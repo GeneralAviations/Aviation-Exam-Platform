@@ -124,35 +124,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Garis Merah Radial",
-          "answer": "260°F",
-          "acceptedAnswers": [
-            "260",
-            "260°F",
-            "260 F",
-            "260 deg F"
-          ],
-          "unit": "°F",
-          "placeholder": "Nilai Garis Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Bilah Hijau",
-          "answer": "100°F SAMPAI 250°F",
-          "acceptedAnswers": [
-            "100-250",
-            "100 sampai 250",
-            "100°F-250°F",
-            "100-250°F"
-          ],
-          "unit": "°F",
-          "placeholder": "Nilai Bilah Hijau..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-007",
@@ -164,10 +136,6 @@
       "answer": "55 DAN 115 PSI / 55 SAMPAI 95 PSI",
       "acceptedAnswers": [
         "55 dan 115 / 55-95",
-        "55 dan 115 /55-95",
-        "55 dan 115 / 55 sampai 95",
-        "55 & 115 / 55-95",
-        "55-115 / 55-95",
         "55 & 115 PSI / 55-95 PSI",
         "55 dan 115, 55 sampai 95"
       ],
@@ -175,35 +143,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Garis Merah Radial",
-          "answer": "55 DAN 115 PSI",
-          "acceptedAnswers": [
-            "55 dan 115",
-            "55 & 115",
-            "55 dan 115 PSI",
-            "55-115"
-          ],
-          "unit": "PSI",
-          "placeholder": "Nilai Garis Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Bilah Hijau",
-          "answer": "55 SAMPAI 95 PSI",
-          "acceptedAnswers": [
-            "55 sampai 95",
-            "55-95",
-            "55-95 PSI",
-            "55 sampai 95 PSI"
-          ],
-          "unit": "PSI",
-          "placeholder": "Nilai Bilah Hijau..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-008",
@@ -221,45 +161,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Garis Merah",
-          "answer": "500°F",
-          "acceptedAnswers": [
-            "500",
-            "500°F",
-            "500 F"
-          ],
-          "unit": "°F",
-          "placeholder": "Nilai Garis Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Bilah Kuning",
-          "answer": "450°F SAMPAI 500°F",
-          "acceptedAnswers": [
-            "450-500",
-            "450 sampai 500",
-            "450-500°F"
-          ],
-          "unit": "°F",
-          "placeholder": "Nilai Bilah Kuning..."
-        },
-        {
-          "id": "sub_3",
-          "label": "Bilah Hijau",
-          "answer": "230°F SAMPAI 450°F",
-          "acceptedAnswers": [
-            "230-450",
-            "230 sampai 450",
-            "230-450°F"
-          ],
-          "unit": "°F",
-          "placeholder": "Nilai Bilah Hijau..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-009",
@@ -271,11 +173,6 @@
       "answer": "14 DAN 35 PSI / 14 DAN 30 PSI",
       "acceptedAnswers": [
         "14 dan 35 / 14 dan 30",
-        "14 dan 35 / 14-30",
-        "14 dan 35 /14-30",
-        "14-35 / 14-30",
-        "14 & 35 / 14-30",
-        "14 dan 35 / 14 sampai 30",
         "14 & 35 PSI / 14-30 PSI",
         "14 dan 35, 14 sampai 30"
       ],
@@ -283,36 +180,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Garis Merah Radial",
-          "answer": "14 DAN 35 PSI",
-          "acceptedAnswers": [
-            "14 dan 35",
-            "14 & 35",
-            "14-35",
-            "14 dan 35 PSI"
-          ],
-          "unit": "PSI",
-          "placeholder": "Nilai Garis Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Bilah Hijau",
-          "answer": "14 DAN 30 PSI",
-          "acceptedAnswers": [
-            "14 dan 30",
-            "14-30",
-            "14 & 30",
-            "14 sampai 30",
-            "14 sampai 30 PSI"
-          ],
-          "unit": "PSI",
-          "placeholder": "Nilai Bilah Hijau..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-010",
@@ -330,46 +198,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Merah",
-          "answer": "3000 DAN 3200 RPM",
-          "acceptedAnswers": [
-            "3000 dan 3200",
-            "3000 & 3200",
-            "3000-3200",
-            "3000 dan 3200 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Hijau Radial",
-          "answer": "1200 SAMPAI 1600 RPM",
-          "acceptedAnswers": [
-            "1200-1600",
-            "1200 sampai 1600",
-            "1200-1600 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Hijau Radial..."
-        },
-        {
-          "id": "sub_3",
-          "label": "Hijau Power",
-          "answer": "3000 SAMPAI 3200 RPM",
-          "acceptedAnswers": [
-            "3000-3200",
-            "3000 sampai 3200",
-            "3000-3200 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Hijau Power..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-011",
@@ -387,46 +216,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 1,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Merah",
-          "answer": "2500 DAN 2700 RPM",
-          "acceptedAnswers": [
-            "2500 dan 2700",
-            "2500 & 2700",
-            "2500-2700",
-            "2500 dan 2700 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Hijau Radial",
-          "answer": "1200 SAMPAI 1600 RPM",
-          "acceptedAnswers": [
-            "1200-1600",
-            "1200 sampai 1600",
-            "1200-1600 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Hijau Radial..."
-        },
-        {
-          "id": "sub_3",
-          "label": "Hijau Power",
-          "answer": "2500 SAMPAI 2700 RPM",
-          "acceptedAnswers": [
-            "2500-2700",
-            "2500 sampai 2700",
-            "2500-2700 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Hijau Power..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-012",
@@ -444,34 +234,7 @@
       "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
       "sourcePage": 2,
       "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Garis Merah Radial",
-          "answer": "390 DAN 504 RPM",
-          "acceptedAnswers": [
-            "390 dan 504",
-            "390 & 504",
-            "390 dan 504 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Garis Merah..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Bilah Hijau",
-          "answer": "390 SAMPAI 504 RPM",
-          "acceptedAnswers": [
-            "390-504",
-            "390 sampai 504",
-            "390 sampai 504 RPM",
-            "390-504 RPM"
-          ],
-          "unit": "RPM",
-          "placeholder": "Nilai Bilah Hijau..."
-        }
-      ]
+      "verified": true
     },
     {
       "id": "S300C-LIM-013",

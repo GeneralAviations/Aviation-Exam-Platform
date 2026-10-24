@@ -62,10 +62,15 @@
       "answer": "105 - 110",
       "acceptedAnswers": [
         "105 - 110",
+        "105 s/d 110",
+        "105 to 110",
         "105-110",
-        "105 - 110%",
+        "105 s/d 110%",
+        "105 sampai 110%",
+        "105 sampai 110",
         "105-110%",
-        "105 to 110"
+        "105 - 110%",
+        "105 to 110%"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -100,11 +105,16 @@
       "question": "NR LIMITS (%): Rentang Normal (green)?",
       "answer": "94 - 104",
       "acceptedAnswers": [
+        "94 to 104%",
+        "94 s/d 104%",
+        "94 s/d 104",
+        "94 - 104%",
+        "94 to 104",
+        "94-104%",
         "94 - 104",
         "94-104",
-        "94 - 104%",
-        "94-104%",
-        "94 to 104"
+        "94 sampai 104",
+        "94 sampai 104%"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -121,13 +131,18 @@
       "question": "NR LIMITS (%): Rentang Transient (red)?",
       "answer": "0 - 93",
       "acceptedAnswers": [
-        "0 - 93",
-        "0-93",
-        "0 - 93%",
-        "0-93%",
-        "0 to 93",
+        "0 sampai 93%",
+        "0 s/d 93",
         "< 94",
-        "<94"
+        "0-93",
+        "0-93%",
+        "0 - 93%",
+        "0 - 93",
+        "0 sampai 93",
+        "0 to 93%",
+        "<94",
+        "0 s/d 93%",
+        "0 to 93"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -164,11 +179,16 @@
       "question": "LIMITS - ENG 1 or 2 OIL PRESSURE (PSI): Normal (green)?",
       "answer": "23 - 120",
       "acceptedAnswers": [
-        "23 - 120",
-        "23-120",
-        "23 to 120",
+        "23 s/d 120",
         "23 - 120 psi",
-        "23-120 psi"
+        "23-120",
+        "23 - 120",
+        "23-120 psi",
+        "23 s/d 120 psi",
+        "23 sampai 120 psi",
+        "23 to 120 psi",
+        "23 to 120",
+        "23 sampai 120"
       ],
       "unit": "PSI",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -247,9 +267,11 @@
       "question": "LIMITS - HYDRAULIC PRESSURE (PSI): Transient permitted for 5 Sec (yellow)?",
       "answer": "3310 - 3400",
       "acceptedAnswers": [
+        "3310 sampai 3400",
+        "3310 s/d 3400",
         "3310 - 3400",
-        "3310-3400",
-        "3310 to 3400"
+        "3310 to 3400",
+        "3310-3400"
       ],
       "unit": "PSI",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -267,9 +289,14 @@
       "answer": "2700 - 3300",
       "acceptedAnswers": [
         "2700 - 3300",
-        "2700-3300",
+        "2700 sampai 3300",
+        "2.700 - 3.300",
+        "2.700 s/d 3.300",
+        "2.700 to 3.300",
         "2700 to 3300",
-        "2.700 - 3.300"
+        "2700 s/d 3300",
+        "2700-3300",
+        "2.700 sampai 3.300"
       ],
       "unit": "PSI",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -330,6 +357,8 @@
       "acceptedAnswers": [
         "904 - 949",
         "904-949",
+        "904 sampai 949",
+        "904 s/d 949",
         "904 to 949"
       ],
       "unit": "°C",
@@ -370,7 +399,9 @@
       "acceptedAnswers": [
         "880 - 903",
         "880-903",
-        "880 to 903"
+        "880 s/d 903",
+        "880 to 903",
+        "880 sampai 903"
       ],
       "unit": "°C",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -411,8 +442,10 @@
       "answer": "847 - 879",
       "acceptedAnswers": [
         "847 - 879",
-        "847-879",
-        "847 to 879"
+        "847 s/d 879",
+        "847 to 879",
+        "847 sampai 879",
+        "847-879"
       ],
       "unit": "°C",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -469,9 +502,11 @@
       "question": "LIMITS - 701D TGT (°C): Rentang Intermediate rated power (yellow)?",
       "answer": "794 - 846",
       "acceptedAnswers": [
+        "794 s/d 846",
         "794 - 846",
+        "794 to 846",
         "794-846",
-        "794 to 846"
+        "794 sampai 846"
       ],
       "unit": "°C",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -529,8 +564,10 @@
       "answer": "0 - 793",
       "acceptedAnswers": [
         "0 - 793",
-        "0-793",
-        "0 to 793"
+        "0 sampai 793",
+        "0 to 793",
+        "0 s/d 793",
+        "0-793"
       ],
       "unit": "°C",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -547,12 +584,18 @@
       "question": "Hindari operasi berkepanjangan pada rentang Nr berapa saat APU running agar clutch APU tidak berosilasi?",
       "answer": "94% - 96%",
       "acceptedAnswers": [
-        "94% - 96%",
         "94 - 96%",
         "94-96%",
+        "94%-96%",
+        "94 sampai 96%",
         "94% to 96%",
+        "94 s/d 96",
+        "94% - 96%",
+        "94 to 96%",
+        "94 s/d 96%",
         "94 - 96",
-        "94%-96%"
+        "94 sampai 96",
+        "94 to 96"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -589,10 +632,15 @@
       "question": "TORQUE NR LESS THAN 50%: Normal operation (green)?",
       "answer": "0 - 30",
       "acceptedAnswers": [
-        "0 - 30",
-        "0-30",
         "0 to 30",
-        "0 - 30%"
+        "0 - 30%",
+        "0 s/d 30",
+        "0 sampai 30",
+        "0-30",
+        "0 sampai 30%",
+        "0 - 30",
+        "0 s/d 30%",
+        "0 to 30%"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -629,10 +677,15 @@
       "question": "TORQUE NR 50% - 90%: Normal operation (green)?",
       "answer": "0 - 70",
       "acceptedAnswers": [
-        "0 - 70",
+        "0 sampai 70",
         "0-70",
+        "0 - 70",
         "0 to 70",
-        "0 - 70%"
+        "0 sampai 70%",
+        "0 s/d 70",
+        "0 - 70%",
+        "0 to 70%",
+        "0 s/d 70%"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -669,11 +722,20 @@
       "question": "DUAL ENGINE TORQUE: Transient (yellow) & durasi?",
       "answer": "101 - 115 (6 Sec)",
       "acceptedAnswers": [
-        "101 - 115 (6 Sec)",
-        "101 - 115",
-        "101-115",
         "101 - 115 (6 detik)",
-        "6 sec"
+        "101 sampai 115 (6 Sec)",
+        "101 to 115 (6 Sec)",
+        "101 to 115 (6 detik)",
+        "101 - 115 (6 Sec)",
+        "101 s/d 115 (6 detik)",
+        "101 s/d 115",
+        "101-115",
+        "101 sampai 115 (6 detik)",
+        "101 sampai 115",
+        "101 - 115",
+        "101 to 115",
+        "6 sec",
+        "101 s/d 115 (6 Sec)"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -690,10 +752,15 @@
       "question": "DUAL ENGINE TORQUE: Normal (green)?",
       "answer": "0 - 100",
       "acceptedAnswers": [
+        "0 s/d 100",
+        "0 sampai 100",
+        "0 to 100",
+        "0 to 100%",
+        "0 s/d 100%",
+        "0 - 100%",
         "0 - 100",
         "0-100",
-        "0 to 100",
-        "0 - 100%"
+        "0 sampai 100%"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -730,11 +797,20 @@
       "question": "SINGLE ENGINE TORQUE: Transient (yellow) & durasi?",
       "answer": "121 - 125 (6 Sec)",
       "acceptedAnswers": [
-        "121 - 125 (6 Sec)",
-        "121 - 125",
         "121-125",
+        "121 to 125 (6 detik)",
+        "121 sampai 125 (6 Sec)",
+        "121 s/d 125 (6 Sec)",
+        "121 s/d 125",
+        "121 to 125",
+        "121 - 125",
+        "121 sampai 125",
+        "121 s/d 125 (6 detik)",
+        "121 to 125 (6 Sec)",
         "121 - 125 (6 detik)",
-        "6 sec"
+        "121 sampai 125 (6 detik)",
+        "6 sec",
+        "121 - 125 (6 Sec)"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -752,10 +828,19 @@
       "answer": "111 - 120 (2.5 Min)",
       "acceptedAnswers": [
         "111 - 120 (2.5 Min)",
-        "111 - 120",
+        "111 to 120 (2.5 menit)",
         "111-120",
+        "111 to 120 (2.5 Min)",
+        "111 sampai 120",
+        "111 sampai 120 (2.5 menit)",
+        "111 - 120",
         "111 - 120 (2.5 menit)",
-        "2.5 min"
+        "111 to 120",
+        "111 s/d 120 (2.5 menit)",
+        "2.5 min",
+        "111 sampai 120 (2.5 Min)",
+        "111 s/d 120",
+        "111 s/d 120 (2.5 Min)"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -790,11 +875,16 @@
       "question": "SINGLE ENGINE TORQUE: Normal (green)?",
       "answer": "0 - 100",
       "acceptedAnswers": [
-        "0 - 100",
-        "0-100",
+        "0 s/d 100",
         "0 - 110",
+        "0 to 100",
+        "0 sampai 110",
+        "0 sampai 100",
+        "0 s/d 110",
+        "0 - 100",
+        "0 to 110",
         "0-110",
-        "0 to 100"
+        "0-100"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -833,11 +923,17 @@
       "question": "ENG 1 OR 2 NG (%): Transient & durasi?",
       "answer": "105.1 - 106.0 (12 Sec)",
       "acceptedAnswers": [
-        "105.1 - 106.0 (12 Sec)",
-        "105.1 - 106.0",
-        "105.1-106.0",
+        "105.1 to 106.0",
+        "105.1 to 106.0 (12 Sec)",
         "12 sec",
-        "12 detik"
+        "12 detik",
+        "105.1 sampai 106.0 (12 Sec)",
+        "105.1 sampai 106.0",
+        "105.1 - 106.0 (12 Sec)",
+        "105.1 s/d 106.0 (12 Sec)",
+        "105.1 s/d 106.0",
+        "105.1 - 106.0",
+        "105.1-106.0"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -854,8 +950,10 @@
       "question": "ENG 1 OR 2 NG (%): Normal (green)?",
       "answer": "63.1 - 105.0",
       "acceptedAnswers": [
-        "63.1 - 105.0",
         "63.1-105.0",
+        "63.1 s/d 105.0",
+        "63.1 - 105.0",
+        "63.1 sampai 105.0",
         "63.1 to 105.0"
       ],
       "unit": "%",
@@ -934,11 +1032,17 @@
       "question": "ENG 1 OR 2 NP (%): Transient operation & durasi?",
       "answer": "104 - 119 (12 Sec)",
       "acceptedAnswers": [
-        "104 - 119 (12 Sec)",
-        "104 - 119",
-        "104-119",
+        "104 s/d 119 (12 Sec)",
+        "104 to 119",
         "12 sec",
-        "12 detik"
+        "104 sampai 119",
+        "104 s/d 119",
+        "104 to 119 (12 Sec)",
+        "12 detik",
+        "104 - 119",
+        "104 - 119 (12 Sec)",
+        "104 sampai 119 (12 Sec)",
+        "104-119"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -955,9 +1059,11 @@
       "question": "ENG 1 OR 2 NP (%): Normal (green)?",
       "answer": "0 - 103",
       "acceptedAnswers": [
-        "0 - 103",
+        "0 sampai 103",
+        "0 to 103",
+        "0 s/d 103",
         "0-103",
-        "0 to 103"
+        "0 - 103"
       ],
       "unit": "%",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1535,9 +1641,11 @@
       "question": "Tuliskan definisi darurat: 'Land Without Delay'!",
       "answer": "Landing in which the primary consideration is continued control of the A/C & survival of the occupants. It is mean to be more urgent than Land as soon as possible",
       "acceptedAnswers": [
-        "Landing in which the primary consideration is continued control of the A/C & survival of the occupants. It is mean to be more urgent than Land as soon as possible",
         "Landing in which the primary consideration is continued control of the A/C & survival of the occupants",
         "Landing in which the primary consideration is continued control of the A/C and survival of the occupants",
+        "Landing in which the primary consideration is continued control of the A/C & survival of the occupants. It is mean to be more urgent than Land as soon as possible",
+        "Landing in which the primary consideration is continued control of the A/C dan survival of the occupants. It is mean to be more urgent than Land as soon as possible",
+        "Landing in which the primary consideration is continued control of the A/C dan survival of the occupants",
         "Landing in which the primary consideration is continued control of the aircraft and survival of the occupants"
       ],
       "unit": "",
@@ -1650,9 +1758,18 @@
       "question": "Sebutkan seluruh prosedur 'Emergency Egress' secara berurutan!",
       "answer": "1. Helmet Visor - Down, 2. Area Around Helicopter - Clear of Personnel, 3. Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy",
       "acceptedAnswers": [
-        "1. Helmet Visor - Down, 2. Area Around Helicopter - Clear of Personnel, 3. Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy",
         "Helmet Visor - Down, Area Around Helicopter - Clear of Personnel, Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy",
-        "1. Helmet Visor - Down 2. Area Around Helicopter - Clear of Personnel 3. Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy"
+        "Helmet Visor s/d Down, Area Around Helicopter s/d Clear of Personnel, Canopy Jettison Handle s/d Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor sampai Down, 2. Area Around Helicopter sampai Clear of Personnel, 3. Canopy Jettison Handle sampai Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor - Down, 2. Area Around Helicopter - Clear of Personnel, 3. Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor sampai Down 2. Area Around Helicopter sampai Clear of Personnel 3. Canopy Jettison Handle sampai Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor s/d Down 2. Area Around Helicopter s/d Clear of Personnel 3. Canopy Jettison Handle s/d Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor - Down 2. Area Around Helicopter - Clear of Personnel 3. Canopy Jettison Handle - Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor to Down 2. Area Around Helicopter to Clear of Personnel 3. Canopy Jettison Handle to Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor s/d Down, 2. Area Around Helicopter s/d Clear of Personnel, 3. Canopy Jettison Handle s/d Turn 90°, release, then push to jettison canopy",
+        "Helmet Visor to Down, Area Around Helicopter to Clear of Personnel, Canopy Jettison Handle to Turn 90°, release, then push to jettison canopy",
+        "1. Helmet Visor to Down, 2. Area Around Helicopter to Clear of Personnel, 3. Canopy Jettison Handle to Turn 90°, release, then push to jettison canopy",
+        "Helmet Visor sampai Down, Area Around Helicopter sampai Clear of Personnel, Canopy Jettison Handle sampai Turn 90°, release, then push to jettison canopy"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1687,9 +1804,12 @@
       "question": "ABORT START PROCEDURES: Tindakan pada ENG Start Switch?",
       "answer": "IGN Oride for 30 sec & until TGT is below 540°c",
       "acceptedAnswers": [
-        "IGN Oride for 30 sec & until TGT is below 540°c",
-        "IGN Oride for 30 sec & until TGT is below 540°C",
         "IGN Oride for 30 sec and until TGT is below 540°c",
+        "IGN Oride for 30 sec & until TGT is below 540°c",
+        "IGN Oride for 30 sec dan until TGT below 540°c",
+        "IGN Oride for 30 sec & until TGT is below 540°C",
+        "IGN Oride for 30 sec dan until TGT is below 540°c",
+        "IGN Oride for 30 sec dan until TGT is below 540°C",
         "IGN Oride for 30 sec & until TGT below 540°c",
         "IGN Oride for 30 sec until TGT is below 540°c"
       ],
@@ -1708,9 +1828,21 @@
       "question": "Sebutkan seluruh tindakan 'ABORT START PROCEDURES' secara berurutan!",
       "answer": "1. Power Levers - OFF, 2. ENG Start Switch - IGN Oride for 30 sec & until TGT is below 540°c",
       "acceptedAnswers": [
+        "1. Power Levers sampai OFF 2. ENG Start Switch sampai IGN Oride for 30 sec & until TGT is below 540°c",
+        "Power Levers s/d OFF, ENG Start Switch s/d IGN Oride for 30 sec & until TGT is below 540°c",
+        "Power Levers - OFF, ENG Start Switch - IGN Oride for 30 sec dan until TGT is below 540°c",
+        "1. Power Levers to OFF, 2. ENG Start Switch to IGN Oride for 30 sec & until TGT is below 540°c",
         "1. Power Levers - OFF, 2. ENG Start Switch - IGN Oride for 30 sec & until TGT is below 540°c",
+        "1. Power Levers to OFF 2. ENG Start Switch to IGN Oride for 30 sec & until TGT is below 540°c",
+        "1. Power Levers sampai OFF, 2. ENG Start Switch sampai IGN Oride for 30 sec & until TGT is below 540°c",
+        "1. Power Levers - OFF 2. ENG Start Switch - IGN Oride for 30 sec dan until TGT is below 540°c",
+        "1. Power Levers - OFF, 2. ENG Start Switch - IGN Oride for 30 sec dan until TGT is below 540°c",
+        "1. Power Levers - OFF 2. ENG Start Switch - IGN Oride for 30 sec & until TGT is below 540°c",
+        "1. Power Levers s/d OFF 2. ENG Start Switch s/d IGN Oride for 30 sec & until TGT is below 540°c",
+        "Power Levers sampai OFF, ENG Start Switch sampai IGN Oride for 30 sec & until TGT is below 540°c",
         "Power Levers - OFF, ENG Start Switch - IGN Oride for 30 sec & until TGT is below 540°c",
-        "1. Power Levers - OFF 2. ENG Start Switch - IGN Oride for 30 sec & until TGT is below 540°c"
+        "1. Power Levers s/d OFF, 2. ENG Start Switch s/d IGN Oride for 30 sec & until TGT is below 540°c",
+        "Power Levers to OFF, ENG Start Switch to IGN Oride for 30 sec & until TGT is below 540°c"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1764,8 +1896,17 @@
       "question": "Sebutkan seluruh tindakan 'Dual Engine Failure - Low Altitude / Low Airspeed and Cruise'!",
       "answer": "1. Autorotate, 2. ENG CHOP Button - Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
       "acceptedAnswers": [
-        "1. Autorotate, 2. ENG CHOP Button - Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
+        "Autorotate, ENG CHOP Button sampai Reset only if ENG CHOP warning message is present",
         "1. Autorotate, 2. ENG CHOP Button - Reset only if ENG CHOP warning message is present, 3. Reset may be accomplished by either crewmember",
+        "1. Autorotate, 2. ENG CHOP Button s/d Reset only if ENG CHOP warning message is present, 3. Reset may be accomplished by either crewmember",
+        "Autorotate, ENG CHOP Button s/d Reset only if ENG CHOP warning message is present",
+        "1. Autorotate, 2. ENG CHOP Button sampai Reset only if ENG CHOP warning message is present, 3. Reset may be accomplished by either crewmember",
+        "1. Autorotate, 2. ENG CHOP Button to Reset only if ENG CHOP warning message is present, 3. Reset may be accomplished by either crewmember",
+        "1. Autorotate, 2. ENG CHOP Button sampai Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
+        "Autorotate, ENG CHOP Button to Reset only if ENG CHOP warning message is present",
+        "1. Autorotate, 2. ENG CHOP Button - Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
+        "1. Autorotate, 2. ENG CHOP Button s/d Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
+        "1. Autorotate, 2. ENG CHOP Button to Reset only if ENG CHOP warning message is present (Reset may be accomplished by either crewmember)",
         "Autorotate, ENG CHOP Button - Reset only if ENG CHOP warning message is present"
       ],
       "unit": "",
@@ -1783,9 +1924,18 @@
       "question": "Single Engine Failure - Low Altitude / Low Airspeed and Cruise: Sebutkan 3 tindakan darurat!",
       "answer": "1. Airspeed - Adjust as appropriate, 2. Wing Stores Jettison - As appropriate, 3. Land as soon as practicable",
       "acceptedAnswers": [
+        "1. Airspeed s/d Adjust as appropriate, 2. Wing Stores Jettison s/d As appropriate, 3. Land as soon as practicable",
+        "Airspeed sampai Adjust as appropriate, Wing Stores Jettison sampai As appropriate, Land as soon as practicable",
+        "Airspeed to Adjust as appropriate, Wing Stores Jettison to As appropriate, Land as soon as practicable",
         "1. Airspeed - Adjust as appropriate, 2. Wing Stores Jettison - As appropriate, 3. Land as soon as practicable",
-        "Airspeed - Adjust as appropriate, Wing Stores Jettison - As appropriate, Land as soon as practicable",
-        "1. Airspeed - Adjust as appropriate 2. Wing Stores Jettison - As appropriate 3. Land as soon as practicable"
+        "1. Airspeed to Adjust as appropriate 2. Wing Stores Jettison to As appropriate 3. Land as soon as practicable",
+        "1. Airspeed sampai Adjust as appropriate 2. Wing Stores Jettison sampai As appropriate 3. Land as soon as practicable",
+        "Airspeed s/d Adjust as appropriate, Wing Stores Jettison s/d As appropriate, Land as soon as practicable",
+        "1. Airspeed sampai Adjust as appropriate, 2. Wing Stores Jettison sampai As appropriate, 3. Land as soon as practicable",
+        "1. Airspeed - Adjust as appropriate 2. Wing Stores Jettison - As appropriate 3. Land as soon as practicable",
+        "1. Airspeed to Adjust as appropriate, 2. Wing Stores Jettison to As appropriate, 3. Land as soon as practicable",
+        "1. Airspeed s/d Adjust as appropriate 2. Wing Stores Jettison s/d As appropriate 3. Land as soon as practicable",
+        "Airspeed - Adjust as appropriate, Wing Stores Jettison - As appropriate, Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1802,9 +1952,18 @@
       "question": "Engine 1 or 2 Overspeed - NP Failed High: Sebutkan tindakan darurat lengkap!",
       "answer": "1. Collective - Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
       "acceptedAnswers": [
+        "Collective s/d Adjust to maintain NR within limits. If condition persists: Power Lever (affected engine) - Retard to equalize torque, Land as soon as practicable",
+        "1. Collective s/d Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "1. Collective sampai Adjust to maintain NR within limits, 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "1. Collective to Adjust to maintain NR within limits, 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "1. Collective to Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "Collective to Adjust to maintain NR within limits. If condition persists: Power Lever (affected engine) - Retard to equalize torque, Land as soon as practicable",
+        "1. Collective sampai Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "1. Collective s/d Adjust to maintain NR within limits, 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
         "1. Collective - Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
-        "Collective - Adjust to maintain NR within limits. If condition persists: Power Lever (affected engine) - Retard to equalize torque, Land as soon as practicable",
-        "1. Collective - Adjust to maintain NR within limits, 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable"
+        "1. Collective - Adjust to maintain NR within limits, 2. Power Lever (affected engine) - Retard to equalize torque, 3. Land as soon as practicable",
+        "Collective sampai Adjust to maintain NR within limits. If condition persists: Power Lever (affected engine) - Retard to equalize torque, Land as soon as practicable",
+        "Collective - Adjust to maintain NR within limits. If condition persists: Power Lever (affected engine) - Retard to equalize torque, Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1821,9 +1980,21 @@
       "question": "Low RPM Rotor - NP Failed Low: Sebutkan tindakan darurat lengkap!",
       "answer": "1. Collective - Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
       "acceptedAnswers": [
+        "1. Collective sampai Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "1. Collective s/d Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "Collective sampai Adjust to maintain NR within limits, Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines, Power Lever (affected engine) - IDLE, Land as soon as practicable",
+        "1. Collective - Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "Collective s/d Adjust to maintain NR within limits, Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines, Power Lever (affected engine) - IDLE, Land as soon as practicable",
+        "1. Collective sampai Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "1. Collective to Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "Collective - Adjust to maintain NR within limits, Power Lever (affected engine) - LOCKOUT dan then retard to equalize torque output of both engines, Power Lever (affected engine) - IDLE, Land as soon as practicable",
         "1. Collective - Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "1. Collective s/d Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
         "Collective - Adjust to maintain NR within limits, Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines, Power Lever (affected engine) - IDLE, Land as soon as practicable",
-        "1. Collective - Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable"
+        "1. Collective - Adjust to maintain NR within limits, 2. Power Lever (affected engine) - LOCKOUT dan then retard to equalize torque, 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "1. Collective to Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "1. Collective - Adjust to maintain NR within limits. If condition persists: 2. Power Lever (affected engine) - LOCKOUT dan then retard to equalize torque output of both engines. If manual control is not possible: 3. Power Lever (affected engine) - IDLE, 4. Land as soon as practicable",
+        "Collective to Adjust to maintain NR within limits, Power Lever (affected engine) - LOCKOUT & then retard to equalize torque output of both engines, Power Lever (affected engine) - IDLE, Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1840,9 +2011,18 @@
       "question": "Engine Compressor Stall: Sebutkan tindakan darurat lengkap!",
       "answer": "1. Collective - Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
       "acceptedAnswers": [
-        "1. Collective - Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "1. Collective s/d Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
         "Collective - Reduce, Power Lever (affected engine) - Retard, Power Lever (affected engine) - FLY, Power Lever (affected engine) - IDLE, Land as soon as practicable",
-        "1. Collective - Reduce, 2. Power Lever (affected engine) - Retard, 3. Power Lever (affected engine) - FLY, 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable"
+        "1. Collective s/d Reduce, 2. Power Lever (affected engine) - Retard, 3. Power Lever (affected engine) - FLY, 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "1. Collective sampai Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "Collective s/d Reduce, Power Lever (affected engine) - Retard, Power Lever (affected engine) - FLY, Power Lever (affected engine) - IDLE, Land as soon as practicable",
+        "1. Collective to Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "Collective sampai Reduce, Power Lever (affected engine) - Retard, Power Lever (affected engine) - FLY, Power Lever (affected engine) - IDLE, Land as soon as practicable",
+        "Collective to Reduce, Power Lever (affected engine) - Retard, Power Lever (affected engine) - FLY, Power Lever (affected engine) - IDLE, Land as soon as practicable",
+        "1. Collective - Reduce, 2. Power Lever (affected engine) - Retard, 3. Power Lever (affected engine) - FLY, 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "1. Collective sampai Reduce, 2. Power Lever (affected engine) - Retard, 3. Power Lever (affected engine) - FLY, 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "1. Collective to Reduce, 2. Power Lever (affected engine) - Retard, 3. Power Lever (affected engine) - FLY, 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable",
+        "1. Collective - Reduce, 2. Power Lever (affected engine) - Retard. If TGT decreases and there is no further evidence of a stall: 3. Power Lever (affected engine) - FLY. If stall condition recurs: 4. Power Lever (affected engine) - IDLE, 5. Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1859,9 +2039,18 @@
       "question": "Loss of Tail Rotor Thrust in cruise flight - Continued flight possible: Sebutkan 4 langkah darurat!",
       "answer": "1. EMERG HYD Button - Press ON, 2. Airspeed - 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison - As appropriate, 4. Power Lever - Retard as necessary (5 to 10 ft above Touchdown)",
       "acceptedAnswers": [
-        "1. EMERG HYD Button - Press ON, 2. Airspeed - 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison - As appropriate, 4. Power Lever - Retard as necessary (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button s/d Press ON 2. Airspeed s/d 100 KTAS minimum 3. Wing Stores Jettison s/d As appropriate 4. Power Lever s/d Retard as necessary",
+        "EMERG HYD Button to Press ON, Airspeed to 100 KTAS minimum (until 10 to 20 ft above Touchdown), Wing Stores Jettison to As appropriate, Power Lever to Retard as necessary (5 to 10 ft above Touchdown)",
+        "EMERG HYD Button sampai Press ON, Airspeed sampai 100 KTAS minimum (until 10 to 20 ft above Touchdown), Wing Stores Jettison sampai As appropriate, Power Lever sampai Retard as necessary (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button sampai Press ON, 2. Airspeed sampai 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison sampai As appropriate, 4. Power Lever sampai Retard as necessary (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button s/d Press ON, 2. Airspeed s/d 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison s/d As appropriate, 4. Power Lever s/d Retard as necessary (5 to 10 ft above Touchdown)",
         "EMERG HYD Button - Press ON, Airspeed - 100 KTAS minimum (until 10 to 20 ft above Touchdown), Wing Stores Jettison - As appropriate, Power Lever - Retard as necessary (5 to 10 ft above Touchdown)",
-        "1. EMERG HYD Button - Press ON 2. Airspeed - 100 KTAS minimum 3. Wing Stores Jettison - As appropriate 4. Power Lever - Retard as necessary"
+        "1. EMERG HYD Button - Press ON 2. Airspeed - 100 KTAS minimum 3. Wing Stores Jettison - As appropriate 4. Power Lever - Retard as necessary",
+        "1. EMERG HYD Button - Press ON, 2. Airspeed - 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison - As appropriate, 4. Power Lever - Retard as necessary (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button to Press ON 2. Airspeed to 100 KTAS minimum 3. Wing Stores Jettison to As appropriate 4. Power Lever to Retard as necessary",
+        "EMERG HYD Button s/d Press ON, Airspeed s/d 100 KTAS minimum (until 10 to 20 ft above Touchdown), Wing Stores Jettison s/d As appropriate, Power Lever s/d Retard as necessary (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button sampai Press ON 2. Airspeed sampai 100 KTAS minimum 3. Wing Stores Jettison sampai As appropriate 4. Power Lever sampai Retard as necessary",
+        "1. EMERG HYD Button to Press ON, 2. Airspeed to 100 KTAS minimum (until 10 to 20 ft above Touchdown), 3. Wing Stores Jettison to As appropriate, 4. Power Lever to Retard as necessary (5 to 10 ft above Touchdown)"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1878,7 +2067,17 @@
       "question": "Loss of Tail Rotor Thrust in cruise flight - Continued flight not possible or Low airspeed / Hover: Sebutkan 5 langkah darurat!",
       "answer": "1. EMERG HYD Button - Press ON, 2. Collective Reduce (compromise between rate of turn & rate of descent), 3. Wing Stores Jettison - As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers - OFF (5 to 10 ft above Touchdown)",
       "acceptedAnswers": [
+        "1. EMERG HYD Button - Press ON, 2. Collective Reduce (compromise between rate of turn dan rate of descent), 3. Wing Stores Jettison - As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers - OFF (5 to 10 ft above Touchdown)",
+        "EMERG HYD Button s/d Press ON, Collective Reduce, Wing Stores Jettison s/d As appropriate, Minimize Rate of Descent, Power Levers s/d OFF",
         "1. EMERG HYD Button - Press ON, 2. Collective Reduce (compromise between rate of turn & rate of descent), 3. Wing Stores Jettison - As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers - OFF (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button sampai Press ON, 2. Collective Reduce (compromise between rate of turn & rate of descent), 3. Wing Stores Jettison sampai As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers sampai OFF (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button to Press ON 2. Collective Reduce 3. Wing Stores Jettison to As appropriate 4. Minimize Rate of Descent 5. Power Levers to OFF",
+        "1. EMERG HYD Button s/d Press ON, 2. Collective Reduce (compromise between rate of turn & rate of descent), 3. Wing Stores Jettison s/d As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers s/d OFF (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button to Press ON, 2. Collective Reduce (compromise between rate of turn & rate of descent), 3. Wing Stores Jettison to As appropriate, 4. Minimize Rate of Descent (10 to 20 ft above Touchdown), 5. Power Levers to OFF (5 to 10 ft above Touchdown)",
+        "1. EMERG HYD Button sampai Press ON 2. Collective Reduce 3. Wing Stores Jettison sampai As appropriate 4. Minimize Rate of Descent 5. Power Levers sampai OFF",
+        "1. EMERG HYD Button s/d Press ON 2. Collective Reduce 3. Wing Stores Jettison s/d As appropriate 4. Minimize Rate of Descent 5. Power Levers s/d OFF",
+        "EMERG HYD Button sampai Press ON, Collective Reduce, Wing Stores Jettison sampai As appropriate, Minimize Rate of Descent, Power Levers sampai OFF",
+        "EMERG HYD Button to Press ON, Collective Reduce, Wing Stores Jettison to As appropriate, Minimize Rate of Descent, Power Levers to OFF",
         "EMERG HYD Button - Press ON, Collective Reduce, Wing Stores Jettison - As appropriate, Minimize Rate of Descent, Power Levers - OFF",
         "1. EMERG HYD Button - Press ON 2. Collective Reduce 3. Wing Stores Jettison - As appropriate 4. Minimize Rate of Descent 5. Power Levers - OFF"
       ],
@@ -1915,8 +2114,14 @@
       "question": "Main Transmission Input Drive Clutch Failure - On Ground: Tindakan jika clutch failed to engage vs clutch failed to disengage?",
       "answer": "Clutch failed to engage: 1. EMER ENG SHUTDOWN (affected engine only), 2. Or NG is less than 10% (affected engine), 3. Normal engine shutdown - perform. Clutch failed to disengage: 1. EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
       "acceptedAnswers": [
+        "Clutch failed to engage: 1. EMER ENG SHUTDOWN (affected engine only), 2. Or NG is less than 10% (affected engine), 3. Normal engine shutdown sampai perform. Clutch failed to disengage: 1. EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
+        "Failed to engage: EMER ENG SHUTDOWN (affected engine only), NG is less than 10%, Normal engine shutdown - perform. Failed to disengage: EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
         "Clutch failed to engage: 1. EMER ENG SHUTDOWN (affected engine only), 2. Or NG is less than 10% (affected engine), 3. Normal engine shutdown - perform. Clutch failed to disengage: 1. EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
-        "Failed to engage: EMER ENG SHUTDOWN (affected engine only), NG is less than 10%, Normal engine shutdown - perform. Failed to disengage: EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)"
+        "Failed to engage: EMER ENG SHUTDOWN (affected engine only), NG is less than 10%, Normal engine shutdown s/d perform. Failed to disengage: EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
+        "Failed to engage: EMER ENG SHUTDOWN (affected engine only), NG is less than 10%, Normal engine shutdown to perform. Failed to disengage: EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
+        "Clutch failed to engage: 1. EMER ENG SHUTDOWN (affected engine only), 2. Or NG is less than 10% (affected engine), 3. Normal engine shutdown s/d perform. Clutch failed to disengage: 1. EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
+        "Failed to engage: EMER ENG SHUTDOWN (affected engine only), NG is less than 10%, Normal engine shutdown sampai perform. Failed to disengage: EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)",
+        "Clutch failed to engage: 1. EMER ENG SHUTDOWN (affected engine only), 2. Or NG is less than 10% (affected engine), 3. Normal engine shutdown to perform. Clutch failed to disengage: 1. EMERG ENG(S) SHUTDOWN (Both Engines Simultaneously)"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1933,9 +2138,21 @@
       "question": "Engine Fire In Flight: Sebutkan 4 tindakan darurat lengkap!",
       "answer": "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
-        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "EMERG ENG SHUTDOWN (affected engine) - when condition permit, Illuminated ENG FIRE Button - Press dan RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
         "EMERG ENG SHUTDOWN (affected engine) - when condition permit, Illuminated ENG FIRE Button - Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
-        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE"
+        "EMERG ENG SHUTDOWN (affected engine) - when condition permit, Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button - Press dan RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button to Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE",
+        "EMERG ENG SHUTDOWN (affected engine) - when condition permit, Illuminated ENG FIRE Button to Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button - Press dan RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) 2. Illuminated ENG FIRE Button to Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press 4. LAND AS SOON AS POSSIBLE",
+        "1. EMERG ENG SHUTDOWN (affected engine) - when condition permit, 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press, 4. LAND AS SOON AS POSSIBLE",
+        "EMERG ENG SHUTDOWN (affected engine) - when condition permit, Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1952,9 +2169,21 @@
       "question": "Engine Fire On Ground: Sebutkan 3 tindakan darurat!",
       "answer": "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
       "acceptedAnswers": [
+        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button - Press dan RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button - Press dan RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button to Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button to Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
         "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
-        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button - Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
-        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press"
+        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button to Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button s/d Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN, 2. Illuminated ENG FIRE Button sampai Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. EMERG ENG(S) SHUTDOWN 2. Illuminated ENG FIRE Button - Press dan RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "EMERG ENG(S) SHUTDOWN, Illuminated ENG FIRE Button - Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1971,9 +2200,21 @@
       "question": "APU Compartment Fire On Ground: Sebutkan 3 tindakan darurat!",
       "answer": "1. APU - OFF, 2. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
       "acceptedAnswers": [
-        "1. APU - OFF, 2. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "APU to OFF, Illuminated APU FIRE Button to Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "APU sampai OFF, Illuminated APU FIRE Button sampai Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
         "APU - OFF, Illuminated APU FIRE Button - Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
-        "1. APU - OFF 2. Illuminated APU FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press"
+        "1. APU s/d OFF 2. Illuminated APU FIRE Button s/d Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "APU - OFF, Illuminated APU FIRE Button - Press dan RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. APU - OFF, 2. Illuminated APU FIRE Button - Press dan RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. APU to OFF 2. Illuminated APU FIRE Button to Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "1. APU sampai OFF, 2. Illuminated APU FIRE Button sampai Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. APU to OFF, 2. Illuminated APU FIRE Button to Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "1. APU s/d OFF, 2. Illuminated APU FIRE Button s/d Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press",
+        "APU s/d OFF, Illuminated APU FIRE Button s/d Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press",
+        "1. APU sampai OFF 2. Illuminated APU FIRE Button sampai Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "1. APU - OFF 2. Illuminated APU FIRE Button - Press dan RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "1. APU - OFF 2. Illuminated APU FIRE Button - Press & RDY Light Illuminates 3. FIRE DISCH Button(s) - Press",
+        "1. APU - OFF, 2. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 3. FIRE DISCH Button(s) - Press"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -1990,9 +2231,21 @@
       "question": "APU Compartment Fire In Flight: Sebutkan 3 tindakan darurat!",
       "answer": "1. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
-        "1. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button - Press dan RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE",
+        "Illuminated APU FIRE Button to Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
         "Illuminated APU FIRE Button - Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
-        "1. Illuminated APU FIRE Button - Press & RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE"
+        "Illuminated APU FIRE Button sampai Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button s/d Press & RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button to Press & RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button to Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button s/d Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
+        "Illuminated APU FIRE Button - Press dan RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button - Press dan RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button - Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button sampai Press & RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE",
+        "Illuminated APU FIRE Button s/d Press & RDY Light Illuminates, FIRE DISCH Button(s) - Press, LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button - Press & RDY Light Illuminates 2. FIRE DISCH Button(s) - Press 3. LAND AS SOON AS POSSIBLE",
+        "1. Illuminated APU FIRE Button sampai Press & RDY Light Illuminates, 2. FIRE DISCH Button(s) - Press, 3. LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2027,9 +2280,18 @@
       "question": "Fuselage Fire On Ground: Sebutkan 2 tindakan darurat!",
       "answer": "1. EMERG ENG(s) SHUTDOWN, 2. APU - OFF (if applicable)",
       "acceptedAnswers": [
-        "1. EMERG ENG(s) SHUTDOWN, 2. APU - OFF (if applicable)",
+        "EMERG ENG(s) SHUTDOWN, APU to OFF (if applicable)",
+        "EMERG ENG(s) SHUTDOWN, APU to OFF",
+        "EMERG ENG(s) SHUTDOWN, APU sampai OFF (if applicable)",
+        "EMERG ENG(s) SHUTDOWN, APU - OFF",
+        "1. EMERG ENG(s) SHUTDOWN, 2. APU s/d OFF (if applicable)",
+        "EMERG ENG(s) SHUTDOWN, APU s/d OFF",
         "EMERG ENG(s) SHUTDOWN, APU - OFF (if applicable)",
-        "EMERG ENG(s) SHUTDOWN, APU - OFF"
+        "EMERG ENG(s) SHUTDOWN, APU s/d OFF (if applicable)",
+        "1. EMERG ENG(s) SHUTDOWN, 2. APU sampai OFF (if applicable)",
+        "1. EMERG ENG(s) SHUTDOWN, 2. APU - OFF (if applicable)",
+        "1. EMERG ENG(s) SHUTDOWN, 2. APU to OFF (if applicable)",
+        "EMERG ENG(s) SHUTDOWN, APU sampai OFF"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2047,8 +2309,19 @@
       "answer": "1. GEN 1 & GEN 2 - OFF, 2. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
         "1. GEN 1 & GEN 2 - OFF, 2. LAND AS SOON AS POSSIBLE",
-        "GEN 1 & GEN 2 - OFF, LAND AS SOON AS POSSIBLE",
-        "GEN 1 and GEN 2 - OFF, LAND AS SOON AS POSSIBLE"
+        "1. GEN 1 & GEN 2 s/d OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 dan GEN 2 - OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 & GEN 2 sampai OFF, 2. LAND AS SOON AS POSSIBLE",
+        "GEN 1 and GEN 2 to OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 and GEN 2 sampai OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 sampai OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 and GEN 2 - OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 to OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 dan GEN 2 - OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 and GEN 2 s/d OFF, LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 s/d OFF, LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 & GEN 2 to OFF, 2. LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 - OFF, LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2066,8 +2339,17 @@
       "answer": "1. Airspeed - Slow to 20 KTAS Maximum, 2. Canopy door (affected crew station) - Open to intermediate position, 3. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
         "1. Airspeed - Slow to 20 KTAS Maximum, 2. Canopy door (affected crew station) - Open to intermediate position, 3. LAND AS SOON AS POSSIBLE",
+        "1. Airspeed sampai Slow to 20 KTAS Maximum 2. Canopy door sampai Open to intermediate position 3. LAND AS SOON AS POSSIBLE",
+        "1. Airspeed s/d Slow to 20 KTAS Maximum, 2. Canopy door (affected crew station) - Open to intermediate position, 3. LAND AS SOON AS POSSIBLE",
+        "Airspeed sampai Slow to 20 KTAS Maximum, Canopy door (affected crew station) - Open to intermediate position, LAND AS SOON AS POSSIBLE",
+        "1. Airspeed s/d Slow to 20 KTAS Maximum 2. Canopy door s/d Open to intermediate position 3. LAND AS SOON AS POSSIBLE",
+        "1. Airspeed - Slow to 20 KTAS Maximum 2. Canopy door - Open to intermediate position 3. LAND AS SOON AS POSSIBLE",
         "Airspeed - Slow to 20 KTAS Maximum, Canopy door (affected crew station) - Open to intermediate position, LAND AS SOON AS POSSIBLE",
-        "1. Airspeed - Slow to 20 KTAS Maximum 2. Canopy door - Open to intermediate position 3. LAND AS SOON AS POSSIBLE"
+        "1. Airspeed to Slow to 20 KTAS Maximum, 2. Canopy door (affected crew station) - Open to intermediate position, 3. LAND AS SOON AS POSSIBLE",
+        "1. Airspeed sampai Slow to 20 KTAS Maximum, 2. Canopy door (affected crew station) - Open to intermediate position, 3. LAND AS SOON AS POSSIBLE",
+        "Airspeed to Slow to 20 KTAS Maximum, Canopy door (affected crew station) - Open to intermediate position, LAND AS SOON AS POSSIBLE",
+        "Airspeed s/d Slow to 20 KTAS Maximum, Canopy door (affected crew station) - Open to intermediate position, LAND AS SOON AS POSSIBLE",
+        "1. Airspeed to Slow to 20 KTAS Maximum 2. Canopy door to Open to intermediate position 3. LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2085,8 +2367,17 @@
       "answer": "1. EMERG HYD Button - Press ON, 2. LAND WITHOUT DELAY, 3. EMERG ENG(s) SHUTDOWN",
       "acceptedAnswers": [
         "1. EMERG HYD Button - Press ON, 2. LAND WITHOUT DELAY, 3. EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button - Press ON 2. LAND WITHOUT DELAY 3. EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button sampai Press ON, 2. LAND WITHOUT DELAY, 3. EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button to Press ON, 2. LAND WITHOUT DELAY, 3. EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button s/d Press ON 2. LAND WITHOUT DELAY 3. EMERG ENG(s) SHUTDOWN",
+        "EMERG HYD Button sampai Press ON, LAND WITHOUT DELAY, EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button s/d Press ON, 2. LAND WITHOUT DELAY, 3. EMERG ENG(s) SHUTDOWN",
+        "EMERG HYD Button to Press ON, LAND WITHOUT DELAY, EMERG ENG(s) SHUTDOWN",
+        "EMERG HYD Button s/d Press ON, LAND WITHOUT DELAY, EMERG ENG(s) SHUTDOWN",
         "EMERG HYD Button - Press ON, LAND WITHOUT DELAY, EMERG ENG(s) SHUTDOWN",
-        "1. EMERG HYD Button - Press ON 2. LAND WITHOUT DELAY 3. EMERG ENG(s) SHUTDOWN"
+        "1. EMERG HYD Button to Press ON 2. LAND WITHOUT DELAY 3. EMERG ENG(s) SHUTDOWN",
+        "1. EMERG HYD Button sampai Press ON 2. LAND WITHOUT DELAY 3. EMERG ENG(s) SHUTDOWN"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2121,8 +2412,14 @@
       "question": "EMERGENCY LANDING IN WOODED AREAS (POWER OFF): Tindakan darurat?",
       "answer": "AUTOROTATE - Apply full collective to decay rotor RPM as helicopter settles",
       "acceptedAnswers": [
+        "AUTOROTATE s/d Apply full collective to decay rotor RPM as helicopter settles",
+        "AUTOROTATE sampai Apply full collective to decay rotor RPM as helicopter settles",
+        "Autorotate s/d Apply full collective to decay rotor RPM as helicopter settles",
+        "Autorotate - Apply full collective to decay rotor RPM as helicopter settles",
+        "Autorotate to Apply full collective to decay rotor RPM as helicopter settles",
+        "AUTOROTATE to Apply full collective to decay rotor RPM as helicopter settles",
         "AUTOROTATE - Apply full collective to decay rotor RPM as helicopter settles",
-        "Autorotate - Apply full collective to decay rotor RPM as helicopter settles"
+        "Autorotate sampai Apply full collective to decay rotor RPM as helicopter settles"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2139,8 +2436,14 @@
       "question": "DITCHING (POWER OFF): Sebutkan 4 langkah darurat!",
       "answer": "1. AUTOROTATE - Apply full collective to decay rotor RPM as Helicopter settles, 2. Canopies - Jettison prior to entering water, 3. Cyclic - position on direction of roll, 4. Exit when main rotor has stopped",
       "acceptedAnswers": [
+        "AUTOROTATE sampai Apply full collective to decay rotor RPM as Helicopter settles, Canopies sampai Jettison prior to entering water, Cyclic sampai position on direction of roll, Exit when main rotor has stopped",
+        "1. AUTOROTATE s/d Apply full collective to decay rotor RPM as Helicopter settles, 2. Canopies s/d Jettison prior to entering water, 3. Cyclic s/d position on direction of roll, 4. Exit when main rotor has stopped",
+        "AUTOROTATE - Apply full collective to decay rotor RPM as Helicopter settles, Canopies - Jettison prior to entering water, Cyclic - position on direction of roll, Exit when main rotor has stopped",
+        "1. AUTOROTATE to Apply full collective to decay rotor RPM as Helicopter settles, 2. Canopies to Jettison prior to entering water, 3. Cyclic to position on direction of roll, 4. Exit when main rotor has stopped",
         "1. AUTOROTATE - Apply full collective to decay rotor RPM as Helicopter settles, 2. Canopies - Jettison prior to entering water, 3. Cyclic - position on direction of roll, 4. Exit when main rotor has stopped",
-        "AUTOROTATE - Apply full collective to decay rotor RPM as Helicopter settles, Canopies - Jettison prior to entering water, Cyclic - position on direction of roll, Exit when main rotor has stopped"
+        "AUTOROTATE s/d Apply full collective to decay rotor RPM as Helicopter settles, Canopies s/d Jettison prior to entering water, Cyclic s/d position on direction of roll, Exit when main rotor has stopped",
+        "1. AUTOROTATE sampai Apply full collective to decay rotor RPM as Helicopter settles, 2. Canopies sampai Jettison prior to entering water, 3. Cyclic sampai position on direction of roll, 4. Exit when main rotor has stopped",
+        "AUTOROTATE to Apply full collective to decay rotor RPM as Helicopter settles, Canopies to Jettison prior to entering water, Cyclic to position on direction of roll, Exit when main rotor has stopped"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2158,7 +2461,13 @@
       "answer": "1. Approach to Hover, 2. Canopies - Jettison prior to entering water, 3. Pilot Shoulder Harness - Lock, 4. CPG - Exit Helicopter, 5. Hover Downwind to a safe distance, 6. Power Levers - OFF, 7. Perform Hovering Autorotation - apply full collective to decay rotor RPM as helicopter settles, 8. Cyclic - position on direction of roll, 9. Exit when main rotor has stopped",
       "acceptedAnswers": [
         "1. Approach to Hover, 2. Canopies - Jettison prior to entering water, 3. Pilot Shoulder Harness - Lock, 4. CPG - Exit Helicopter, 5. Hover Downwind to a safe distance, 6. Power Levers - OFF, 7. Perform Hovering Autorotation - apply full collective to decay rotor RPM as helicopter settles, 8. Cyclic - position on direction of roll, 9. Exit when main rotor has stopped",
-        "Approach to Hover, Canopies - Jettison prior to entering water, Pilot Shoulder Harness - Lock, CPG - Exit Helicopter, Hover Downwind to a safe distance, Power Levers - OFF, Perform Hovering Autorotation, Cyclic - position on direction of roll, Exit when main rotor has stopped"
+        "1. Approach to Hover, 2. Canopies sampai Jettison prior to entering water, 3. Pilot Shoulder Harness sampai Lock, 4. CPG sampai Exit Helicopter, 5. Hover Downwind to a safe distance, 6. Power Levers sampai OFF, 7. Perform Hovering Autorotation sampai apply full collective to decay rotor RPM as helicopter settles, 8. Cyclic sampai position on direction of roll, 9. Exit when main rotor has stopped",
+        "1. Approach to Hover, 2. Canopies to Jettison prior to entering water, 3. Pilot Shoulder Harness to Lock, 4. CPG to Exit Helicopter, 5. Hover Downwind to a safe distance, 6. Power Levers to OFF, 7. Perform Hovering Autorotation to apply full collective to decay rotor RPM as helicopter settles, 8. Cyclic to position on direction of roll, 9. Exit when main rotor has stopped",
+        "Approach to Hover, Canopies sampai Jettison prior to entering water, Pilot Shoulder Harness sampai Lock, CPG sampai Exit Helicopter, Hover Downwind to a safe distance, Power Levers sampai OFF, Perform Hovering Autorotation, Cyclic sampai position on direction of roll, Exit when main rotor has stopped",
+        "Approach to Hover, Canopies s/d Jettison prior to entering water, Pilot Shoulder Harness s/d Lock, CPG s/d Exit Helicopter, Hover Downwind to a safe distance, Power Levers s/d OFF, Perform Hovering Autorotation, Cyclic s/d position on direction of roll, Exit when main rotor has stopped",
+        "Approach to Hover, Canopies - Jettison prior to entering water, Pilot Shoulder Harness - Lock, CPG - Exit Helicopter, Hover Downwind to a safe distance, Power Levers - OFF, Perform Hovering Autorotation, Cyclic - position on direction of roll, Exit when main rotor has stopped",
+        "1. Approach to Hover, 2. Canopies s/d Jettison prior to entering water, 3. Pilot Shoulder Harness s/d Lock, 4. CPG s/d Exit Helicopter, 5. Hover Downwind to a safe distance, 6. Power Levers s/d OFF, 7. Perform Hovering Autorotation s/d apply full collective to decay rotor RPM as helicopter settles, 8. Cyclic s/d position on direction of roll, 9. Exit when main rotor has stopped",
+        "Approach to Hover, Canopies to Jettison prior to entering water, Pilot Shoulder Harness to Lock, CPG to Exit Helicopter, Hover Downwind to a safe distance, Power Levers to OFF, Perform Hovering Autorotation, Cyclic to position on direction of roll, Exit when main rotor has stopped"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2175,9 +2484,18 @@
       "question": "BUCS Fail / BUCS ON: Sebutkan 3 tindakan darurat!",
       "answer": "1. LAND AS SOON AS POSSIBLE, 2. APU - ON, 3. EMERG ENG(s) SHUTDOWN",
       "acceptedAnswers": [
-        "1. LAND AS SOON AS POSSIBLE, 2. APU - ON, 3. EMERG ENG(s) SHUTDOWN",
+        "LAND AS SOON AS POSSIBLE, APU sampai ON, EMERG ENG(s) SHUTDOWN",
         "LAND AS SOON AS POSSIBLE, APU - ON, EMERG ENG(s) SHUTDOWN",
-        "1. LAND AS SOON AS POSSIBLE 2. APU - ON 3. EMERG ENG(s) SHUTDOWN"
+        "1. LAND AS SOON AS POSSIBLE 2. APU to ON 3. EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE, 2. APU - ON, 3. EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE 2. APU sampai ON 3. EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE 2. APU - ON 3. EMERG ENG(s) SHUTDOWN",
+        "LAND AS SOON AS POSSIBLE, APU s/d ON, EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE, 2. APU sampai ON, 3. EMERG ENG(s) SHUTDOWN",
+        "LAND AS SOON AS POSSIBLE, APU to ON, EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE 2. APU s/d ON 3. EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE, 2. APU to ON, 3. EMERG ENG(s) SHUTDOWN",
+        "1. LAND AS SOON AS POSSIBLE, 2. APU s/d ON, 3. EMERG ENG(s) SHUTDOWN"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2194,9 +2512,21 @@
       "question": "Both GEN 1 FAIL and GEN 2 FAIL: Tindakan darurat lengkap?",
       "answer": "1. GEN 1 & GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
+        "GEN 1 & GEN 2 to OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 dan GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 & GEN 2 s/d OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 sampai OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 sampai OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
         "1. GEN 1 & GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "GEN 1 dan GEN 2 - OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 - OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 & GEN 2 to OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 to OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
+        "GEN 1 & GEN 2 s/d OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
         "GEN 1 & GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
-        "GEN 1 & GEN 2 - OFF/RESET, then ON, LAND AS SOON AS POSSIBLE"
+        "GEN 1 & GEN 2 s/d OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "GEN 1 dan GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
+        "1. GEN 1 & GEN 2 sampai OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2213,9 +2543,18 @@
       "question": "Single Generator and Single RTRU Failure: Tindakan darurat lengkap?",
       "answer": "1. Affected GEN 1 or GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
-        "1. Affected GEN 1 or GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "1. Affected GEN 1 or GEN 2 to OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 to OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
+        "1. Affected GEN 1 or GEN 2 s/d OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 s/d OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 to OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 sampai OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 s/d OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
         "Affected GEN 1 or GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: LAND AS SOON AS POSSIBLE",
-        "Affected GEN 1 or GEN 2 - OFF/RESET, then ON, LAND AS SOON AS POSSIBLE"
+        "Affected GEN 1 or GEN 2 - OFF/RESET, then ON, LAND AS SOON AS POSSIBLE",
+        "1. Affected GEN 1 or GEN 2 - OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "1. Affected GEN 1 or GEN 2 sampai OFF/RESET, then ON (pilot GEN OFF/RST panel). If condition persists: 2. LAND AS SOON AS POSSIBLE",
+        "Affected GEN 1 or GEN 2 sampai OFF/RESET, then ON, LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2251,9 +2590,18 @@
       "question": "WING STORES JETTISON - All Armament Wing Stores: Langkah darurat?",
       "answer": "1. Airspeed - 130 KTAS Maximum, 2. Collective JETT Button - press",
       "acceptedAnswers": [
-        "1. Airspeed - 130 KTAS Maximum, 2. Collective JETT Button - press",
+        "1. Airspeed - 130 KTAS Maximum 2. Collective JETT Button - press",
+        "Airspeed sampai 130 KTAS Maximum, Collective JETT Button sampai press",
+        "Airspeed to 130 KTAS Maximum, Collective JETT Button to press",
+        "1. Airspeed sampai 130 KTAS Maximum, 2. Collective JETT Button sampai press",
+        "1. Airspeed s/d 130 KTAS Maximum, 2. Collective JETT Button s/d press",
+        "Airspeed s/d 130 KTAS Maximum, Collective JETT Button s/d press",
         "Airspeed - 130 KTAS Maximum, Collective JETT Button - press",
-        "1. Airspeed - 130 KTAS Maximum 2. Collective JETT Button - press"
+        "1. Airspeed sampai 130 KTAS Maximum 2. Collective JETT Button sampai press",
+        "1. Airspeed - 130 KTAS Maximum, 2. Collective JETT Button - press",
+        "1. Airspeed s/d 130 KTAS Maximum 2. Collective JETT Button s/d press",
+        "1. Airspeed to 130 KTAS Maximum 2. Collective JETT Button to press",
+        "1. Airspeed to 130 KTAS Maximum, 2. Collective JETT Button to press"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2270,7 +2618,13 @@
       "question": "WING STORES JETTISON - Selected Armament Wing Stores: Langkah darurat?",
       "answer": "1. Airspeed - 130 KTAS Maximum, 2. Selected STORES JETTISON Buttons - press to ARM, 3. JETT Button - press",
       "acceptedAnswers": [
+        "1. Airspeed s/d 130 KTAS Maximum, 2. Selected STORES JETTISON Buttons s/d press to ARM, 3. JETT Button s/d press",
         "1. Airspeed - 130 KTAS Maximum, 2. Selected STORES JETTISON Buttons - press to ARM, 3. JETT Button - press",
+        "Airspeed to 130 KTAS Maximum, Selected STORES JETTISON Buttons to press to ARM, JETT Button to press",
+        "1. Airspeed sampai 130 KTAS Maximum, 2. Selected STORES JETTISON Buttons sampai press to ARM, 3. JETT Button sampai press",
+        "Airspeed sampai 130 KTAS Maximum, Selected STORES JETTISON Buttons sampai press to ARM, JETT Button sampai press",
+        "1. Airspeed to 130 KTAS Maximum, 2. Selected STORES JETTISON Buttons to press to ARM, 3. JETT Button to press",
+        "Airspeed s/d 130 KTAS Maximum, Selected STORES JETTISON Buttons s/d press to ARM, JETT Button s/d press",
         "Airspeed - 130 KTAS Maximum, Selected STORES JETTISON Buttons - press to ARM, JETT Button - press"
       ],
       "unit": "",
@@ -2288,8 +2642,14 @@
       "question": "WING STORES JETTISON - External Fuel Wing Stores: Langkah darurat?",
       "answer": "1. Airspeed - 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons - press to ARM, 3. JETT Button - press",
       "acceptedAnswers": [
-        "1. Airspeed - 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons - press to ARM, 3. JETT Button - press",
-        "Airspeed - 90 KTAS Maximum, Selected STORES JETTISON Buttons - press to ARM, JETT Button - press"
+        "Airspeed s/d 90 KTAS Maximum, Selected STORES JETTISON Buttons s/d press to ARM, JETT Button s/d press",
+        "Airspeed sampai 90 KTAS Maximum, Selected STORES JETTISON Buttons sampai press to ARM, JETT Button sampai press",
+        "Airspeed - 90 KTAS Maximum, Selected STORES JETTISON Buttons - press to ARM, JETT Button - press",
+        "1. Airspeed sampai 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons sampai press to ARM, 3. JETT Button sampai press",
+        "1. Airspeed s/d 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons s/d press to ARM, 3. JETT Button s/d press",
+        "1. Airspeed to 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons to press to ARM, 3. JETT Button to press",
+        "Airspeed to 90 KTAS Maximum, Selected STORES JETTISON Buttons to press to ARM, JETT Button to press",
+        "1. Airspeed - 90 KTAS Maximum, 2. Selected STORES JETTISON Buttons - press to ARM, 3. JETT Button - press"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2306,9 +2666,12 @@
       "question": "PNVS Failure: Tindakan darurat?",
       "answer": "NVS Select Switch (pilot) - TADS",
       "acceptedAnswers": [
-        "NVS Select Switch (pilot) - TADS",
+        "TADS",
         "NVS Select switch - TADS",
-        "TADS"
+        "NVS Select switch s/d TADS",
+        "NVS Select Switch (pilot) - TADS",
+        "NVS Select switch sampai TADS",
+        "NVS Select switch to TADS"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2325,9 +2688,18 @@
       "question": "Single MP Operation: Tindakan darurat?",
       "answer": "1. NVS Select Switch - Reselect (PNVS or TADS) Or 2. Crewmember (not on controls) - Assume Control",
       "acceptedAnswers": [
+        "NVS Select Switch to Reselect (PNVS or TADS) or Crewmember (not on controls) - Assume Control",
+        "NVS Select Switch s/d Reselect (PNVS or TADS) or Crewmember (not on controls) - Assume Control",
+        "NVS Select Switch to Reselect (PNVS or TADS) Or Crewmember (not on controls) - Assume Control",
+        "1. NVS Select Switch s/d Reselect (PNVS or TADS) Or 2. Crewmember (not on controls) - Assume Control",
         "1. NVS Select Switch - Reselect (PNVS or TADS) Or 2. Crewmember (not on controls) - Assume Control",
+        "1. NVS Select Switch sampai Reselect (PNVS or TADS) Or 2. Crewmember (not on controls) - Assume Control",
+        "1. NVS Select Switch to Reselect (PNVS or TADS) Or 2. Crewmember (not on controls) - Assume Control",
+        "NVS Select Switch - Reselect (PNVS or TADS) or Crewmember (not on controls) - Assume Control",
+        "NVS Select Switch s/d Reselect (PNVS or TADS) Or Crewmember (not on controls) - Assume Control",
         "NVS Select Switch - Reselect (PNVS or TADS) Or Crewmember (not on controls) - Assume Control",
-        "NVS Select Switch - Reselect (PNVS or TADS) or Crewmember (not on controls) - Assume Control"
+        "NVS Select Switch sampai Reselect (PNVS or TADS) Or Crewmember (not on controls) - Assume Control",
+        "NVS Select Switch sampai Reselect (PNVS or TADS) or Crewmember (not on controls) - Assume Control"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2382,7 +2754,16 @@
       "acceptedAnswers": [
         "1. POWER LEVER - IDLE, 2. LAND AS SOON AS PRACTICABLE",
         "POWER LEVER - IDLE, LAND AS SOON AS PRACTICABLE",
-        "1. Power Lever - IDLE 2. Land as soon as practicable"
+        "1. Power Lever to IDLE 2. Land as soon as practicable",
+        "POWER LEVER sampai IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever s/d IDLE 2. Land as soon as practicable",
+        "1. POWER LEVER to IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "POWER LEVER s/d IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER sampai IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever - IDLE 2. Land as soon as practicable",
+        "POWER LEVER to IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER s/d IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever sampai IDLE 2. Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2401,7 +2782,16 @@
       "acceptedAnswers": [
         "1. POWER LEVER - IDLE, 2. LAND AS SOON AS PRACTICABLE",
         "POWER LEVER - IDLE, LAND AS SOON AS PRACTICABLE",
-        "1. Power Lever - IDLE 2. Land as soon as practicable"
+        "1. Power Lever to IDLE 2. Land as soon as practicable",
+        "POWER LEVER sampai IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever s/d IDLE 2. Land as soon as practicable",
+        "1. POWER LEVER to IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "POWER LEVER s/d IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER sampai IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever - IDLE 2. Land as soon as practicable",
+        "POWER LEVER to IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER s/d IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever sampai IDLE 2. Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2438,8 +2828,17 @@
       "answer": "1. Fuel page, BOOST Button - press ON, 2. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
         "1. Fuel page, BOOST Button - press ON, 2. LAND AS SOON AS POSSIBLE",
+        "1. Fuel page, BOOST Button s/d press ON, 2. LAND AS SOON AS POSSIBLE",
+        "Fuel page BOOST Button to press ON, Land as soon as possible",
+        "Fuel page BOOST Button s/d press ON, Land as soon as possible",
+        "Fuel page, BOOST Button s/d press ON, LAND AS SOON AS POSSIBLE",
+        "Fuel page BOOST Button - press ON, Land as soon as possible",
+        "Fuel page BOOST Button sampai press ON, Land as soon as possible",
+        "1. Fuel page, BOOST Button sampai press ON, 2. LAND AS SOON AS POSSIBLE",
+        "1. Fuel page, BOOST Button to press ON, 2. LAND AS SOON AS POSSIBLE",
         "Fuel page, BOOST Button - press ON, LAND AS SOON AS POSSIBLE",
-        "Fuel page BOOST Button - press ON, Land as soon as possible"
+        "Fuel page, BOOST Button to press ON, LAND AS SOON AS POSSIBLE",
+        "Fuel page, BOOST Button sampai press ON, LAND AS SOON AS POSSIBLE"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2458,7 +2857,16 @@
       "acceptedAnswers": [
         "1. POWER LEVER - IDLE, 2. LAND AS SOON AS PRACTICABLE",
         "POWER LEVER - IDLE, LAND AS SOON AS PRACTICABLE",
-        "1. Power Lever - IDLE 2. Land as soon as practicable"
+        "1. Power Lever to IDLE 2. Land as soon as practicable",
+        "POWER LEVER sampai IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever s/d IDLE 2. Land as soon as practicable",
+        "1. POWER LEVER to IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "POWER LEVER s/d IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER sampai IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever - IDLE 2. Land as soon as practicable",
+        "POWER LEVER to IDLE, LAND AS SOON AS PRACTICABLE",
+        "1. POWER LEVER s/d IDLE, 2. LAND AS SOON AS PRACTICABLE",
+        "1. Power Lever sampai IDLE 2. Land as soon as practicable"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
@@ -2620,9 +3028,18 @@
       "question": "Peringatan 'ROTOR BRAKE ON/LK': Tindakan darurat yang harus diambil?",
       "answer": "1. RTR BRK Switch - OFF, 2. LAND AS SOON AS POSSIBLE",
       "acceptedAnswers": [
-        "1. RTR BRK Switch - OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch s/d OFF, 2. LAND AS SOON AS POSSIBLE",
         "RTR BRK Switch - OFF, LAND AS SOON AS POSSIBLE",
-        "1. RTR BRK Switch - OFF 2. Land as soon as possible"
+        "1. RTR BRK Switch s/d OFF 2. Land as soon as possible",
+        "1. RTR BRK Switch - OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch to OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch sampai OFF 2. Land as soon as possible",
+        "RTR BRK Switch to OFF, LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch - OFF 2. Land as soon as possible",
+        "RTR BRK Switch s/d OFF, LAND AS SOON AS POSSIBLE",
+        "RTR BRK Switch sampai OFF, LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch sampai OFF, 2. LAND AS SOON AS POSSIBLE",
+        "1. RTR BRK Switch to OFF 2. Land as soon as possible"
       ],
       "unit": "",
       "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",

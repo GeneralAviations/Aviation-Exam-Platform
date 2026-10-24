@@ -3,7 +3,7 @@
   "title": "BOLD FACE LIMITATION & EMERGENCY BELL 412 EP",
   "sourceDocument": "bold face bell 412 EP.pdf",
   "description": "Limitation 106 item lengkap, Indicator limitation ranges, dan Emergency Procedures Bell 412 EP",
-  "totalQuestions": 141,
+  "totalQuestions": 147,
   "questions": [
     {
       "id": "B412-LIM-001",
@@ -11,7 +11,7 @@
       "section": "LIMITATION",
       "category": "FLIGHT CREW",
       "questionType": "fill-blank",
-      "question": "Minimum flight crew",
+      "question": "1. Minimum flight crew",
       "answer": "1 pilot who shall operate helicopter on right crew seat",
       "acceptedAnswers": [
         "1 pilot who shall operate helicopter on right crew seat",
@@ -31,7 +31,7 @@
       "section": "LIMITATION",
       "category": "GROSS WEIGHT",
       "questionType": "fill-blank",
-      "question": "Maximum gross weight for take off and landing",
+      "question": "2. Maximum gross weight for take off and landing",
       "answer": "11.900 Lbs",
       "acceptedAnswers": [
         "11.900",
@@ -52,7 +52,7 @@
       "section": "LIMITATION",
       "category": "GROSS WEIGHT",
       "questionType": "fill-blank",
-      "question": "Minimum gross weight for flight",
+      "question": "3. Minimum gross weight for flight",
       "answer": "6400 Lbs",
       "acceptedAnswers": [
         "6400",
@@ -72,7 +72,7 @@
       "section": "LIMITATION",
       "category": "GROSS WEIGHT",
       "questionType": "fill-blank",
-      "question": "Minimum combined crew weight at fuselage station 47.0",
+      "question": "4. Minimum combined crew weight at fuselage station 47.0",
       "answer": "170 Lbs",
       "acceptedAnswers": [
         "170",
@@ -91,7 +91,7 @@
       "section": "LIMITATION",
       "category": "CARGO",
       "questionType": "fill-blank",
-      "question": "Max allowable deck loading",
+      "question": "5. Max allowable deck loading",
       "answer": "100 lbs/ft2",
       "acceptedAnswers": [
         "100",
@@ -111,7 +111,7 @@
       "section": "LIMITATION",
       "category": "CARGO",
       "questionType": "fill-blank",
-      "question": "Cargo deck tiedown fitting capacity: Vertical",
+      "question": "6. Cargo deck tiedown fitting capacity: Vertical",
       "answer": "1250 lbs",
       "acceptedAnswers": [
         "1250",
@@ -131,7 +131,7 @@
       "section": "LIMITATION",
       "category": "CARGO",
       "questionType": "fill-blank",
-      "question": "Cargo deck tiedown fitting capacity: Horizontal",
+      "question": "7. Cargo deck tiedown fitting capacity: Horizontal",
       "answer": "500 lbs",
       "acceptedAnswers": [
         "500",
@@ -150,7 +150,7 @@
       "section": "LIMITATION",
       "category": "CARGO",
       "questionType": "fill-blank",
-      "question": "Baggage compartment load limit (not to exceed 100 lbs/ft2)",
+      "question": "8. Baggage compartment load limit (not to exceed 100 lbs/ft2)",
       "answer": "400 lbs",
       "acceptedAnswers": [
         "400",
@@ -169,7 +169,7 @@
       "section": "LIMITATION",
       "category": "CENTER OF GRAVITY",
       "questionType": "fill-blank",
-      "question": "Longitudinal center of gravity limits vary from station",
+      "question": "9. Longitudinal center of gravity limits vary from station",
       "answer": "130 to 144",
       "acceptedAnswers": [
         "130 to 144",
@@ -188,7 +188,7 @@
       "section": "LIMITATION",
       "category": "CENTER OF GRAVITY",
       "questionType": "fill-blank",
-      "question": "Lateral center of gravity (left and right)",
+      "question": "10. Lateral center of gravity (left and right)",
       "answer": "4.5 inch",
       "acceptedAnswers": [
         "4.5",
@@ -208,7 +208,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Minimum IFR airspeed",
+      "question": "11. Minimum IFR airspeed",
       "answer": "60 KIAS",
       "acceptedAnswers": [
         "60",
@@ -228,7 +228,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Basic Vne from sea level to 3000 ft (DA) at all gross weight",
+      "question": "12. Basic Vne from sea level to 3000 ft (DA) at all gross weight",
       "answer": "140 KIAS",
       "acceptedAnswers": [
         "140",
@@ -247,7 +247,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne with only one autopilot engage",
+      "question": "13. Vne with only one autopilot engage",
       "answer": "115 KIAS",
       "acceptedAnswers": [
         "115",
@@ -266,7 +266,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Maximum airspeed when operating above 81% mast torque",
+      "question": "14. Maximum airspeed when operating above 81% mast torque",
       "answer": "105 KIAS",
       "acceptedAnswers": [
         "105",
@@ -285,7 +285,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne for steady state autorotation: At or below 10.000 ft pressure altitude",
+      "question": "15. Vne for steady state autorotation: At or below 10.000 ft pressure altitude",
       "answer": "105 KIAS",
       "acceptedAnswers": [
         "105",
@@ -304,7 +304,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne for steady state autorotation: Above 10.000 ft pressure altitude",
+      "question": "16. Vne for steady state autorotation: Above 10.000 ft pressure altitude",
       "answer": "80 KIAS",
       "acceptedAnswers": [
         "80",
@@ -323,7 +323,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne with cargo doors opened asymmetrically",
+      "question": "17. Vne with cargo doors opened asymmetrically",
       "answer": "80 KIAS",
       "acceptedAnswers": [
         "80",
@@ -342,7 +342,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne with cargo doors in transit or in an unlocked position",
+      "question": "18. Vne with cargo doors in transit or in an unlocked position",
       "answer": "60 KIAS",
       "acceptedAnswers": [
         "60",
@@ -361,7 +361,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne with symmetrically doors open or removed with Bell installed energy attenuating passenger seats",
+      "question": "19. Vne with symmetrically doors open or removed with Bell installed energy attenuating passenger seats",
       "answer": "60 KIAS",
       "acceptedAnswers": [
         "60",
@@ -380,7 +380,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Vne with symmetrically doors open or removed with Bell Installed Blanket Interior/deluxe interior",
+      "question": "20. Vne with symmetrically doors open or removed with Bell Installed Blanket Interior/deluxe interior",
       "answer": "100 KIAS",
       "acceptedAnswers": [
         "100",
@@ -399,7 +399,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Maximum allowable air speed for sideward or rearward flight at or below 3.000 feet HD",
+      "question": "21. Maximum allowable air speed for sideward or rearward flight at or below 3.000 feet HD",
       "answer": "35 Knots",
       "acceptedAnswers": [
         "35",
@@ -418,7 +418,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Maximum allowable tailwind and crosswind or bellow 3.000 feet HD",
+      "question": "22. Maximum allowable tailwind and crosswind or bellow 3.000 feet HD",
       "answer": "35 Knots",
       "acceptedAnswers": [
         "35",
@@ -437,7 +437,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Maximum operating pressure altitude",
+      "question": "23. Maximum operating pressure altitude",
       "answer": "20.000 Ft",
       "acceptedAnswers": [
         "20.000",
@@ -457,7 +457,7 @@
       "section": "LIMITATION",
       "category": "AIR SPEED",
       "questionType": "fill-blank",
-      "question": "Maximum density altitude for take off, landing, and in-ground effect Maneuvers",
+      "question": "24. Maximum density altitude for take off, landing, and in-ground effect Maneuvers",
       "answer": "14.000 Ft",
       "acceptedAnswers": [
         "14.000",
@@ -477,7 +477,7 @@
       "section": "LIMITATION",
       "category": "CLIMB/DESCENT",
       "questionType": "fill-blank",
-      "question": "Maximum IFR rate of climb or descent",
+      "question": "25. Maximum IFR rate of climb or descent",
       "answer": "1000 ft/min",
       "acceptedAnswers": [
         "1000",
@@ -497,7 +497,7 @@
       "section": "LIMITATION",
       "category": "CLIMB/DESCENT",
       "questionType": "fill-blank",
-      "question": "Maximum IFR approach slope",
+      "question": "26. Maximum IFR approach slope",
       "answer": "5 degrees",
       "acceptedAnswers": [
         "5",
@@ -517,7 +517,7 @@
       "section": "LIMITATION",
       "category": "SLOPE LANDING",
       "questionType": "fill-blank",
-      "question": "Slope Landing: Forward/nose down",
+      "question": "27. Slope Landing: Forward/nose down",
       "answer": "4 degrees",
       "acceptedAnswers": [
         "4",
@@ -537,7 +537,7 @@
       "section": "LIMITATION",
       "category": "SLOPE LANDING",
       "questionType": "fill-blank",
-      "question": "Slope Landing: Rearward/nose up",
+      "question": "28. Slope Landing: Rearward/nose up",
       "answer": "4 degrees",
       "acceptedAnswers": [
         "4",
@@ -557,7 +557,7 @@
       "section": "LIMITATION",
       "category": "SLOPE LANDING",
       "questionType": "fill-blank",
-      "question": "Slope Landing: Leftside slope",
+      "question": "29. Slope Landing: Leftside slope",
       "answer": "10 degrees",
       "acceptedAnswers": [
         "10",
@@ -577,7 +577,7 @@
       "section": "LIMITATION",
       "category": "SLOPE LANDING",
       "questionType": "fill-blank",
-      "question": "Slope Landing: Rightside slope",
+      "question": "30. Slope Landing: Rightside slope",
       "answer": "10 degrees",
       "acceptedAnswers": [
         "10",
@@ -597,7 +597,7 @@
       "section": "LIMITATION",
       "category": "MANEUVERING",
       "questionType": "fill-blank",
-      "question": "Max angle of bank",
+      "question": "31. Max angle of bank",
       "answer": "50 degrees",
       "acceptedAnswers": [
         "50",
@@ -618,7 +618,7 @@
       "section": "LIMITATION",
       "category": "MANEUVERING",
       "questionType": "fill-blank",
-      "question": "Max nose up",
+      "question": "32. Max nose up",
       "answer": "30 degrees",
       "acceptedAnswers": [
         "30",
@@ -639,7 +639,7 @@
       "section": "LIMITATION",
       "category": "MANEUVERING",
       "questionType": "fill-blank",
-      "question": "Max nose down",
+      "question": "33. Max nose down",
       "answer": "15 degrees",
       "acceptedAnswers": [
         "15",
@@ -660,7 +660,7 @@
       "section": "LIMITATION",
       "category": "AMBIENT AIR TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Maximum sea level ambient temperature for operation",
+      "question": "34. Maximum sea level ambient temperature for operation",
       "answer": "51.7 °C/ 125 °F",
       "acceptedAnswers": [
         "51.7 °C/ 125 °F",
@@ -682,7 +682,7 @@
       "section": "LIMITATION",
       "category": "AMBIENT AIR TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Minimum ambient temperature for operation at all altitudes",
+      "question": "35. Minimum ambient temperature for operation at all altitudes",
       "answer": "-40 °C/ -40 °F",
       "acceptedAnswers": [
         "-40 °C/ -40 °F",
@@ -703,7 +703,7 @@
       "section": "LIMITATION",
       "category": "BATTERY",
       "questionType": "fill-blank",
-      "question": "Maximum battery temperature",
+      "question": "36. Maximum battery temperature",
       "answer": "62.8 °C/ 145 °F",
       "acceptedAnswers": [
         "62.8 °C/ 145 °F",
@@ -724,7 +724,7 @@
       "section": "LIMITATION",
       "category": "BATTERY",
       "questionType": "fill-blank",
-      "question": "Minimum ambient temperature for battery start when battery and helicopter have been cold soaked",
+      "question": "37. Minimum ambient temperature for battery start when battery and helicopter have been cold soaked",
       "answer": "-25 °C/ -13 °F",
       "acceptedAnswers": [
         "-25 °C/ -13 °F",
@@ -744,7 +744,7 @@
       "section": "LIMITATION",
       "category": "GENERATOR",
       "questionType": "fill-blank",
-      "question": "Generator: Continuous Operation",
+      "question": "38. Generator: Continuous Operation",
       "answer": "0 to 75 amps",
       "acceptedAnswers": [
         "0 to 75",
@@ -764,7 +764,7 @@
       "section": "LIMITATION",
       "category": "GENERATOR",
       "questionType": "fill-blank",
-      "question": "Generator: Caution",
+      "question": "39. Generator: Caution",
       "answer": "75 to 150 amps",
       "acceptedAnswers": [
         "75 to 150",
@@ -784,7 +784,7 @@
       "section": "LIMITATION",
       "category": "GENERATOR",
       "questionType": "fill-blank",
-      "question": "Generator: Maximum Continuous",
+      "question": "40. Generator: Maximum Continuous",
       "answer": "150 amps (each)",
       "acceptedAnswers": [
         "150",
@@ -804,7 +804,7 @@
       "section": "LIMITATION",
       "category": "ENGINE STARTER",
       "questionType": "fill-blank",
-      "question": "Engine Starter sequence 1: second ON",
+      "question": "41. Engine Starter sequence 1: second ON",
       "answer": "30 second ON",
       "acceptedAnswers": [
         "30",
@@ -824,7 +824,7 @@
       "section": "LIMITATION",
       "category": "ENGINE STARTER",
       "questionType": "fill-blank",
-      "question": "Engine Starter sequence 2: second OFF",
+      "question": "42. Engine Starter sequence 2: second OFF",
       "answer": "60 second OFF",
       "acceptedAnswers": [
         "60",
@@ -844,7 +844,7 @@
       "section": "LIMITATION",
       "category": "ENGINE STARTER",
       "questionType": "fill-blank",
-      "question": "Engine Starter sequence 3: second ON",
+      "question": "43. Engine Starter sequence 3: second ON",
       "answer": "30 second ON",
       "acceptedAnswers": [
         "30",
@@ -864,17 +864,13 @@
       "section": "LIMITATION",
       "category": "ENGINE STARTER",
       "questionType": "fill-blank",
-      "question": "Engine Starter sequence 4: minutes OFF",
+      "question": "44. Engine Starter sequence 4: minutes OFF",
       "answer": "5 minutes OFF",
       "acceptedAnswers": [
         "5",
         "5 minutes",
         "5 min",
-        "5 menit",
-        "5 minutes OFF",
-        "5 min OFF",
-        "5 / 30 / 15",
-        "5 minutes OFF / 30 second ON / 15 minutes OFF"
+        "5 menit"
       ],
       "unit": "",
       "sourceDocument": "bold face bell 412 EP.pdf",
@@ -886,9 +882,49 @@
       "id": "B412-LIM-045",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
+      "category": "ENGINE STARTER",
+      "questionType": "fill-blank",
+      "question": "45. Engine Starter sequence 5: second ON",
+      "answer": "30 second ON",
+      "acceptedAnswers": [
+        "30",
+        "30 second",
+        "30 sec",
+        "30 detik"
+      ],
+      "unit": "",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-046",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "ENGINE STARTER",
+      "questionType": "fill-blank",
+      "question": "46. Engine Starter sequence 6: minutes OFF",
+      "answer": "15 minutes OFF",
+      "acceptedAnswers": [
+        "15",
+        "15 minutes",
+        "15 min",
+        "15 menit"
+      ],
+      "unit": "",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-047",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
       "category": "GROUND POWER STARTS",
       "questionType": "fill-blank",
-      "question": "28 VDC ground power units for starting shall be limited to",
+      "question": "47. 28 VDC ground power units for starting shall be limited to",
       "answer": "1000 amps max",
       "acceptedAnswers": [
         "1000",
@@ -903,131 +939,130 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-046",
-      "aircraft": "BELL 412 EP",
-      "section": "LIMITATION",
-      "category": "GAS PRODUCER RPM (N1)",
-      "questionType": "fill-blank",
-      "question": "Twin Engine Operation",
-      "answer": "61 to 103.1 % / 103.1 % / 103.1 %",
-      "acceptedAnswers": [
-        "61 to 103.1 / 103.1 / 103.1",
-        "61-103.1 / 103.1 / 103.1",
-        "61 to 103.1 % / 103.1 % / 103.1 %"
-      ],
-      "unit": "%",
-      "sourceDocument": "bold face bell 412 EP.pdf",
-      "sourcePage": 17,
-      "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Continuous operation",
-          "answer": "61 to 103.1 %",
-          "acceptedAnswers": [
-            "61 to 103.1",
-            "61-103.1",
-            "61 to 103.1 %",
-            "61-103.1%"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        },
-        {
-          "id": "sub_2",
-          "label": "Maximum continuous",
-          "answer": "103.1 %",
-          "acceptedAnswers": [
-            "103.1",
-            "103.1 %",
-            "103,1",
-            "103.1%"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        },
-        {
-          "id": "sub_3",
-          "label": "Maximum for take off",
-          "answer": "103.1 %",
-          "acceptedAnswers": [
-            "103.1",
-            "103.1 %",
-            "103,1",
-            "103.1%"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        }
-      ]
-    },
-    {
-      "id": "B412-LIM-047",
-      "aircraft": "BELL 412 EP",
-      "section": "LIMITATION",
-      "category": "GAS PRODUCER RPM (N1)",
-      "questionType": "fill-blank",
-      "question": "One Engine Inoperative (OEI)",
-      "answer": "103.1 to 103.7 % / 103.7 to 109.2 % / 109.2 %",
-      "acceptedAnswers": [
-        "103.1 to 103.7 / 103.7 to 109.2 / 109.2",
-        "103.1-103.7 / 103.7-109.2 / 109.2",
-        "103.1 to 103.7 % / 103.7 to 109.2 % / 109.2 %"
-      ],
-      "unit": "%",
-      "sourceDocument": "bold face bell 412 EP.pdf",
-      "sourcePage": 17,
-      "points": 1,
-      "verified": true,
-      "subQuestions": [
-        {
-          "id": "sub_1",
-          "label": "Continuous OEI",
-          "answer": "103.1 to 103.7 %",
-          "acceptedAnswers": [
-            "103.1 to 103.7",
-            "103.1-103.7",
-            "103.1 to 103.7 %"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        },
-        {
-          "id": "sub_2",
-          "label": "2 1/2 Minutes OEI",
-          "answer": "103.7 to 109.2 %",
-          "acceptedAnswers": [
-            "103.7 to 109.2",
-            "103.7-109.2",
-            "103.7 to 109.2 %",
-            "2.5 min OEI"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        },
-        {
-          "id": "sub_3",
-          "label": "Maximum OEI",
-          "answer": "109.2 %",
-          "acceptedAnswers": [
-            "109.2",
-            "109.2 %",
-            "109,2",
-            "109.2%"
-          ],
-          "unit": "%",
-          "placeholder": "Ketik..."
-        }
-      ]
-    },
-    {
       "id": "B412-LIM-048",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "48. GAS PRODUCER RPM (N1): Twin Engine Operation: Continuous operation",
+      "answer": "61 to 103.1 %",
+      "acceptedAnswers": [
+        "61 to 103.1",
+        "61-103.1",
+        "61 to 103.1 %",
+        "61-103.1%"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-049",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "49. GAS PRODUCER RPM (N1): Twin Engine Operation: Maximum continuous",
+      "answer": "103.1 %",
+      "acceptedAnswers": [
+        "103.1",
+        "103.1 %",
+        "103,1",
+        "103.1%"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-050",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "50. GAS PRODUCER RPM (N1): Twin Engine Operation: Maximum for take off",
+      "answer": "103.1 %",
+      "acceptedAnswers": [
+        "103.1",
+        "103.1 %",
+        "103,1",
+        "103.1%"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-051",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "51. GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): Continuous OEI",
+      "answer": "103.1 to 103.7 %",
+      "acceptedAnswers": [
+        "103.1 to 103.7",
+        "103.1-103.7",
+        "103.1 to 103.7 %"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-052",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "52. GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): 2 1/2 Minutes OEI",
+      "answer": "103.7 to 109.2 %",
+      "acceptedAnswers": [
+        "103.7 to 109.2",
+        "103.7-109.2",
+        "103.7 to 109.2 %"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-053",
+      "aircraft": "BELL 412 EP",
+      "section": "LIMITATION",
+      "category": "GAS PRODUCER RPM (N1)",
+      "questionType": "fill-blank",
+      "question": "53. GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): Maximum OEI",
+      "answer": "109.2 %",
+      "acceptedAnswers": [
+        "109.2",
+        "109.2 %",
+        "109,2",
+        "109.2%"
+      ],
+      "unit": "%",
+      "sourceDocument": "bold face bell 412 EP.pdf",
+      "sourcePage": 17,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "B412-LIM-054",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "POWER TURBINE RPM (N2)",
       "questionType": "fill-blank",
-      "question": "Minimum in cruise at or below 6000 ft HD",
+      "question": "54. POWER TURBINE RPM (N2): Minimum in cruise at or below 6000 ft HD",
       "answer": "97 %",
       "acceptedAnswers": [
         "97",
@@ -1041,12 +1076,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-049",
+      "id": "B412-LIM-055",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "POWER TURBINE RPM (N2)",
       "questionType": "fill-blank",
-      "question": "Min for hover, take off and climb",
+      "question": "55. POWER TURBINE RPM (N2): Min for hover, take off and climb",
       "answer": "100 %",
       "acceptedAnswers": [
         "100",
@@ -1060,12 +1095,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-050",
+      "id": "B412-LIM-056",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "POWER TURBINE RPM (N2)",
       "questionType": "fill-blank",
-      "question": "Min in cruise above 6000 ft HD",
+      "question": "56. POWER TURBINE RPM (N2): Min in cruise above 6000 ft HD",
       "answer": "100 %",
       "acceptedAnswers": [
         "100",
@@ -1079,12 +1114,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-051",
+      "id": "B412-LIM-057",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "POWER TURBINE RPM (N2)",
       "questionType": "fill-blank",
-      "question": "Operation with ENG torque at or below 30%",
+      "question": "57. POWER TURBINE RPM (N2): Operation with ENG torque at or below 30%",
       "answer": "100 to 104.5 %",
       "acceptedAnswers": [
         "100 to 104.5",
@@ -1098,12 +1133,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-052",
+      "id": "B412-LIM-058",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "POWER TURBINE RPM (N2)",
       "questionType": "fill-blank",
-      "question": "Max with ENG torque at or below 30%",
+      "question": "58. POWER TURBINE RPM (N2): Max with ENG torque at or below 30%",
       "answer": "104.5 %",
       "acceptedAnswers": [
         "104.5",
@@ -1118,12 +1153,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-053",
+      "id": "B412-LIM-059",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-115: Continuous operation",
+      "question": "59. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Continuous operation",
       "answer": "300 to 810 °C",
       "acceptedAnswers": [
         "300 to 810",
@@ -1137,12 +1172,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-054",
+      "id": "B412-LIM-060",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-115: Maximum continuous",
+      "question": "60. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum continuous",
       "answer": "810 °C",
       "acceptedAnswers": [
         "810",
@@ -1157,12 +1192,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-055",
+      "id": "B412-LIM-061",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-115: Maximum transient (5 sec max above 810°C)",
+      "question": "61. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum transient (5 sec max above 810°C)",
       "answer": "925 °C",
       "acceptedAnswers": [
         "925",
@@ -1177,12 +1212,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-056",
+      "id": "B412-LIM-062",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-115: Maximum for starting (2 sec max above 960°C)",
+      "question": "62. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum for starting (2 sec max above 960°C)",
       "answer": "1090 °C",
       "acceptedAnswers": [
         "1090",
@@ -1198,12 +1233,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-057",
+      "id": "B412-LIM-063",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-119: Continuous operation & Max continuous",
+      "question": "63. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Continuous operation & Max continuous",
       "answer": "300 to 810 °C / 810 °C",
       "acceptedAnswers": [
         "300 to 810 / 810",
@@ -1217,12 +1252,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-058",
+      "id": "B412-LIM-064",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-119: Maximum transient (5 sec max above 810°C)",
+      "question": "64. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Maximum transient (5 sec max above 810°C)",
       "answer": "940 °C",
       "acceptedAnswers": [
         "940",
@@ -1237,12 +1272,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-059",
+      "id": "B412-LIM-065",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "Twin Engine Gauge P/N 212-075-067-119: Maximum for starting (2 sec max above 960°C)",
+      "question": "65. INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Maximum for starting (2 sec max above 960°C)",
       "answer": "1090 °C",
       "acceptedAnswers": [
         "1090",
@@ -1257,12 +1292,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-060",
+      "id": "B412-LIM-066",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "OEI Gauge P/N 212-075-067-115: Maximum continuous OEI",
+      "question": "66. INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-115: Maximum continuous OEI",
       "answer": "820 °C",
       "acceptedAnswers": [
         "820",
@@ -1277,12 +1312,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-061",
+      "id": "B412-LIM-067",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "OEI Gauge P/N 212-075-067-115: 2 1/2 Min OEI & Maximum OEI",
+      "question": "67. INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-115: 2 1/2 Min OEI & Maximum OEI",
       "answer": "820 to 925 °C / 925 °C",
       "acceptedAnswers": [
         "820 to 925 / 925",
@@ -1296,12 +1331,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-062",
+      "id": "B412-LIM-068",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "OEI Gauge P/N 212-075-067-119: Maximum continuous OEI",
+      "question": "68. INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-119: Maximum continuous OEI",
       "answer": "820 °C",
       "acceptedAnswers": [
         "820",
@@ -1316,12 +1351,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-063",
+      "id": "B412-LIM-069",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "INTER TURBINE TEMPERATURE (ITT)",
       "questionType": "fill-blank",
-      "question": "OEI Gauge P/N 212-075-067-119: 2 1/2 Min OEI & Maximum OEI",
+      "question": "69. INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-119: 2 1/2 Min OEI & Maximum OEI",
       "answer": "820 to 940 °C / 940 °C",
       "acceptedAnswers": [
         "820 to 940 / 940",
@@ -1335,12 +1370,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-064",
+      "id": "B412-LIM-070",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE TORQUE – OEI",
       "questionType": "fill-blank",
-      "question": "Continuous OEI torque",
+      "question": "70. ENGINE TORQUE – OEI: Continuous OEI torque",
       "answer": "5 to 73.2 %",
       "acceptedAnswers": [
         "5 to 73.2",
@@ -1355,12 +1390,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-065",
+      "id": "B412-LIM-071",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE TORQUE – OEI",
       "questionType": "fill-blank",
-      "question": "Maximum continuous OEI torque",
+      "question": "71. ENGINE TORQUE – OEI: Maximum continuous OEI torque",
       "answer": "73.2 %",
       "acceptedAnswers": [
         "73.2",
@@ -1375,12 +1410,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-066",
+      "id": "B412-LIM-072",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE TORQUE – OEI",
       "questionType": "fill-blank",
-      "question": "2 1/2 Min OEI torque",
+      "question": "72. ENGINE TORQUE – OEI: 2 1/2 Min OEI torque",
       "answer": "73.2 to 81 %",
       "acceptedAnswers": [
         "73.2 to 81",
@@ -1394,12 +1429,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-067",
+      "id": "B412-LIM-073",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE TORQUE – OEI",
       "questionType": "fill-blank",
-      "question": "Maximum OEI torque",
+      "question": "73. ENGINE TORQUE – OEI: Maximum OEI torque",
       "answer": "81 %",
       "acceptedAnswers": [
         "81",
@@ -1413,12 +1448,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-068",
+      "id": "B412-LIM-074",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "FUEL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Fuel Pressure: Minimum",
+      "question": "74. Fuel Pressure: Minimum",
       "answer": "4 PSI",
       "acceptedAnswers": [
         "4",
@@ -1432,12 +1467,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-069",
+      "id": "B412-LIM-075",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "FUEL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Fuel Pressure: Continuous operation",
+      "question": "75. Fuel Pressure: Continuous operation",
       "answer": "4 to 35 PSI",
       "acceptedAnswers": [
         "4 to 35",
@@ -1451,12 +1486,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-070",
+      "id": "B412-LIM-076",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "FUEL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Fuel Pressure: Maximum",
+      "question": "76. Fuel Pressure: Maximum",
       "answer": "35 PSI",
       "acceptedAnswers": [
         "35",
@@ -1470,12 +1505,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-071",
+      "id": "B412-LIM-077",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -113: Minimum for flight idle",
+      "question": "77. Engine Oil Press Gauge -113: Minimum for flight idle",
       "answer": "40 PSI",
       "acceptedAnswers": [
         "40",
@@ -1489,12 +1524,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-072",
+      "id": "B412-LIM-078",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -113: Operation below 79% N1 RPM",
+      "question": "78. Engine Oil Press Gauge -113: Operation below 79% N1 RPM",
       "answer": "40 to 90 PSI",
       "acceptedAnswers": [
         "40 to 90",
@@ -1508,12 +1543,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-073",
+      "id": "B412-LIM-079",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -113: Continuous operation",
+      "question": "79. Engine Oil Press Gauge -113: Continuous operation",
       "answer": "90 to 115 PSI",
       "acceptedAnswers": [
         "90 to 115",
@@ -1527,12 +1562,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-074",
+      "id": "B412-LIM-080",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -113: Maximum",
+      "question": "80. Engine Oil Press Gauge -113: Maximum",
       "answer": "115 PSI",
       "acceptedAnswers": [
         "115",
@@ -1546,12 +1581,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-075",
+      "id": "B412-LIM-081",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -109: Minimum for flight idle",
+      "question": "81. Engine Oil Press Gauge -109: Minimum for flight idle",
       "answer": "40 PSI",
       "acceptedAnswers": [
         "40",
@@ -1565,12 +1600,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-076",
+      "id": "B412-LIM-082",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -109: Operation below 79% N1 RPM",
+      "question": "82. Engine Oil Press Gauge -109: Operation below 79% N1 RPM",
       "answer": "40 to 80 PSI",
       "acceptedAnswers": [
         "40 to 80",
@@ -1584,12 +1619,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-077",
+      "id": "B412-LIM-083",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -109: Continuous operation",
+      "question": "83. Engine Oil Press Gauge -109: Continuous operation",
       "answer": "80 to 115 PSI",
       "acceptedAnswers": [
         "80 to 115",
@@ -1603,12 +1638,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-078",
+      "id": "B412-LIM-084",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Press Gauge -109: Maximum",
+      "question": "84. Engine Oil Press Gauge -109: Maximum",
       "answer": "115 PSI",
       "acceptedAnswers": [
         "115",
@@ -1622,12 +1657,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-079",
+      "id": "B412-LIM-085",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Temperature: Minimum",
+      "question": "85. Engine Oil Temperature: Minimum",
       "answer": "0 °C",
       "acceptedAnswers": [
         "0",
@@ -1642,12 +1677,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-080",
+      "id": "B412-LIM-086",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Temperature: Continuous operation",
+      "question": "86. Engine Oil Temperature: Continuous operation",
       "answer": "0 to 115 °C",
       "acceptedAnswers": [
         "0 to 115",
@@ -1661,12 +1696,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-081",
+      "id": "B412-LIM-087",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Temperature: Maximum for MIL-PRF-7808 oil",
+      "question": "87. Engine Oil Temperature: Maximum for MIL-PRF-7808 oil",
       "answer": "115 °C",
       "acceptedAnswers": [
         "115",
@@ -1680,12 +1715,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-082",
+      "id": "B412-LIM-088",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ENGINE OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Engine Oil Temperature: Maximum for MIL-PRF-23699 oil",
+      "question": "88. Engine Oil Temperature: Maximum for MIL-PRF-23699 oil",
       "answer": "120 °C",
       "acceptedAnswers": [
         "120",
@@ -1699,12 +1734,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-083",
+      "id": "B412-LIM-089",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Pressure: Minimum for flight idle",
+      "question": "89. C-BOX Oil Pressure: Minimum for flight idle",
       "answer": "40 PSI",
       "acceptedAnswers": [
         "40",
@@ -1718,12 +1753,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-084",
+      "id": "B412-LIM-090",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Pressure: Operation below 94% N2 RPM",
+      "question": "90. C-BOX Oil Pressure: Operation below 94% N2 RPM",
       "answer": "40 to 60 PSI",
       "acceptedAnswers": [
         "40 to 60",
@@ -1737,12 +1772,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-085",
+      "id": "B412-LIM-091",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Pressure: Continuous operation",
+      "question": "91. C-BOX Oil Pressure: Continuous operation",
       "answer": "60 to 80 PSI",
       "acceptedAnswers": [
         "60 to 80",
@@ -1756,12 +1791,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-086",
+      "id": "B412-LIM-092",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Pressure: Maximum",
+      "question": "92. C-BOX Oil Pressure: Maximum",
       "answer": "80 PSI",
       "acceptedAnswers": [
         "80",
@@ -1775,12 +1810,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-087",
+      "id": "B412-LIM-093",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Temperature: Minimum",
+      "question": "93. C-BOX Oil Temperature: Minimum",
       "answer": "0 °C",
       "acceptedAnswers": [
         "0",
@@ -1794,12 +1829,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-088",
+      "id": "B412-LIM-094",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Temperature: Continuous operation",
+      "question": "94. C-BOX Oil Temperature: Continuous operation",
       "answer": "0 to 115 °C",
       "acceptedAnswers": [
         "0 to 115",
@@ -1813,12 +1848,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-089",
+      "id": "B412-LIM-095",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Temperature: Maximum for MIL-PRF-7808 oil",
+      "question": "95. C-BOX Oil Temperature: Maximum for MIL-PRF-7808 oil",
       "answer": "115 °C",
       "acceptedAnswers": [
         "115",
@@ -1832,12 +1867,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-090",
+      "id": "B412-LIM-096",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "C-BOX OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "C-BOX Oil Temperature: Maximum for MIL-PRF-23699 oil",
+      "question": "96. C-BOX Oil Temperature: Maximum for MIL-PRF-23699 oil",
       "answer": "120 °C",
       "acceptedAnswers": [
         "120",
@@ -1851,12 +1886,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-091",
+      "id": "B412-LIM-097",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Pressure: Minimum for flight idle",
+      "question": "97. XMSN Oil Pressure: Minimum for flight idle",
       "answer": "30 PSI",
       "acceptedAnswers": [
         "30",
@@ -1870,12 +1905,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-092",
+      "id": "B412-LIM-098",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Pressure: Idle range",
+      "question": "98. XMSN Oil Pressure: Idle range",
       "answer": "30 to 40 PSI",
       "acceptedAnswers": [
         "30 to 40",
@@ -1889,12 +1924,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-093",
+      "id": "B412-LIM-099",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Pressure: Continuous operation",
+      "question": "99. XMSN Oil Pressure: Continuous operation",
       "answer": "40 to 70 PSI",
       "acceptedAnswers": [
         "40 to 70",
@@ -1908,12 +1943,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-094",
+      "id": "B412-LIM-100",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL PRESSURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Pressure: Maximum",
+      "question": "100. XMSN Oil Pressure: Maximum",
       "answer": "70 PSI",
       "acceptedAnswers": [
         "70",
@@ -1927,12 +1962,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-095",
+      "id": "B412-LIM-101",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Temperature: Continuous operation",
+      "question": "101. XMSN Oil Temperature: Continuous operation",
       "answer": "15 to 110 °C",
       "acceptedAnswers": [
         "15 to 110",
@@ -1946,12 +1981,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-096",
+      "id": "B412-LIM-102",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "XMSN OIL TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "XMSN Oil Temperature: Maximum",
+      "question": "102. XMSN Oil Temperature: Maximum",
       "answer": "110 °C",
       "acceptedAnswers": [
         "110",
@@ -1965,12 +2000,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-097",
+      "id": "B412-LIM-103",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "MAST TORQUE",
       "questionType": "fill-blank",
-      "question": "Mast Torque Twin Engine: Maximum continuous",
+      "question": "103. Mast Torque Twin Engine: Maximum continuous",
       "answer": "81 %",
       "acceptedAnswers": [
         "81",
@@ -1984,12 +2019,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-098",
+      "id": "B412-LIM-104",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "MAST TORQUE",
       "questionType": "fill-blank",
-      "question": "Mast Torque Twin Engine: Take off range (5 minutes max)",
+      "question": "104. Mast Torque Twin Engine: Take off range (5 minutes max)",
       "answer": "81 to 100 %",
       "acceptedAnswers": [
         "81 to 100",
@@ -2003,12 +2038,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-099",
+      "id": "B412-LIM-105",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "MAST TORQUE",
       "questionType": "fill-blank",
-      "question": "Mast Torque Twin Engine: Maximum",
+      "question": "105. Mast Torque Twin Engine: Maximum",
       "answer": "100 %",
       "acceptedAnswers": [
         "100",
@@ -2022,12 +2057,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-100",
+      "id": "B412-LIM-106",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Minimum",
+      "question": "106. Rotor RPM Power On: Minimum",
       "answer": "97 %",
       "acceptedAnswers": [
         "97",
@@ -2041,12 +2076,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-101",
+      "id": "B412-LIM-107",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Continuous operation at or below 6000 ft HD",
+      "question": "107. Rotor RPM Power On: Continuous operation at or below 6000 ft HD",
       "answer": "97 to 100 %",
       "acceptedAnswers": [
         "97 to 100",
@@ -2060,12 +2095,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-102",
+      "id": "B412-LIM-108",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Continuous operation above 6000 ft HD",
+      "question": "108. Rotor RPM Power On: Continuous operation above 6000 ft HD",
       "answer": "100 %",
       "acceptedAnswers": [
         "100",
@@ -2079,12 +2114,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-103",
+      "id": "B412-LIM-109",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Maximum continuous",
+      "question": "109. Rotor RPM Power On: Maximum continuous",
       "answer": "100 %",
       "acceptedAnswers": [
         "100",
@@ -2098,12 +2133,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-104",
+      "id": "B412-LIM-110",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Operation with ENG torque at or below 30%",
+      "question": "110. Rotor RPM Power On: Operation with ENG torque at or below 30%",
       "answer": "100 to 104.5 %",
       "acceptedAnswers": [
         "100 to 104.5",
@@ -2117,12 +2152,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-105",
+      "id": "B412-LIM-111",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER ON",
       "questionType": "fill-blank",
-      "question": "Rotor RPM Power On: Max with ENG torque at or below 30%",
+      "question": "111. Rotor RPM Power On: Max with ENG torque at or below 30%",
       "answer": "104.5 %",
       "acceptedAnswers": [
         "104.5",
@@ -2137,12 +2172,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-106",
+      "id": "B412-LIM-112",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER OFF",
       "questionType": "fill-blank",
-      "question": "Min for autorotation with gross weight below 8000 lbs (3629 kg)",
+      "question": "112. ROTOR RPM – POWER OFF: Min for autorotation with gross weight below 8000 lbs (3629 kg)",
       "answer": "80 %",
       "acceptedAnswers": [
         "80",
@@ -2156,12 +2191,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-107",
+      "id": "B412-LIM-113",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER OFF",
       "questionType": "fill-blank",
-      "question": "Power off operation with gross weight below 8000 lbs (3629 kg)",
+      "question": "113. ROTOR RPM – POWER OFF: Power off operation with gross weight below 8000 lbs (3629 kg)",
       "answer": "80 to 104.5 %",
       "acceptedAnswers": [
         "80 to 104.5",
@@ -2175,12 +2210,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-108",
+      "id": "B412-LIM-114",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER OFF",
       "questionType": "fill-blank",
-      "question": "Min for autorotation with gross weight at or above 8000 lbs (3629 kg)",
+      "question": "114. ROTOR RPM – POWER OFF: Min for autorotation with gross weight at or above 8000 lbs (3629 kg)",
       "answer": "91 %",
       "acceptedAnswers": [
         "91",
@@ -2194,12 +2229,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-109",
+      "id": "B412-LIM-115",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – POWER OFF",
       "questionType": "fill-blank",
-      "question": "Power Off Maximum",
+      "question": "115. ROTOR RPM – POWER OFF: Power Off Maximum",
       "answer": "104.5 %",
       "acceptedAnswers": [
         "104.5",
@@ -2214,12 +2249,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-110",
+      "id": "B412-LIM-116",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – GROUND OPERATION",
       "questionType": "fill-blank",
-      "question": "Ground Operation: Minimum",
+      "question": "116. ROTOR RPM – GROUND OPERATION: Ground Operation: Minimum",
       "answer": "77 %",
       "acceptedAnswers": [
         "77",
@@ -2233,12 +2268,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-111",
+      "id": "B412-LIM-117",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – GROUND OPERATION",
       "questionType": "fill-blank",
-      "question": "Ground Operation: Minimum with stick centering ind system inoperative",
+      "question": "117. ROTOR RPM – GROUND OPERATION: Ground Operation: Minimum with stick centering ind system inoperative",
       "answer": "97 %",
       "acceptedAnswers": [
         "97",
@@ -2252,12 +2287,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-112",
+      "id": "B412-LIM-118",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "ROTOR RPM – GROUND OPERATION",
       "questionType": "fill-blank",
-      "question": "Ground Operation: Transient (avoid steady state autorotation)",
+      "question": "118. ROTOR RPM – GROUND OPERATION: Ground Operation: Transient (avoid steady state autorotation)",
       "answer": "26 to 77 %",
       "acceptedAnswers": [
         "26 to 77",
@@ -2271,12 +2306,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-113",
+      "id": "B412-LIM-119",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "HYDRAULIC PRESSURE",
       "questionType": "fill-blank",
-      "question": "Hydraulic Pressure: Minimum",
+      "question": "119. Hydraulic Pressure: Minimum",
       "answer": "600 PSI",
       "acceptedAnswers": [
         "600",
@@ -2290,12 +2325,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-114",
+      "id": "B412-LIM-120",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "HYDRAULIC PRESSURE",
       "questionType": "fill-blank",
-      "question": "Hydraulic Pressure: Caution",
+      "question": "120. Hydraulic Pressure: Caution",
       "answer": "600 to 900 PSI",
       "acceptedAnswers": [
         "600 to 900",
@@ -2309,12 +2344,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-115",
+      "id": "B412-LIM-121",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "HYDRAULIC PRESSURE",
       "questionType": "fill-blank",
-      "question": "Hydraulic Pressure: Continuous operation",
+      "question": "121. Hydraulic Pressure: Continuous operation",
       "answer": "900 to 1100 PSI",
       "acceptedAnswers": [
         "900 to 1100",
@@ -2328,12 +2363,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-116",
+      "id": "B412-LIM-122",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "HYDRAULIC PRESSURE",
       "questionType": "fill-blank",
-      "question": "Hydraulic Pressure: Maximum",
+      "question": "122. Hydraulic Pressure: Maximum",
       "answer": "1100 PSI",
       "acceptedAnswers": [
         "1100",
@@ -2348,12 +2383,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-117",
+      "id": "B412-LIM-123",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "HYDRAULIC TEMPERATURE",
       "questionType": "fill-blank",
-      "question": "Hydraulic Temperature: Maximum",
+      "question": "123. Hydraulic Temperature: Maximum",
       "answer": "88 °C",
       "acceptedAnswers": [
         "88",
@@ -2368,12 +2403,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-118",
+      "id": "B412-LIM-124",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "AHRS ALIGNMENT",
       "questionType": "fill-blank",
-      "question": "AHRS Alignment: Pitch",
+      "question": "124. AHRS Alignment: Pitch",
       "answer": "less than ± 10°",
       "acceptedAnswers": [
         "less than ± 10°",
@@ -2390,12 +2425,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-119",
+      "id": "B412-LIM-125",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "AHRS ALIGNMENT",
       "questionType": "fill-blank",
-      "question": "AHRS Alignment: Roll",
+      "question": "125. AHRS Alignment: Roll",
       "answer": "less than ± 5°",
       "acceptedAnswers": [
         "less than ± 5°",
@@ -2412,12 +2447,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-120",
+      "id": "B412-LIM-126",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "AHRS ALIGNMENT",
       "questionType": "fill-blank",
-      "question": "AHRS Alignment: Yaw",
+      "question": "126. AHRS Alignment: Yaw",
       "answer": "less than 1°/sec",
       "acceptedAnswers": [
         "less than 1°/sec",
@@ -2433,12 +2468,12 @@
       "verified": true
     },
     {
-      "id": "B412-LIM-121",
+      "id": "B412-LIM-127",
       "aircraft": "BELL 412 EP",
       "section": "LIMITATION",
       "category": "AHRS ALIGNMENT",
       "questionType": "fill-blank",
-      "question": "AHRS Alignment: Lateral and longitudinal acceleration",
+      "question": "127. AHRS Alignment: Lateral and longitudinal acceleration",
       "answer": "less than 0.05g",
       "acceptedAnswers": [
         "less than 0.05g",
@@ -2706,7 +2741,7 @@
       "section": "INDICATOR LIMITATION",
       "category": "Gas Producer RPM (Ni)",
       "questionType": "fill-blank",
-      "question": "White lines (12 & 61), Green arc (61-103.1), Red line (103.1), Yellow arcs (103.1-103.7 & 103.7-109.2), Red line (109.2)",
+      "question": "Gas Producer RPM (Ni): White lines (12 & 61), Green arc (61-103.1), Red line (103.1), Yellow arcs (103.1-103.7 & 103.7-109.2), Red line (109.2)",
       "answer": "12: Min opening throttle during start | 61: Idle RPM | 61-103.1: Continuous Operation | 103.1: Max Continuous | 103.1-103.7: Cont OEI | 103.7-109.2: 2 1/2 Min OEI | 109.2: Max 2 1/2 OEI",
       "acceptedAnswers": [
         "12 Start, 61 Idle, 61-103.1 Cont, 103.1 Max Cont, 103.1-103.7 Cont OEI, 103.7-109.2 2 1/2 Min OEI, 109.2 Max OEI"
@@ -2724,8 +2759,7 @@
           "acceptedAnswers": [
             "12: Min opening throttle during start | 61: Idle RPM",
             "12 Start, 61 Idle",
-            "12 Start 61 Idle",
-            "12: Min opening throttle, 61: Idle RPM"
+            "12: Start, 61: Idle"
           ],
           "placeholder": "Batas / arti penunjukan..."
         },
@@ -2770,8 +2804,7 @@
           "acceptedAnswers": [
             "Max 2 1/2 OEI",
             "Max OEI",
-            "Maximum OEI",
-            "Max 2 1/2"
+            "Maximum OEI"
           ],
           "placeholder": "Batas / arti penunjukan..."
         }
@@ -2832,8 +2865,7 @@
           "answer": "820: Max Cont. OEI | 940: Max 2 1/2 OEI",
           "acceptedAnswers": [
             "820: Max Cont. OEI | 940: Max 2 1/2 OEI",
-            "820 Max Cont OEI, 940 Max 2 1/2 OEI",
-            "820: Max Cont OEI, 940: Max 2 1/2 OEI"
+            "820 Max Cont OEI, 940 Max 2 1/2 OEI"
           ],
           "placeholder": "Batas / arti penunjukan..."
         },
@@ -2965,7 +2997,7 @@
       ]
     },
     {
-      "id": "B412-EMG-001",
+      "id": "B412-EMER-001",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Terminology",
@@ -2984,7 +3016,7 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-002",
+      "id": "B412-EMER-002",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Terminology",
@@ -3002,12 +3034,12 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-003",
+      "id": "B412-EMER-003",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Single Engine Failure",
       "questionType": "fill-blank",
-      "question": "List 4 primary indications",
+      "question": "Single Engine Failure: List 4 primary indications",
       "answer": "ENG 1 OUT or ENG 2 OUT W/L ILLUMINATE; N1 drop below 53% and decreasing; N2 drop below 85% and decreasing; ITT drop below 400°C and decreasing",
       "acceptedAnswers": [
         "ENG 1 OUT, N1 drop below 53%, N2 drop below 85%, ITT drop below 400°C",
@@ -3020,12 +3052,12 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-004",
+      "id": "B412-EMER-004",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Single Engine Failure",
       "questionType": "fill-blank",
-      "question": "FLY THE A/C immediate actions (steps a, b, c)",
+      "question": "Single Engine Failure: FLY THE A/C immediate actions (steps a, b, c)",
       "answer": "a. Reduce power | b. Set airspeed 70 kts | c. Set N2 100% if possible",
       "acceptedAnswers": [
         "Reduce power, Set airspeed 70 kts, Set N2 100%",
@@ -3073,12 +3105,12 @@
       ]
     },
     {
-      "id": "B412-EMG-005",
+      "id": "B412-EMER-005",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Single Engine Failure",
       "questionType": "fill-blank",
-      "question": "IDENTIFY & Engine shutdown steps (steps d, e, f, g)",
+      "question": "Single Engine Failure: IDENTIFY & Engine shutdown steps (steps d, e, f, g)",
       "answer": "d. IDLE STOP RELEASE to affected Eng | e. THROTTLE - CLOSED | f. BOOST PUMP - OFF | g. FUEL SWITCH - OFF",
       "acceptedAnswers": [
         "IDLE STOP RELEASE, THROTTLE CLOSED, BOOST PUMP OFF, FUEL SWITCH OFF"
@@ -3090,12 +3122,12 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-006",
+      "id": "B412-EMER-006",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Dual Engine Failure",
       "questionType": "fill-blank",
-      "question": "AUTOROTATION immediate actions (steps a, b, c, d)",
+      "question": "Dual Engine Failure: AUTOROTATION immediate actions (steps a, b, c, d)",
       "answer": "a. Collective FULL DOWN | b. THROTTLE - CLOSE | c. Set airspeed 65 - 90 kts | d. ROTOR RPM - ON THE GREEN",
       "acceptedAnswers": [
         "Collective FULL DOWN, THROTTLE CLOSE, airspeed 65-90 kts, ROTOR RPM ON THE GREEN"
@@ -3107,12 +3139,12 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-007",
+      "id": "B412-EMER-007",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Dual Engine Failure",
       "questionType": "fill-blank",
-      "question": "Altimeter reading actions (e. 300 FT AGL, f. 100 FT AGL)",
+      "question": "Dual Engine Failure: Altimeter reading actions (e. 300 FT AGL, f. 100 FT AGL)",
       "answer": "e. 300 FT AGL - OPEN THROTTLE | f. 100 FT AGL - FLARE",
       "acceptedAnswers": [
         "300 FT OPEN THROTTLE, 100 FT FLARE",
@@ -3147,7 +3179,7 @@
       ]
     },
     {
-      "id": "B412-EMG-008",
+      "id": "B412-EMER-008",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Engine Fire In Flight",
@@ -3188,7 +3220,7 @@
       ]
     },
     {
-      "id": "B412-EMG-009",
+      "id": "B412-EMER-009",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Engine Fire In Flight",
@@ -3207,7 +3239,7 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-010",
+      "id": "B412-EMER-010",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Pedal Malfunction",
@@ -3224,7 +3256,7 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-011",
+      "id": "B412-EMER-011",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Pedal Malfunction",
@@ -3241,7 +3273,7 @@
       "verified": true
     },
     {
-      "id": "B412-EMG-012",
+      "id": "B412-EMER-012",
       "aircraft": "BELL 412 EP",
       "section": "EMERGENCY PROCEDURES",
       "category": "Hydraulic Failure",

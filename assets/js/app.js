@@ -11,6 +11,134 @@ const App = (() => {
   let boldFaceSubMode = 'practice';
   let boldFaceKeysRevealed = false;
 
+  const FLEET_METADATA = {
+    'AH-64E APACHE': {
+      category: 'COMBAT',
+      heli: true,
+      roleBadge: '⚔️ ATTACK HELICOPTER',
+      tagline: 'Helikopter Tempur Utama Tandem / Sistem Sensor Malam & Rudal',
+      icon: '⚔️'
+    },
+    'ANKA MALE UAV': {
+      category: 'UAV',
+      heli: false,
+      roleBadge: '🛸 MALE UNMANNED AERIAL VEHICLE',
+      tagline: 'Drone Pengintai Taktis Jarak Jauh / Satcom & Dual FLIR Payload',
+      icon: '🛸'
+    },
+    'BELL 412 EP': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 TACTICAL UTILITY HELICOPTER',
+      tagline: 'Twin-Turbine Multi-Mission / Angkut Personel & Medevac',
+      icon: '🚁'
+    },
+    'BO-105': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 LIGHT SCOUT & LIAISON',
+      tagline: 'Dual-Turbine Rigid Rotor / Agilitas Tinggi & Observasi Udara',
+      icon: '🚁'
+    },
+    'CASA 212-200': {
+      category: 'PLANE',
+      heli: false,
+      roleBadge: '✈️ TWIN TURBOPROP TRANSPORT',
+      tagline: 'Pesawat Angkut Taktis Sayap Tetap / STOL Operasi Perintis',
+      icon: '✈️'
+    },
+    'FENNEC AS550': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 LIGHT ARMED SCOUT',
+      tagline: 'Helikopter Serbu Ringan & Pengawal / FADEC Turbomeca Arriel',
+      icon: '🚁'
+    },
+    'MI-17V5': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 HEAVY MEDIUM TRANSPORT',
+      tagline: 'Helikopter Angkut Berat & Pasukan / Kapasitas Kargo 4.000 kg',
+      icon: '🚁'
+    },
+    'SIKORSKY S300C': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 PRIMARY FLIGHT TRAINER',
+      tagline: 'Helikopter Latih Dasar Penerbang / Piston Lycoming HIO-360',
+      icon: '🚁'
+    }
+  };
+
+  let currentFleetFilter = 'ALL';
+  let fleetSearchQuery = '';
+
+  function filterFleetCategory(category, buttonEl) {
+    currentFleetFilter = category;
+    document.querySelectorAll('.fleet-filter-pill').forEach(btn => btn.classList.remove('active'));
+    if (buttonEl) buttonEl.classList.add('active');
+    applyFleetFilters();
+  }
+
+  function onFleetSearch(event) {
+    fleetSearchQuery = (event.target.value || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('fleet-search-clear');
+    if (clearBtn) {
+      clearBtn.style.display = fleetSearchQuery ? 'block' : 'none';
+    }
+    applyFleetFilters();
+  }
+
+  function clearFleetSearch() {
+    fleetSearchQuery = '';
+    const input = document.getElementById('fleet-search-input');
+    if (input) input.value = '';
+    const clearBtn = document.getElementById('fleet-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    applyFleetFilters();
+  }
+
+  function applyFleetFilters() {
+    const cards = document.querySelectorAll('.aircraft-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const aircraft = card.getAttribute('data-aircraft');
+      const meta = FLEET_METADATA[aircraft] || { category: 'HELI', heli: true };
+
+      let matchCat = false;
+      if (currentFleetFilter === 'ALL') {
+        matchCat = true;
+      } else if (currentFleetFilter === 'HELI') {
+        matchCat = meta.heli === true;
+      } else if (currentFleetFilter === 'PLANE') {
+        matchCat = meta.category === 'PLANE';
+      } else if (currentFleetFilter === 'UAV') {
+        matchCat = meta.category === 'UAV';
+      } else if (currentFleetFilter === 'COMBAT') {
+        matchCat = meta.category === 'COMBAT';
+      }
+
+      let matchSearch = true;
+      if (fleetSearchQuery) {
+        const textContent = (card.textContent || '').toLowerCase();
+        matchSearch = textContent.includes(fleetSearchQuery);
+      }
+
+      if (matchCat && matchSearch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const emptyBox = document.getElementById('aircraft-empty-search');
+    if (emptyBox) {
+      emptyBox.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+
   async function init() {
     initTheme();
     setupGlobalEvents();
@@ -104,15 +232,22 @@ const App = (() => {
     container.innerHTML = catalog.map(item => {
       const draftAnswers = Storage.getDraftAnswers(item.aircraft);
       const draftCount = Object.keys(draftAnswers || {}).filter(k => (draftAnswers[k] || '').trim()).length;
+      const meta = FLEET_METADATA[item.aircraft] || {
+        category: 'HELI',
+        roleBadge: '🚁 AVIATION FLEET',
+        tagline: item.description || '',
+        icon: '✈️'
+      };
 
       return `
         <div class="aircraft-card" data-aircraft="${item.aircraft}">
+          <div class="card-role-badge">${meta.roleBadge}</div>
           <div class="card-badge-row">
             <span class="badge badge-accent">${item.aircraft}</span>
             <span class="badge badge-subtle">${item.sourceDocument}</span>
           </div>
           <h3 class="card-title">${item.title}</h3>
-          <p class="card-desc">${item.description}</p>
+          <p class="card-desc">${meta.tagline || item.description}</p>
           
           <div class="card-stats-grid">
             <div class="card-stat-item">
@@ -148,6 +283,8 @@ const App = (() => {
         </div>
       `;
     }).join('');
+
+    applyFleetFilters();
   }
 
   function updateDashboardStats() {
@@ -321,6 +458,13 @@ const App = (() => {
   // ==========================================
   function renderExamState(state) {
     if (!state) return;
+
+    // Progress Bar HUD
+    const progressBar = document.getElementById('exam-progress-bar-fill');
+    if (progressBar && state.totalQuestions > 0) {
+      const pct = Math.round(((state.currentIndex + 1) / state.totalQuestions) * 100);
+      progressBar.style.width = `${pct}%`;
+    }
 
     // Header info
     const titleEl = document.getElementById('exam-aircraft-badge');
@@ -1457,9 +1601,14 @@ const App = (() => {
       const active = Navigation.getCurrentView();
       if (active === 'exam') {
         if (e.key === 'ArrowRight' && e.altKey) {
+          e.preventDefault();
           ExamEngine.nextQuestion();
         } else if (e.key === 'ArrowLeft' && e.altKey) {
+          e.preventDefault();
           ExamEngine.prevQuestion();
+        } else if ((e.key === 'f' || e.key === 'F') && e.altKey) {
+          e.preventDefault();
+          toggleCurrentFlag();
         }
       }
     });
@@ -1501,7 +1650,10 @@ const App = (() => {
     onBoldFaceKeyDown,
     renderBankFiltered,
     exportBankJSON,
-    clearAllHistory
+    clearAllHistory,
+    filterFleetCategory,
+    onFleetSearch,
+    clearFleetSearch
   };
 })();
 

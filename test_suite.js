@@ -43,7 +43,8 @@ const requiredFiles = [
   'data/mi-17v5.json',
   'data/bell-412-ep.json',
   'data/fennec-as550.json',
-  'data/sikorsky-s300c.json'
+  'data/sikorsky-s300c.json',
+  'data/anka-male-uav.json'
 ];
 
 requiredFiles.forEach(file => {
@@ -62,7 +63,8 @@ const dataFiles = [
   'data/sikorsky-s300c.json',
   'data/casa-212-200.json',
   'data/ah-64e.json',
-  'data/bo-105.json'
+  'data/bo-105.json',
+  'data/anka-male-uav.json'
 ];
 
 const allIds = new Set();
@@ -120,6 +122,22 @@ assert(!res5.isCorrect, 'Rejects conflicting speed units (100 knots vs 100 km/h)
 // Empty answer
 const res6 = Grading.evaluateAnswer('', '4000 kg', [], 'kg');
 assert(!res6.isCorrect && res6.status === 'empty', 'Detects empty answer');
+
+// 'sampai' <-> '-' equivalence
+const resSampai1 = Grading.evaluateAnswer('980 sampai 2320', '980-2320', []);
+assert(resSampai1.isCorrect, 'Accepts "sampai" when official answer is "-"');
+const resSampai2 = Grading.evaluateAnswer('980-2320', '980 sampai 2320', []);
+assert(resSampai2.isCorrect, 'Accepts "-" when official answer is "sampai"');
+
+// 'dan' <-> '&' equivalence
+const resDan1 = Grading.evaluateAnswer('3000 & 3200', '3000 dan 3200', []);
+assert(resDan1.isCorrect, 'Accepts "&" when official answer is "dan"');
+const resDan2 = Grading.evaluateAnswer('3000 dan 3200', '3000 & 3200', []);
+assert(resDan2.isCorrect, 'Accepts "dan" when official answer is "&"');
+
+// Combined complex range and conjunction equivalence
+const resComb = Grading.evaluateAnswer('55 & 115 / 55 - 95', '55 DAN 115 PSI / 55 SAMPAI 95 PSI', []);
+assert(resComb.isCorrect, 'Accepts complex combined "&" and "-" for "DAN" and "SAMPAI"');
 
 // Overall exam calculation
 const sampleQuestions = [

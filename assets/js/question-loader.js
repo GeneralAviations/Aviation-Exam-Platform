@@ -45,6 +45,8 @@ const QuestionLoader = (() => {
       filename = 'data/ah-64e.json';
     } else if (norm.includes('bo-105') || norm.includes('bo105')) {
       filename = 'data/bo-105.json';
+    } else if (norm.includes('anka')) {
+      filename = 'data/anka-male-uav.json';
     } else {
       const catalog = await loadCatalog();
       const entry = catalog.find(c => c.aircraft === aircraftId);

@@ -25,7 +25,10 @@
       "questionType": "fill-blank",
       "question": "Electrical fire on ground: Tindakan pada Master switch?",
       "answer": "Off",
-      "acceptedAnswers": ["Off", "OFF"],
+      "acceptedAnswers": [
+        "Off",
+        "OFF"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -40,7 +43,15 @@
       "questionType": "fill-blank",
       "question": "Electrical fire on ground: Tindakan pada APU?",
       "answer": "Off & disconnect",
-      "acceptedAnswers": ["Off & disconnect", "Off and disconnect", "Off & Disconnect", "OFF & DISCONNECT"],
+      "acceptedAnswers": [
+        "Off and disconnect",
+        "Off & disconnect",
+        "Off dan disconnect",
+        "Off & Disconnect",
+        "Off dan Disconnect",
+        "OFF dan DISCONNECT",
+        "OFF & DISCONNECT"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -56,9 +67,13 @@
       "question": "Sebutkan seluruh tindakan darurat 'Electrical fire on ground' secara berurutan!",
       "answer": "a. Master switch Off, b. APU Off & disconnect",
       "acceptedAnswers": [
-        "Master switch Off, APU Off & disconnect",
         "Master switch Off, APU Off and disconnect",
-        "a. Master switch Off b. APU Off & disconnect"
+        "a. Master switch Off b. APU Off dan disconnect",
+        "a. Master switch Off, b. APU Off dan disconnect",
+        "Master switch Off, APU Off dan disconnect",
+        "a. Master switch Off b. APU Off & disconnect",
+        "a. Master switch Off, b. APU Off & disconnect",
+        "Master switch Off, APU Off & disconnect"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
@@ -74,7 +89,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Posisi Fuel switch?",
       "answer": "Close",
-      "acceptedAnswers": ["Close", "CLOSE"],
+      "acceptedAnswers": [
+        "Close",
+        "CLOSE"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -89,7 +107,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Posisi Emergency shut down lever?",
       "answer": "Feather",
-      "acceptedAnswers": ["Feather", "FEATHER"],
+      "acceptedAnswers": [
+        "Feather",
+        "FEATHER"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -104,7 +125,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Posisi Fuel booster pumps?",
       "answer": "Off",
-      "acceptedAnswers": ["Off", "OFF"],
+      "acceptedAnswers": [
+        "Off",
+        "OFF"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -119,7 +143,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Posisi Heating lever?",
       "answer": "Close",
-      "acceptedAnswers": ["Close", "CLOSE"],
+      "acceptedAnswers": [
+        "Close",
+        "CLOSE"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -134,7 +161,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Posisi Air Conditioning?",
       "answer": "Off",
-      "acceptedAnswers": ["Off", "OFF"],
+      "acceptedAnswers": [
+        "Off",
+        "OFF"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -149,7 +179,11 @@
       "questionType": "fill-blank",
       "question": "Engine fire on the ground: Tindakan pada Fire discharge buttons?",
       "answer": "Press as required",
-      "acceptedAnswers": ["Press as required", "Press As Required", "PRESS AS REQUIRED"],
+      "acceptedAnswers": [
+        "Press as required",
+        "Press As Required",
+        "PRESS AS REQUIRED"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -165,8 +199,9 @@
       "question": "Sebutkan prosedur berurutan 'Engine fire on the ground' (a sampai f)!",
       "answer": "a. Fuel switch Close, b. Emergency shut down lever Feather, c. Fuel booster pumps Off, d. Heating lever Close, e. Air Conditioning Off, f. Fire discharge buttons Press as required",
       "acceptedAnswers": [
+        "Fuel switch Close, Emergency shut down lever Feather, Fuel booster pumps Off, Heating lever Close, Air Conditioning Off, Fire discharge buttons Press",
         "Fuel switch Close, Emergency shut down lever Feather, Fuel booster pumps Off, Heating lever Close, Air Conditioning Off, Fire discharge buttons Press as required",
-        "Fuel switch Close, Emergency shut down lever Feather, Fuel booster pumps Off, Heating lever Close, Air Conditioning Off, Fire discharge buttons Press"
+        "a. Fuel switch Close, b. Emergency shut down lever Feather, c. Fuel booster pumps Off, d. Heating lever Close, e. Air Conditioning Off, f. Fire discharge buttons Press as required"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
@@ -182,7 +217,12 @@
       "questionType": "fill-blank",
       "question": "Engine failure before V1 (aborted take off): Posisi Power lever pertama?",
       "answer": "Aft of F.I",
-      "acceptedAnswers": ["Aft of F.I", "Aft of FI", "AFT OF F.I", "AFT OF FI"],
+      "acceptedAnswers": [
+        "Aft of F.I",
+        "Aft of FI",
+        "AFT OF F.I",
+        "AFT OF FI"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -197,7 +237,11 @@
       "questionType": "fill-blank",
       "question": "Engine failure before V1 (aborted take off): Posisi Control column?",
       "answer": "Full forward",
-      "acceptedAnswers": ["Full forward", "FULL FORWARD", "Forward"],
+      "acceptedAnswers": [
+        "Full forward",
+        "FULL FORWARD",
+        "Forward"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -212,7 +256,11 @@
       "questionType": "fill-blank",
       "question": "Engine failure before V1 (aborted take off): Arah injakan Rudder?",
       "answer": "Into dead engine",
-      "acceptedAnswers": ["Into dead engine", "INTO DEAD ENGINE", "Dead engine"],
+      "acceptedAnswers": [
+        "Into dead engine",
+        "INTO DEAD ENGINE",
+        "Dead engine"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -227,7 +275,11 @@
       "questionType": "fill-blank",
       "question": "Engine failure before V1 (aborted take off): Tindakan pada Brake?",
       "answer": "As Required",
-      "acceptedAnswers": ["As Required", "As required", "AS REQUIRED"],
+      "acceptedAnswers": [
+        "As Required",
+        "As required",
+        "AS REQUIRED"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -242,7 +294,12 @@
       "questionType": "fill-blank",
       "question": "Engine failure before V1 (aborted take off): Tindakan lanjutan pada Power lever?",
       "answer": "Reverse as required",
-      "acceptedAnswers": ["Reverse as required", "Reverse As Required", "REVERSE AS REQUIRED", "Reverse"],
+      "acceptedAnswers": [
+        "Reverse as required",
+        "Reverse As Required",
+        "REVERSE AS REQUIRED",
+        "Reverse"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -258,6 +315,7 @@
       "question": "Sebutkan prosedur berurutan 'Engine failure before V1 (aborted take off)' (a sampai e)!",
       "answer": "a. Power lever Aft of F.I, b. Control collum Full forward, c. Rudder Into dead engine, d. Brake As Required, e. Power lever Reverse as required",
       "acceptedAnswers": [
+        "a. Power lever Aft of F.I, b. Control collum Full forward, c. Rudder Into dead engine, d. Brake As Required, e. Power lever Reverse as required",
         "Power lever Aft of F.I, Control collum Full forward, Rudder Into dead engine, Brake As Required, Power lever Reverse as required",
         "Power lever Aft of FI, Control column Full forward, Rudder Into dead engine, Brake As Required, Power lever Reverse as required"
       ],
@@ -275,7 +333,12 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Posisi Speed lever?",
       "answer": "Take off / landing",
-      "acceptedAnswers": ["Take off / landing", "Take off/landing", "Takeoff / landing", "Take off and landing"],
+      "acceptedAnswers": [
+        "Take off / landing",
+        "Take off/landing",
+        "Takeoff / landing",
+        "Take off and landing"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -290,7 +353,11 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Posisi Power lever?",
       "answer": "Max",
-      "acceptedAnswers": ["Max", "MAX", "Maximum"],
+      "acceptedAnswers": [
+        "Max",
+        "MAX",
+        "Maximum"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -305,7 +372,11 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Pengaturan Flaps?",
       "answer": "As required",
-      "acceptedAnswers": ["As required", "As Required", "AS REQUIRED"],
+      "acceptedAnswers": [
+        "As required",
+        "As Required",
+        "AS REQUIRED"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -320,7 +391,10 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Langkah kendali terbang setelah Flaps?",
       "answer": "Maintain flight path",
-      "acceptedAnswers": ["Maintain flight path", "MAINTAIN FLIGHT PATH"],
+      "acceptedAnswers": [
+        "Maintain flight path",
+        "MAINTAIN FLIGHT PATH"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -336,9 +410,10 @@
       "question": "Engine failure / fire after V1 (in flight): Langkah identifikasi mesin?",
       "answer": "Identify and verify failed engine",
       "acceptedAnswers": [
-        "Identify and verify failed engine",
         "Identify and verify failed angine",
-        "Identify & verify failed engine"
+        "Identify dan verify failed engine",
+        "Identify & verify failed engine",
+        "Identify and verify failed engine"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
@@ -354,7 +429,10 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Tindakan pada APR light?",
       "answer": "Check",
-      "acceptedAnswers": ["Check", "CHECK"],
+      "acceptedAnswers": [
+        "Check",
+        "CHECK"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -369,7 +447,10 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Posisi Fuel switch?",
       "answer": "Off",
-      "acceptedAnswers": ["Off", "OFF"],
+      "acceptedAnswers": [
+        "Off",
+        "OFF"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -384,7 +465,10 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Tindakan Emergency shut down engine?",
       "answer": "Feather",
-      "acceptedAnswers": ["Feather", "FEATHER"],
+      "acceptedAnswers": [
+        "Feather",
+        "FEATHER"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -399,7 +483,10 @@
       "questionType": "fill-blank",
       "question": "Engine failure / fire after V1 (in flight): Posisi Fuel booster pump?",
       "answer": "Off",
-      "acceptedAnswers": ["Off", "OFF"],
+      "acceptedAnswers": [
+        "Off",
+        "OFF"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -434,7 +521,10 @@
       "questionType": "fill-blank",
       "question": "Engine fire after V1 (IF FIRE): Tindakan pada Discharge no. 1?",
       "answer": "Press",
-      "acceptedAnswers": ["Press", "PRESS"],
+      "acceptedAnswers": [
+        "Press",
+        "PRESS"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -505,7 +595,10 @@
       "questionType": "fill-blank",
       "question": "Electrical fire in flight switch / smoke and fume elimination: Posisi No smoking switch?",
       "answer": "ON",
-      "acceptedAnswers": ["ON", "On"],
+      "acceptedAnswers": [
+        "ON",
+        "On"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -520,7 +613,12 @@
       "questionType": "fill-blank",
       "question": "Electrical fire in flight switch / smoke and fume elimination: Status Oxygen mask / smoke goggles?",
       "answer": "Donned / 100 %",
-      "acceptedAnswers": ["Donned / 100 %", "Donned / 100%", "Donned/100%", "Donned 100%"],
+      "acceptedAnswers": [
+        "Donned / 100 %",
+        "Donned / 100%",
+        "Donned/100%",
+        "Donned 100%"
+      ],
       "unit": "%",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -535,7 +633,10 @@
       "questionType": "fill-blank",
       "question": "Electrical fire in flight switch / smoke and fume elimination: Posisi Oxygen main line valve?",
       "answer": "Open",
-      "acceptedAnswers": ["Open", "OPEN"],
+      "acceptedAnswers": [
+        "Open",
+        "OPEN"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -550,7 +651,10 @@
       "questionType": "fill-blank",
       "question": "Electrical fire in flight switch / smoke and fume elimination: Posisi Heating lever?",
       "answer": "Close",
-      "acceptedAnswers": ["Close", "CLOSE"],
+      "acceptedAnswers": [
+        "Close",
+        "CLOSE"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -565,7 +669,10 @@
       "questionType": "fill-blank",
       "question": "Electrical fire in flight switch / smoke and fume elimination: Posisi Air conditioning?",
       "answer": "OFF",
-      "acceptedAnswers": ["OFF", "Off"],
+      "acceptedAnswers": [
+        "OFF",
+        "Off"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -581,8 +688,9 @@
       "question": "Sebutkan seluruh tindakan 'Electrical fire in flight switch / smoke and fume elimination' (a sampai e)!",
       "answer": "a. No smoking switch ON, b. Oxygen mask / smoke goggles Donned / 100 %, c. Oxygen main line valve Open, d. Heating lever Close, e. Air conditioning OFF",
       "acceptedAnswers": [
-        "No smoking switch ON, Oxygen mask / smoke goggles Donned / 100 %, Oxygen main line valve Open, Heating lever Close, Air conditioning OFF",
-        "No smoking ON, Oxygen mask Donned 100%, Oxygen main valve Open, Heating Close, AC OFF"
+        "a. No smoking switch ON, b. Oxygen mask / smoke goggles Donned / 100 %, c. Oxygen main line valve Open, d. Heating lever Close, e. Air conditioning OFF",
+        "No smoking ON, Oxygen mask Donned 100%, Oxygen main valve Open, Heating Close, AC OFF",
+        "No smoking switch ON, Oxygen mask / smoke goggles Donned / 100 %, Oxygen main line valve Open, Heating lever Close, Air conditioning OFF"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
@@ -598,7 +706,10 @@
       "questionType": "fill-blank",
       "question": "Battery over temperature warning: Tindakan pada Affected battery?",
       "answer": "OFF",
-      "acceptedAnswers": ["OFF", "Off"],
+      "acceptedAnswers": [
+        "OFF",
+        "Off"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -613,7 +724,10 @@
       "questionType": "fill-blank",
       "question": "Two generator fail: Posisi Bustied switch?",
       "answer": "Emergency",
-      "acceptedAnswers": ["Emergency", "EMERGENCY"],
+      "acceptedAnswers": [
+        "Emergency",
+        "EMERGENCY"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -628,7 +742,13 @@
       "questionType": "fill-blank",
       "question": "Two generator fail: Tindakan pada Generator switch?",
       "answer": "Reset / ON",
-      "acceptedAnswers": ["Reset / ON", "Reset / On", "Reset/ON", "Reset and ON", "RESET / ON"],
+      "acceptedAnswers": [
+        "Reset / ON",
+        "Reset / On",
+        "Reset/ON",
+        "Reset and ON",
+        "RESET / ON"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -644,6 +764,7 @@
       "question": "Sebutkan 2 prosedur darurat 'Two generator fail'!",
       "answer": "a. Bustied switch Emergency, b. Generator Reset / ON",
       "acceptedAnswers": [
+        "a. Bustied switch Emergency, b. Generator Reset / ON",
         "Bustied switch Emergency, Generator Reset / ON",
         "Bustied switch Emergency, Generator Reset/ON"
       ],
@@ -661,7 +782,10 @@
       "questionType": "fill-blank",
       "question": "Multiple engine failure: Posisi Emergency shut down lever?",
       "answer": "Feather",
-      "acceptedAnswers": ["Feather", "FEATHER"],
+      "acceptedAnswers": [
+        "Feather",
+        "FEATHER"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -676,7 +800,12 @@
       "questionType": "fill-blank",
       "question": "Multiple engine failure: Posisi Flaps?",
       "answer": "0°",
-      "acceptedAnswers": ["0°", "0 deg", "0 derajat", "0"],
+      "acceptedAnswers": [
+        "0°",
+        "0 deg",
+        "0 derajat",
+        "0"
+      ],
       "unit": "°",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -691,7 +820,10 @@
       "questionType": "fill-blank",
       "question": "Multiple engine failure: Posisi Bustied switch?",
       "answer": "Emergency",
-      "acceptedAnswers": ["Emergency", "EMERGENCY"],
+      "acceptedAnswers": [
+        "Emergency",
+        "EMERGENCY"
+      ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
       "sourcePage": 1,
@@ -707,8 +839,9 @@
       "question": "Sebutkan seluruh tindakan 'Multiple engine failure' (a sampai c)!",
       "answer": "a. Emergency shut down lever Feather, b. Flaps 0°, c. Bustied switch Emergency",
       "acceptedAnswers": [
-        "Emergency shut down lever Feather, Flaps 0°, Bustied switch Emergency",
-        "Emergency shutdown Feather, Flaps 0, Bustied Emergency"
+        "a. Emergency shut down lever Feather, b. Flaps 0°, c. Bustied switch Emergency",
+        "Emergency shutdown Feather, Flaps 0, Bustied Emergency",
+        "Emergency shut down lever Feather, Flaps 0°, Bustied switch Emergency"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",

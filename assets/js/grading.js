@@ -51,6 +51,50 @@ const Grading = (() => {
   }
 
   /**
+   * Generates equivalent aviation terms exchanging:
+   * - 'sampai' <-> '-' (including 'to', 's/d', 's.d.', 'hingga')
+   * - 'dan' <-> '&' (including 'and')
+   */
+  function expandEquivalents(val) {
+    if (val === null || val === undefined) return [];
+    const base = String(val).trim();
+    if (!base) return [];
+    const set = new Set([base]);
+
+    // 1. sampai <-> -
+    if (/\bsampai\b/i.test(base)) {
+      set.add(base.replace(/\bsampai\b/gi, '-'));
+      set.add(base.replace(/\bsampai\b/gi, ' - '));
+      set.add(base.replace(/\bsampai\b/gi, 'to'));
+      set.add(base.replace(/\bsampai\b/gi, 's/d'));
+      set.add(base.replace(/\bsampai\b/gi, 's.d.'));
+    }
+    if (/[-–—]/.test(base)) {
+      set.add(base.replace(/(\S+)\s*[-–—]\s*(\S+)/g, '$1 sampai $2'));
+      set.add(base.replace(/(\S+)\s*[-–—]\s*(\S+)/g, '$1 - $2'));
+      set.add(base.replace(/(\S+)\s*[-–—]\s*(\S+)/g, '$1 to $2'));
+      set.add(base.replace(/(\S+)\s*[-–—]\s*(\S+)/g, '$1 s/d $2'));
+    }
+
+    // 2. dan <-> &
+    if (/\bdan\b/i.test(base)) {
+      set.add(base.replace(/\bdan\b/gi, '&'));
+      set.add(base.replace(/\bdan\b/gi, ' & '));
+    }
+    if (/&/.test(base)) {
+      set.add(base.replace(/\s*&\s*/g, ' dan '));
+      set.add(base.replace(/\s*&\s*/g, ' & '));
+    }
+    if (/\band\b/i.test(base)) {
+      set.add(base.replace(/\band\b/gi, 'dan'));
+      set.add(base.replace(/\band\b/gi, '&'));
+      set.add(base.replace(/\band\b/gi, ' & '));
+    }
+
+    return Array.from(set);
+  }
+
+  /**
    * Canonical normalization for aviation terms, ranges, delimiters, and units.
    * Enables robust matching between user inputs (e.g. '55 dan 115 /55-95') and keys ('55 DAN 115 PSI / 55 SAMPAI 95 PSI').
    */
@@ -63,8 +107,8 @@ const Grading = (() => {
       .trim()
       .toLowerCase();
 
-    // 1. Range indicators before delimiter split (e.g. s/d, sampai, to)
-    s = s.replace(/\b(sampai|s\/d|sd|s\.d|to)\b/gi, '-');
+    // 1. Range indicators before delimiter split (e.g. s/d, sampai, hingga, to)
+    s = s.replace(/(?:\b(?:sampai|hingga|sd|to)\b|s\/d|s\.d\.|s\.d)/gi, '-');
     // 2. Conjunctions (& and dan)
     s = s.replace(/(?:&|\b(?:dan|and)\b)/gi, ' dan ');
     // 3. Delimiters (/ | ; ,)
@@ -188,13 +232,19 @@ const Grading = (() => {
       return { status: 'correct', isCorrect: true, score: 1, feedback: 'Tepat sesuai dokumen sumber' };
     }
 
-    // 2. Build list of all acceptable targets
-    const allAccepted = [officialAnswer, ...(acceptedAnswers || [])]
-      .filter(Boolean)
-      .map(item => normalizeText(item));
+    // 2. Build list of all acceptable targets (including expanded equivalents for 'sampai' <-> '-' and 'dan' <-> '&')
+    const baseAccepted = [officialAnswer, ...(acceptedAnswers || [])].filter(Boolean);
+    const allAccepted = [];
+    baseAccepted.forEach(item => {
+      expandEquivalents(item).forEach(v => {
+        const norm = normalizeText(v);
+        if (norm && !allAccepted.includes(norm)) allAccepted.push(norm);
+      });
+    });
 
-    for (const target of allAccepted) {
-      if (uNorm === target) {
+    const userVariants = expandEquivalents(uRaw).map(v => normalizeText(v));
+    for (const uVar of userVariants) {
+      if (allAccepted.includes(uVar)) {
         return { status: 'correct', isCorrect: true, score: 1, feedback: 'Benar (sesuai variasi yang diterima)' };
       }
     }
@@ -403,6 +453,7 @@ const Grading = (() => {
     normalizeText,
     normalizeNumeric,
     canonicalAviation,
+    expandEquivalents,
     evaluateAnswer,
     evaluateQuestion,
     calculateExamResults

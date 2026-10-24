@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aviation Examination & Training Platform - Media Ujian & Latihan Interaktif Berbasis Dokumen BOLD FACE MI-17V5, BELL 412 EP, FENNEC AS550, SIKORSKY S300C, CASA 212-200, AH-64E APACHE, dan BO-105." />
+  <meta name="description" content="Aviation Examination & Training Platform - Media Ujian & Latihan Interaktif Berbasis Dokumen BOLD FACE MI-17V5, BELL 412 EP, FENNEC AS550, SIKORSKY S300C, CASA 212-200, AH-64E APACHE, BO-105, dan ANKA MALE UAV." />
   <meta name="author" content="Senior Aviation Web Developer" />
   <title>Aviation Examination &amp; Training Platform</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Outfit (luxury aerospace headings), Inter (clean UI), JetBrains Mono (avionics & telemetry) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -21,10 +21,15 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand-wrapper" onclick="Navigation.navigateTo('home')">
-        <div class="brand-logo-icon">✈️</div>
+        <div class="brand-logo-icon">
+          <span class="logo-glyph">✈️</span>
+        </div>
         <div class="brand-text">
-          <h1>Aviation Exam Platform</h1>
-          <p>Training &amp; Evaluation System</p>
+          <div class="brand-title-row">
+            <h1>Aviation Exam Platform</h1>
+            <span class="live-status-pill"><span class="pulse-dot"></span> PRO V2.0</span>
+          </div>
+          <p>Flight Crew Standardized Evaluation Suite</p>
         </div>
       </div>
 
@@ -49,41 +54,93 @@
     <section id="view-home">
       <div class="hero-section">
         <div class="hero-pill">
-          <span>🛡️ Official Bold Face &amp; Limitation Database</span>
+          <span class="hero-beacon"></span>
+          <span>STANDAR DOKUMEN BOLD FACE &amp; LIMITATIONS MILITER &amp; SIPIL</span>
         </div>
-        <h1 class="hero-title">Evaluasi &amp; Latihan Penerbangan Interaktif</h1>
+        <h1 class="hero-title">Pusat Evaluasi &amp; Latihan Penerbangan</h1>
         <p class="hero-subtitle">
-          Platform terstandarisasi untuk persiapan ujian, pemahaman batasan operasional (Limitations), dan prosedur darurat (Emergency Procedures) berbasis dokumen resmi.
+          Platform terstandarisasi untuk persiapan ujian kualifikasi, pemahaman batasan operasional (Limitations), dan prosedur darurat (Emergency Procedures) berbasis dokumen resmi AFM &amp; Flight Checklist.
         </p>
 
         <!-- DASHBOARD STATS -->
         <div class="dashboard-stats-strip">
           <div class="stat-card">
-            <div id="dash-total-questions" class="stat-val">527</div>
+            <div class="stat-icon-wrapper">📚</div>
+            <div id="dash-total-questions" class="stat-val">659</div>
             <div class="stat-desc">Bank Soal Terverifikasi</div>
+            <div class="stat-sub">8 Jenis Pesawat Lengkap</div>
           </div>
           <div class="stat-card">
+            <div class="stat-icon-wrapper">📝</div>
             <div id="dash-total-exams" class="stat-val">0</div>
-            <div class="stat-desc">Ujian Selesai</div>
+            <div class="stat-desc">Sesi Ujian Selesai</div>
+            <div class="stat-sub">Tersimpan di Perangkat</div>
           </div>
           <div class="stat-card">
+            <div class="stat-icon-wrapper">🎯</div>
             <div id="dash-avg-score" class="stat-val">0%</div>
             <div class="stat-desc">Rata-rata Nilai</div>
+            <div class="stat-sub">Standar Kelulusan 75%</div>
           </div>
           <div class="stat-card">
+            <div class="stat-icon-wrapper">🏆</div>
             <div id="dash-pass-rate" class="stat-val">0%</div>
             <div class="stat-desc">Tingkat Kelulusan</div>
+            <div class="stat-sub">Evaluasi Akurasi Jawaban</div>
+          </div>
+        </div>
+
+        <!-- FLEET TOOLBAR (FILTER & SEARCH) -->
+        <div class="fleet-toolbar-card">
+          <div class="fleet-filter-pills" id="fleet-filter-pills">
+            <button type="button" class="fleet-filter-pill active" data-fleet-filter="ALL" onclick="App.filterFleetCategory('ALL', this)">
+              Semua Armada <span class="pill-count" id="fleet-count-all">8</span>
+            </button>
+            <button type="button" class="fleet-filter-pill" data-fleet-filter="HELI" onclick="App.filterFleetCategory('HELI', this)">
+              🚁 Helikopter <span class="pill-count" id="fleet-count-heli">6</span>
+            </button>
+            <button type="button" class="fleet-filter-pill" data-fleet-filter="PLANE" onclick="App.filterFleetCategory('PLANE', this)">
+              ✈️ Sayap Tetap <span class="pill-count" id="fleet-count-plane">1</span>
+            </button>
+            <button type="button" class="fleet-filter-pill" data-fleet-filter="UAV" onclick="App.filterFleetCategory('UAV', this)">
+              🛸 UAV / Drone <span class="pill-count" id="fleet-count-uav">1</span>
+            </button>
+            <button type="button" class="fleet-filter-pill" data-fleet-filter="COMBAT" onclick="App.filterFleetCategory('COMBAT', this)">
+              ⚔️ Tempur / Serbu <span class="pill-count" id="fleet-count-combat">1</span>
+            </button>
+          </div>
+
+          <div class="fleet-search-box">
+            <span class="fleet-search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="fleet-search-input" 
+              class="fleet-search-input" 
+              placeholder="Cari pesawat, helikopter, atau dokumen..." 
+              oninput="App.onFleetSearch(event)"
+              autocomplete="off"
+            />
+            <button type="button" id="fleet-search-clear" class="fleet-search-clear" onclick="App.clearFleetSearch()" style="display: none;" title="Hapus pencarian">✕</button>
           </div>
         </div>
       </div>
 
       <div class="section-heading-bar">
-        <h2>Pilih Jenis Pesawat / Helikopter</h2>
+        <div>
+          <h2>Katalog Armada Pesawat &amp; Helikopter</h2>
+          <p class="section-subheading">Pilih jenis pesawat untuk memulai simulasi ujian atau buka lembar dokumen asli</p>
+        </div>
       </div>
 
       <!-- AIRCRAFT CARDS GRID -->
       <div id="aircraft-card-grid" class="aircraft-grid">
         <!-- Rendered via JS -->
+      </div>
+      <div id="aircraft-empty-search" class="aircraft-empty-search" style="display: none;">
+        <div class="empty-icon">🔍</div>
+        <h3>Tidak ada pesawat yang cocok</h3>
+        <p>Coba kata kunci lain atau pilih filter kategori "Semua Armada".</p>
+        <button class="btn btn-secondary btn-sm" onclick="App.clearFleetSearch()">Reset Pencarian</button>
       </div>
     </section>
 
@@ -183,6 +240,11 @@
       <div class="exam-layout">
         <!-- MAIN QUESTION PANEL -->
         <div class="exam-main-panel">
+          <!-- EXAM HUD PROGRESS BAR -->
+          <div class="exam-progress-bar-container" title="Kemajuan Ujian">
+            <div id="exam-progress-bar-fill" class="exam-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+
           <div class="exam-status-bar">
             <div class="exam-meta-pills">
               <span id="exam-aircraft-badge" class="badge badge-accent">AIRCRAFT</span>
@@ -213,6 +275,13 @@
                 <span id="exam-q-unit" class="input-unit-indicator"></span>
               </div>
               <div id="multi-input-grid" class="multi-sub-grid" style="display: none;"></div>
+
+              <!-- KEYBOARD SHORTCUTS HINT STRIP -->
+              <div class="keyboard-hints-strip">
+                <span class="hint-item"><kbd class="kb-key">Enter ↵</kbd> Simpan &amp; Lanjut</span>
+                <span class="hint-item"><kbd class="kb-key">Alt</kbd> + <kbd class="kb-key">←</kbd> / <kbd class="kb-key">→</kbd> Navigasi Soal</span>
+                <span class="hint-item"><kbd class="kb-key">Alt</kbd> + <kbd class="kb-key">F</kbd> Tandai Ragu</span>
+              </div>
             </div>
 
             <!-- PRACTICE MODE CONTROLS -->
@@ -430,11 +499,15 @@
             oninput="App.renderBankFiltered()" 
           />
           <select id="bank-aircraft-filter" class="select-control" onchange="App.renderBankFiltered()">
-            <option value="ALL">Semua Pesawat</option>
-            <option value="MI-17V5">MI-17V5</option>
-            <option value="BELL 412 EP">BELL 412 EP</option>
-            <option value="FENNEC AS550">FENNEC AS550</option>
-            <option value="SIKORSKY S300C">SIKORSKY S300C</option>
+            <option value="ALL">Semua Pesawat (8 Armada)</option>
+            <option value="AH-64E APACHE">AH-64E APACHE (132 Soal)</option>
+            <option value="ANKA MALE UAV">ANKA MALE UAV (132 Soal)</option>
+            <option value="BELL 412 EP">BELL 412 EP (147 Soal)</option>
+            <option value="BO-105">BO-105 (79 Soal)</option>
+            <option value="CASA 212-200">CASA 212-200 (44 Soal)</option>
+            <option value="FENNEC AS550">FENNEC AS550 (49 Soal)</option>
+            <option value="MI-17V5">MI-17V5 (53 Soal)</option>
+            <option value="SIKORSKY S300C">SIKORSKY S300C (23 Soal)</option>
           </select>
         </div>
 

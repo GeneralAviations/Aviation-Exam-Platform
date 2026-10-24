@@ -1,38 +1,71 @@
 [
   {
-    "aircraft": "MI-17V5",
-    "title": "BOLD FACE MI-17V5",
-    "file": "data/mi-17v5.json",
-    "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
-    "description": "Limitation, Engine Operating Parameters, Gearbox, APU, Slopes, dan Maneuver Khusus Helikopter MI-17V5",
-    "totalQuestions": 53,
-    "categoriesCount": 20,
+    "aircraft": "AH-64E APACHE",
+    "title": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES & LIMITATIONS",
+    "file": "data/ah-64e.json",
+    "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
+    "description": "",
+    "totalQuestions": 132,
+    "categoriesCount": 19,
     "categories": [
-      "APU",
-      "Basic Weights & Capacity",
-      "CG Limitation",
-      "Ceiling",
-      "Cruising Speed",
-      "Engine Operating Parameters",
-      "External Load",
-      "Fastrooping/Rappelling",
-      "Fuel Reserve",
-      "Hoist",
-      "Hovering Altitude",
-      "Main Gear Box",
-      "Maximum Allowed Wind Speed",
-      "Maximum Bank",
-      "Speed",
-      "Speed Limitation",
-      "Speed at Zoom and Dive",
-      "Take-off and Landing Slopes",
-      "Troop Carrier",
-      "Weight Limitation"
+      "APU & Transmission",
+      "Definitions",
+      "Electrical Emergency",
+      "Engine Emergency",
+      "Engine Oil Pressure",
+      "Engine Starter Limitations",
+      "Fire Emergency",
+      "Hydraulic & Flight Control Emergency",
+      "Hydraulic Systems",
+      "Landing & Ditching Emergency",
+      "Maneuvering & Flight Limitations",
+      "Mission Equipment & Avionics",
+      "NG Limits",
+      "NP Limits",
+      "NR Limits",
+      "TGT Limits",
+      "Torque Limits",
+      "Warning/Caution/Advisories",
+      "Weight & Airspeed Limitations"
     ],
     "sections": [
-      "A. ISIAN",
-      "LIMITATION",
-      "Maneuver Khusus"
+      "EMERGENCY PROCEDURES",
+      "LIMITATIONS",
+      "WARNING/CAUTION/ADVISORIES"
+    ]
+  },
+  {
+    "aircraft": "ANKA MALE UAV",
+    "title": "ANKA MALE UAV - BOLD FACE LIMITATIONS & EMERGENCY PROCEDURES",
+    "file": "data/anka-male-uav.json",
+    "sourceDocument": "ANKAID-T0544-AFM-2",
+    "description": "Bold Face Limitations (Airspeed, Wind, KU-Band, Engine & System Limits), Takeoff/Landing Limitations, dan Emergency Procedures (Actuator Fail, Engine RPM High/Low, Gear Extension Fail, Engine Stopped) ANKA MALE UAV",
+    "totalQuestions": 132,
+    "categoriesCount": 15,
+    "categories": [
+      "Actuator Position Fail Emergency",
+      "Airspeed Limitations",
+      "Crosswind Ruddervator Failure Surface Wind",
+      "Engine & System Limitations",
+      "Engine RPM High Emergency",
+      "Engine RPM Low Emergency",
+      "Engine Stopped Emergency",
+      "KU-Band Data Link Limitations",
+      "Landing Gear Extension Fail Emergency",
+      "Landing Limitations",
+      "Operational Wind & Weather Limits",
+      "Performance & Flight Limitations",
+      "Takeoff Entry Conditions",
+      "Weather Avoidance",
+      "Wind Limitations"
+    ],
+    "sections": [
+      "BOLD FACE LIMITATIONS",
+      "EMER - ACT POSITION FAIL",
+      "EMER - ENG RPM HIGH",
+      "EMER - ENG RPM LOW",
+      "EMER - LDG GR EXTENTION FAIL",
+      "EMER - ENG STOPPED"
     ]
   },
   {
@@ -41,7 +74,7 @@
     "file": "data/bell-412-ep.json",
     "sourceDocument": "bold face bell 412 EP.pdf",
     "description": "Limitation 106 item lengkap, Indicator limitation ranges, dan Emergency Procedures Bell 412 EP",
-    "totalQuestions": 141,
+    "totalQuestions": 147,
     "categoriesCount": 45,
     "categories": [
       "AHRS ALIGNMENT",
@@ -97,6 +130,52 @@
     ]
   },
   {
+    "aircraft": "BO-105",
+    "title": "BOLD FACE BO-105",
+    "file": "data/bo-105.json",
+    "sourceDocument": "BOLD FACE BO-105.pdf",
+    "description": "",
+    "totalQuestions": 79,
+    "categoriesCount": 10,
+    "categories": [
+      "Engine & Transmission Power",
+      "Engine Starter Limits",
+      "Fuel Quantity & Press",
+      "Mass & Load",
+      "Max Altitude",
+      "Max Speed",
+      "Oil Pressure",
+      "Oil Quantity",
+      "Oil Temperature",
+      "Slope Limits"
+    ],
+    "sections": [
+      "BOLD FACE LIMITATIONS"
+    ]
+  },
+  {
+    "aircraft": "CASA 212-200",
+    "title": "BOLD FACE CASA 212-200 AVIOCAR",
+    "file": "data/casa-212-200.json",
+    "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
+    "description": "",
+    "totalQuestions": 44,
+    "categoriesCount": 8,
+    "categories": [
+      "Battery Warning",
+      "Electrical Fire",
+      "Engine Failure after V1",
+      "Engine Failure before V1",
+      "Engine Fire on Ground",
+      "Generator Failure",
+      "Multiple Engine Failure",
+      "Smoke and Fume Elimination"
+    ],
+    "sections": [
+      "BOLD FACE"
+    ]
+  },
+  {
     "aircraft": "FENNEC AS550",
     "title": "BOLD FACE FENNEC AS550",
     "file": "data/fennec-as550.json",
@@ -123,6 +202,42 @@
     ],
     "sections": [
       "LIMITATION"
+    ]
+  },
+  {
+    "aircraft": "MI-17V5",
+    "title": "BOLD FACE MI-17V5",
+    "file": "data/mi-17v5.json",
+    "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+    "description": "Limitation, Engine Operating Parameters, Gearbox, APU, Slopes, dan Maneuver Khusus Helikopter MI-17V5",
+    "totalQuestions": 53,
+    "categoriesCount": 20,
+    "categories": [
+      "APU",
+      "Basic Weights & Capacity",
+      "CG Limitation",
+      "Ceiling",
+      "Cruising Speed",
+      "Engine Operating Parameters",
+      "External Load",
+      "Fastrooping/Rappelling",
+      "Fuel Reserve",
+      "Hoist",
+      "Hovering Altitude",
+      "Main Gear Box",
+      "Maximum Allowed Wind Speed",
+      "Maximum Bank",
+      "Speed",
+      "Speed Limitation",
+      "Speed at Zoom and Dive",
+      "Take-off and Landing Slopes",
+      "Troop Carrier",
+      "Weight Limitation"
+    ],
+    "sections": [
+      "A. ISIAN",
+      "LIMITATION",
+      "Maneuver Khusus"
     ]
   },
   {
@@ -156,87 +271,6 @@
     "sections": [
       "EMERGENCY",
       "LIMITATION"
-    ]
-  },
-  {
-    "aircraft": "CASA 212-200",
-    "title": "BOLD FACE CASA 212-200 AVIOCAR",
-    "file": "data/casa-212-200.json",
-    "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
-    "description": "Prosedur Darurat Bold Face Pesawat Angkut CASA 212-200 Aviocar (Engine Failure, Fire, Generator Fail, dan Smoke Elimination)",
-    "totalQuestions": 44,
-    "categoriesCount": 8,
-    "categories": [
-      "Battery Warning",
-      "Electrical Fire",
-      "Engine Failure after V1",
-      "Engine Failure before V1",
-      "Engine Fire on Ground",
-      "Generator Failure",
-      "Multiple Engine Failure",
-      "Smoke and Fume Elimination"
-    ],
-    "sections": [
-      "BOLD FACE"
-    ]
-  },
-  {
-    "aircraft": "AH-64E APACHE",
-    "title": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES & LIMITATIONS",
-    "file": "data/ah-64e.json",
-    "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
-    "description": "Limitations lengkap (Nr, Engine Oil, Hyd, TGT 701D, Torque, Ng, Np, XMSN), Emergency Procedures (Egress, Fire, Flight Controls, Ditching), dan Warning/Caution/Advisories Helikopter Serbu AH-64E Apache",
-    "totalQuestions": 132,
-    "categoriesCount": 19,
-    "categories": [
-      "APU & Transmission",
-      "Definitions",
-      "Electrical Emergency",
-      "Engine Emergency",
-      "Engine Oil Pressure",
-      "Engine Starter Limitations",
-      "Fire Emergency",
-      "Hydraulic & Flight Control Emergency",
-      "Hydraulic Systems",
-      "Landing & Ditching Emergency",
-      "Maneuvering & Flight Limitations",
-      "Mission Equipment & Avionics",
-      "NG Limits",
-      "NP Limits",
-      "NR Limits",
-      "TGT Limits",
-      "Torque Limits",
-      "Warning/Caution/Advisories",
-      "Weight & Airspeed Limitations"
-    ],
-    "sections": [
-      "EMERGENCY PROCEDURES",
-      "LIMITATIONS",
-      "WARNING/CAUTION/ADVISORIES"
-    ]
-  },
-  {
-    "aircraft": "BO-105",
-    "title": "BOLD FACE BO-105",
-    "file": "data/bo-105.json",
-    "sourceDocument": "BOLD FACE BO-105.pdf",
-    "description": "Limitations lengkap Helikopter BO-105: Mass & Load, Max Altitude, Max Speed, Oil Qty, Oil Temp, Oil Pressure, Fuel Qty & Press, Engine/Transmission Power, Slope Limits, dan Engine Starter",
-    "totalQuestions": 79,
-    "categoriesCount": 10,
-    "categories": [
-      "Engine & Transmission Power",
-      "Engine Starter Limits",
-      "Fuel Quantity & Press",
-      "Mass & Load",
-      "Max Altitude",
-      "Max Speed",
-      "Oil Pressure",
-      "Oil Quantity",
-      "Oil Temperature",
-      "Slope Limits"
-    ],
-    "sections": [
-      "BOLD FACE LIMITATIONS"
     ]
   }
 ]

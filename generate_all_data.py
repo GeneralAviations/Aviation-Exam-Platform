@@ -1305,6 +1305,7 @@ def build_sikorsky_s300c():
     }
 
 def main():
+    import glob
     os.makedirs("data", exist_ok=True)
     
     aircraft_list = [
@@ -1314,21 +1315,36 @@ def main():
         ("data/sikorsky-s300c.json", build_sikorsky_s300c())
     ]
     
-    index_meta = []
     for path, data in aircraft_list:
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         print(f"Wrote {path} with {data['totalQuestions']} questions.")
         
-        # Collect categories
-        cats = sorted(list(set(q["category"] for q in data["questions"])))
-        sections = sorted(list(set(q["section"] for q in data["questions"])))
+    try:
+        from generate_anka_data import build_anka_dataset
+        anka_data = build_anka_dataset()
+        with open("data/anka-male-uav.json", "w", encoding="utf-8") as f:
+            json.dump(anka_data, f, indent=2, ensure_ascii=False)
+        print(f"Wrote data/anka-male-uav.json with {anka_data['totalQuestions']} questions.")
+    except Exception as e:
+        print(f"Notice regarding ANKA dataset: {e}")
+
+    # Build master aircraft-index.json from all data files
+    all_files = sorted(glob.glob("data/*.json"))
+    index_meta = []
+    for fpath in all_files:
+        if "aircraft-index.json" in fpath:
+            continue
+        with open(fpath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        cats = sorted(list(set(q["category"] for q in data.get("questions", []))))
+        sections = data.get("sections") or sorted(list(set(q["section"] for q in data.get("questions", []))))
         index_meta.append({
             "aircraft": data["aircraft"],
             "title": data["title"],
-            "file": path.replace("\\", "/"),
+            "file": fpath.replace("\\", "/"),
             "sourceDocument": data["sourceDocument"],
-            "description": data["description"],
+            "description": data.get("description", ""),
             "totalQuestions": data["totalQuestions"],
             "categoriesCount": len(cats),
             "categories": cats,
@@ -1337,7 +1353,7 @@ def main():
         
     with open("data/aircraft-index.json", "w", encoding="utf-8") as f:
         json.dump(index_meta, f, indent=2, ensure_ascii=False)
-    print("Wrote data/aircraft-index.json successfully.")
+    print(f"Wrote data/aircraft-index.json successfully with {len(index_meta)} aircraft.")
 
 if __name__ == "__main__":
     main()
