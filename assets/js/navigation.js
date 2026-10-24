@@ -73,8 +73,11 @@ const Navigation = (() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Notify App
-    if (window.App && window.App.onViewChanged) {
-      window.App.onViewChanged(viewName, params);
+    const appInstance = (typeof window !== 'undefined' && window.App) || 
+                        (typeof globalThis !== 'undefined' && globalThis.App) || 
+                        (typeof App !== 'undefined' ? App : null);
+    if (appInstance && appInstance.onViewChanged) {
+      appInstance.onViewChanged(viewName, params);
     }
   }
 
@@ -89,3 +92,13 @@ const Navigation = (() => {
     parseHash
   };
 })();
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Navigation;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.Navigation = Navigation;
+}
+if (typeof window !== 'undefined') {
+  window.Navigation = Navigation;
+}

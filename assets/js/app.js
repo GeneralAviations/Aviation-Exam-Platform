@@ -83,6 +83,10 @@ const App = (() => {
       await loadAndRenderQuestionBank();
     } else if (viewName === 'history') {
       renderHistory();
+    } else if (viewName === 'exam') {
+      if (!ExamEngine.getState()) {
+        Navigation.navigateTo('home');
+      }
     }
   }
 
@@ -225,8 +229,22 @@ const App = (() => {
     }
   }
 
-  function startExamFromSetup() {
-    if (!currentAircraftData) return;
+  async function startExamFromSetup() {
+    if (!currentAircraftData) {
+      const { params } = Navigation.parseHash();
+      const aircraft = params.get('aircraft') || 'BELL 412 EP';
+      try {
+        await loadAndRenderSetup(aircraft);
+      } catch (e) {
+        showToast('Gagal memuat materi pesawat. Silakan kembali ke Beranda.', 'error');
+        return;
+      }
+    }
+
+    if (!currentAircraftData) {
+      showToast('Pilih jenis pesawat terlebih dahulu dari Beranda.', 'warning');
+      return;
+    }
 
     const selectedCats = Array.from(document.querySelectorAll('input[name="setup-cat"]:checked')).map(cb => cb.value);
     if (selectedCats.length === 0) {
@@ -829,6 +847,16 @@ const App = (() => {
     clearAllHistory
   };
 })();
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = App;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.App = App;
+}
+if (typeof window !== 'undefined') {
+  window.App = App;
+}
 
 // Start application when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
