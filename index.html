@@ -115,18 +115,23 @@
           <div class="mode-toggle-group">
             <label class="mode-radio-label">
               <input type="radio" name="exam-mode" value="exam" checked />
-              <span class="mode-radio-title">Mode Ujian</span>
-              <span class="mode-radio-sub">Tanpa bocoran kunci selama ujian</span>
+              <span class="mode-radio-title">Mode Ujian (Per Soal)</span>
+              <span class="mode-radio-sub">Tampilan kartu kuis 1 per 1 tanpa kunci jawaban</span>
             </label>
             <label class="mode-radio-label">
               <input type="radio" name="exam-mode" value="practice" />
-              <span class="mode-radio-title">Mode Latihan</span>
+              <span class="mode-radio-title">Mode Latihan (Per Soal)</span>
               <span class="mode-radio-sub">Bisa cek jawaban langsung &amp; lihat kunci</span>
             </label>
             <label class="mode-radio-label">
+              <input type="radio" name="exam-mode" value="boldface" />
+              <span class="mode-radio-title">Lembar Dokumen Bold Face Asli ⭐</span>
+              <span class="mode-radio-sub">Format lembar ujian asli (gaya ANKA), isi langsung di lembar &amp; koreksi instan</span>
+            </label>
+            <label class="mode-radio-label">
               <input type="radio" name="exam-mode" value="manual" />
-              <span class="mode-radio-title">Lembar Manual</span>
-              <span class="mode-radio-sub">Format cetak kertas putih (PDF)</span>
+              <span class="mode-radio-title">Lembar Cetak (Print Manual)</span>
+              <span class="mode-radio-sub">Format cetak kertas putih titik-titik untuk print/PDF</span>
             </label>
           </div>
         </div>
@@ -314,50 +319,91 @@
       </div>
     </section>
 
-    <!-- 5. MANUAL EXAM / PAPER PRINT VIEW -->
+    <!-- 5. BOLD FACE & PAPER SHEET VIEW (INTERAKTIF GAYA ANKA & CETAK) -->
     <section id="view-paper" hidden>
-      <div class="paper-controls-bar">
-        <button class="btn btn-secondary" onclick="Navigation.navigateTo('home')">← Kembali ke Beranda</button>
-        <button class="btn btn-primary btn-lg" onclick="window.print()">🖨️ Cetak Lembar Ujian (Print / PDF)</button>
-      </div>
+      <div class="boldface-app-shell">
+        <!-- SIDEBAR KONTROL & NAVIGASI (STYLE ANKA) -->
+        <aside class="boldface-sidebar no-print">
+          <div class="bf-sidebar-logo">
+            <div class="bf-logo-icon">✈️</div>
+            <div>
+              <h3 id="bf-aircraft-title">PESAWAT</h3>
+              <p id="bf-doc-sub" class="bf-doc-sub">Dokumen Resmi</p>
+            </div>
+          </div>
 
-      <div class="paper-sheet-container" id="paper-sheet">
-        <div class="paper-header">
-          <h1 id="paper-aircraft-title">LEMBAR UJIAN BOLD FACE</h1>
-          <p id="paper-source-doc" style="font-size: 0.9rem; color: #444; margin-top: 4px;">Dokumen Acuan Resmi</p>
-        </div>
+          <!-- Section tabs / filter -->
+          <div class="bf-panel-heading">Navigasi Modul / Bagian</div>
+          <div id="bf-tabs-list" class="bf-tabs-list" role="tablist">
+            <!-- Rendered via JS -->
+          </div>
 
-        <table class="paper-candidate-table">
-          <tr>
-            <td style="width: 140px;">NAMA</td>
-            <td style="width: 20px;">:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-            <td style="width: 120px; padding-left: 20px;">TANGGAL</td>
-            <td style="width: 20px;">:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-          </tr>
-          <tr>
-            <td>PANGKAT/NRP</td>
-            <td>:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-            <td style="padding-left: 20px;">JABATAN</td>
-            <td>:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-          </tr>
-          <tr>
-            <td>KUALIFIKASI</td>
-            <td>:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-            <td style="padding-left: 20px;">NILAI</td>
-            <td>:</td>
-            <td style="border-bottom: 1px dotted #000;"></td>
-          </tr>
-        </table>
+          <div class="bf-panel-heading">Mode &amp; Aksi</div>
+          <div class="bf-actions-box">
+            <div class="bf-mode-switch">
+              <button type="button" id="bf-mode-btn-practice" class="bf-mode-btn active" onclick="App.setBoldFaceSubMode('practice')">Mode Latihan</button>
+              <button type="button" id="bf-mode-btn-exam" class="bf-mode-btn" onclick="App.setBoldFaceSubMode('exam')">Mode Ujian</button>
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="App.checkBoldFaceAnswers()">🔍 Koreksi Jawaban</button>
+            <button type="button" id="bf-toggle-keys-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;" onclick="App.toggleBoldFaceKeys()">💡 Tampilkan Jawaban</button>
+            <button type="button" class="btn btn-danger btn-sm" style="width: 100%; justify-content: center;" onclick="App.resetBoldFaceSheet()">🔄 Ulangi Latihan</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center;" onclick="window.print()">🖨️ Cetak Lembar Ujian (PDF)</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: center;" onclick="Navigation.navigateTo('home')">← Kembali ke Beranda</button>
+          </div>
 
-        <!-- PAPER QUESTIONS CONTENT -->
-        <div id="paper-sheet-content">
-          <!-- Rendered via JS -->
-        </div>
+          <!-- STATS PANEL (STYLE ANKA) -->
+          <div id="bf-stats-panel" class="bf-stats-panel">
+            <h4>Statistik Hasil</h4>
+            <div class="bf-stat-row"><span>Benar</span><strong id="bf-stat-benar" style="color:var(--success)">0</strong></div>
+            <div class="bf-stat-row"><span>Salah</span><strong id="bf-stat-salah" style="color:var(--danger)">0</strong></div>
+            <div class="bf-stat-row"><span>Kosong</span><strong id="bf-stat-kosong" style="color:var(--text-muted)">0</strong></div>
+            <div class="bf-stat-row total"><span>Nilai</span><strong id="bf-stat-nilai">0%</strong></div>
+            <div id="bf-stat-badge" class="bf-stat-badge">BELUM DIKOREKSI</div>
+          </div>
+        </aside>
+
+        <!-- MAIN PAPER DOCUMENT (LEMBAR DOKUMEN BOLD FACE ASLI) -->
+        <main class="boldface-main-content">
+          <div class="paper-sheet-container" id="paper-sheet">
+            <div class="paper-header">
+              <span class="paper-watermark-tag no-print">OFFICIAL BOLD FACE EVALUATION</span>
+              <h1 id="paper-aircraft-title">LEMBAR UJIAN BOLD FACE</h1>
+              <p id="paper-source-doc" style="font-size: 0.9rem; color: #444; margin-top: 4px;">Dokumen Acuan Resmi</p>
+            </div>
+
+            <table class="paper-candidate-table">
+              <tr>
+                <td style="width: 130px;">NAMA</td>
+                <td style="width: 15px;">:</td>
+                <td style="border-bottom: 1px dotted #000;"><input type="text" id="paper-cand-name" class="paper-cand-input" placeholder="Nama Peserta..." /></td>
+                <td style="width: 110px; padding-left: 20px;">TANGGAL</td>
+                <td style="width: 15px;">:</td>
+                <td style="border-bottom: 1px dotted #000;"><input type="text" id="paper-cand-date" class="paper-cand-input" placeholder="DD/MM/YYYY" /></td>
+              </tr>
+              <tr>
+                <td>PANGKAT/NRP</td>
+                <td>:</td>
+                <td style="border-bottom: 1px dotted #000;"><input type="text" id="paper-cand-nrp" class="paper-cand-input" placeholder="Pangkat / NRP..." /></td>
+                <td style="padding-left: 20px;">JABATAN</td>
+                <td>:</td>
+                <td style="border-bottom: 1px dotted #000;"><input type="text" id="paper-cand-jabatan" class="paper-cand-input" placeholder="Jabatan..." /></td>
+              </tr>
+              <tr>
+                <td>KUALIFIKASI</td>
+                <td>:</td>
+                <td style="border-bottom: 1px dotted #000;"><input type="text" id="paper-cand-kualifikasi" class="paper-cand-input" placeholder="Kualifikasi..." /></td>
+                <td style="padding-left: 20px;">NILAI</td>
+                <td>:</td>
+                <td style="border-bottom: 1px dotted #000;"><strong id="paper-cand-score" style="font-size: 1.15rem; color: #0d2238;">-</strong></td>
+              </tr>
+            </table>
+
+            <!-- PAPER QUESTIONS CONTENT -->
+            <div id="paper-sheet-content">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </main>
       </div>
     </section>
 

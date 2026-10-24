@@ -6,6 +6,10 @@ const App = (() => {
   let currentAircraftData = null;
   let activeExamResult = null;
   let bankQuestions = [];
+  let currentPaperData = null;
+  let currentPaperQuestions = [];
+  let boldFaceSubMode = 'practice';
+  let boldFaceKeysRevealed = false;
 
   async function init() {
     initTheme();
@@ -134,8 +138,11 @@ const App = (() => {
             <button class="btn btn-primary" onclick="App.openSetup('${item.aircraft}')">
               Mulai Ujian
             </button>
-            <button class="btn btn-secondary" onclick="App.openPaperMode('${item.aircraft}')">
-              Lembar Cetak
+            <button class="btn btn-secondary" onclick="App.openBoldFaceDirect('${item.aircraft}')">
+              Lembar Bold Face ⭐
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="App.openPaperMode('${item.aircraft}')">
+              Cetak PDF
             </button>
           </div>
         </div>
@@ -265,6 +272,11 @@ const App = (() => {
 
     if (questions.length === 0) {
       showToast('Tidak ada soal yang cocok dengan pilihan Anda.', 'warning');
+      return;
+    }
+
+    if (mode === 'boldface') {
+      openBoldFaceSheet(currentAircraftData, questions, 'practice');
       return;
     }
 
@@ -634,8 +646,19 @@ const App = (() => {
   }
 
   // ==========================================
-  // PAPER / MANUAL EXAM MODE
+  // BOLD FACE & PAPER SHEET MODE (STYLE ANKA)
   // ==========================================
+  async function openBoldFaceDirect(aircraftId) {
+    try {
+      const data = await QuestionLoader.loadAircraftData(aircraftId);
+      currentAircraftData = data;
+      openBoldFaceSheet(data, data.questions, 'practice');
+    } catch (e) {
+      console.error(e);
+      showToast('Gagal memuat lembar Bold Face untuk: ' + aircraftId, 'error');
+    }
+  }
+
   function openPaperMode(aircraftId) {
     QuestionLoader.loadAircraftData(aircraftId).then(data => {
       openPaperView(data, data.questions);
@@ -643,38 +666,344 @@ const App = (() => {
   }
 
   function openPaperView(data, questions) {
+    openBoldFaceSheet(data, questions, 'manual');
+  }
+
+  function openBoldFaceSheet(data, questions, subMode = 'practice') {
+    currentPaperData = data;
+    currentPaperQuestions = questions && questions.length ? questions : (data.questions || []);
+    boldFaceSubMode = subMode;
+    boldFaceKeysRevealed = false;
+
+    // Sidebar Info
+    const aTitle = document.getElementById('bf-aircraft-title');
+    const aSub = document.getElementById('bf-doc-sub');
+    if (aTitle) aTitle.textContent = data.aircraft;
+    if (aSub) aSub.textContent = data.sourceDocument || data.title;
+
+    // Header Paper Info
+    const pTitle = document.getElementById('paper-aircraft-title');
+    const pDoc = document.getElementById('paper-source-doc');
+    if (pTitle) pTitle.textContent = data.title;
+    if (pDoc) pDoc.textContent = data.sourceDocument;
+
+    // Candidate default Date
+    const dateInput = document.getElementById('paper-cand-date');
+    if (dateInput && !dateInput.value) {
+      const now = new Date();
+      dateInput.value = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+    }
+
+    const candScore = document.getElementById('paper-cand-score');
+    if (candScore) candScore.textContent = '-';
+
+    setBoldFaceSubMode(subMode, false);
+
+    // Render Navigation tabs in sidebar
+    const sections = [...new Set(currentPaperQuestions.map(q => q.section || 'UMUM'))];
+    const tabsContainer = document.getElementById('bf-tabs-list');
+    if (tabsContainer) {
+      tabsContainer.innerHTML = `
+        <button type="button" class="bf-tab-btn active" data-tab-sec="ALL" onclick="App.filterBoldFaceSection('ALL')">
+          <span>Semua Bagian</span>
+          <span class="bf-tab-badge">${currentPaperQuestions.length}</span>
+        </button>
+        ${sections.map(sec => {
+          const count = currentPaperQuestions.filter(q => (q.section || 'UMUM') === sec).length;
+          return `
+            <button type="button" class="bf-tab-btn" data-tab-sec="${sec}" onclick="App.filterBoldFaceSection('${sec}')">
+              <span>${sec}</span>
+              <span class="bf-tab-badge">${count}</span>
+            </button>
+          `;
+        }).join('')}
+      `;
+    }
+
+    // Render questions onto document sheet
+    renderBoldFaceQuestions(currentPaperQuestions, subMode === 'manual');
+
+    // Restore draft answers from Storage
+    const drafts = Storage.getDraftAnswers(data.aircraft) || {};
+    currentPaperQuestions.forEach(q => {
+      const input = document.getElementById(`paper-input-${q.id}`);
+      if (input && drafts[q.id]) {
+        input.value = drafts[q.id];
+      }
+    });
+
+    resetBoldFaceStatsUI();
+    Navigation.navigateTo('paper');
+  }
+
+  function renderBoldFaceQuestions(questionsList, isPrintOnly) {
     const container = document.getElementById('paper-sheet-content');
-    const titleEl = document.getElementById('paper-aircraft-title');
-    const docEl = document.getElementById('paper-source-doc');
+    if (!container) return;
 
-    if (titleEl) titleEl.textContent = data.title;
-    if (docEl) docEl.textContent = data.sourceDocument;
-
-    // Group questions by Section
-    const sections = [...new Set(questions.map(q => q.section))];
+    const sections = [...new Set(questionsList.map(q => q.section || 'UMUM'))];
 
     container.innerHTML = sections.map(sec => {
-      const secQuestions = questions.filter(q => q.section === sec);
+      const secQuestions = questionsList.filter(q => (q.section || 'UMUM') === sec);
       return `
-        <div class="paper-section-block">
+        <div class="paper-section-block" id="paper-sec-${sec.replace(/\s+/g, '-')}">
           <h2 class="paper-section-title">${sec}</h2>
           <div class="paper-questions-list">
             ${secQuestions.map((q, idx) => `
-              <div class="paper-question-item">
+              <div class="paper-question-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
                 <div class="paper-q-text">
                   <span class="paper-q-num">${idx + 1}.</span>
                   <span class="paper-q-body">${q.question}</span>
-                  <span class="paper-dots">..........................................................................................</span>
+                  <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">..........................................................................................</span>
+                  ${!isPrintOnly ? `
+                    <div class="paper-input-wrapper no-print">
+                      <input 
+                        type="text" 
+                        class="paper-answer-input" 
+                        id="paper-input-${q.id}" 
+                        data-qid="${q.id}" 
+                        placeholder="Ketik jawaban..." 
+                        autocomplete="off" 
+                        spellcheck="false"
+                        oninput="App.onBoldFaceInput('${q.id}')"
+                        onkeydown="App.onBoldFaceKeyDown(event, '${q.id}')"
+                      />
+                    </div>
+                  ` : ''}
                   <span class="paper-unit">${q.unit ? `[ ${q.unit} ]` : ''}</span>
                 </div>
+                ${!isPrintOnly ? `
+                  <div class="paper-feedback-box no-print" id="paper-feedback-${q.id}" style="display: none;">
+                    <span class="paper-feedback-text"></span>
+                  </div>
+                ` : ''}
               </div>
             `).join('')}
           </div>
         </div>
       `;
     }).join('');
+  }
 
-    Navigation.navigateTo('paper');
+  function setBoldFaceSubMode(mode, showNotification = true) {
+    boldFaceSubMode = mode;
+    const btnPractice = document.getElementById('bf-mode-btn-practice');
+    const btnExam = document.getElementById('bf-mode-btn-exam');
+    const toggleKeysBtn = document.getElementById('bf-toggle-keys-btn');
+
+    if (btnPractice) btnPractice.classList.toggle('active', mode === 'practice');
+    if (btnExam) btnExam.classList.toggle('active', mode === 'exam');
+
+    if (toggleKeysBtn) {
+      toggleKeysBtn.style.display = mode === 'exam' ? 'none' : 'block';
+    }
+
+    if (showNotification) {
+      showToast(mode === 'exam' ? 'Mode Ujian aktif: Kunci jawaban disembunyikan sampai dikoreksi.' : 'Mode Latihan aktif: Anda dapat mengecek dan melihat kunci jawaban.', 'info');
+    }
+  }
+
+  function checkBoldFaceAnswers() {
+    if (!currentPaperQuestions || currentPaperQuestions.length === 0) return;
+
+    let correctCount = 0;
+    let wrongCount = 0;
+    let emptyCount = 0;
+    let totalPoints = 0;
+    let earnedPoints = 0;
+
+    currentPaperQuestions.forEach(q => {
+      const input = document.getElementById(`paper-input-${q.id}`);
+      const fbBox = document.getElementById(`paper-feedback-${q.id}`);
+      const userVal = input ? input.value.trim() : '';
+      const weight = q.points || 1;
+      totalPoints += weight;
+
+      const evalRes = Grading.evaluateAnswer(userVal, q.answer, q.acceptedAnswers, q.unit);
+      earnedPoints += (evalRes.score * weight);
+
+      if (input) {
+        input.classList.remove('correct', 'incorrect', 'auto-filled');
+        if (evalRes.status === 'correct') {
+          input.classList.add('correct');
+        } else {
+          input.classList.add('incorrect');
+        }
+      }
+
+      if (fbBox) {
+        if (evalRes.status === 'correct') {
+          fbBox.className = 'paper-feedback-box correct-box no-print';
+          fbBox.innerHTML = `✓ <strong>Tepat!</strong> Kunci: ${q.answer}`;
+          fbBox.style.display = 'flex';
+          correctCount++;
+        } else if (evalRes.status === 'empty') {
+          fbBox.className = 'paper-feedback-box no-print';
+          fbBox.innerHTML = `⚠️ <em>Belum diisi.</em> Kunci: <strong>${q.answer}</strong>`;
+          fbBox.style.display = 'flex';
+          emptyCount++;
+        } else {
+          fbBox.className = 'paper-feedback-box no-print';
+          fbBox.innerHTML = `✕ <strong>Kurang tepat.</strong> Kunci: <strong>${q.answer}</strong>`;
+          fbBox.style.display = 'flex';
+          wrongCount++;
+        }
+      }
+    });
+
+    const finalScore = totalPoints > 0 ? Math.round((earnedPoints / totalPoints) * 100) : 0;
+    const settings = Storage.getSettings();
+    const isPassed = finalScore >= (settings.passingScore || 75);
+
+    const elBenar = document.getElementById('bf-stat-benar');
+    const elSalah = document.getElementById('bf-stat-salah');
+    const elKosong = document.getElementById('bf-stat-kosong');
+    const elNilai = document.getElementById('bf-stat-nilai');
+    const elBadge = document.getElementById('bf-stat-badge');
+    const candScore = document.getElementById('paper-cand-score');
+
+    if (elBenar) elBenar.textContent = String(correctCount);
+    if (elSalah) elSalah.textContent = String(wrongCount);
+    if (elKosong) elKosong.textContent = String(emptyCount);
+    if (elNilai) elNilai.textContent = `${finalScore}%`;
+    if (candScore) candScore.textContent = `${finalScore}% (${isPassed ? 'LULUS' : 'TIDAK LULUS'})`;
+
+    if (elBadge) {
+      elBadge.textContent = isPassed ? `LULUS (STANDAR ${settings.passingScore || 75}%)` : `TIDAK LULUS (STANDAR ${settings.passingScore || 75}%)`;
+      elBadge.className = `bf-stat-badge ${isPassed ? 'status-pass' : 'status-fail'}`;
+    }
+
+    if (boldFaceSubMode === 'exam' && currentPaperData) {
+      Storage.saveExamResult({
+        aircraft: currentPaperData.aircraft,
+        mode: 'boldface-sheet',
+        finalScore,
+        totalQuestions: currentPaperQuestions.length,
+        correctCount,
+        wrongCount,
+        emptyCount,
+        reviewCount: 0,
+        isPassed,
+        durationSeconds: 0,
+        categories: []
+      });
+      Storage.clearDraftAnswers(currentPaperData.aircraft);
+    }
+
+    showToast(`Koreksi selesai! Skor: ${finalScore}% (${correctCount} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
+  }
+
+  function toggleBoldFaceKeys() {
+    if (!currentPaperQuestions) return;
+    boldFaceKeysRevealed = !boldFaceKeysRevealed;
+    const toggleBtn = document.getElementById('bf-toggle-keys-btn');
+
+    currentPaperQuestions.forEach(q => {
+      const input = document.getElementById(`paper-input-${q.id}`);
+      const fbBox = document.getElementById(`paper-feedback-${q.id}`);
+      if (!input) return;
+
+      if (boldFaceKeysRevealed) {
+        input.dataset.origVal = input.value;
+        input.value = q.answer;
+        input.classList.add('auto-filled');
+        if (fbBox) {
+          fbBox.className = 'paper-feedback-box correct-box no-print';
+          fbBox.innerHTML = `💡 Kunci: <strong>${q.answer}</strong>`;
+          fbBox.style.display = 'flex';
+        }
+      } else {
+        input.value = input.dataset.origVal || '';
+        input.classList.remove('auto-filled', 'correct', 'incorrect');
+        if (fbBox) fbBox.style.display = 'none';
+      }
+    });
+
+    if (toggleBtn) {
+      toggleBtn.innerHTML = boldFaceKeysRevealed ? '🙈 Sembunyikan Kunci' : '💡 Tampilkan Jawaban';
+    }
+
+    showToast(boldFaceKeysRevealed ? 'Kunci jawaban diisikan ke lembar.' : 'Kunci jawaban disembunyikan.', 'info');
+  }
+
+  function resetBoldFaceSheet() {
+    if (!currentPaperQuestions || !currentPaperData) return;
+    if (!window.confirm('Kosongkan seluruh isian jawaban pada lembar dokumen ini?')) return;
+
+    currentPaperQuestions.forEach(q => {
+      const input = document.getElementById(`paper-input-${q.id}`);
+      const fbBox = document.getElementById(`paper-feedback-${q.id}`);
+      if (input) {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect', 'auto-filled');
+      }
+      if (fbBox) {
+        fbBox.style.display = 'none';
+      }
+    });
+
+    Storage.clearDraftAnswers(currentPaperData.aircraft);
+    resetBoldFaceStatsUI();
+    boldFaceKeysRevealed = false;
+    const toggleBtn = document.getElementById('bf-toggle-keys-btn');
+    if (toggleBtn) toggleBtn.innerHTML = '💡 Tampilkan Jawaban';
+
+    showToast('Seluruh isian lembar telah dikosongkan.', 'info');
+  }
+
+  function resetBoldFaceStatsUI() {
+    const elBenar = document.getElementById('bf-stat-benar');
+    const elSalah = document.getElementById('bf-stat-salah');
+    const elKosong = document.getElementById('bf-stat-kosong');
+    const elNilai = document.getElementById('bf-stat-nilai');
+    const elBadge = document.getElementById('bf-stat-badge');
+    const candScore = document.getElementById('paper-cand-score');
+
+    if (elBenar) elBenar.textContent = '0';
+    if (elSalah) elSalah.textContent = '0';
+    if (elKosong) elKosong.textContent = '0';
+    if (elNilai) elNilai.textContent = '0%';
+    if (candScore) candScore.textContent = '-';
+    if (elBadge) {
+      elBadge.textContent = 'BELUM DIKOREKSI';
+      elBadge.className = 'bf-stat-badge';
+    }
+  }
+
+  function filterBoldFaceSection(sec) {
+    document.querySelectorAll('.bf-tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tabSec === sec);
+    });
+
+    const blocks = document.querySelectorAll('.paper-section-block');
+    if (sec === 'ALL') {
+      blocks.forEach(b => b.style.display = 'block');
+    } else {
+      blocks.forEach(b => {
+        const titleEl = b.querySelector('.paper-section-title');
+        const match = titleEl && titleEl.textContent.trim() === sec;
+        b.style.display = match ? 'block' : 'none';
+      });
+    }
+  }
+
+  function onBoldFaceInput(qid) {
+    if (!currentPaperData) return;
+    const drafts = {};
+    document.querySelectorAll('.paper-answer-input').forEach(inp => {
+      if (inp.value) drafts[inp.dataset.qid] = inp.value;
+    });
+    Storage.saveDraftAnswers(currentPaperData.aircraft, drafts);
+  }
+
+  function onBoldFaceKeyDown(e, qid) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const inputs = Array.from(document.querySelectorAll('.paper-answer-input'));
+      const currIdx = inputs.findIndex(i => i.dataset.qid === qid);
+      if (currIdx >= 0 && currIdx < inputs.length - 1) {
+        inputs[currIdx + 1].focus();
+      }
+    }
   }
 
   // ==========================================
@@ -842,6 +1171,15 @@ const App = (() => {
     retakeWrongOnly,
     exportResultCSV,
     openPaperMode,
+    openBoldFaceDirect,
+    openBoldFaceSheet,
+    setBoldFaceSubMode,
+    checkBoldFaceAnswers,
+    toggleBoldFaceKeys,
+    resetBoldFaceSheet,
+    filterBoldFaceSection,
+    onBoldFaceInput,
+    onBoldFaceKeyDown,
     renderBankFiltered,
     exportBankJSON,
     clearAllHistory
