@@ -1,0 +1,433 @@
+{
+  "aircraft": "SIKORSKY S300C",
+  "title": "BOLD FACE & EMERGENCY SIKORSKY S300C",
+  "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+  "description": "Limitations, Engine RPM, Manifold Press, dan Prosedur Emergency Sikorsky S300C",
+  "totalQuestions": 23,
+  "questions": [
+    {
+      "id": "S300C-LIM-001",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Berat Beban",
+      "questionType": "fill-blank",
+      "question": "Berat beban (Gross Weight)",
+      "answer": "2050 LBS",
+      "acceptedAnswers": [
+        "2050",
+        "2050 LBS",
+        "2050 lbs",
+        "2.050"
+      ],
+      "unit": "LBS",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-002",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Center of Gravity (CG)",
+      "questionType": "fill-blank",
+      "question": "Gerakan titik berat (CG) maximum ke depan",
+      "answer": "95 INCH",
+      "acceptedAnswers": [
+        "95",
+        "95 INCH",
+        "95 inch",
+        "95 in"
+      ],
+      "unit": "INCH",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-003",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Center of Gravity (CG)",
+      "questionType": "fill-blank",
+      "question": "Gerakan titik berat (CG) maximum ke belakang",
+      "answer": "101 INCH",
+      "acceptedAnswers": [
+        "101",
+        "101 INCH",
+        "101 inch",
+        "101 in"
+      ],
+      "unit": "INCH",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-004",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Kecepatan Max (VNE)",
+      "questionType": "fill-blank",
+      "question": "Kecepatan Max (VNE) Pintu Terbuka",
+      "answer": "102 MPH/ 89 KTS",
+      "acceptedAnswers": [
+        "102 MPH/ 89 KTS",
+        "102 MPH",
+        "89 KTS",
+        "102 mph / 89 kts",
+        "89 kts"
+      ],
+      "unit": "MPH / KTS",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-005",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Kecepatan Max (VNE)",
+      "questionType": "fill-blank",
+      "question": "Kecepatan Max (VNE) Pintu Tertutup",
+      "answer": "109 MPH/ 95 KTS",
+      "acceptedAnswers": [
+        "109 MPH/ 95 KTS",
+        "109 MPH",
+        "95 KTS",
+        "109 mph / 95 kts",
+        "95 kts"
+      ],
+      "unit": "MPH / KTS",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-006",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Oil Temp",
+      "questionType": "fill-blank",
+      "question": "Temperatur Minyak Mesin: Garis Merah Radial / Bilah Hijau",
+      "answer": "260°F / 100°F SAMPAI 250°F",
+      "acceptedAnswers": [
+        "260 / 100-250",
+        "260°F / 100°F-250°F",
+        "260, 100 sampai 250"
+      ],
+      "unit": "°F",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-007",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Oil Press",
+      "questionType": "fill-blank",
+      "question": "Tekanan Minyak Mesin: Garis Merah Radial / Bilah Hijau",
+      "answer": "55 DAN 115 PSI / 55 SAMPAI 95 PSI",
+      "acceptedAnswers": [
+        "55 dan 115 / 55-95",
+        "55 & 115 PSI / 55-95 PSI",
+        "55 dan 115, 55 sampai 95"
+      ],
+      "unit": "PSI",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-008",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "CHT",
+      "questionType": "fill-blank",
+      "question": "Temperature Head Cylinder (CHT): Garis Merah / Bilah Kuning / Bilah Hijau",
+      "answer": "500°F / 450°F SAMPAI 500°F / 230°F SAMPAI 450°F",
+      "acceptedAnswers": [
+        "500 / 450-500 / 230-450",
+        "500°F, 450-500°F, 230-450°F"
+      ],
+      "unit": "°F",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-009",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Fuel Press",
+      "questionType": "fill-blank",
+      "question": "Tekanan Bahan Bakar (Fuel Press): Garis Merah Radial / Bilah Hijau",
+      "answer": "14 DAN 35 PSI / 14 DAN 30 PSI",
+      "acceptedAnswers": [
+        "14 dan 35 / 14 dan 30",
+        "14 & 35 PSI / 14-30 PSI",
+        "14 dan 35, 14 sampai 30"
+      ],
+      "unit": "PSI",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-010",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Engine RPM",
+      "questionType": "fill-blank",
+      "question": "Putaran Mesin (Lycoming HIO-360-DIA): Merah / Hijau Radial / Hijau Power",
+      "answer": "3000 DAN 3200 RPM / 1200 SAMPAI 1600 RPM / 3000 SAMPAI 3200 RPM",
+      "acceptedAnswers": [
+        "3000 dan 3200 / 1200-1600 / 3000-3200",
+        "3000-3200, 1200-1600, 3000-3200"
+      ],
+      "unit": "RPM",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-011",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Engine RPM",
+      "questionType": "fill-blank",
+      "question": "Putaran Mesin (Lycoming HIO-360-GIA): Merah / Hijau Radial / Hijau Power",
+      "answer": "2500 DAN 2700 RPM / 1200 SAMPAI 1600 RPM / 2500 SAMPAI 2700 RPM",
+      "acceptedAnswers": [
+        "2500 dan 2700 / 1200-1600 / 2500-2700",
+        "2500-2700, 1200-1600, 2500-2700"
+      ],
+      "unit": "RPM",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-012",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Rotor RPM",
+      "questionType": "fill-blank",
+      "question": "Putaran Baling-Baling Utama: Garis Merah Radial / Bilah Hijau",
+      "answer": "390 DAN 504 RPM / 390 SAMPAI 504 RPM",
+      "acceptedAnswers": [
+        "390 dan 504 / 390-504",
+        "390 & 504 / 390 sampai 504"
+      ],
+      "unit": "RPM",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-013",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Manifold Press",
+      "questionType": "fill-blank",
+      "question": "Tekanan Manifold: Garis Merah Radial / Bilah Kuning",
+      "answer": "27,2 INCH MP / 23,3 SAMPAI 27,2 INCH MP",
+      "acceptedAnswers": [
+        "27.2 / 23.3-27.2",
+        "27,2 / 23,3 sampai 27,2",
+        "27.2 INCH MP"
+      ],
+      "unit": "INCH MP",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-LIM-014",
+      "aircraft": "SIKORSKY S300C",
+      "section": "LIMITATION",
+      "category": "Wind Velocity & Landing",
+      "questionType": "fill-blank",
+      "question": "Max Wind Velocity & Max Running Landing",
+      "answer": "20 MPH/ 17 KTS & 40 MPH/ 35 KTS",
+      "acceptedAnswers": [
+        "20 MPH/ 17 KTS & 40 MPH/ 35 KTS",
+        "20 MPH / 40 MPH",
+        "17 KTS / 35 KTS"
+      ],
+      "unit": "MPH / KTS",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-015",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Engine Fire On The Ground",
+      "questionType": "fill-blank",
+      "question": "Tindakan Engine Fire On The Ground (a sampai e)",
+      "answer": "a. Mixture Idle Cut Off, b. Fuel Valve closed, c. Battery Off, d. Alternator Off, e. Exit A/C with fire extinguisher",
+      "acceptedAnswers": [
+        "Mixture Idle Cut Off, Fuel Valve closed, Battery Off, Alternator Off, Exit A/C with fire extinguisher"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-016",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Transmission W/L",
+      "questionType": "fill-blank",
+      "question": "Main Rotor Xmsn W/L ON: Indikasi & Tindakan",
+      "answer": "Oil pressure below 2 1/2 Psi or Oil Temperature above 235°F -> LASAP (Land As Soon As Possible)",
+      "acceptedAnswers": [
+        "Oil pressure below 2 1/2 Psi or Oil Temperature above 235°F, LASAP"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-017",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Fuel Low",
+      "questionType": "fill-blank",
+      "question": "Fuel Low W/L on: Fuel quantity, Time remaining, Tindakan",
+      "answer": "Fuel quantity 1 gallon remain, Time remaining 5 min, Land immediately",
+      "acceptedAnswers": [
+        "1 gallon remain, 5 min, Land immediately",
+        "1 gallon, 5 min, Land immediately"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-018",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Electrical Fire in Flight",
+      "questionType": "fill-blank",
+      "question": "Tindakan Electrical Fire in Flight (a sampai g)",
+      "answer": "a. Set Battery off, b. Alternator on, c. Land immediately, d. Close throttle, e. Mixture idle cut off, f. Fuel valve closed, g. Exit A/C with fire extinguisher",
+      "acceptedAnswers": [
+        "Set Battery off, Alternator on, Land immediately, Close throttle, Mixture idle cut off, Fuel valve closed, Exit A/C"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-019",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Engine Failure",
+      "questionType": "fill-blank",
+      "question": "Engine Fail Below 7ft: Indikasi & Prosedur",
+      "answer": "A/C sudden yawing left -> Maintain collective pitch, Apply right pedal, Apply collective as necessary",
+      "acceptedAnswers": [
+        "A/C sudden yawing left, Maintain collective, Apply right pedal, Apply collective as necessary"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-020",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Engine Failure",
+      "questionType": "fill-blank",
+      "question": "Engine fail below 450 ft: Prosedur",
+      "answer": "a. Lower Collective pitch, b. Maintain RPM, c. Control cyclic and collective to maintain A/C settle, d. Set Attitude, e. Prepare ground contact",
+      "acceptedAnswers": [
+        "Lower Collective pitch, Maintain RPM, Control cyclic and collective, Set Attitude, Prepare ground contact"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-021",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Engine Failure",
+      "questionType": "fill-blank",
+      "question": "Engine Fail Alt above 450 ft: Key autorotation steps",
+      "answer": "Steady glide 52 Kts; Backward cyclic at 50 ft; Coordinate cyclic & collective at 10 ft; Lower collective pitch; Land A/C",
+      "acceptedAnswers": [
+        "Steady glide 52 Kts, Backward cyclic at 50 ft, Coordinate cyclic and collective at 10 ft, Land A/C"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-022",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Tail Rotor Failure",
+      "questionType": "fill-blank",
+      "question": "Tail Rotor Failure Complete lost T/R Thrust indication & Forward Flight",
+      "answer": "Indicate by yawing to right; Lower Collective, Set airspeed 50-60 Kts, Move left cyclic, Control collective, Maintain heading, Autorotation",
+      "acceptedAnswers": [
+        "Indicate by yawing to right, Lower Collective, Set airspeed 50-60 Kts, Move left cyclic, Autorotation"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "S300C-EME-023",
+      "aircraft": "SIKORSKY S300C",
+      "section": "EMERGENCY",
+      "category": "Simulated Anti Torque",
+      "questionType": "fill-blank",
+      "question": "Simulated Anti Torque Malfunction: Altitude, Airspeed, RPM, Approach",
+      "answer": "Altitude 300 ft AGL, Airspeed 55 kts, RPM 3000 (left) / 3200 (right), Approach 5 to 8 degrees",
+      "acceptedAnswers": [
+        "300 ft AGL, 55 kts, RPM 3000 / 3200, Approach 5 to 8 degrees",
+        "300 ft, 55 kts, 3000/3200 RPM, 5-8 degrees"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE SIKORSKY S300C.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aviation Examination & Training Platform - Media Ujian & Latihan Interaktif Berbasis Dokumen BOLD FACE MI-17V5, BELL 412 EP, FENNEC AS550, dan SIKORSKY S300C." />
+  <meta name="author" content="Senior Aviation Web Developer" />
+  <title>Aviation Examination &amp; Training Platform</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrapper" onclick="Navigation.navigateTo('home')">
+        <div class="brand-logo-icon">✈️</div>
+        <div class="brand-text">
+          <h1>Aviation Exam Platform</h1>
+          <p>Training &amp; Evaluation System</p>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-item active" data-nav-view="home">Beranda</button>
+        <button class="nav-item" data-nav-view="bank">Bank Soal</button>
+        <button class="nav-item" data-nav-view="history">Riwayat Ujian</button>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Ganti Tema">
+          <span class="icon">☀️</span> <span class="btn-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-content">
+
+    <!-- 1. HOME VIEW -->
+    <section id="view-home">
+      <div class="hero-section">
+        <div class="hero-pill">
+          <span>🛡️ Official Bold Face &amp; Limitation Database</span>
+        </div>
+        <h1 class="hero-title">Evaluasi &amp; Latihan Penerbangan Interaktif</h1>
+        <p class="hero-subtitle">
+          Platform terstandarisasi untuk persiapan ujian, pemahaman batasan operasional (Limitations), dan prosedur darurat (Emergency Procedures) berbasis dokumen resmi.
+        </p>
+
+        <!-- DASHBOARD STATS -->
+        <div class="dashboard-stats-strip">
+          <div class="stat-card">
+            <div id="dash-total-questions" class="stat-val">272</div>
+            <div class="stat-desc">Bank Soal Terverifikasi</div>
+          </div>
+          <div class="stat-card">
+            <div id="dash-total-exams" class="stat-val">0</div>
+            <div class="stat-desc">Ujian Selesai</div>
+          </div>
+          <div class="stat-card">
+            <div id="dash-avg-score" class="stat-val">0%</div>
+            <div class="stat-desc">Rata-rata Nilai</div>
+          </div>
+          <div class="stat-card">
+            <div id="dash-pass-rate" class="stat-val">0%</div>
+            <div class="stat-desc">Tingkat Kelulusan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading-bar">
+        <h2>Pilih Jenis Pesawat / Helikopter</h2>
+      </div>
+
+      <!-- AIRCRAFT CARDS GRID -->
+      <div id="aircraft-card-grid" class="aircraft-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 2. SETUP VIEW -->
+    <section id="view-setup" hidden>
+      <div class="setup-container">
+        <div class="setup-header">
+          <div class="badge-row" style="margin-bottom: 8px;">
+            <span id="setup-aircraft-doc" class="badge badge-accent">Doc</span>
+          </div>
+          <h2 id="setup-aircraft-title">Setup Ujian Pesawat</h2>
+          <p id="setup-aircraft-desc" class="text-secondary">Pilih kategori dan mode pengerjaan</p>
+        </div>
+
+        <!-- CATEGORIES SELECTOR -->
+        <div class="setup-block">
+          <div class="setup-block-title" style="display: flex; justify-content: space-between;">
+            <span>Kategori Materi</span>
+            <span id="setup-selected-count" class="badge badge-subtle">0 Soal</span>
+          </div>
+          <div id="setup-categories-list" class="category-chips-wrapper">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- MODE SELECTION -->
+        <div class="setup-block">
+          <div class="setup-block-title">Pilih Mode Pengerjaan</div>
+          <div class="mode-toggle-group">
+            <label class="mode-radio-label">
+              <input type="radio" name="exam-mode" value="exam" checked />
+              <span class="mode-radio-title">Mode Ujian</span>
+              <span class="mode-radio-sub">Tanpa bocoran kunci selama ujian</span>
+            </label>
+            <label class="mode-radio-label">
+              <input type="radio" name="exam-mode" value="practice" />
+              <span class="mode-radio-title">Mode Latihan</span>
+              <span class="mode-radio-sub">Bisa cek jawaban langsung &amp; lihat kunci</span>
+            </label>
+            <label class="mode-radio-label">
+              <input type="radio" name="exam-mode" value="manual" />
+              <span class="mode-radio-title">Lembar Manual</span>
+              <span class="mode-radio-sub">Format cetak kertas putih (PDF)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- EXAM OPTIONS -->
+        <div class="setup-block">
+          <div class="setup-block-title">Opsi &amp; Batasan Waktu</div>
+          <div class="setup-options-grid">
+            <div class="option-group">
+              <label for="setup-timer-select">Batas Waktu Pengerjaan:</label>
+              <select id="setup-timer-select" class="select-control">
+                <option value="0">Tanpa Batas Waktu</option>
+                <option value="15">15 Menit</option>
+                <option value="30" selected>30 Menit</option>
+                <option value="45">45 Menit</option>
+                <option value="60">60 Menit</option>
+                <option value="90">90 Menit</option>
+              </select>
+            </div>
+
+            <div class="option-group">
+              <label for="setup-limit-select">Jumlah Soal:</label>
+              <select id="setup-limit-select" class="select-control">
+                <option value="0">Semua Soal Kategori Terpilih</option>
+                <option value="10">10 Soal Acak</option>
+                <option value="20">20 Soal Acak</option>
+                <option value="50">50 Soal Acak</option>
+              </select>
+            </div>
+
+            <div class="option-group" style="justify-content: flex-end;">
+              <label class="category-chip" style="cursor: pointer; padding: 12px;">
+                <input type="checkbox" id="setup-shuffle-toggle" />
+                <span>Acak Urutan Soal</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-footer">
+          <button class="btn btn-secondary" onclick="Navigation.navigateTo('home')">← Kembali ke Beranda</button>
+          <button class="btn btn-primary btn-lg" onclick="App.startExamFromSetup()">Mulai Sekarang →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EXAM VIEW -->
+    <section id="view-exam" hidden>
+      <div class="exam-layout">
+        <!-- MAIN QUESTION PANEL -->
+        <div class="exam-main-panel">
+          <div class="exam-status-bar">
+            <div class="exam-meta-pills">
+              <span id="exam-aircraft-badge" class="badge badge-accent">AIRCRAFT</span>
+              <span id="exam-mode-badge" class="badge badge-subtle">Mode Ujian</span>
+              <span id="exam-counter" class="badge badge-subtle">Soal 1 / 50</span>
+            </div>
+            <div id="exam-timer-badge" class="timer-badge">⏱️ 00:00</div>
+          </div>
+
+          <div class="question-container">
+            <div id="exam-q-section" class="badge badge-subtle" style="margin-bottom: 6px;">SECTION</div>
+            <div id="exam-q-category" class="question-category-tag">CATEGORY</div>
+            <div id="exam-q-text" class="question-text-box">Loading question...</div>
+
+            <div class="answer-input-zone">
+              <div class="aviation-input-group">
+                <input 
+                  type="text" 
+                  id="exam-answer-input" 
+                  class="text-answer-input" 
+                  placeholder="Ketik jawaban di sini..." 
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  oninput="App.onAnswerInput(event)" 
+                  onkeydown="App.onAnswerKeyDown(event)" 
+                />
+                <span id="exam-q-unit" class="input-unit-indicator"></span>
+              </div>
+            </div>
+
+            <!-- PRACTICE MODE CONTROLS -->
+            <div id="exam-practice-box" class="practice-box" hidden>
+              <div class="practice-buttons">
+                <button class="btn btn-secondary btn-sm" onclick="ExamEngine.checkSingleAnswer(document.getElementById('exam-answer-input').dataset.questionId)">
+                  🔍 Periksa Jawaban
+                </button>
+                <button class="btn btn-secondary btn-sm" onclick="ExamEngine.revealAnswer(document.getElementById('exam-answer-input').dataset.questionId)">
+                  💡 Lihat Kunci
+                </button>
+              </div>
+              <div id="practice-feedback-text" class="practice-feedback"></div>
+            </div>
+          </div>
+
+          <div class="exam-nav-toolbar">
+            <button id="exam-prev-btn" class="btn btn-secondary" onclick="ExamEngine.prevQuestion()">← Sebelumnya</button>
+            <button id="exam-flag-btn" class="btn btn-secondary" onclick="ExamEngine.toggleFlag(document.getElementById('exam-answer-input').dataset.questionId)">🏳️ Tandai Ragu</button>
+            <button id="exam-next-btn" class="btn btn-primary" onclick="ExamEngine.nextQuestion()">Selanjutnya →</button>
+          </div>
+        </div>
+
+        <!-- SIDEBAR NAVIGATOR -->
+        <aside class="exam-sidebar">
+          <div class="sidebar-title">Daftar Nomor Soal</div>
+          <div id="exam-navigator-grid" class="navigator-grid">
+            <!-- Number buttons rendered via JS -->
+          </div>
+
+          <div class="legend-row">
+            <span><strong style="color:var(--success)">●</strong> Terjawab</span>
+            <span><strong style="color:var(--warning)">●</strong> Ragu-ragu</span>
+            <span><strong style="color:var(--text-muted)">●</strong> Belum</span>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button class="btn btn-danger" style="width: 100%;" onclick="App.promptSubmitExam()">
+              Kumpulkan Ujian
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 4. RESULTS VIEW -->
+    <section id="view-result" hidden>
+      <div class="result-header-card">
+        <div class="badge badge-accent" id="res-aircraft-name" style="margin-bottom: 12px;">AIRCRAFT</div>
+        <div class="score-circle-wrapper">
+          <div id="res-score-value" class="score-large-text">0%</div>
+        </div>
+        <div id="res-status-badge" class="status-badge status-pass">LULUS</div>
+
+        <div class="results-metrics-grid">
+          <div class="res-metric-item">
+            <span id="res-correct-count" class="res-metric-val" style="color:var(--success)">0</span>
+            <span class="res-metric-lbl">Benar</span>
+          </div>
+          <div class="res-metric-item">
+            <span id="res-wrong-count" class="res-metric-val" style="color:var(--danger)">0</span>
+            <span class="res-metric-lbl">Salah</span>
+          </div>
+          <div class="res-metric-item">
+            <span id="res-empty-count" class="res-metric-val" style="color:var(--text-muted)">0</span>
+            <span class="res-metric-lbl">Kosong</span>
+          </div>
+          <div class="res-metric-item">
+            <span id="res-time-taken" class="res-metric-val">00:00</span>
+            <span class="res-metric-lbl">Durasi</span>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 12px; margin-top: 28px; flex-wrap: wrap;">
+          <button class="btn btn-warning" onclick="App.retakeWrongOnly()">Ulangi Soal yang Salah</button>
+          <button class="btn btn-primary" onclick="Navigation.navigateTo('home')">Kerjakan Materi Lain</button>
+          <button class="btn btn-secondary" onclick="window.print()">Cetak Hasil Ujian</button>
+          <button class="btn btn-secondary" onclick="App.exportResultCSV()">Ekspor CSV</button>
+        </div>
+      </div>
+
+      <!-- CATEGORY ANALYSIS -->
+      <div class="categories-analysis-card">
+        <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;">Rincian Penguasaan Per Kategori</h3>
+        <div id="res-category-breakdown">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- DETAILED REVIEW -->
+      <div class="review-section">
+        <div class="section-heading-bar">
+          <h3>Pembahasan &amp; Kunci Jawaban Resmi</h3>
+          <div class="review-filter-bar">
+            <button class="filter-pill active" onclick="App.filterReview('all', this)">Semua Soal</button>
+            <button class="filter-pill" onclick="App.filterReview('wrong', this)">Salah Saja</button>
+            <button class="filter-pill" onclick="App.filterReview('empty', this)">Belum Dijawab</button>
+            <button class="filter-pill" onclick="App.filterReview('correct', this)">Benar</button>
+          </div>
+        </div>
+
+        <div id="res-question-review-list">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MANUAL EXAM / PAPER PRINT VIEW -->
+    <section id="view-paper" hidden>
+      <div class="paper-controls-bar">
+        <button class="btn btn-secondary" onclick="Navigation.navigateTo('home')">← Kembali ke Beranda</button>
+        <button class="btn btn-primary btn-lg" onclick="window.print()">🖨️ Cetak Lembar Ujian (Print / PDF)</button>
+      </div>
+
+      <div class="paper-sheet-container" id="paper-sheet">
+        <div class="paper-header">
+          <h1 id="paper-aircraft-title">LEMBAR UJIAN BOLD FACE</h1>
+          <p id="paper-source-doc" style="font-size: 0.9rem; color: #444; margin-top: 4px;">Dokumen Acuan Resmi</p>
+        </div>
+
+        <table class="paper-candidate-table">
+          <tr>
+            <td style="width: 140px;">NAMA</td>
+            <td style="width: 20px;">:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+            <td style="width: 120px; padding-left: 20px;">TANGGAL</td>
+            <td style="width: 20px;">:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+          </tr>
+          <tr>
+            <td>PANGKAT/NRP</td>
+            <td>:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+            <td style="padding-left: 20px;">JABATAN</td>
+            <td>:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+          </tr>
+          <tr>
+            <td>KUALIFIKASI</td>
+            <td>:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+            <td style="padding-left: 20px;">NILAI</td>
+            <td>:</td>
+            <td style="border-bottom: 1px dotted #000;"></td>
+          </tr>
+        </table>
+
+        <!-- PAPER QUESTIONS CONTENT -->
+        <div id="paper-sheet-content">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. QUESTION BANK EXPLORER VIEW -->
+    <section id="view-bank" hidden>
+      <div class="bank-container">
+        <div class="section-heading-bar">
+          <div>
+            <h2>Katalog Bank Soal Lengkap</h2>
+            <p class="text-secondary">Pencarian dan eksplorasi data teknis seluruh armada</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary btn-sm" onclick="App.exportBankJSON()">📥 Ekspor JSON</button>
+          </div>
+        </div>
+
+        <div class="bank-filter-row">
+          <input 
+            type="text" 
+            id="bank-search-input" 
+            class="bank-search-input" 
+            placeholder="Cari pertanyaan, angka, atau kata kunci..." 
+            oninput="App.renderBankFiltered()" 
+          />
+          <select id="bank-aircraft-filter" class="select-control" onchange="App.renderBankFiltered()">
+            <option value="ALL">Semua Pesawat</option>
+            <option value="MI-17V5">MI-17V5</option>
+            <option value="BELL 412 EP">BELL 412 EP</option>
+            <option value="FENNEC AS550">FENNEC AS550</option>
+            <option value="SIKORSKY S300C">SIKORSKY S300C</option>
+          </select>
+        </div>
+
+        <div class="bank-table-wrapper">
+          <table class="bank-table">
+            <thead>
+              <tr>
+                <th style="width: 40px;">No</th>
+                <th style="width: 120px;">Pesawat</th>
+                <th style="width: 160px;">Kategori</th>
+                <th>Pertanyaan</th>
+                <th style="width: 180px;">Kunci Jawaban</th>
+                <th style="width: 80px;">Satuan</th>
+                <th style="width: 160px;">Sumber</th>
+              </tr>
+            </thead>
+            <tbody id="bank-questions-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HISTORY VIEW -->
+    <section id="view-history" hidden>
+      <div class="section-heading-bar">
+        <div>
+          <h2>Riwayat &amp; Evaluasi Hasil Latihan</h2>
+          <p class="text-secondary">Catatan seluruh sesi pengerjaan ujian yang tersimpan pada perangkat ini</p>
+        </div>
+      </div>
+      <div id="history-records-container">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- APPLICATION JAVASCRIPT MODULES -->
+  <script src="./assets/js/storage.js"></script>
+  <script src="./assets/js/grading.js"></script>
+  <script src="./assets/js/question-loader.js"></script>
+  <script src="./assets/js/exam-engine.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

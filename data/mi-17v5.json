@@ -1,0 +1,1074 @@
+{
+  "aircraft": "MI-17V5",
+  "title": "BOLD FACE MI-17V5",
+  "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+  "description": "Limitation, Engine Operating Parameters, Gearbox, APU, Slopes, dan Maneuver Khusus Helikopter MI-17V5",
+  "totalQuestions": 53,
+  "questions": [
+    {
+      "id": "MI17-ISIAN-001",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Basic Weights & Capacity",
+      "questionType": "fill-blank",
+      "question": "Normal takeoff weight",
+      "answer": "11.100 Kg",
+      "acceptedAnswers": [
+        "11.100",
+        "11100",
+        "11.100 Kg",
+        "11100 kg",
+        "11,100"
+      ],
+      "unit": "Kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-002",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Basic Weights & Capacity",
+      "questionType": "fill-blank",
+      "question": "Maximum takeoff weight",
+      "answer": "13.000 Kg",
+      "acceptedAnswers": [
+        "13.000",
+        "13000",
+        "13.000 Kg",
+        "13000 kg",
+        "13,000"
+      ],
+      "unit": "Kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-003",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Troop Carrier",
+      "questionType": "fill-blank",
+      "question": "Troop carrier Maximum",
+      "answer": "4.000 Kg",
+      "acceptedAnswers": [
+        "4.000",
+        "4000",
+        "4.000 Kg",
+        "4000 kg",
+        "4,000"
+      ],
+      "unit": "Kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-004",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Troop Carrier",
+      "questionType": "fill-blank",
+      "question": "Troop carrier Numb Troopers carried",
+      "answer": "36 Orang",
+      "acceptedAnswers": [
+        "36",
+        "36 Orang",
+        "36 orang",
+        "36 person"
+      ],
+      "unit": "Orang",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-005",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum limit speed in horizontal flight at altitude from 0-1000 m (At normal takeoff weight)",
+      "answer": "250 km/h",
+      "acceptedAnswers": [
+        "250",
+        "250 km/h",
+        "250km/h"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-006",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum limit speed in horizontal flight at altitude from 0-1000 m (At maximum takeoff weight)",
+      "answer": "230 km/h",
+      "acceptedAnswers": [
+        "230",
+        "230 km/h",
+        "230km/h"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-007",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Cruising Speed",
+      "questionType": "fill-blank",
+      "question": "Cruising speed at altitude from 0 to 1000 (At normal takeoff weight)",
+      "answer": "220 to 230 km/h",
+      "acceptedAnswers": [
+        "220 to 230",
+        "220-230",
+        "220 to 230 km/h",
+        "220-230 km/h",
+        "220 sampai 230"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-008",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Cruising Speed",
+      "questionType": "fill-blank",
+      "question": "Cruising speed at altitude from 0 to 1000 (At maximum takeoff weight)",
+      "answer": "205 to 215 km/h",
+      "acceptedAnswers": [
+        "205 to 215",
+        "205-215",
+        "205 to 215 km/h",
+        "205-215 km/h",
+        "205 sampai 215"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-009",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Ceiling",
+      "questionType": "fill-blank",
+      "question": "Hovering ceiling at normal takeoff weight, ISA, air bleed to Dust protection device ejectors being off",
+      "answer": "3980 m",
+      "acceptedAnswers": [
+        "3980",
+        "3980 m",
+        "3.980",
+        "3.980 m"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-010",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Ceiling",
+      "questionType": "fill-blank",
+      "question": "Service ceiling (At Normal takeoff weight)",
+      "answer": "6000 m",
+      "acceptedAnswers": [
+        "6000",
+        "6000 m",
+        "6.000",
+        "6.000 m"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-ISIAN-011",
+      "aircraft": "MI-17V5",
+      "section": "A. ISIAN",
+      "category": "Ceiling",
+      "questionType": "fill-blank",
+      "question": "Service ceiling (At maximum takeoff wieight)",
+      "answer": "4800 m",
+      "acceptedAnswers": [
+        "4800",
+        "4800 m",
+        "4.800",
+        "4.800 m"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-001",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Weight Limitation",
+      "questionType": "fill-blank",
+      "question": "Maximum useful load",
+      "answer": "4000 kg",
+      "acceptedAnswers": [
+        "4000",
+        "4000 kg",
+        "4.000",
+        "4.000 kg"
+      ],
+      "unit": "kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-002",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Weight Limitation",
+      "questionType": "fill-blank",
+      "question": "Maximum external load weight",
+      "answer": "3000 (4000) kg",
+      "acceptedAnswers": [
+        "3000 (4000)",
+        "3000 (4000) kg",
+        "3000",
+        "4000",
+        "3000/4000",
+        "3000-4000",
+        "3.000 (4.000) kg"
+      ],
+      "unit": "kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-003",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "CG Limitation",
+      "questionType": "fill-blank",
+      "question": "Forward CG limit is",
+      "answer": "+300 mm",
+      "acceptedAnswers": [
+        "+300",
+        "+300 mm",
+        "300",
+        "300 mm",
+        "+300mm"
+      ],
+      "unit": "mm",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-004",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "CG Limitation",
+      "questionType": "fill-blank",
+      "question": "Aft CG limit",
+      "answer": "-95 mm",
+      "acceptedAnswers": [
+        "-95",
+        "-95 mm",
+        "-95mm"
+      ],
+      "unit": "mm",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-005",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude Up to 1000 m (13.000 kg takeoff weight: Maximum / Minimum)",
+      "answer": "230 / 60 Km/h",
+      "acceptedAnswers": [
+        "230 / 60",
+        "230/60",
+        "230 dan 60",
+        "Max 230 Min 60",
+        "230, 60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-006",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude Up to 1000 m (11.100 kg takeoff weight: Maximum / Minimum)",
+      "answer": "250 / 60 Km/h",
+      "acceptedAnswers": [
+        "250 / 60",
+        "250/60",
+        "250 dan 60",
+        "Max 250 Min 60",
+        "250, 60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-007",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude 2000 m (13.000 kg: Max/Min vs 11.100 kg: Max/Min)",
+      "answer": "195 / 60 dan 230 / 60 Km/h",
+      "acceptedAnswers": [
+        "195 / 60, 230 / 60",
+        "195/60, 230/60",
+        "195 60 230 60",
+        "195/60 dan 230/60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-008",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude 3000 m (13.000 kg: Max/Min vs 11.100 kg: Max/Min)",
+      "answer": "160 / 60 dan 210 / 60 Km/h",
+      "acceptedAnswers": [
+        "160 / 60, 210 / 60",
+        "160/60, 210/60",
+        "160 60 210 60",
+        "160/60 dan 210/60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-009",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude 4000 m (13.000 kg: Max/Min vs 11.100 kg: Max/Min)",
+      "answer": "120 / 60 dan 170 / 60 Km/h",
+      "acceptedAnswers": [
+        "120 / 60, 170 / 60",
+        "120/60, 170/60",
+        "120 60 170 60",
+        "120/60 dan 170/60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-010",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed Limitation",
+      "questionType": "fill-blank",
+      "question": "IAS limits at altitude 5000 m & 6000 m (11.100 kg takeoff weight: Max/Min)",
+      "answer": "5000 m: 130 / 60, 6000 m: 100 / 60 Km/h",
+      "acceptedAnswers": [
+        "130 / 60, 100 / 60",
+        "130/60, 100/60",
+        "130 60 100 60",
+        "130/60 dan 100/60"
+      ],
+      "unit": "Km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-011",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Hovering Altitude",
+      "questionType": "fill-blank",
+      "question": "Hovering altitude for takeoff weight 11.100 kg and below",
+      "answer": "Up to 10 m",
+      "acceptedAnswers": [
+        "Up to 10",
+        "Up to 10 m",
+        "10",
+        "10 m",
+        "sampai 10 m"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-012",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Hovering Altitude",
+      "questionType": "fill-blank",
+      "question": "Hovering altitude for takeoff weight Above 11.1000 kg",
+      "answer": "Up to 5 m",
+      "acceptedAnswers": [
+        "Up to 5",
+        "Up to 5 m",
+        "5",
+        "5 m",
+        "sampai 5 m"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-013",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Allowed Wind Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum allowed wind speed - Headwind (At M/R start & stop / At takeoff & landing)",
+      "answer": "25 / 25 m/s",
+      "acceptedAnswers": [
+        "25 / 25",
+        "25/25",
+        "25 m/s",
+        "25",
+        "25 dan 25"
+      ],
+      "unit": "m/s",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-014",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Allowed Wind Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum allowed wind speed - Right side crosswind (At M/R start & stop / At takeoff & landing)",
+      "answer": "10 / 10 m/s",
+      "acceptedAnswers": [
+        "10 / 10",
+        "10/10",
+        "10 m/s",
+        "10",
+        "10 dan 10"
+      ],
+      "unit": "m/s",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-015",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Allowed Wind Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum allowed wind speed - Left side crosswind (At M/R start & stop / At takeoff & landing)",
+      "answer": "15 / 10 m/s",
+      "acceptedAnswers": [
+        "15 / 10",
+        "15/10",
+        "15 dan 10",
+        "15/10 m/s"
+      ],
+      "unit": "m/s",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-016",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Allowed Wind Speed",
+      "questionType": "fill-blank",
+      "question": "Maximum allowed wind speed - Tailwind (At M/R start & stop / At takeoff & landing)",
+      "answer": "8 / 10 m/s",
+      "acceptedAnswers": [
+        "8 / 10",
+        "8/10",
+        "8 dan 10",
+        "8/10 m/s"
+      ],
+      "unit": "m/s",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-017",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Bank",
+      "questionType": "fill-blank",
+      "question": "Maximum Bank at 50 TO 3000 m (Gross weight 11100 kg or below / Above 11100 kg)",
+      "answer": "30 / 20 deg",
+      "acceptedAnswers": [
+        "30 / 20",
+        "30/20",
+        "30 dan 20",
+        "30 deg / 20 deg",
+        "30° / 20°"
+      ],
+      "unit": "deg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-018",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Maximum Bank",
+      "questionType": "fill-blank",
+      "question": "Maximum Bank ABOVE 3000 m (Gross weight 11100 kg or below / Above 11100 kg)",
+      "answer": "15 / 15 deg",
+      "acceptedAnswers": [
+        "15 / 15",
+        "15/15",
+        "15",
+        "15 deg",
+        "15°"
+      ],
+      "unit": "deg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-019",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed at Zoom and Dive",
+      "questionType": "fill-blank",
+      "question": "Max allowed speed for zoom from horizontal flight / recovery from dive (0 TO 500 m)",
+      "answer": "220 / 300 km/h",
+      "acceptedAnswers": [
+        "220 / 300",
+        "220/300",
+        "220 dan 300"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-020",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed at Zoom and Dive",
+      "questionType": "fill-blank",
+      "question": "Max allowed speed for zoom from horizontal flight / recovery from dive (500 TO 1000 m)",
+      "answer": "200 / 300 km/h",
+      "acceptedAnswers": [
+        "200 / 300",
+        "200/300",
+        "200 dan 300"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-021",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Speed at Zoom and Dive",
+      "questionType": "fill-blank",
+      "question": "Max allowed speed for zoom from horizontal flight / recovery from dive (1000 TO 2000 m)",
+      "answer": "180 / 250 km/h",
+      "acceptedAnswers": [
+        "180 / 250",
+        "180/250",
+        "180 dan 250"
+      ],
+      "unit": "km/h",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-022",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Engine Operating Parameters",
+      "questionType": "fill-blank",
+      "question": "Takeoff rating: Max gas generator turbine inlet gas temperature & Max gas generator turbine speed %",
+      "answer": "990 °C / 101.15 %",
+      "acceptedAnswers": [
+        "990 / 101.15",
+        "990 / 101.15%",
+        "990, 101.15",
+        "990 dan 101.15%"
+      ],
+      "unit": "°C / %",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-023",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Engine Operating Parameters",
+      "questionType": "fill-blank",
+      "question": "30 min power OEI takeoff: Max gas generator inlet gas temp & Max speed %",
+      "answer": "990 °C / 101.15 %",
+      "acceptedAnswers": [
+        "990 / 101.15",
+        "990 / 101.15%",
+        "990, 101.15",
+        "990 dan 101.15%"
+      ],
+      "unit": "°C / %",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-024",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Engine Operating Parameters",
+      "questionType": "fill-blank",
+      "question": "Continuous power OEI (normal): Max gas generator inlet gas temp & Max speed %",
+      "answer": "955 °C / 99.0 %",
+      "acceptedAnswers": [
+        "955 / 99.0",
+        "955 / 99%",
+        "955, 99.0",
+        "955 dan 99.0%"
+      ],
+      "unit": "°C / %",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-025",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Engine Operating Parameters",
+      "questionType": "fill-blank",
+      "question": "Cruising 1 & Cruising 2: Max gas generator inlet gas temp",
+      "answer": "910 °C / 870 °C",
+      "acceptedAnswers": [
+        "910 / 870",
+        "910 dan 870",
+        "910 °C / 870 °C",
+        "910, 870"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-LIM-026",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Engine Operating Parameters",
+      "questionType": "fill-blank",
+      "question": "Idle rating: Max gas generator inlet gas temperature",
+      "answer": "780 °C",
+      "acceptedAnswers": [
+        "780",
+        "780 °C",
+        "780 C",
+        "780°C"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MGB-001",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Main Gear Box",
+      "questionType": "fill-blank",
+      "question": "Main Gear Box Oil Pressure: a. At idle, b. In sideslip flight (<= 30 s), c. At other power ratings",
+      "answer": "0.5 kgf/cm2, min / 2.5 kgf/cm2, min / 3.5 ± 0.5 kgf/cm2",
+      "acceptedAnswers": [
+        "0.5 / 2.5 / 3.5 ± 0.5",
+        "0.5, 2.5, 3.5",
+        "0.5 / 2.5 / 3.5 +/- 0.5"
+      ],
+      "unit": "kgf/cm2",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MGB-002",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Main Gear Box",
+      "questionType": "fill-blank",
+      "question": "Main gearbox inlet oil temperature: Maximum & Recommended",
+      "answer": "90°C, max / 50 to 80°C",
+      "acceptedAnswers": [
+        "90 max / 50 to 80",
+        "90 / 50-80",
+        "90 dan 50-80",
+        "90°C, 50 to 80°C"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MGB-003",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Main Gear Box",
+      "questionType": "fill-blank",
+      "question": "Main gearbox inlet oil temp: Continuous operation min & starting without MGB heating min",
+      "answer": "+30°C / -40°C",
+      "acceptedAnswers": [
+        "+30 / -40",
+        "+30 dan -40",
+        "30 / -40",
+        "+30°C / -40°C"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MGB-004",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Main Gear Box",
+      "questionType": "fill-blank",
+      "question": "The maximum oil temperature in the tail and intermediate gear boxes is",
+      "answer": "110°C",
+      "acceptedAnswers": [
+        "110",
+        "110°C",
+        "110 C",
+        "110 °C"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-APU-001",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "APU",
+      "questionType": "fill-blank",
+      "question": "Maximum allowed TGT of APU engine: At start / At idle / At air bleed and generators modes",
+      "answer": "880 °C / 720 °C / 750 °C",
+      "acceptedAnswers": [
+        "880 / 720 / 750",
+        "880, 720, 750",
+        "880 / 720 / 750 °C"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-APU-002",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "APU",
+      "questionType": "fill-blank",
+      "question": "Maximum continuous operation time on generator mode for APU",
+      "answer": "30 min",
+      "acceptedAnswers": [
+        "30",
+        "30 min",
+        "30 menit",
+        "30 minutes"
+      ],
+      "unit": "min",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-SLOPE-001",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Take-off and Landing Slopes",
+      "questionType": "fill-blank",
+      "question": "Max slopes for vertical takeoff and landing WITHOUT shutdown: Uphill / Downhill / LH side / RH side",
+      "answer": "7° / 5° / 7° / 3°",
+      "acceptedAnswers": [
+        "7 / 5 / 7 / 3",
+        "7, 5, 7, 3",
+        "7° / 5° / 7° / 3°",
+        "7 5 7 3"
+      ],
+      "unit": "degrees",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-SLOPE-002",
+      "aircraft": "MI-17V5",
+      "section": "LIMITATION",
+      "category": "Take-off and Landing Slopes",
+      "questionType": "fill-blank",
+      "question": "Max slopes for vertical takeoff and landing maximal WITH shutdown engine after touchdown: Uphill, Downhill, LH / RH",
+      "answer": "3° / 3°",
+      "acceptedAnswers": [
+        "3 / 3",
+        "3° / 3°",
+        "3",
+        "3°"
+      ],
+      "unit": "degrees",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-001",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "External Load",
+      "questionType": "fill-blank",
+      "question": "External Load: MTOW & Berat Max Load",
+      "answer": "13.000 Kg / 4.000 Kg",
+      "acceptedAnswers": [
+        "13000 / 4000",
+        "13.000 / 4.000",
+        "13.000 Kg / 4.000 Kg",
+        "13000 kg dan 4000 kg"
+      ],
+      "unit": "Kg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-002",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "External Load",
+      "questionType": "fill-blank",
+      "question": "External Load: Max Speed & Max Turn/bank",
+      "answer": "200 Km/jam / 15°",
+      "acceptedAnswers": [
+        "200 / 15",
+        "200 Km/jam / 15°",
+        "200 km/h / 15 deg",
+        "200 dan 15"
+      ],
+      "unit": "Km/jam / deg",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-003",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Fastrooping/Rappelling",
+      "questionType": "fill-blank",
+      "question": "Fastrooping/Rappeling: Max berat 1 orang & Headwind max Wind Speed",
+      "answer": "100 Kg / 10 m/s",
+      "acceptedAnswers": [
+        "100 / 10",
+        "100 Kg / 10 m/s",
+        "100 kg dan 10 m/s"
+      ],
+      "unit": "Kg / m/s",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-004",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Fastrooping/Rappelling",
+      "questionType": "fill-blank",
+      "question": "Fastrooping/Rappeling: Min Altitude & Pelaksanaan di hutan jarak dari ujung pohon tidak kurang dari",
+      "answer": "45 m / 10 m",
+      "acceptedAnswers": [
+        "45 / 10",
+        "45 m / 10 m",
+        "45 dan 10"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-005",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Hoist",
+      "questionType": "fill-blank",
+      "question": "Hoist: Max weight hoisted (at hovering 50 - 55 m) & Max hover height (panjang tali 60 m)",
+      "answer": "300 kg / 55 m",
+      "acceptedAnswers": [
+        "300 kg / 55 m",
+        "300 / 55",
+        "300 kg dan 55 m"
+      ],
+      "unit": "kg / m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-006",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Hoist",
+      "questionType": "fill-blank",
+      "question": "Hoist: Max hover di atas air untuk hoist",
+      "answer": "20 m",
+      "acceptedAnswers": [
+        "20",
+        "20 m",
+        "20 meter"
+      ],
+      "unit": "m",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-007",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Fuel Reserve",
+      "questionType": "fill-blank",
+      "question": "Fuel Reserve 320 L (... minutes ... meter ... km/jam ... km)",
+      "answer": "21 minutes ... 500 meter ... 220 km/jam ... 70 km",
+      "acceptedAnswers": [
+        "21 minutes, 500 meter, 220 km/jam, 70 km",
+        "21 min, 500 m, 220 km/h, 70 km",
+        "21 500 220 70",
+        "21, 500, 220, 70"
+      ],
+      "unit": "min / m / km/jam / km",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "MI17-MAN-008",
+      "aircraft": "MI-17V5",
+      "section": "Maneuver Khusus",
+      "category": "Fuel Reserve",
+      "questionType": "fill-blank",
+      "question": "Fuel Reserve 270 L (... minutes ... meter ... km/jam ... km)",
+      "answer": "17 minutes ... 500 meter ... 220 km/jam ... 55 km",
+      "acceptedAnswers": [
+        "17 minutes, 500 meter, 220 km/jam, 55 km",
+        "17 min, 500 m, 220 km/h, 55 km",
+        "17 500 220 55",
+        "17, 500, 220, 55"
+      ],
+      "unit": "min / m / km/jam / km",
+      "sourceDocument": "BOLD FACE MI-17V5 ISI.docx",
+      "sourcePage": 4,
+      "points": 1,
+      "verified": true
+    }
+  ]
+}
