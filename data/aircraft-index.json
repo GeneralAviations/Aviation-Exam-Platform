@@ -157,5 +157,27 @@
       "EMERGENCY",
       "LIMITATION"
     ]
+  },
+  {
+    "aircraft": "CASA 212-200",
+    "title": "BOLD FACE CASA 212-200 AVIOCAR",
+    "file": "data/casa-212-200.json",
+    "sourceDocument": "BOLD FACE CASA 212-200 AVIOCAR.pdf",
+    "description": "Prosedur Darurat Bold Face Pesawat Angkut CASA 212-200 Aviocar (Engine Failure, Fire, Generator Fail, dan Smoke Elimination)",
+    "totalQuestions": 44,
+    "categoriesCount": 8,
+    "categories": [
+      "Battery Warning",
+      "Electrical Fire",
+      "Engine Failure after V1",
+      "Engine Failure before V1",
+      "Engine Fire on Ground",
+      "Generator Failure",
+      "Multiple Engine Failure",
+      "Smoke and Fume Elimination"
+    ],
+    "sections": [
+      "BOLD FACE"
+    ]
   }
 ]

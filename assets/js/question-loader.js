@@ -39,6 +39,8 @@ const QuestionLoader = (() => {
       filename = 'data/fennec-as550.json';
     } else if (norm.includes('sikorsky') || norm.includes('s300')) {
       filename = 'data/sikorsky-s300c.json';
+    } else if (norm.includes('casa') || norm.includes('212') || norm.includes('aviocar')) {
+      filename = 'data/casa-212-200.json';
     } else {
       const catalog = await loadCatalog();
       const entry = catalog.find(c => c.aircraft === aircraftId);
