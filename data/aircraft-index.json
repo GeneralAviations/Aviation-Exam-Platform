@@ -179,5 +179,40 @@
     "sections": [
       "BOLD FACE"
     ]
+  },
+  {
+    "aircraft": "AH-64E APACHE",
+    "title": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES & LIMITATIONS",
+    "file": "data/ah-64e.json",
+    "sourceDocument": "AH-64E Rv. 3.0 EMERGENCY PROCEDURES PRACTICE TEST.pdf",
+    "description": "Limitations lengkap (Nr, Engine Oil, Hyd, TGT 701D, Torque, Ng, Np, XMSN), Emergency Procedures (Egress, Fire, Flight Controls, Ditching), dan Warning/Caution/Advisories Helikopter Serbu AH-64E Apache",
+    "totalQuestions": 132,
+    "categoriesCount": 19,
+    "categories": [
+      "APU & Transmission",
+      "Definitions",
+      "Electrical Emergency",
+      "Engine Emergency",
+      "Engine Oil Pressure",
+      "Engine Starter Limitations",
+      "Fire Emergency",
+      "Hydraulic & Flight Control Emergency",
+      "Hydraulic Systems",
+      "Landing & Ditching Emergency",
+      "Maneuvering & Flight Limitations",
+      "Mission Equipment & Avionics",
+      "NG Limits",
+      "NP Limits",
+      "NR Limits",
+      "TGT Limits",
+      "Torque Limits",
+      "Warning/Caution/Advisories",
+      "Weight & Airspeed Limitations"
+    ],
+    "sections": [
+      "EMERGENCY PROCEDURES",
+      "LIMITATIONS",
+      "WARNING/CAUTION/ADVISORIES"
+    ]
   }
 ]
