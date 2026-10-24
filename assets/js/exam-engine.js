@@ -93,7 +93,13 @@ const ExamEngine = (() => {
   function getState() {
     if (!session) return null;
     const currentQ = session.questions[session.currentIndex] || null;
-    const answeredCount = Object.keys(session.answers).filter(id => (session.answers[id] || '').trim().length > 0).length;
+    const answeredCount = Object.keys(session.answers).filter(id => {
+      const ans = session.answers[id];
+      if (typeof ans === 'object' && ans !== null) {
+        return Object.values(ans).some(v => (v || '').trim().length > 0);
+      }
+      return (ans || '').trim().length > 0;
+    }).length;
 
     return {
       aircraft: session.aircraft,
@@ -101,7 +107,7 @@ const ExamEngine = (() => {
       totalQuestions: session.questions.length,
       currentIndex: session.currentIndex,
       currentQuestion: currentQ,
-      currentAnswer: currentQ ? (session.answers[currentQ.id] || '') : '',
+      currentAnswer: currentQ ? (session.answers[currentQ.id] !== undefined ? session.answers[currentQ.id] : '') : '',
       isFlagged: currentQ ? session.flags.includes(currentQ.id) : false,
       answers: session.answers,
       flags: session.flags,
@@ -117,9 +123,18 @@ const ExamEngine = (() => {
     };
   }
 
-  function setAnswer(questionId, value) {
+  function setAnswer(questionId, value, subId = null) {
     if (!session || session.isCompleted) return;
-    session.answers[questionId] = value;
+
+    if (subId) {
+      if (typeof session.answers[questionId] !== 'object' || session.answers[questionId] === null) {
+        session.answers[questionId] = {};
+      }
+      session.answers[questionId][subId] = value;
+    } else {
+      session.answers[questionId] = value;
+    }
+
     // Persist draft immediately
     if (typeof Storage !== 'undefined') {
       Storage.saveDraftAnswers(session.aircraft, session.answers);
@@ -129,7 +144,13 @@ const ExamEngine = (() => {
     if (session.mode === 'practice' && session.instantFeedback[questionId]) {
       const q = session.questions.find(item => item.id === questionId);
       if (q && typeof Grading !== 'undefined') {
-        session.instantFeedback[questionId] = Grading.evaluateAnswer(value, q.answer, q.acceptedAnswers, q.unit);
+        session.instantFeedback[questionId] = Grading.evaluateAnswer(
+          session.answers[questionId],
+          q.answer,
+          q.acceptedAnswers,
+          q.unit,
+          q.subQuestions
+        );
       }
     }
 
@@ -180,7 +201,15 @@ const ExamEngine = (() => {
     session.revealedAnswers[questionId] = true;
     const q = session.questions.find(item => item.id === questionId);
     if (q) {
-      session.answers[questionId] = q.answer;
+      if (q.subQuestions && Array.isArray(q.subQuestions) && q.subQuestions.length > 0) {
+        const obj = {};
+        q.subQuestions.forEach(sub => {
+          obj[sub.id] = sub.answer;
+        });
+        session.answers[questionId] = obj;
+      } else {
+        session.answers[questionId] = q.answer;
+      }
       if (typeof Storage !== 'undefined') {
         Storage.saveDraftAnswers(session.aircraft, session.answers);
       }
@@ -198,9 +227,9 @@ const ExamEngine = (() => {
     if (!session || session.mode === 'exam') return;
     const q = session.questions.find(item => item.id === questionId);
     if (!q) return;
-    const userVal = session.answers[questionId] || '';
+    const userVal = session.answers[questionId] !== undefined ? session.answers[questionId] : '';
     if (typeof Grading !== 'undefined') {
-      const res = Grading.evaluateAnswer(userVal, q.answer, q.acceptedAnswers, q.unit);
+      const res = Grading.evaluateAnswer(userVal, q.answer, q.acceptedAnswers, q.unit, q.subQuestions);
       session.instantFeedback[questionId] = res;
     }
     if (onUpdateCallback) onUpdateCallback(getState());

@@ -59,7 +59,10 @@ const dataFiles = [
   'data/mi-17v5.json',
   'data/bell-412-ep.json',
   'data/fennec-as550.json',
-  'data/sikorsky-s300c.json'
+  'data/sikorsky-s300c.json',
+  'data/casa-212-200.json',
+  'data/ah-64e.json',
+  'data/bo-105.json'
 ];
 
 const allIds = new Set();
@@ -153,14 +156,24 @@ function testEndpoint(pathname) {
 }
 
 (async () => {
-  await testEndpoint('');
-  await testEndpoint('data/aircraft-index.json');
-  await testEndpoint('data/mi-17v5.json');
-  await testEndpoint('data/bell-412-ep.json');
-  await testEndpoint('data/fennec-as550.json');
-  await testEndpoint('data/sikorsky-s300c.json');
-  await testEndpoint('assets/css/style.css');
-  await testEndpoint('assets/js/app.js');
+  const isServerUp = await new Promise((resolve) => {
+    const req = http.get('http://localhost:8080/', () => resolve(true));
+    req.on('error', () => resolve(false));
+    req.setTimeout(400, () => { req.destroy(); resolve(false); });
+  });
+
+  if (isServerUp) {
+    await testEndpoint('');
+    await testEndpoint('data/aircraft-index.json');
+    await testEndpoint('data/mi-17v5.json');
+    await testEndpoint('data/bell-412-ep.json');
+    await testEndpoint('data/fennec-as550.json');
+    await testEndpoint('data/sikorsky-s300c.json');
+    await testEndpoint('assets/css/style.css');
+    await testEndpoint('assets/js/app.js');
+  } else {
+    console.log('  ℹ️ INFO: Local HTTP server on :8080 is not running; skipping live endpoint probe.');
+  }
 
   console.log('\n====================================================');
   console.log(`SUMMARY: ${passedTests} / ${totalTests} tests passed (${failedTests} failed)`);

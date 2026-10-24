@@ -197,8 +197,8 @@
             <div id="exam-q-category" class="question-category-tag">CATEGORY</div>
             <div id="exam-q-text" class="question-text-box">Loading question...</div>
 
-            <div class="answer-input-zone">
-              <div class="aviation-input-group">
+            <div class="answer-input-zone" id="exam-answer-zone">
+              <div class="aviation-input-group" id="single-input-group">
                 <input 
                   type="text" 
                   id="exam-answer-input" 
@@ -212,15 +212,16 @@
                 />
                 <span id="exam-q-unit" class="input-unit-indicator"></span>
               </div>
+              <div id="multi-input-grid" class="multi-sub-grid" style="display: none;"></div>
             </div>
 
             <!-- PRACTICE MODE CONTROLS -->
             <div id="exam-practice-box" class="practice-box" hidden>
               <div class="practice-buttons">
-                <button class="btn btn-secondary btn-sm" onclick="ExamEngine.checkSingleAnswer(document.getElementById('exam-answer-input').dataset.questionId)">
+                <button class="btn btn-secondary btn-sm" onclick="App.checkCurrentQuestion()">
                   🔍 Periksa Jawaban
                 </button>
-                <button class="btn btn-secondary btn-sm" onclick="ExamEngine.revealAnswer(document.getElementById('exam-answer-input').dataset.questionId)">
+                <button class="btn btn-secondary btn-sm" onclick="App.revealCurrentQuestion()">
                   💡 Lihat Kunci
                 </button>
               </div>
@@ -230,7 +231,7 @@
 
           <div class="exam-nav-toolbar">
             <button id="exam-prev-btn" class="btn btn-secondary" onclick="ExamEngine.prevQuestion()">← Sebelumnya</button>
-            <button id="exam-flag-btn" class="btn btn-secondary" onclick="ExamEngine.toggleFlag(document.getElementById('exam-answer-input').dataset.questionId)">🏳️ Tandai Ragu</button>
+            <button id="exam-flag-btn" class="btn btn-secondary" onclick="App.toggleCurrentFlag()">🏳️ Tandai Ragu</button>
             <button id="exam-next-btn" class="btn btn-primary" onclick="ExamEngine.nextQuestion()">Selanjutnya →</button>
           </div>
         </div>

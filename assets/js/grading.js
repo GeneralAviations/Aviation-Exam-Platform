@@ -51,10 +51,126 @@ const Grading = (() => {
   }
 
   /**
+   * Canonical normalization for aviation terms, ranges, delimiters, and units.
+   * Enables robust matching between user inputs (e.g. '55 dan 115 /55-95') and keys ('55 DAN 115 PSI / 55 SAMPAI 95 PSI').
+   */
+  function canonicalAviation(val) {
+    if (val === null || val === undefined) return '';
+    let s = String(val)
+      .replace(/\u00A0/g, ' ')
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"')
+      .trim()
+      .toLowerCase();
+
+    // 1. Range indicators before delimiter split (e.g. s/d, sampai, to)
+    s = s.replace(/\b(sampai|s\/d|sd|s\.d|to)\b/gi, '-');
+    // 2. Conjunctions (& and dan)
+    s = s.replace(/(?:&|\b(?:dan|and)\b)/gi, ' dan ');
+    // 3. Delimiters (/ | ; ,)
+    s = s.replace(/\s*([/|,;])\s*/g, ' / ');
+    s = s.replace(/\s*[-–—]\s*/g, '-');
+
+    // 4. Decimal commas & thousand separators
+    s = s.replace(/(\d+),(\d{1,2})\b/g, '$1.$2');
+    s = s.replace(/(\d+)[.,](\d{3})\b/g, '$1$2');
+
+    // 5. Strip common aviation units in evaluation
+    s = s.replace(/\b(psi|kias|kts|knots|mph|km\/h|km\/jam|rpm|lbs|kg|ft|feet|fpm|ft\/min|deg|degrees|amps|volts?|v|inch|in|min|minutes|menit|sec|seconds|detik|°c|°f|c|f|%)\b/gi, '');
+    s = s.replace(/°/g, '');
+
+    // 6. Whitespace cleanup
+    s = s.replace(/\s+/g, ' ').trim();
+    s = s.replace(/\s*-\s*/g, '-');
+    s = s.replace(/\s*dan\s*/g, ' dan ');
+    s = s.replace(/\s*\/\s*/g, ' / ');
+    return s;
+  }
+
+  /**
    * Compare user answer with accepted answers list and official answer
    */
-  function evaluateAnswer(userAnswer, officialAnswer, acceptedAnswers = [], unit = '') {
-    const uRaw = (userAnswer || '').trim();
+  /**
+   * Compare user answer with accepted answers list and official answer.
+   * Supports both single inputs and multi-parameter subQuestions with partial credit.
+   */
+  function evaluateAnswer(userAnswer, officialAnswer, acceptedAnswers = [], unit = '', subQuestions = null) {
+    // -----------------------------------------------------------
+    // Case A: Multi-Parameter Questions (subQuestions array)
+    // -----------------------------------------------------------
+    if (subQuestions && Array.isArray(subQuestions) && subQuestions.length > 0) {
+      const totalSubCount = subQuestions.length;
+      let correctSubCount = 0;
+      let emptySubCount = 0;
+      const subResults = [];
+
+      // Determine string parts if user answered with a single delimited string (backward-compatibility fallback)
+      let legacyParts = null;
+      if (typeof userAnswer === 'string' && userAnswer.trim() && (userAnswer.includes('|') || userAnswer.includes('/') || userAnswer.includes(','))) {
+        legacyParts = userAnswer.split(/[|\/,]+/).map(s => s.trim());
+      }
+
+      subQuestions.forEach((sub, idx) => {
+        let subUserAns = '';
+        if (typeof userAnswer === 'object' && userAnswer !== null) {
+          subUserAns = userAnswer[sub.id] !== undefined ? userAnswer[sub.id] : (userAnswer[sub.label] || '');
+        } else if (typeof userAnswer === 'string') {
+          if (legacyParts && legacyParts[idx] !== undefined) {
+            subUserAns = legacyParts[idx];
+          } else {
+            subUserAns = userAnswer;
+          }
+        }
+
+        const subEval = evaluateAnswer(subUserAns, sub.answer, sub.acceptedAnswers || [], sub.unit || unit);
+        if (subEval.status === 'correct') correctSubCount++;
+        else if (subEval.status === 'empty') emptySubCount++;
+
+        subResults.push({
+          id: sub.id,
+          label: sub.label,
+          userAnswer: subUserAns,
+          officialAnswer: sub.answer,
+          acceptedAnswers: sub.acceptedAnswers || [],
+          unit: sub.unit || unit,
+          status: subEval.status,
+          isCorrect: subEval.isCorrect,
+          feedback: subEval.feedback
+        });
+      });
+
+      const score = totalSubCount > 0 ? (correctSubCount / totalSubCount) : 0;
+      let status = 'incorrect';
+      let feedback = 'Jawaban belum tepat';
+
+      if (emptySubCount === totalSubCount) {
+        status = 'empty';
+        feedback = 'Belum dijawab';
+      } else if (correctSubCount === totalSubCount) {
+        status = 'correct';
+        feedback = 'Tepat! Semua sub-parameter dijawab dengan benar';
+      } else if (correctSubCount > 0) {
+        status = 'partial';
+        feedback = `Sebagian benar (${correctSubCount}/${totalSubCount} sub-parameter benar)`;
+      }
+
+      return {
+        status,
+        isCorrect: status === 'correct',
+        isPartial: status === 'partial',
+        isEmpty: status === 'empty',
+        score: Math.round(score * 100) / 100,
+        correctSubCount,
+        totalSubCount,
+        feedback,
+        subResults
+      };
+    }
+
+    // -----------------------------------------------------------
+    // Case B: Single Input Questions
+    // -----------------------------------------------------------
+    const uRaw = (typeof userAnswer === 'string' ? userAnswer : '').trim();
     if (!uRaw) {
       return {
         status: 'empty',
@@ -132,8 +248,21 @@ const Grading = (() => {
       }
     }
 
-    // 4. Procedure / Descriptive check (Keyword matching for procedures)
-    if (officialAnswer.length > 30) {
+    // 4. Canonical Aviation Normalization check (handles ranges, delimiters, conjunctions & units)
+    const uCanon = canonicalAviation(uRaw);
+    const oCanon = canonicalAviation(officialAnswer);
+    if (uCanon && uCanon === oCanon) {
+      return { status: 'correct', isCorrect: true, score: 1, feedback: 'Benar (sesuai standar nilai dokumen)' };
+    }
+
+    for (const target of (acceptedAnswers || [])) {
+      if (uCanon && uCanon === canonicalAviation(target)) {
+        return { status: 'correct', isCorrect: true, score: 1, feedback: 'Benar (sesuai variasi standar)' };
+      }
+    }
+
+    // 5. Procedure / Descriptive check (Keyword matching for procedures)
+    if (officialAnswer && officialAnswer.length > 30) {
       const targetTokens = oNorm
         .replace(/[^a-z0-9]/g, ' ')
         .split(/\s+/)
@@ -180,6 +309,13 @@ const Grading = (() => {
   }
 
   /**
+   * Helper to evaluate a question object directly
+   */
+  function evaluateQuestion(q, userAnswer) {
+    return evaluateAnswer(userAnswer, q.answer, q.acceptedAnswers, q.unit, q.subQuestions);
+  }
+
+  /**
    * Calculates overall exam results
    */
   function calculateExamResults(questions, userAnswers = {}, passingThreshold = 75) {
@@ -189,6 +325,7 @@ const Grading = (() => {
     let wrongCount = 0;
     let emptyCount = 0;
     let reviewCount = 0;
+    let partialCount = 0;
 
     const categoryStats = {};
     const detailedResults = [];
@@ -197,15 +334,17 @@ const Grading = (() => {
       const weight = q.points || 1;
       totalPoints += weight;
 
-      const userAns = userAnswers[q.id] || '';
-      const evalResult = evaluateAnswer(userAns, q.answer, q.acceptedAnswers, q.unit);
+      const userAns = userAnswers[q.id] !== undefined ? userAnswers[q.id] : '';
+      const evalResult = evaluateAnswer(userAns, q.answer, q.acceptedAnswers, q.unit, q.subQuestions);
 
       earnedPoints += (evalResult.score * weight);
 
       if (evalResult.status === 'empty') emptyCount++;
       else if (evalResult.status === 'correct') correctCount++;
-      else if (evalResult.status === 'review') reviewCount++;
-      else wrongCount++;
+      else if (evalResult.status === 'review' || evalResult.status === 'partial') {
+        reviewCount++;
+        if (evalResult.status === 'partial') partialCount++;
+      } else wrongCount++;
 
       // Category breakdown
       const cat = q.category || 'General';
@@ -246,11 +385,12 @@ const Grading = (() => {
     return {
       totalQuestions: questions.length,
       totalPoints,
-      earnedPoints,
+      earnedPoints: Math.round(earnedPoints * 100) / 100,
       correctCount,
       wrongCount,
       emptyCount,
       reviewCount,
+      partialCount,
       finalScore,
       passingThreshold,
       isPassed,
@@ -262,7 +402,9 @@ const Grading = (() => {
   return {
     normalizeText,
     normalizeNumeric,
+    canonicalAviation,
     evaluateAnswer,
+    evaluateQuestion,
     calculateExamResults
   };
 })();

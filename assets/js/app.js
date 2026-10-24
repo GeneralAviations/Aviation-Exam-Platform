@@ -349,27 +349,99 @@ const App = (() => {
     const catEl = document.getElementById('exam-q-category');
     const secEl = document.getElementById('exam-q-section');
     const textEl = document.getElementById('exam-q-text');
+    const singleInputGroup = document.getElementById('single-input-group');
     const inputEl = document.getElementById('exam-answer-input');
+    const multiGrid = document.getElementById('multi-input-grid');
     const unitEl = document.getElementById('exam-q-unit');
     const flagBtn = document.getElementById('exam-flag-btn');
     const practiceBox = document.getElementById('exam-practice-box');
 
     if (catEl) catEl.textContent = q.category;
     if (secEl) secEl.textContent = q.section;
-    if (textEl) textEl.textContent = q.question;
-    if (unitEl) {
-      if (q.unit) {
-        unitEl.textContent = `Satuan: [ ${q.unit} ]`;
-        unitEl.removeAttribute('hidden');
-      } else {
-        unitEl.setAttribute('hidden', '');
-      }
-    }
+    if (textEl) textEl.textContent = (q.question || '').replace(/^\d+[\.\)]\s*/, '');
 
-    if (inputEl) {
-      inputEl.value = state.currentAnswer || '';
-      inputEl.dataset.questionId = q.id;
-      inputEl.focus();
+    const hasSub = q.subQuestions && Array.isArray(q.subQuestions) && q.subQuestions.length > 0;
+
+    if (hasSub) {
+      if (singleInputGroup) singleInputGroup.style.display = 'none';
+      if (unitEl) unitEl.setAttribute('hidden', '');
+
+      if (multiGrid) {
+        multiGrid.style.display = 'grid';
+        const userObj = (typeof state.currentAnswer === 'object' && state.currentAnswer !== null) ? state.currentAnswer : {};
+        const subChecks = state.instantCheck?.subResults || {};
+
+        multiGrid.innerHTML = q.subQuestions.map((subQ, sIdx) => {
+          const val = userObj[subQ.id] || '';
+          const subRes = Array.isArray(subChecks) ? subChecks.find(s => s.id === subQ.id) : subChecks?.[subQ.id];
+          let statusCls = '';
+          let subFeedbackHtml = '';
+
+          if (state.mode === 'practice' && subRes) {
+            statusCls = subRes.isCorrect ? 'is-valid' : subRes.isEmpty ? 'is-empty' : 'is-invalid';
+            subFeedbackHtml = `
+              <div class="sub-param-feedback ${subRes.status}">
+                <span>${subRes.isCorrect ? '✓ Benar' : subRes.isEmpty ? '⚠️ Belum diisi' : '✕ Kunci: ' + subQ.answer}</span>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="sub-param-card ${statusCls}">
+              <div class="sub-param-header">
+                <span class="sub-param-label">
+                  <span class="sub-idx">${sIdx + 1}</span>
+                  <strong>${subQ.label || 'Parameter'}</strong>
+                </span>
+                ${subQ.unit ? `<span class="sub-unit-tag">${subQ.unit}</span>` : ''}
+              </div>
+              <div class="sub-input-wrapper">
+                <input 
+                  type="text" 
+                  class="text-answer-input sub-param-input ${statusCls}" 
+                  id="sub-input-${subQ.id}" 
+                  data-question-id="${q.id}" 
+                  data-sub-id="${subQ.id}" 
+                  value="${val}" 
+                  placeholder="Ketik nilai ${subQ.label}..." 
+                  autocomplete="off" 
+                  autocapitalize="off" 
+                  spellcheck="false" 
+                  oninput="App.onSubAnswerInput(event)" 
+                  onkeydown="App.onAnswerKeyDown(event)" 
+                />
+              </div>
+              ${subFeedbackHtml}
+            </div>
+          `;
+        }).join('');
+
+        // Autofocus first input if none currently focused
+        const firstInput = multiGrid.querySelector('.sub-param-input');
+        if (firstInput && (!document.activeElement || document.activeElement.tagName !== 'INPUT')) {
+          firstInput.focus();
+        }
+      }
+    } else {
+      if (multiGrid) multiGrid.style.display = 'none';
+      if (singleInputGroup) singleInputGroup.style.display = 'flex';
+
+      if (unitEl) {
+        if (q.unit) {
+          unitEl.textContent = `Satuan: [ ${q.unit} ]`;
+          unitEl.removeAttribute('hidden');
+        } else {
+          unitEl.setAttribute('hidden', '');
+        }
+      }
+
+      if (inputEl) {
+        inputEl.value = (typeof state.currentAnswer === 'string' ? state.currentAnswer : '') || '';
+        inputEl.dataset.questionId = q.id;
+        if (!document.activeElement || document.activeElement.tagName !== 'INPUT') {
+          inputEl.focus();
+        }
+      }
     }
 
     if (flagBtn) {
@@ -384,7 +456,11 @@ const App = (() => {
         const feedbackEl = document.getElementById('practice-feedback-text');
         if (state.instantCheck) {
           feedbackEl.className = `practice-feedback ${state.instantCheck.status}`;
-          feedbackEl.textContent = `${state.instantCheck.feedback} (Kunci: ${q.answer})`;
+          if (hasSub) {
+            feedbackEl.innerHTML = `<strong>${state.instantCheck.feedback}</strong>`;
+          } else {
+            feedbackEl.textContent = `${state.instantCheck.feedback} (Kunci: ${q.answer})`;
+          }
         } else {
           feedbackEl.className = 'practice-feedback';
           feedbackEl.textContent = '';
@@ -417,7 +493,14 @@ const App = (() => {
     if (!grid) return;
 
     grid.innerHTML = state.questions ? state.questions.map((q, idx) => {
-      const isAns = (state.answers[q.id] || '').trim().length > 0;
+      const rawAns = state.answers[q.id];
+      let isAns = false;
+      if (typeof rawAns === 'object' && rawAns !== null) {
+        isAns = Object.values(rawAns).some(v => typeof v === 'string' && v.trim().length > 0);
+      } else if (typeof rawAns === 'string') {
+        isAns = rawAns.trim().length > 0;
+      }
+
       const isFlag = state.flags.includes(q.id);
       const isCurr = state.currentIndex === idx;
 
@@ -436,6 +519,33 @@ const App = (() => {
     if (qId) {
       ExamEngine.setAnswer(qId, input.value);
     }
+  }
+
+  function onSubAnswerInput(e) {
+    const input = e.target;
+    const qId = input.dataset.questionId;
+    const subId = input.dataset.subId;
+    if (qId && subId) {
+      ExamEngine.setAnswer(qId, input.value, subId);
+    }
+  }
+
+  function checkCurrentQuestion() {
+    const state = ExamEngine.getState();
+    if (!state || !state.currentQuestion) return;
+    ExamEngine.checkSingleAnswer(state.currentQuestion.id);
+  }
+
+  function revealCurrentQuestion() {
+    const state = ExamEngine.getState();
+    if (!state || !state.currentQuestion) return;
+    ExamEngine.revealAnswer(state.currentQuestion.id);
+  }
+
+  function toggleCurrentFlag() {
+    const state = ExamEngine.getState();
+    if (!state || !state.currentQuestion) return;
+    ExamEngine.toggleFlag(state.currentQuestion.id);
   }
 
   function onAnswerKeyDown(e) {
@@ -528,7 +638,7 @@ const App = (() => {
 
     let items = activeExamResult.detailedResults || [];
     if (filter === 'wrong') {
-      items = items.filter(i => i.evaluation.status === 'incorrect' || i.evaluation.status === 'review');
+      items = items.filter(i => i.evaluation.status === 'incorrect' || i.evaluation.status === 'review' || i.evaluation.status === 'partial');
     } else if (filter === 'correct') {
       items = items.filter(i => i.evaluation.status === 'correct');
     } else if (filter === 'empty') {
@@ -538,8 +648,65 @@ const App = (() => {
     container.innerHTML = items.map((item, idx) => {
       const q = item.question;
       const ev = item.evaluation;
-      const statusClass = ev.status === 'correct' ? 'badge-correct' : ev.status === 'empty' ? 'badge-empty' : 'badge-wrong';
-      const statusText = ev.status === 'correct' ? 'BENAR' : ev.status === 'empty' ? 'KOSONG' : 'SALAH';
+      let statusClass = 'badge-wrong';
+      let statusText = 'SALAH';
+
+      if (ev.status === 'correct') {
+        statusClass = 'badge-correct';
+        statusText = 'BENAR';
+      } else if (ev.status === 'partial') {
+        statusClass = 'badge-partial';
+        statusText = `SEBAGIAN (${Math.round(ev.score * 100)}%)`;
+      } else if (ev.status === 'empty') {
+        statusClass = 'badge-empty';
+        statusText = 'KOSONG';
+      }
+
+      const hasSub = q.subQuestions && Array.isArray(q.subQuestions) && q.subQuestions.length > 0 && ev.subResults;
+
+      let comparisonHtml = '';
+      if (hasSub) {
+        comparisonHtml = `
+          <div class="review-sub-breakdown">
+            <div class="review-sub-grid">
+              ${q.subQuestions.map(sq => {
+                const sr = (Array.isArray(ev.subResults) ? ev.subResults.find(s => s.id === sq.id) : ev.subResults?.[sq.id]) || {};
+                const subBadge = sr.isCorrect ? '<span class="badge badge-correct">✓ Tepat</span>' : sr.isEmpty ? '<span class="badge badge-empty">Kosong</span>' : '<span class="badge badge-wrong">✕ Salah</span>';
+                return `
+                  <div class="review-sub-card ${sr.status || 'empty'}">
+                    <div class="review-sub-header">
+                      <strong>${sq.label}</strong>
+                      ${subBadge}
+                    </div>
+                    <div class="review-sub-row">
+                      <span class="sub-key-lbl">Jawaban Anda:</span>
+                      <span class="sub-val ${sr.isCorrect ? 'text-success' : 'text-danger'}">${sr.userAnswer || '<em class="text-muted">(Kosong)</em>'}</span>
+                    </div>
+                    <div class="review-sub-row">
+                      <span class="sub-key-lbl">Kunci Resmi:</span>
+                      <span class="sub-val text-accent"><strong>${sq.answer} ${sq.unit || ''}</strong></span>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      } else {
+        const displayUserAns = typeof item.userAnswer === 'string' ? item.userAnswer : (item.userAnswer ? JSON.stringify(item.userAnswer) : '');
+        comparisonHtml = `
+          <div class="review-comparison-grid">
+            <div class="answer-box user-box ${ev.status}">
+              <span class="box-label">Jawaban Anda:</span>
+              <span class="box-value">${displayUserAns || '<em class="text-muted">(Tidak dijawab)</em>'}</span>
+            </div>
+            <div class="answer-box target-box">
+              <span class="box-label">Kunci Dokumen Resmi:</span>
+              <span class="box-value">${q.answer}</span>
+            </div>
+          </div>
+        `;
+      }
 
       return `
         <div class="review-item-card ${ev.status}">
@@ -552,18 +719,9 @@ const App = (() => {
             <span class="badge ${statusClass}">${statusText}</span>
           </div>
 
-          <p class="review-q-text">${q.question}</p>
+          <p class="review-q-text">${(q.question || '').replace(/^\d+[\.\)]\s*/, '')}</p>
 
-          <div class="review-comparison-grid">
-            <div class="answer-box user-box ${ev.status}">
-              <span class="box-label">Jawaban Anda:</span>
-              <span class="box-value">${item.userAnswer || '<em class="text-muted">(Tidak dijawab)</em>'}</span>
-            </div>
-            <div class="answer-box target-box">
-              <span class="box-label">Kunci Dokumen Resmi:</span>
-              <span class="box-value">${q.answer}</span>
-            </div>
-          </div>
+          ${comparisonHtml}
 
           ${q.acceptedAnswers && q.acceptedAnswers.length > 1 ? `
             <div class="accepted-variants-note">
@@ -573,7 +731,7 @@ const App = (() => {
 
           <div class="review-citation-footer">
             <span>📄 Dokumen: ${q.sourceDocument} ${q.sourcePage ? `(Hal. ${q.sourcePage})` : ''}</span>
-            <span>Nilai: ${ev.score} / ${q.points || 1} poin</span>
+            <span>Nilai: ${Math.round(ev.score * (q.points || 1) * 10) / 10} / ${q.points || 1} poin</span>
           </div>
         </div>
       `;
@@ -726,9 +884,18 @@ const App = (() => {
     // Restore draft answers from Storage
     const drafts = Storage.getDraftAnswers(data.aircraft) || {};
     currentPaperQuestions.forEach(q => {
-      const input = document.getElementById(`paper-input-${q.id}`);
-      if (input && drafts[q.id]) {
-        input.value = drafts[q.id];
+      if (q.subQuestions && q.subQuestions.length > 0) {
+        q.subQuestions.forEach(sq => {
+          const subInp = document.getElementById(`paper-input-${q.id}-${sq.id}`);
+          if (subInp && drafts[q.id] && typeof drafts[q.id] === 'object' && drafts[q.id][sq.id]) {
+            subInp.value = drafts[q.id][sq.id];
+          }
+        });
+      } else {
+        const input = document.getElementById(`paper-input-${q.id}`);
+        if (input && drafts[q.id]) {
+          input.value = typeof drafts[q.id] === 'string' ? drafts[q.id] : '';
+        }
       }
     });
 
@@ -748,36 +915,93 @@ const App = (() => {
         <div class="paper-section-block" id="paper-sec-${sec.replace(/\s+/g, '-')}">
           <h2 class="paper-section-title">${sec}</h2>
           <div class="paper-questions-list">
-            ${secQuestions.map((q, idx) => `
-              <div class="paper-question-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
-                <div class="paper-q-text">
-                  <span class="paper-q-num">${idx + 1}.</span>
-                  <span class="paper-q-body">${q.question}</span>
-                  <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">..........................................................................................</span>
+            ${secQuestions.map((q, idx) => {
+              const prevQ = idx > 0 ? secQuestions[idx - 1] : null;
+              const isNewCat = !prevQ || (prevQ.category !== q.category);
+              const catHeaderHtml = (isNewCat && q.category) ? `
+                <div class="paper-category-header">
+                  <h3 class="paper-cat-title">${q.category}</h3>
+                </div>
+              ` : '';
+
+              const hasSub = q.subQuestions && q.subQuestions.length > 0;
+              const cleanQText = (q.question || '').replace(/^\d+[\.\)]\s*/, '');
+              if (hasSub) {
+                return `
+                  ${catHeaderHtml}
+                  <div class="paper-question-item paper-multi-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
+                    <div class="paper-q-text">
+                      <span class="paper-q-num">${idx + 1}.</span>
+                      <span class="paper-q-body">${cleanQText}</span>
+                    </div>
+                    <div class="paper-sub-list">
+                      ${q.subQuestions.map((sq, sIdx) => {
+                        const subLetter = String.fromCharCode(97 + sIdx);
+                        return `
+                        <div class="paper-sub-row">
+                          <span class="paper-sub-label">${subLetter}. ${sq.label}:</span>
+                          <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">....................................................</span>
+                          ${!isPrintOnly ? `
+                            <div class="paper-input-wrapper no-print">
+                              <input 
+                                type="text" 
+                                class="paper-answer-input paper-sub-input" 
+                                id="paper-input-${q.id}-${sq.id}" 
+                                data-qid="${q.id}" 
+                                data-subid="${sq.id}" 
+                                placeholder="Ketik..." 
+                                autocomplete="off" 
+                                spellcheck="false" 
+                                oninput="App.onBoldFaceSubInput('${q.id}', '${sq.id}')"
+                                onkeydown="App.onBoldFaceKeyDown(event, '${q.id}')"
+                              />
+                            </div>
+                          ` : ''}
+                          <span class="paper-unit">${sq.unit ? `[ ${sq.unit} ]` : ''}</span>
+                        </div>
+                      `;
+                      }).join('')}
+                    </div>
+                    ${!isPrintOnly ? `
+                      <div class="paper-feedback-box no-print" id="paper-feedback-${q.id}" style="display: none;">
+                        <span class="paper-feedback-text"></span>
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }
+              return `
+                ${catHeaderHtml}
+                <div class="paper-question-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
+                  <div class="paper-q-text">
+                    <span class="paper-q-num">${idx + 1}.</span>
+                    <span class="paper-q-body">${cleanQText}</span>
+                    <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">..........................................................................................</span>
+                    ${!isPrintOnly ? `
+                      <div class="paper-input-wrapper no-print">
+                        <input 
+                          type="text" 
+                          class="paper-answer-input" 
+                          id="paper-input-${q.id}" 
+                          data-qid="${q.id}" 
+                          placeholder="Ketik jawaban..." 
+                          autocomplete="off" 
+                          spellcheck="false"
+                          oninput="App.onBoldFaceInput('${q.id}')"
+                          onkeydown="App.onBoldFaceKeyDown(event, '${q.id}')"
+                        />
+                      </div>
+                    ` : ''}
+                    <span class="paper-unit">${q.unit ? `[ ${q.unit} ]` : ''}</span>
+                  </div>
                   ${!isPrintOnly ? `
-                    <div class="paper-input-wrapper no-print">
-                      <input 
-                        type="text" 
-                        class="paper-answer-input" 
-                        id="paper-input-${q.id}" 
-                        data-qid="${q.id}" 
-                        placeholder="Ketik jawaban..." 
-                        autocomplete="off" 
-                        spellcheck="false"
-                        oninput="App.onBoldFaceInput('${q.id}')"
-                        onkeydown="App.onBoldFaceKeyDown(event, '${q.id}')"
-                      />
+                    <div class="paper-feedback-box no-print" id="paper-feedback-${q.id}" style="display: none;">
+                      <span class="paper-feedback-text"></span>
                     </div>
                   ` : ''}
-                  <span class="paper-unit">${q.unit ? `[ ${q.unit} ]` : ''}</span>
                 </div>
-                ${!isPrintOnly ? `
-                  <div class="paper-feedback-box no-print" id="paper-feedback-${q.id}" style="display: none;">
-                    <span class="paper-feedback-text"></span>
-                  </div>
-                ` : ''}
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
         </div>
       `;
@@ -812,23 +1036,49 @@ const App = (() => {
     let earnedPoints = 0;
 
     currentPaperQuestions.forEach(q => {
-      const input = document.getElementById(`paper-input-${q.id}`);
       const fbBox = document.getElementById(`paper-feedback-${q.id}`);
-      const userVal = input ? input.value.trim() : '';
       const weight = q.points || 1;
       totalPoints += weight;
 
-      const evalRes = Grading.evaluateAnswer(userVal, q.answer, q.acceptedAnswers, q.unit);
-      earnedPoints += (evalRes.score * weight);
+      const hasSub = q.subQuestions && q.subQuestions.length > 0;
+      let evalRes;
 
-      if (input) {
-        input.classList.remove('correct', 'incorrect', 'auto-filled');
-        if (evalRes.status === 'correct') {
-          input.classList.add('correct');
-        } else {
-          input.classList.add('incorrect');
+      if (hasSub) {
+        const userObj = {};
+        q.subQuestions.forEach(sq => {
+          const subInp = document.getElementById(`paper-input-${q.id}-${sq.id}`);
+          userObj[sq.id] = subInp ? subInp.value.trim() : '';
+        });
+        evalRes = Grading.evaluateAnswer(userObj, q.answer, q.acceptedAnswers, q.unit, q.subQuestions);
+
+        q.subQuestions.forEach(sq => {
+          const subInp = document.getElementById(`paper-input-${q.id}-${sq.id}`);
+          const subEval = Array.isArray(evalRes.subResults) ? evalRes.subResults.find(s => s.id === sq.id) : evalRes.subResults?.[sq.id];
+          if (subInp && subEval) {
+            subInp.classList.remove('correct', 'incorrect', 'auto-filled');
+            if (subEval.isCorrect) {
+              subInp.classList.add('correct');
+            } else {
+              subInp.classList.add('incorrect');
+            }
+          }
+        });
+      } else {
+        const input = document.getElementById(`paper-input-${q.id}`);
+        const userVal = input ? input.value.trim() : '';
+        evalRes = Grading.evaluateAnswer(userVal, q.answer, q.acceptedAnswers, q.unit);
+
+        if (input) {
+          input.classList.remove('correct', 'incorrect', 'auto-filled');
+          if (evalRes.status === 'correct') {
+            input.classList.add('correct');
+          } else {
+            input.classList.add('incorrect');
+          }
         }
       }
+
+      earnedPoints += (evalRes.score * weight);
 
       if (fbBox) {
         if (evalRes.status === 'correct') {
@@ -836,6 +1086,11 @@ const App = (() => {
           fbBox.innerHTML = `✓ <strong>Tepat!</strong> Kunci: ${q.answer}`;
           fbBox.style.display = 'flex';
           correctCount++;
+        } else if (evalRes.status === 'partial') {
+          fbBox.className = 'paper-feedback-box partial-box no-print';
+          fbBox.innerHTML = `⚠️ <strong>Sebagian Benar (${Math.round(evalRes.score * 100)}%).</strong> Kunci: ${q.answer}`;
+          fbBox.style.display = 'flex';
+          correctCount += evalRes.score;
         } else if (evalRes.status === 'empty') {
           fbBox.className = 'paper-feedback-box no-print';
           fbBox.innerHTML = `⚠️ <em>Belum diisi.</em> Kunci: <strong>${q.answer}</strong>`;
@@ -861,7 +1116,7 @@ const App = (() => {
     const elBadge = document.getElementById('bf-stat-badge');
     const candScore = document.getElementById('paper-cand-score');
 
-    if (elBenar) elBenar.textContent = String(correctCount);
+    if (elBenar) elBenar.textContent = String(Math.round(correctCount));
     if (elSalah) elSalah.textContent = String(wrongCount);
     if (elKosong) elKosong.textContent = String(emptyCount);
     if (elNilai) elNilai.textContent = `${finalScore}%`;
@@ -878,7 +1133,7 @@ const App = (() => {
         mode: 'boldface-sheet',
         finalScore,
         totalQuestions: currentPaperQuestions.length,
-        correctCount,
+        correctCount: Math.round(correctCount),
         wrongCount,
         emptyCount,
         reviewCount: 0,
@@ -889,7 +1144,7 @@ const App = (() => {
       Storage.clearDraftAnswers(currentPaperData.aircraft);
     }
 
-    showToast(`Koreksi selesai! Skor: ${finalScore}% (${correctCount} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
+    showToast(`Koreksi selesai! Skor: ${finalScore}% (${Math.round(correctCount)} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
   }
 
   function toggleBoldFaceKeys() {
@@ -898,23 +1153,48 @@ const App = (() => {
     const toggleBtn = document.getElementById('bf-toggle-keys-btn');
 
     currentPaperQuestions.forEach(q => {
-      const input = document.getElementById(`paper-input-${q.id}`);
       const fbBox = document.getElementById(`paper-feedback-${q.id}`);
-      if (!input) return;
 
-      if (boldFaceKeysRevealed) {
-        input.dataset.origVal = input.value;
-        input.value = q.answer;
-        input.classList.add('auto-filled');
+      if (q.subQuestions && q.subQuestions.length > 0) {
+        q.subQuestions.forEach(sq => {
+          const subInp = document.getElementById(`paper-input-${q.id}-${sq.id}`);
+          if (!subInp) return;
+          if (boldFaceKeysRevealed) {
+            subInp.dataset.origVal = subInp.value;
+            subInp.value = sq.answer;
+            subInp.classList.add('auto-filled');
+          } else {
+            subInp.value = subInp.dataset.origVal || '';
+            subInp.classList.remove('auto-filled', 'correct', 'incorrect');
+          }
+        });
         if (fbBox) {
-          fbBox.className = 'paper-feedback-box correct-box no-print';
-          fbBox.innerHTML = `💡 Kunci: <strong>${q.answer}</strong>`;
-          fbBox.style.display = 'flex';
+          if (boldFaceKeysRevealed) {
+            fbBox.className = 'paper-feedback-box correct-box no-print';
+            fbBox.innerHTML = `💡 Kunci: <strong>${q.answer}</strong>`;
+            fbBox.style.display = 'flex';
+          } else {
+            fbBox.style.display = 'none';
+          }
         }
       } else {
-        input.value = input.dataset.origVal || '';
-        input.classList.remove('auto-filled', 'correct', 'incorrect');
-        if (fbBox) fbBox.style.display = 'none';
+        const input = document.getElementById(`paper-input-${q.id}`);
+        if (!input) return;
+
+        if (boldFaceKeysRevealed) {
+          input.dataset.origVal = input.value;
+          input.value = q.answer;
+          input.classList.add('auto-filled');
+          if (fbBox) {
+            fbBox.className = 'paper-feedback-box correct-box no-print';
+            fbBox.innerHTML = `💡 Kunci: <strong>${q.answer}</strong>`;
+            fbBox.style.display = 'flex';
+          }
+        } else {
+          input.value = input.dataset.origVal || '';
+          input.classList.remove('auto-filled', 'correct', 'incorrect');
+          if (fbBox) fbBox.style.display = 'none';
+        }
       }
     });
 
@@ -930,11 +1210,21 @@ const App = (() => {
     if (!window.confirm('Kosongkan seluruh isian jawaban pada lembar dokumen ini?')) return;
 
     currentPaperQuestions.forEach(q => {
-      const input = document.getElementById(`paper-input-${q.id}`);
       const fbBox = document.getElementById(`paper-feedback-${q.id}`);
-      if (input) {
-        input.value = '';
-        input.classList.remove('correct', 'incorrect', 'auto-filled');
+      if (q.subQuestions && q.subQuestions.length > 0) {
+        q.subQuestions.forEach(sq => {
+          const subInp = document.getElementById(`paper-input-${q.id}-${sq.id}`);
+          if (subInp) {
+            subInp.value = '';
+            subInp.classList.remove('correct', 'incorrect', 'auto-filled');
+          }
+        });
+      } else {
+        const input = document.getElementById(`paper-input-${q.id}`);
+        if (input) {
+          input.value = '';
+          input.classList.remove('correct', 'incorrect', 'auto-filled');
+        }
       }
       if (fbBox) {
         fbBox.style.display = 'none';
@@ -988,18 +1278,42 @@ const App = (() => {
 
   function onBoldFaceInput(qid) {
     if (!currentPaperData) return;
-    const drafts = {};
-    document.querySelectorAll('.paper-answer-input').forEach(inp => {
-      if (inp.value) drafts[inp.dataset.qid] = inp.value;
-    });
-    Storage.saveDraftAnswers(currentPaperData.aircraft, drafts);
+    const drafts = Storage.getDraftAnswers(currentPaperData.aircraft) || {};
+    const input = document.getElementById(`paper-input-${qid}`);
+    if (input) {
+      input.classList.remove('correct', 'incorrect', 'auto-filled');
+      drafts[qid] = input.value;
+      Storage.saveDraftAnswers(currentPaperData.aircraft, drafts);
+    }
+    const fbBox = document.getElementById(`paper-feedback-${qid}`);
+    if (fbBox && boldFaceSubMode !== 'practice') {
+      fbBox.style.display = 'none';
+    }
+  }
+
+  function onBoldFaceSubInput(qid, subid) {
+    if (!currentPaperData) return;
+    const drafts = Storage.getDraftAnswers(currentPaperData.aircraft) || {};
+    const input = document.getElementById(`paper-input-${qid}-${subid}`);
+    if (input) {
+      input.classList.remove('correct', 'incorrect', 'auto-filled');
+      if (typeof drafts[qid] !== 'object' || drafts[qid] === null) {
+        drafts[qid] = {};
+      }
+      drafts[qid][subid] = input.value;
+      Storage.saveDraftAnswers(currentPaperData.aircraft, drafts);
+    }
+    const fbBox = document.getElementById(`paper-feedback-${qid}`);
+    if (fbBox && boldFaceSubMode !== 'practice') {
+      fbBox.style.display = 'none';
+    }
   }
 
   function onBoldFaceKeyDown(e, qid) {
     if (e.key === 'Enter') {
       e.preventDefault();
       const inputs = Array.from(document.querySelectorAll('.paper-answer-input'));
-      const currIdx = inputs.findIndex(i => i.dataset.qid === qid);
+      const currIdx = inputs.indexOf(e.target);
       if (currIdx >= 0 && currIdx < inputs.length - 1) {
         inputs[currIdx + 1].focus();
       }
@@ -1165,7 +1479,11 @@ const App = (() => {
     updateSelectedCatCount,
     startExamFromSetup,
     onAnswerInput,
+    onSubAnswerInput,
     onAnswerKeyDown,
+    checkCurrentQuestion,
+    revealCurrentQuestion,
+    toggleCurrentFlag,
     promptSubmitExam,
     filterReview,
     retakeWrongOnly,
@@ -1179,6 +1497,7 @@ const App = (() => {
     resetBoldFaceSheet,
     filterBoldFaceSection,
     onBoldFaceInput,
+    onBoldFaceSubInput,
     onBoldFaceKeyDown,
     renderBankFiltered,
     exportBankJSON,

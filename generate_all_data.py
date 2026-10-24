@@ -873,32 +873,32 @@ def build_bell412ep():
         ("ENGINE STARTER", "Engine Starter sequence 5: second ON", "30 second ON", ["30", "30 second", "30 sec", "30 detik"]),
         ("ENGINE STARTER", "Engine Starter sequence 6: minutes OFF", "15 minutes OFF", ["15", "15 minutes", "15 min", "15 menit"]),
         ("GROUND POWER STARTS", "28 VDC ground power units for starting shall be limited to", "1000 amps max", ["1000", "1000 amps", "1000 amps max", "1.000 amps"]),
-        ("GAS PRODUCER RPM (N1)", "Twin Engine Operation: Continuous operation", "61 to 103.1 %", ["61 to 103.1", "61-103.1", "61 to 103.1 %", "61-103.1%"]),
-        ("GAS PRODUCER RPM (N1)", "Twin Engine Operation: Maximum continuous", "103.1 %", ["103.1", "103.1 %", "103,1", "103.1%"]),
-        ("GAS PRODUCER RPM (N1)", "Twin Engine Operation: Maximum for take off", "103.1 %", ["103.1", "103.1 %", "103,1", "103.1%"]),
-        ("GAS PRODUCER RPM (N1)", "One Engine Inoperative (OEI): Continuous OEI", "103.1 to 103.7 %", ["103.1 to 103.7", "103.1-103.7", "103.1 to 103.7 %"]),
-        ("GAS PRODUCER RPM (N1)", "One Engine Inoperative (OEI): 2 1/2 Minutes OEI", "103.7 to 109.2 %", ["103.7 to 109.2", "103.7-109.2", "103.7 to 109.2 %"]),
-        ("GAS PRODUCER RPM (N1)", "One Engine Inoperative (OEI): Maximum OEI", "109.2 %", ["109.2", "109.2 %", "109,2", "109.2%"]),
-        ("POWER TURBINE RPM (N2)", "Minimum in cruise at or below 6000 ft HD", "97 %", ["97", "97 %", "97%"]),
-        ("POWER TURBINE RPM (N2)", "Min for hover, take off and climb", "100 %", ["100", "100 %", "100%"]),
-        ("POWER TURBINE RPM (N2)", "Min in cruise above 6000 ft HD", "100 %", ["100", "100 %", "100%"]),
-        ("POWER TURBINE RPM (N2)", "Operation with ENG torque at or below 30%", "100 to 104.5 %", ["100 to 104.5", "100-104.5", "100 to 104.5 %"]),
-        ("POWER TURBINE RPM (N2)", "Max with ENG torque at or below 30%", "104.5 %", ["104.5", "104.5 %", "104,5", "104.5%"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-115: Continuous operation", "300 to 810 °C", ["300 to 810", "300-810", "300 to 810 °C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-115: Maximum continuous", "810 °C", ["810", "810 °C", "810 C", "810°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-115: Maximum transient (5 sec max above 810°C)", "925 °C", ["925", "925 °C", "925 C", "925°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-115: Maximum for starting (2 sec max above 960°C)", "1090 °C", ["1090", "1090 °C", "1090 C", "1090°C", "1.090"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-119: Continuous operation & Max continuous", "300 to 810 °C / 810 °C", ["300 to 810 / 810", "300-810 / 810", "300-810, 810"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-119: Maximum transient (5 sec max above 810°C)", "940 °C", ["940", "940 °C", "940 C", "940°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "Twin Engine Gauge P/N 212-075-067-119: Maximum for starting (2 sec max above 960°C)", "1090 °C", ["1090", "1090 °C", "1090 C", "1090°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "OEI Gauge P/N 212-075-067-115: Maximum continuous OEI", "820 °C", ["820", "820 °C", "820 C", "820°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "OEI Gauge P/N 212-075-067-115: 2 1/2 Min OEI & Maximum OEI", "820 to 925 °C / 925 °C", ["820 to 925 / 925", "820-925 / 925", "820 to 925, 925"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "OEI Gauge P/N 212-075-067-119: Maximum continuous OEI", "820 °C", ["820", "820 °C", "820 C", "820°C"]),
-        ("INTER TURBINE TEMPERATURE (ITT)", "OEI Gauge P/N 212-075-067-119: 2 1/2 Min OEI & Maximum OEI", "820 to 940 °C / 940 °C", ["820 to 940 / 940", "820-940 / 940", "820 to 940, 940"]),
-        ("ENGINE TORQUE – OEI", "Continuous OEI torque", "5 to 73.2 %", ["5 to 73.2", "5-73.2", "5 to 73.2 %", "5-73.2%"]),
-        ("ENGINE TORQUE – OEI", "Maximum continuous OEI torque", "73.2 %", ["73.2", "73.2 %", "73,2", "73.2%"]),
-        ("ENGINE TORQUE – OEI", "2 1/2 Min OEI torque", "73.2 to 81 %", ["73.2 to 81", "73.2-81", "73.2 to 81 %"]),
-        ("ENGINE TORQUE – OEI", "Maximum OEI torque", "81 %", ["81", "81 %", "81%"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): Twin Engine Operation: Continuous operation", "61 to 103.1 %", ["61 to 103.1", "61-103.1", "61 to 103.1 %", "61-103.1%"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): Twin Engine Operation: Maximum continuous", "103.1 %", ["103.1", "103.1 %", "103,1", "103.1%"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): Twin Engine Operation: Maximum for take off", "103.1 %", ["103.1", "103.1 %", "103,1", "103.1%"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): Continuous OEI", "103.1 to 103.7 %", ["103.1 to 103.7", "103.1-103.7", "103.1 to 103.7 %"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): 2 1/2 Minutes OEI", "103.7 to 109.2 %", ["103.7 to 109.2", "103.7-109.2", "103.7 to 109.2 %"]),
+        ("GAS PRODUCER RPM (N1)", "GAS PRODUCER RPM (N1): One Engine Inoperative (OEI): Maximum OEI", "109.2 %", ["109.2", "109.2 %", "109,2", "109.2%"]),
+        ("POWER TURBINE RPM (N2)", "POWER TURBINE RPM (N2): Minimum in cruise at or below 6000 ft HD", "97 %", ["97", "97 %", "97%"]),
+        ("POWER TURBINE RPM (N2)", "POWER TURBINE RPM (N2): Min for hover, take off and climb", "100 %", ["100", "100 %", "100%"]),
+        ("POWER TURBINE RPM (N2)", "POWER TURBINE RPM (N2): Min in cruise above 6000 ft HD", "100 %", ["100", "100 %", "100%"]),
+        ("POWER TURBINE RPM (N2)", "POWER TURBINE RPM (N2): Operation with ENG torque at or below 30%", "100 to 104.5 %", ["100 to 104.5", "100-104.5", "100 to 104.5 %"]),
+        ("POWER TURBINE RPM (N2)", "POWER TURBINE RPM (N2): Max with ENG torque at or below 30%", "104.5 %", ["104.5", "104.5 %", "104,5", "104.5%"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Continuous operation", "300 to 810 °C", ["300 to 810", "300-810", "300 to 810 °C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum continuous", "810 °C", ["810", "810 °C", "810 C", "810°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum transient (5 sec max above 810°C)", "925 °C", ["925", "925 °C", "925 C", "925°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-115: Maximum for starting (2 sec max above 960°C)", "1090 °C", ["1090", "1090 °C", "1090 C", "1090°C", "1.090"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Continuous operation & Max continuous", "300 to 810 °C / 810 °C", ["300 to 810 / 810", "300-810 / 810", "300-810, 810"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Maximum transient (5 sec max above 810°C)", "940 °C", ["940", "940 °C", "940 C", "940°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): Twin Engine Gauge P/N 212-075-067-119: Maximum for starting (2 sec max above 960°C)", "1090 °C", ["1090", "1090 °C", "1090 C", "1090°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-115: Maximum continuous OEI", "820 °C", ["820", "820 °C", "820 C", "820°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-115: 2 1/2 Min OEI & Maximum OEI", "820 to 925 °C / 925 °C", ["820 to 925 / 925", "820-925 / 925", "820 to 925, 925"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-119: Maximum continuous OEI", "820 °C", ["820", "820 °C", "820 C", "820°C"]),
+        ("INTER TURBINE TEMPERATURE (ITT)", "INTER TURBINE TEMPERATURE (ITT): OEI Gauge P/N 212-075-067-119: 2 1/2 Min OEI & Maximum OEI", "820 to 940 °C / 940 °C", ["820 to 940 / 940", "820-940 / 940", "820 to 940, 940"]),
+        ("ENGINE TORQUE – OEI", "ENGINE TORQUE – OEI: Continuous OEI torque", "5 to 73.2 %", ["5 to 73.2", "5-73.2", "5 to 73.2 %", "5-73.2%"]),
+        ("ENGINE TORQUE – OEI", "ENGINE TORQUE – OEI: Maximum continuous OEI torque", "73.2 %", ["73.2", "73.2 %", "73,2", "73.2%"]),
+        ("ENGINE TORQUE – OEI", "ENGINE TORQUE – OEI: 2 1/2 Min OEI torque", "73.2 to 81 %", ["73.2 to 81", "73.2-81", "73.2 to 81 %"]),
+        ("ENGINE TORQUE – OEI", "ENGINE TORQUE – OEI: Maximum OEI torque", "81 %", ["81", "81 %", "81%"]),
         ("FUEL PRESSURE", "Fuel Pressure: Minimum", "4 PSI", ["4", "4 PSI", "4 psi"]),
         ("FUEL PRESSURE", "Fuel Pressure: Continuous operation", "4 to 35 PSI", ["4 to 35", "4-35", "4 to 35 PSI"]),
         ("FUEL PRESSURE", "Fuel Pressure: Maximum", "35 PSI", ["35", "35 PSI", "35 psi"]),
@@ -937,13 +937,13 @@ def build_bell412ep():
         ("ROTOR RPM – POWER ON", "Rotor RPM Power On: Maximum continuous", "100 %", ["100", "100 %", "100%"]),
         ("ROTOR RPM – POWER ON", "Rotor RPM Power On: Operation with ENG torque at or below 30%", "100 to 104.5 %", ["100 to 104.5", "100-104.5", "100 to 104.5 %"]),
         ("ROTOR RPM – POWER ON", "Rotor RPM Power On: Max with ENG torque at or below 30%", "104.5 %", ["104.5", "104.5 %", "104,5", "104.5%"]),
-        ("ROTOR RPM – POWER OFF", "Min for autorotation with gross weight below 8000 lbs (3629 kg)", "80 %", ["80", "80 %", "80%"]),
-        ("ROTOR RPM – POWER OFF", "Power off operation with gross weight below 8000 lbs (3629 kg)", "80 to 104.5 %", ["80 to 104.5", "80-104.5", "80 to 104.5 %"]),
-        ("ROTOR RPM – POWER OFF", "Min for autorotation with gross weight at or above 8000 lbs (3629 kg)", "91 %", ["91", "91 %", "91%"]),
-        ("ROTOR RPM – POWER OFF", "Power Off Maximum", "104.5 %", ["104.5", "104.5 %", "104,5", "104.5%"]),
-        ("ROTOR RPM – GROUND OPERATION", "Ground Operation: Minimum", "77 %", ["77", "77 %", "77%"]),
-        ("ROTOR RPM – GROUND OPERATION", "Ground Operation: Minimum with stick centering ind system inoperative", "97 %", ["97", "97 %", "97%"]),
-        ("ROTOR RPM – GROUND OPERATION", "Ground Operation: Transient (avoid steady state autorotation)", "26 to 77 %", ["26 to 77", "26-77", "26 to 77 %"]),
+        ("ROTOR RPM – POWER OFF", "ROTOR RPM – POWER OFF: Min for autorotation with gross weight below 8000 lbs (3629 kg)", "80 %", ["80", "80 %", "80%"]),
+        ("ROTOR RPM – POWER OFF", "ROTOR RPM – POWER OFF: Power off operation with gross weight below 8000 lbs (3629 kg)", "80 to 104.5 %", ["80 to 104.5", "80-104.5", "80 to 104.5 %"]),
+        ("ROTOR RPM – POWER OFF", "ROTOR RPM – POWER OFF: Min for autorotation with gross weight at or above 8000 lbs (3629 kg)", "91 %", ["91", "91 %", "91%"]),
+        ("ROTOR RPM – POWER OFF", "ROTOR RPM – POWER OFF: Power Off Maximum", "104.5 %", ["104.5", "104.5 %", "104,5", "104.5%"]),
+        ("ROTOR RPM – GROUND OPERATION", "ROTOR RPM – GROUND OPERATION: Ground Operation: Minimum", "77 %", ["77", "77 %", "77%"]),
+        ("ROTOR RPM – GROUND OPERATION", "ROTOR RPM – GROUND OPERATION: Ground Operation: Minimum with stick centering ind system inoperative", "97 %", ["97", "97 %", "97%"]),
+        ("ROTOR RPM – GROUND OPERATION", "ROTOR RPM – GROUND OPERATION: Ground Operation: Transient (avoid steady state autorotation)", "26 to 77 %", ["26 to 77", "26-77", "26 to 77 %"]),
         ("HYDRAULIC PRESSURE", "Hydraulic Pressure: Minimum", "600 PSI", ["600", "600 PSI", "600 psi"]),
         ("HYDRAULIC PRESSURE", "Hydraulic Pressure: Caution", "600 to 900 PSI", ["600 to 900", "600-900", "600 to 900 PSI"]),
         ("HYDRAULIC PRESSURE", "Hydraulic Pressure: Continuous operation", "900 to 1100 PSI", ["900 to 1100", "900-1100", "900 to 1100 PSI"]),
@@ -975,18 +975,108 @@ def build_bell412ep():
 
     # Indicator limitation dial & markings questions
     indicator_data = [
-        ("Airspeed Dial Markings", "Airspeed indicator: Yellow arc (0-30), Green arc (30-140), Blue/White line (105), Red radial (140)", "0-30: Indicator Unreliable | 30-140: Cont. Operation | 105: Max for autorotation at/below 10.000 ft Hp | 140: VNE", ["0-30 Unreliable, 30-140 Cont. Operation, 105 Autorotation, 140 VNE"]),
-        ("Mast Torque Dial Markings", "Mast Torque indicator: Green arc (10-81), Yellow arc (81-100), Red radial (100)", "10-81: Cont. Operation | 81-100: 5 Min Take Off Range | 100: Maximum", ["10-81 Cont, 81-100 5 Min Take Off, 100 Maximum"]),
-        ("Engine Torque Dial Markings", "Engine Torque OEI: Green arc (5-73.2), Yellow arc (73.2-81), Red radial (81)", "5-73.2: Cont. OEI Operation | 73.2-81: 2 1/2 OEI | 81: Maximum OEI", ["5-73.2 Cont OEI, 73.2-81 2 1/2 OEI, 81 Maximum OEI"]),
-        ("Rotor RPM (Nr) Dial Markings", "Rotor RPM (Nr): Yellow (26-77), Red line (80), Yellow (80-91), Green (91-104.5), Red line (104.5)", "26-77: Transient Ground Operation | 80: Min for Autorotation below 8000 lbs | 80-91: Power Off below 8000 lbs | 91-104.5: Cont. Power Off | 104.5: Maximum", ["26-77 Transient, 80 Min Autorotation, 80-91 Power Off, 91-104.5 Cont Power Off, 104.5 Maximum"]),
-        ("Gas Producer RPM (Ni)", "Gas Producer RPM (Ni): White lines (12 & 61), Green arc (61-103.1), Red line (103.1), Yellow arcs (103.1-103.7 & 103.7-109.2), Red line (109.2)", "12: Min opening throttle during start | 61: Idle RPM | 61-103.1: Continuous Operation | 103.1: Max Continuous | 103.1-103.7: Cont OEI | 103.7-109.2: 2 1/2 Min OEI | 109.2: Max 2 1/2 OEI", ["12 Start, 61 Idle, 61-103.1 Cont, 103.1 Max Cont, 103.1-103.7 Cont OEI, 103.7-109.2 2 1/2 Min OEI, 109.2 Max OEI"]),
-        ("ITT Dial Markings", "Inter Turbine Temperature (ITT): Green arc (300-810), Red line (810), Yellow arc (810-940), Red line (820, 940), Red triangle (1090)", "300-810: Continuous Operation | 810: Max Continuous | 810-940: OEI Operation | 820: Max Cont. OEI | 940: Max 2 1/2 OEI | 1090: Max for starting Engine", ["300-810 Cont, 810 Max Cont, 810-940 OEI, 820 Max Cont OEI, 940 Max 2 1/2 OEI, 1090 Starting"]),
-        ("Hydraulic Pressure Dial Markings", "Hydraulic Pressure: Red line (600), Yellow arc (600-900), Green arc (900-1100), Red line (1100)", "600: Minimum | 600-900: Caution | 900-1100: Continuous operation | 1100: Maximum", ["600 Min, 600-900 Caution, 900-1100 Cont, 1100 Max"]),
-        ("Fuel Pressure Dial Markings", "Fuel Pressure: Red line (4), Green arc (4-35), Red line (35)", "4: Minimum | 4-35: Continuous operation | 35: Maximum", ["4 Min, 4-35 Cont, 35 Max"])
+        (
+            "Airspeed Dial Markings",
+            "Airspeed indicator: Yellow arc (0-30), Green arc (30-140), Blue/White line (105), Red radial (140)",
+            "0-30: Indicator Unreliable | 30-140: Cont. Operation | 105: Max for autorotation at/below 10.000 ft Hp | 140: VNE",
+            ["0-30 Unreliable, 30-140 Cont. Operation, 105 Autorotation, 140 VNE"],
+            [
+                {"id": "sub_1", "label": "Yellow arc (0-30)", "answer": "Indicator Unreliable", "acceptedAnswers": ["Indicator Unreliable", "Unreliable"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Green arc (30-140)", "answer": "Continuous Operation", "acceptedAnswers": ["Continuous Operation", "Cont. Operation", "Cont Operation", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Blue/White line (105)", "answer": "Max for autorotation at/below 10.000 ft Hp", "acceptedAnswers": ["Max for autorotation at/below 10.000 ft Hp", "Max for autorotation", "Autorotation", "Max autorotation"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_4", "label": "Red radial (140)", "answer": "VNE", "acceptedAnswers": ["VNE", "Vne", "Velocity Never Exceed"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Mast Torque Dial Markings",
+            "Mast Torque indicator: Green arc (10-81), Yellow arc (81-100), Red radial (100)",
+            "10-81: Cont. Operation | 81-100: 5 Min Take Off Range | 100: Maximum",
+            ["10-81 Cont, 81-100 5 Min Take Off, 100 Maximum"],
+            [
+                {"id": "sub_1", "label": "Green arc (10-81)", "answer": "Continuous Operation", "acceptedAnswers": ["Continuous Operation", "Cont. Operation", "Cont Operation", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Yellow arc (81-100)", "answer": "5 Min Take Off Range", "acceptedAnswers": ["5 Min Take Off Range", "5 Min Take Off", "5 Min Takeoff", "Take Off Range"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Red radial (100)", "answer": "Maximum", "acceptedAnswers": ["Maximum", "Max"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Engine Torque Dial Markings",
+            "Engine Torque OEI: Green arc (5-73.2), Yellow arc (73.2-81), Red radial (81)",
+            "5-73.2: Cont. OEI Operation | 73.2-81: 2 1/2 OEI | 81: Maximum OEI",
+            ["5-73.2 Cont OEI, 73.2-81 2 1/2 OEI, 81 Maximum OEI"],
+            [
+                {"id": "sub_1", "label": "Green arc (5-73.2)", "answer": "Continuous OEI Operation", "acceptedAnswers": ["Continuous OEI Operation", "Cont. OEI Operation", "Cont OEI Operation", "Cont OEI", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Yellow arc (73.2-81)", "answer": "2 1/2 OEI", "acceptedAnswers": ["2 1/2 OEI", "2.5 OEI", "2 1/2 Min OEI", "2 1/2"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Red radial (81)", "answer": "Maximum OEI", "acceptedAnswers": ["Maximum OEI", "Max OEI", "Maximum", "Max"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Rotor RPM (Nr) Dial Markings",
+            "Rotor RPM (Nr): Yellow (26-77), Red line (80), Yellow (80-91), Green (91-104.5), Red line (104.5)",
+            "26-77: Transient Ground Operation | 80: Min for Autorotation below 8000 lbs | 80-91: Power Off below 8000 lbs | 91-104.5: Cont. Power Off | 104.5: Maximum",
+            ["26-77 Transient, 80 Min Autorotation, 80-91 Power Off, 91-104.5 Cont Power Off, 104.5 Maximum"],
+            [
+                {"id": "sub_1", "label": "Yellow (26-77)", "answer": "Transient Ground Operation", "acceptedAnswers": ["Transient Ground Operation", "Transient Ground", "Transient"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Red line (80)", "answer": "Min for Autorotation below 8000 lbs", "acceptedAnswers": ["Min for Autorotation below 8000 lbs", "Min for Autorotation", "Min Autorotation"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Yellow (80-91)", "answer": "Power Off below 8000 lbs", "acceptedAnswers": ["Power Off below 8000 lbs", "Power Off"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_4", "label": "Green (91-104.5)", "answer": "Continuous Power Off", "acceptedAnswers": ["Continuous Power Off", "Cont. Power Off", "Cont Power Off", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_5", "label": "Red line (104.5)", "answer": "Maximum", "acceptedAnswers": ["Maximum", "Max"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Gas Producer RPM (Ni)",
+            "Gas Producer RPM (Ni): White lines (12 & 61), Green arc (61-103.1), Red line (103.1), Yellow arcs (103.1-103.7 & 103.7-109.2), Red line (109.2)",
+            "12: Min opening throttle during start | 61: Idle RPM | 61-103.1: Continuous Operation | 103.1: Max Continuous | 103.1-103.7: Cont OEI | 103.7-109.2: 2 1/2 Min OEI | 109.2: Max 2 1/2 OEI",
+            ["12 Start, 61 Idle, 61-103.1 Cont, 103.1 Max Cont, 103.1-103.7 Cont OEI, 103.7-109.2 2 1/2 Min OEI, 109.2 Max OEI"],
+            [
+                {"id": "sub_1", "label": "White lines (12 & 61)", "answer": "12: Min opening throttle during start | 61: Idle RPM", "acceptedAnswers": ["12: Min opening throttle during start | 61: Idle RPM", "12 Start, 61 Idle", "12: Start, 61: Idle"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Green arc (61-103.1)", "answer": "Continuous Operation", "acceptedAnswers": ["Continuous Operation", "Cont. Operation", "Cont Operation", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Red line (103.1)", "answer": "Max Continuous", "acceptedAnswers": ["Max Continuous", "Maximum Continuous", "Max Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_4", "label": "Yellow arcs (103.1-103.7 & 103.7-109.2)", "answer": "103.1-103.7: Cont OEI | 103.7-109.2: 2 1/2 Min OEI", "acceptedAnswers": ["103.1-103.7: Cont OEI | 103.7-109.2: 2 1/2 Min OEI", "103.1-103.7 Cont OEI, 103.7-109.2 2 1/2 Min OEI", "Cont OEI / 2 1/2 Min OEI"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_5", "label": "Red line (109.2)", "answer": "Max 2 1/2 OEI", "acceptedAnswers": ["Max 2 1/2 OEI", "Max OEI", "Maximum OEI"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "ITT Dial Markings",
+            "Inter Turbine Temperature (ITT): Green arc (300-810), Red line (810), Yellow arc (810-940), Red line (820, 940), Red triangle (1090)",
+            "300-810: Continuous Operation | 810: Max Continuous | 810-940: OEI Operation | 820: Max Cont. OEI | 940: Max 2 1/2 OEI | 1090: Max for starting Engine",
+            ["300-810 Cont, 810 Max Cont, 810-940 OEI, 820 Max Cont OEI, 940 Max 2 1/2 OEI, 1090 Starting"],
+            [
+                {"id": "sub_1", "label": "Green arc (300-810)", "answer": "Continuous Operation", "acceptedAnswers": ["Continuous Operation", "Cont. Operation", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Red line (810)", "answer": "Max Continuous", "acceptedAnswers": ["Max Continuous", "Maximum Continuous", "Max Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Yellow arc (810-940)", "answer": "OEI Operation", "acceptedAnswers": ["OEI Operation", "OEI"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_4", "label": "Red line (820, 940)", "answer": "820: Max Cont. OEI | 940: Max 2 1/2 OEI", "acceptedAnswers": ["820: Max Cont. OEI | 940: Max 2 1/2 OEI", "820 Max Cont OEI, 940 Max 2 1/2 OEI"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_5", "label": "Red triangle (1090)", "answer": "Max for starting Engine", "acceptedAnswers": ["Max for starting Engine", "Starting", "Starting Engine", "Max Starting"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Hydraulic Pressure Dial Markings",
+            "Hydraulic Pressure: Red line (600), Yellow arc (600-900), Green arc (900-1100), Red line (1100)",
+            "600: Minimum | 600-900: Caution | 900-1100: Continuous operation | 1100: Maximum",
+            ["600 Min, 600-900 Caution, 900-1100 Cont, 1100 Max"],
+            [
+                {"id": "sub_1", "label": "Red line (600)", "answer": "Minimum", "acceptedAnswers": ["Minimum", "Min"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Yellow arc (600-900)", "answer": "Caution", "acceptedAnswers": ["Caution"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Green arc (900-1100)", "answer": "Continuous operation", "acceptedAnswers": ["Continuous operation", "Cont. operation", "Cont operation", "Continuous", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_4", "label": "Red line (1100)", "answer": "Maximum", "acceptedAnswers": ["Maximum", "Max"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        ),
+        (
+            "Fuel Pressure Dial Markings",
+            "Fuel Pressure: Red line (4), Green arc (4-35), Red line (35)",
+            "4: Minimum | 4-35: Continuous operation | 35: Maximum",
+            ["4 Min, 4-35 Cont, 35 Max"],
+            [
+                {"id": "sub_1", "label": "Red line (4)", "answer": "Minimum", "acceptedAnswers": ["Minimum", "Min"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_2", "label": "Green arc (4-35)", "answer": "Continuous operation", "acceptedAnswers": ["Continuous operation", "Cont. operation", "Cont operation", "Continuous", "Cont"], "placeholder": "Batas / arti penunjukan..."},
+                {"id": "sub_3", "label": "Red line (35)", "answer": "Maximum", "acceptedAnswers": ["Maximum", "Max"], "placeholder": "Batas / arti penunjukan..."}
+            ]
+        )
     ]
 
-    for idx, (cat, q_text, ans, accepted) in enumerate(indicator_data, 1):
-        questions.append({
+    for idx, item in enumerate(indicator_data, 1):
+        cat, q_text, ans, accepted = item[0], item[1], item[2], item[3]
+        sub_questions = item[4] if len(item) > 4 else None
+        q_obj = {
             "id": f"B412-IND-{idx:03d}",
             "aircraft": "BELL 412 EP",
             "section": "INDICATOR LIMITATION",
@@ -1000,26 +1090,59 @@ def build_bell412ep():
             "sourcePage": 21 + (idx - 1) // 3,
             "points": 1,
             "verified": True
-        })
+        }
+        if sub_questions:
+            q_obj["subQuestions"] = sub_questions
+        questions.append(q_obj)
 
     # Emergency Procedures
     emergencies = [
         ("Terminology", "LAND AS SOON AS POSSIBLE definition", "Land without delay at the nearest suitable area (i.e. open field) at which safe approach and landing is reasonably assured", ["Land without delay at the nearest suitable area", "Land without delay at the nearest suitable area (i.e. open field) at which safe approach and landing is reasonably assured", "Land without delay at nearest suitable area"]),
         ("Terminology", "LAND AS SOON AS PRACTICAL definition", "The duration of the flight and landing site are at the discretion of the pilot. Extended flight beyond the nearest approved landing area is not recommended", ["The duration of the flight and landing site are at the discretion of the pilot", "The duration of the flight and landing site are at the discretion of the pilot. Extended flight beyond the nearest approved landing area is not recommended"]),
         ("Single Engine Failure", "Single Engine Failure: List 4 primary indications", "ENG 1 OUT or ENG 2 OUT W/L ILLUMINATE; N1 drop below 53% and decreasing; N2 drop below 85% and decreasing; ITT drop below 400°C and decreasing", ["ENG 1 OUT, N1 drop below 53%, N2 drop below 85%, ITT drop below 400°C", "ENG OUT, N1 below 53%, N2 below 85%, ITT below 400C"]),
-        ("Single Engine Failure", "Single Engine Failure: FLY THE A/C immediate actions (steps a, b, c)", "a. Reduce power | b. Set airspeed 70 kts | c. Set N2 100% if possible", ["Reduce power, Set airspeed 70 kts, Set N2 100%", "Reduce power, 70 kts, N2 100%"]),
+        (
+            "Single Engine Failure",
+            "Single Engine Failure: FLY THE A/C immediate actions (steps a, b, c)",
+            "a. Reduce power | b. Set airspeed 70 kts | c. Set N2 100% if possible",
+            ["Reduce power, Set airspeed 70 kts, Set N2 100%", "Reduce power, 70 kts, N2 100%"],
+            [
+                {"id": "step_a", "label": "Step a (Power)", "answer": "Reduce power", "acceptedAnswers": ["Reduce power"], "placeholder": "Tindakan step a..."},
+                {"id": "step_b", "label": "Step b (Airspeed)", "answer": "Set airspeed 70 kts", "acceptedAnswers": ["Set airspeed 70 kts", "70 kts", "Airspeed 70 kts", "70 knots"], "placeholder": "Tindakan step b..."},
+                {"id": "step_c", "label": "Step c (N2)", "answer": "Set N2 100% if possible", "acceptedAnswers": ["Set N2 100% if possible", "Set N2 100%", "N2 100%", "N2 100% if possible"], "placeholder": "Tindakan step c..."}
+            ]
+        ),
         ("Single Engine Failure", "Single Engine Failure: IDENTIFY & Engine shutdown steps (steps d, e, f, g)", "d. IDLE STOP RELEASE to affected Eng | e. THROTTLE - CLOSED | f. BOOST PUMP - OFF | g. FUEL SWITCH - OFF", ["IDLE STOP RELEASE, THROTTLE CLOSED, BOOST PUMP OFF, FUEL SWITCH OFF"]),
         ("Dual Engine Failure", "Dual Engine Failure: AUTOROTATION immediate actions (steps a, b, c, d)", "a. Collective FULL DOWN | b. THROTTLE - CLOSE | c. Set airspeed 65 - 90 kts | d. ROTOR RPM - ON THE GREEN", ["Collective FULL DOWN, THROTTLE CLOSE, airspeed 65-90 kts, ROTOR RPM ON THE GREEN"]),
-        ("Dual Engine Failure", "Dual Engine Failure: Altimeter reading actions (e. 300 FT AGL, f. 100 FT AGL)", "e. 300 FT AGL - OPEN THROTTLE | f. 100 FT AGL - FLARE", ["300 FT OPEN THROTTLE, 100 FT FLARE", "300 FT AGL OPEN THROTTLE, 100 FT AGL FLARE"]),
-        ("Engine Fire In Flight", "Engine Fire in Flight: Immediate initial actions (steps a, b)", "a. FIRE PULL handle (affected Eng) - PULL | b. FIRE EXT - MAIN", ["FIRE PULL handle PULL, FIRE EXT MAIN", "FIRE PULL PULL, FIRE EXT MAIN"]),
+        (
+            "Dual Engine Failure",
+            "Dual Engine Failure: Altimeter reading actions (e. 300 FT AGL, f. 100 FT AGL)",
+            "e. 300 FT AGL - OPEN THROTTLE | f. 100 FT AGL - FLARE",
+            ["300 FT OPEN THROTTLE, 100 FT FLARE", "300 FT AGL OPEN THROTTLE, 100 FT AGL FLARE"],
+            [
+                {"id": "step_e", "label": "300 FT AGL (Step e)", "answer": "OPEN THROTTLE", "acceptedAnswers": ["OPEN THROTTLE", "Open throttle"], "placeholder": "Tindakan 300 FT AGL..."},
+                {"id": "step_f", "label": "100 FT AGL (Step f)", "answer": "FLARE", "acceptedAnswers": ["FLARE", "Flare"], "placeholder": "Tindakan 100 FT AGL..."}
+            ]
+        ),
+        (
+            "Engine Fire In Flight",
+            "Engine Fire in Flight: Immediate initial actions (steps a, b)",
+            "a. FIRE PULL handle (affected Eng) - PULL | b. FIRE EXT - MAIN",
+            ["FIRE PULL handle PULL, FIRE EXT MAIN", "FIRE PULL PULL, FIRE EXT MAIN"],
+            [
+                {"id": "step_a", "label": "Step a (FIRE PULL)", "answer": "FIRE PULL handle (affected Eng) - PULL", "acceptedAnswers": ["FIRE PULL handle (affected Eng) - PULL", "FIRE PULL handle PULL", "FIRE PULL PULL"], "placeholder": "Tindakan step a..."},
+                {"id": "step_b", "label": "Step b (FIRE EXT)", "answer": "FIRE EXT - MAIN", "acceptedAnswers": ["FIRE EXT - MAIN", "FIRE EXT MAIN"], "placeholder": "Tindakan step b..."}
+            ]
+        ),
         ("Engine Fire In Flight", "Engine Fire in Flight: If 10 second FIRE PULL W/L remains ON", "FIRE EXT - RESERVE", ["FIRE EXT - RESERVE", "FIRE EXT RESERVE", "RESERVE"]),
         ("Pedal Malfunction", "RIGHT PEDAL LOCKED FORWARD OR NEUTRAL: Approach & Touchdown technique", "Shallow to normal approach; 2 to 5 ft AGL - Slowly reduce THROTTLE (luruskan heading); RUN ON LANDING", ["Shallow to normal approach, 2 to 5 ft reduce throttle, RUN ON LANDING"]),
         ("Pedal Malfunction", "LEFT PEDAL LOCKED FORWARD: Approach & Touchdown technique", "Normal to steep approach; 2 ft AGL - Apply COLLECTIVE as necessary (luruskan heading); ZERO SPEED TOUCHDOWN", ["Normal to steep approach, 2 ft apply collective, ZERO SPEED TOUCHDOWN"]),
         ("Hydraulic Failure", "HYDRAULIC SYSTEM FAILURE: Procedure steps (e, f, g, h)", "e. Affected system - IDENTIFY POSITIVELY | f. HYD SYS switch - OFF (affected system) | g. Set N2 100% | h. MASTER CAUTION - RESET | LAND AS SOON AS POSSIBLE", ["IDENTIFY POSITIVELY, HYD SYS switch OFF, Set N2 100%, MASTER CAUTION RESET"])
     ]
 
-    for idx, (cat, q_text, ans, accepted) in enumerate(emergencies, 1):
-        questions.append({
+    for idx, item in enumerate(emergencies, 1):
+        cat, q_text, ans, accepted = item[0], item[1], item[2], item[3]
+        sub_questions = item[4] if len(item) > 4 else None
+        q_obj = {
             "id": f"B412-EMER-{idx:03d}",
             "aircraft": "BELL 412 EP",
             "section": "EMERGENCY PROCEDURES",
@@ -1033,7 +1156,10 @@ def build_bell412ep():
             "sourcePage": 13 + (idx - 1) // 4,
             "points": 1,
             "verified": True
-        })
+        }
+        if sub_questions:
+            q_obj["subQuestions"] = sub_questions
+        questions.append(q_obj)
 
     return {
         "aircraft": "BELL 412 EP",
