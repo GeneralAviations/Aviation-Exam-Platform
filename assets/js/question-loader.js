@@ -43,6 +43,8 @@ const QuestionLoader = (() => {
       filename = 'data/casa-212-200.json';
     } else if (norm.includes('ah-64') || norm.includes('ah64') || norm.includes('apache')) {
       filename = 'data/ah-64e.json';
+    } else if (norm.includes('bo-105') || norm.includes('bo105')) {
+      filename = 'data/bo-105.json';
     } else {
       const catalog = await loadCatalog();
       const entry = catalog.find(c => c.aircraft === aircraftId);

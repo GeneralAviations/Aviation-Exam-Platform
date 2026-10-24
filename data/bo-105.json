@@ -1,0 +1,1551 @@
+{
+  "aircraft": "BO-105",
+  "title": "BOLD FACE BO-105",
+  "sourceDocument": "BOLD FACE BO-105.pdf",
+  "totalQuestions": 79,
+  "categories": [
+    "Engine & Transmission Power",
+    "Engine Starter Limits",
+    "Fuel Quantity & Press",
+    "Mass & Load",
+    "Max Altitude",
+    "Max Speed",
+    "Oil Pressure",
+    "Oil Quantity",
+    "Oil Temperature",
+    "Slope Limits"
+  ],
+  "sections": [
+    "BOLD FACE LIMITATIONS"
+  ],
+  "questions": [
+    {
+      "id": "BO105-BF-001",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Mass & Load",
+      "questionType": "fill-blank",
+      "question": "BO-105: Berapa Max Gross Mass?",
+      "answer": "2400",
+      "acceptedAnswers": [
+        "2400",
+        "2.400",
+        "2,400",
+        "2400 kg",
+        "2.400 kg"
+      ],
+      "unit": "KG",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-002",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Mass & Load",
+      "questionType": "fill-blank",
+      "question": "BO-105: Berapa Min Gross Mass?",
+      "answer": "1140",
+      "acceptedAnswers": [
+        "1140",
+        "1.140",
+        "1,140",
+        "1140 kg",
+        "1.140 kg"
+      ],
+      "unit": "KG",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-003",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Mass & Load",
+      "questionType": "fill-blank",
+      "question": "BO-105: Berapa Max Allowable Floor Loading?",
+      "answer": "600",
+      "acceptedAnswers": [
+        "600",
+        "600 kg/m2",
+        "600 kg/m²",
+        "600 kg"
+      ],
+      "unit": "KG/M²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-004",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Mass & Load",
+      "questionType": "fill-blank",
+      "question": "BO-105: Berapa Max Allowable Load Avionics Equipment Bay (Baggage)?",
+      "answer": "20",
+      "acceptedAnswers": [
+        "20",
+        "20 kg"
+      ],
+      "unit": "KG",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-005",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Mass & Load",
+      "questionType": "fill-blank",
+      "question": "BO-105: Berapa Max External Load?",
+      "answer": "900",
+      "acceptedAnswers": [
+        "900",
+        "900 kg"
+      ],
+      "unit": "KG",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-006",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Altitude",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Altitude dengan bahan bakar JP 5, JET A, JET A1?",
+      "answer": "17000",
+      "acceptedAnswers": [
+        "17000",
+        "17.000",
+        "17,000",
+        "17000 ft",
+        "17.000 ft"
+      ],
+      "unit": "FT",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-007",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Altitude",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Altitude dengan bahan bakar JP 4, JP 8, JET B?",
+      "answer": "13700",
+      "acceptedAnswers": [
+        "13700",
+        "13.700",
+        "13,700",
+        "13700 ft",
+        "13.700 ft"
+      ],
+      "unit": "FT",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-008",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Altitude",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Altitude pada GM 2400 - 2500?",
+      "answer": "10000",
+      "acceptedAnswers": [
+        "10000",
+        "10.000",
+        "10,000",
+        "10000 ft",
+        "10.000 ft"
+      ],
+      "unit": "FT",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-009",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Speed",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Speed: Kecepatan maju maksimum VNE (Forward)?",
+      "answer": "145",
+      "acceptedAnswers": [
+        "145",
+        "145 kts",
+        "145 knot",
+        "145 knots"
+      ],
+      "unit": "kts",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-010",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Speed",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Speed: Kecepatan menyamping kiri (Sideward Left)?",
+      "answer": "25",
+      "acceptedAnswers": [
+        "25",
+        "25 kts",
+        "25 knot",
+        "25 knots"
+      ],
+      "unit": "kts",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-011",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Speed",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Speed: Kecepatan menyamping kanan (Sideward Right)?",
+      "answer": "25",
+      "acceptedAnswers": [
+        "25",
+        "25 kts",
+        "25 knot",
+        "25 knots"
+      ],
+      "unit": "kts",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-012",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Max Speed",
+      "questionType": "fill-blank",
+      "question": "BO-105 Max Speed: Kecepatan terbang mundur maksimum (Rearward)?",
+      "answer": "20",
+      "acceptedAnswers": [
+        "20",
+        "20 kts",
+        "20 knot",
+        "20 knots"
+      ],
+      "unit": "kts",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-013",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Quantity",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Quantity: Eng Oil (each tank)?",
+      "answer": "4,5",
+      "acceptedAnswers": [
+        "4,5",
+        "4.5",
+        "4,5 liter",
+        "4.5 liter"
+      ],
+      "unit": "LITER",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-014",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Quantity",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Quantity: Main Transmission?",
+      "answer": "10,3",
+      "acceptedAnswers": [
+        "10,3",
+        "10.3",
+        "10,3 liter",
+        "10.3 liter"
+      ],
+      "unit": "LITER",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-015",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Quantity",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Quantity: Intermediate Gearbox?",
+      "answer": "0,6",
+      "acceptedAnswers": [
+        "0,6",
+        "0.6",
+        "0,6 liter",
+        "0.6 liter"
+      ],
+      "unit": "LITER",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-016",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Quantity",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Quantity: Tail Rotor Gearbox?",
+      "answer": "0,4",
+      "acceptedAnswers": [
+        "0,4",
+        "0.4",
+        "0,4 liter",
+        "0.4 liter"
+      ],
+      "unit": "LITER",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-017",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Quantity",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Quantity: Main Rotor Hub?",
+      "answer": "1,8",
+      "acceptedAnswers": [
+        "1,8",
+        "1.8",
+        "1,8 liter",
+        "1.8 liter"
+      ],
+      "unit": "LITER",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-018",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Temperature",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Temperature - Main Transmission: Min?",
+      "answer": "-30",
+      "acceptedAnswers": [
+        "-30",
+        "-30°c",
+        "-30 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-019",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Temperature",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Temperature - Main Transmission: Normal?",
+      "answer": "+30 - 105",
+      "acceptedAnswers": [
+        "+30 - 105",
+        "30 - 105",
+        "30-105",
+        "+30 s/d 105",
+        "30 to 105",
+        "+30-105"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-020",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Temperature",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Temperature - Engine: Min?",
+      "answer": "-30",
+      "acceptedAnswers": [
+        "-30",
+        "-30°c",
+        "-30 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-021",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Temperature",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Temperature - Engine: Normal?",
+      "answer": "+30 - 107",
+      "acceptedAnswers": [
+        "+30 - 107",
+        "30 - 107",
+        "30-107",
+        "+30 s/d 107",
+        "30 to 107",
+        "+30-107"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 1,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-022",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Pressure",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Pressure - Main Transmission: Min?",
+      "answer": "0,5",
+      "acceptedAnswers": [
+        "0,5",
+        "0.5",
+        "0,5 kp/cm2",
+        "0.5 kp/cm²"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-023",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Pressure",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Pressure - Main Transmission: Normal?",
+      "answer": "0,8 - 2,0",
+      "acceptedAnswers": [
+        "0,8 - 2,0",
+        "0.8 - 2.0",
+        "0,8-2,0",
+        "0.8-2.0",
+        "0.8 to 2.0"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-024",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Pressure",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Pressure - Engine: Below 79% N1 Speed?",
+      "answer": "3,5 - 9,1",
+      "acceptedAnswers": [
+        "3,5 - 9,1",
+        "3.5 - 9.1",
+        "3,5-9,1",
+        "3.5-9.1"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-025",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Pressure",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Pressure - Engine: From 79% to 94% N1 Speed?",
+      "answer": "6,3 - 9,1",
+      "acceptedAnswers": [
+        "6,3 - 9,1",
+        "6.3 - 9.1",
+        "6,3-9,1",
+        "6.3-9.1"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-026",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Oil Pressure",
+      "questionType": "fill-blank",
+      "question": "BO-105 Oil Pressure - Engine: At 94% N1 Speed and above?",
+      "answer": "8,1 - 9,1",
+      "acceptedAnswers": [
+        "8,1 - 9,1",
+        "8.1 - 9.1",
+        "8,1-9,1",
+        "8.1-9.1"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-027",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Main Tank Usable (Liters)?",
+      "answer": "477",
+      "acceptedAnswers": [
+        "477",
+        "477 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-028",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Main Tank Usable (Kilograms)?",
+      "answer": "382",
+      "acceptedAnswers": [
+        "382",
+        "382 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-029",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Main Tank Unusable (Liters)?",
+      "answer": "7,5",
+      "acceptedAnswers": [
+        "7,5",
+        "7.5",
+        "7,5 liter",
+        "7.5 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-030",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Main Tank Unusable (Kilograms)?",
+      "answer": "6,0",
+      "acceptedAnswers": [
+        "6,0",
+        "6.0",
+        "6",
+        "6 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-031",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Supply Tank Usable (Liters)?",
+      "answer": "93",
+      "acceptedAnswers": [
+        "93",
+        "93 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-032",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Supply Tank Usable (Kilograms)?",
+      "answer": "74",
+      "acceptedAnswers": [
+        "74",
+        "74 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-033",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Supply Tank Unusable (Liters)?",
+      "answer": "2,5",
+      "acceptedAnswers": [
+        "2,5",
+        "2.5",
+        "2,5 liter",
+        "2.5 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-034",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Supply Tank Unusable (Kilograms)?",
+      "answer": "2,0",
+      "acceptedAnswers": [
+        "2,0",
+        "2.0",
+        "2",
+        "2 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-035",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Total Usable (Liters)?",
+      "answer": "570",
+      "acceptedAnswers": [
+        "570",
+        "570 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-036",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Total Usable (Kilograms)?",
+      "answer": "456",
+      "acceptedAnswers": [
+        "456",
+        "456 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-037",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Total Unusable (Liters)?",
+      "answer": "10",
+      "acceptedAnswers": [
+        "10",
+        "10 liter"
+      ],
+      "unit": "LITERS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-038",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Quantity - Total Unusable (Kilograms)?",
+      "answer": "8,0",
+      "acceptedAnswers": [
+        "8,0",
+        "8.0",
+        "8",
+        "8 kg"
+      ],
+      "unit": "KILOGRAMS",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-039",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Fuel Quantity & Press",
+      "questionType": "fill-blank",
+      "question": "BO-105 Fuel Pressure: Rentang Fuel Press?",
+      "answer": "0,6 - 1,7",
+      "acceptedAnswers": [
+        "0,6 - 1,7",
+        "0.6 - 1.7",
+        "0,6-1,7",
+        "0.6-1.7"
+      ],
+      "unit": "KP/CM²",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-040",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Start/Shutdown Transient (Max 10 Sec above 810°C): Berapa Max TOT?",
+      "answer": "927",
+      "acceptedAnswers": [
+        "927",
+        "927°c",
+        "927 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-041",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Transient (Max 6 Sec above 810°C): Berapa Max TOT?",
+      "answer": "843",
+      "acceptedAnswers": [
+        "843",
+        "843°c",
+        "843 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-042",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Transient (Max 15 Sec): Berapa Max N1 (%)?",
+      "answer": "106",
+      "acceptedAnswers": [
+        "106",
+        "106%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-043",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Transient (Max 15 Sec): Berapa Max N2 (%)?",
+      "answer": "105",
+      "acceptedAnswers": [
+        "105",
+        "105%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-044",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Max Continuous Power: Max Torque (%)?",
+      "answer": "2 x 86",
+      "acceptedAnswers": [
+        "2 x 86",
+        "2x86",
+        "2 x 86%",
+        "2x86%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-045",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Max Continuous Power: Max TOT (°C)?",
+      "answer": "779",
+      "acceptedAnswers": [
+        "779",
+        "779°c",
+        "779 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-046",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Max Continuous Power: Max N1 (%)?",
+      "answer": "105",
+      "acceptedAnswers": [
+        "105",
+        "105%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-047",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Max Continuous Power: Max N2 (%)?",
+      "answer": "102",
+      "acceptedAnswers": [
+        "102",
+        "102%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-048",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Take Off Power: Max Torque (%)?",
+      "answer": "2 x 86",
+      "acceptedAnswers": [
+        "2 x 86",
+        "2x86",
+        "2 x 86%",
+        "2x86%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-049",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Take Off Power: Max TOT (°C)?",
+      "answer": "810",
+      "acceptedAnswers": [
+        "810",
+        "810°c",
+        "810 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-050",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Take Off Power: Max N1 (%)?",
+      "answer": "105",
+      "acceptedAnswers": [
+        "105",
+        "105%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-051",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "All Engines Operating (AEO) - Take Off Power: Max N2 (%)?",
+      "answer": "102",
+      "acceptedAnswers": [
+        "102",
+        "102%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-052",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Max Continuous Power: Max Torque (%)?",
+      "answer": "95",
+      "acceptedAnswers": [
+        "95",
+        "95%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-053",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Max Continuous Power: Max TOT (°C)?",
+      "answer": "779",
+      "acceptedAnswers": [
+        "779",
+        "779°c",
+        "779 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-054",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Max Continuous Power: Max N1 (%)?",
+      "answer": "105",
+      "acceptedAnswers": [
+        "105",
+        "105%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-055",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Max Continuous Power: Max N2 (%)?",
+      "answer": "102",
+      "acceptedAnswers": [
+        "102",
+        "102%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-056",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Emergency Power: Max Torque (%)?",
+      "answer": "95",
+      "acceptedAnswers": [
+        "95",
+        "95%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-057",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Emergency Power: Max TOT (°C)?",
+      "answer": "810",
+      "acceptedAnswers": [
+        "810",
+        "810°c",
+        "810 c"
+      ],
+      "unit": "°C",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-058",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Emergency Power: Max N1 (%)?",
+      "answer": "105",
+      "acceptedAnswers": [
+        "105",
+        "105%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-059",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "One Engine Inoperative (OEI) - Emergency Power: Max N2 (%)?",
+      "answer": "102",
+      "acceptedAnswers": [
+        "102",
+        "102%"
+      ],
+      "unit": "%",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-060",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Take Off Power TOT range 779 - 810 °C batasan waktunya berapa menit?",
+      "answer": "5",
+      "acceptedAnswers": [
+        "5",
+        "5 min",
+        "5 menit",
+        "5 minutes"
+      ],
+      "unit": "MIN",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-061",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Emergency Power TOT range 779 - 810 °C untuk FAA & RAI certified helicopters batas waktunya berapa menit?",
+      "answer": "5",
+      "acceptedAnswers": [
+        "5",
+        "5 min",
+        "5 menit",
+        "5 minutes"
+      ],
+      "unit": "MIN",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-062",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine & Transmission Power",
+      "questionType": "fill-blank",
+      "question": "Emergency Power TOT range 779 - 810 °C untuk LBA & TCAG certified helicopters batas waktunya berapa menit?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 min",
+        "30 menit",
+        "30 minutes"
+      ],
+      "unit": "MIN",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 2,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-063",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Slope Limits",
+      "questionType": "fill-blank",
+      "question": "Slope - MM Indicator Installed: Batas Nose Up / Forward maksimal?",
+      "answer": "8",
+      "acceptedAnswers": [
+        "8",
+        "8°",
+        "8 deg",
+        "8 derajat"
+      ],
+      "unit": "°",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-064",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Slope Limits",
+      "questionType": "fill-blank",
+      "question": "Slope - MM Indicator Installed: Batas Nose Down / Aft maksimal?",
+      "answer": "10",
+      "acceptedAnswers": [
+        "10",
+        "10°",
+        "10 deg",
+        "10 derajat"
+      ],
+      "unit": "°",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-065",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Slope Limits",
+      "questionType": "fill-blank",
+      "question": "Slope - MM Indicator Installed: Batas Left maksimal?",
+      "answer": "15",
+      "acceptedAnswers": [
+        "15",
+        "15°",
+        "15 deg",
+        "15 derajat"
+      ],
+      "unit": "°",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-066",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Slope Limits",
+      "questionType": "fill-blank",
+      "question": "Slope - MM Indicator Installed: Batas Right maksimal?",
+      "answer": "8",
+      "acceptedAnswers": [
+        "8",
+        "8°",
+        "8 deg",
+        "8 derajat"
+      ],
+      "unit": "°",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-067",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Slope Limits",
+      "questionType": "fill-blank",
+      "question": "Slope - MM Indicator Removed: Batas All Direction maksimal?",
+      "answer": "5",
+      "acceptedAnswers": [
+        "5",
+        "5°",
+        "5 deg",
+        "5 derajat"
+      ],
+      "unit": "°",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-068",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 1): Durasi SEC - ON?",
+      "answer": "20",
+      "acceptedAnswers": [
+        "20",
+        "20 sec",
+        "20 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-069",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 1): Durasi SEC - OFF?",
+      "answer": "60",
+      "acceptedAnswers": [
+        "60",
+        "60 sec",
+        "60 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-070",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 2): Durasi SEC - ON?",
+      "answer": "20",
+      "acceptedAnswers": [
+        "20",
+        "20 sec",
+        "20 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-071",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 2): Durasi SEC - OFF?",
+      "answer": "60",
+      "acceptedAnswers": [
+        "60",
+        "60 sec",
+        "60 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-072",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 3): Durasi SEC - ON?",
+      "answer": "20",
+      "acceptedAnswers": [
+        "20",
+        "20 sec",
+        "20 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-073",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter External Power (Cycle 3): Durasi MIN - OFF?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 min",
+        "30 menit"
+      ],
+      "unit": "MIN",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-074",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 1): Durasi SEC - ON?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 sec",
+        "30 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-075",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 1): Durasi SEC - OFF?",
+      "answer": "60",
+      "acceptedAnswers": [
+        "60",
+        "60 sec",
+        "60 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-076",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 2): Durasi SEC - ON?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 sec",
+        "30 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-077",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 2): Durasi SEC - OFF?",
+      "answer": "60",
+      "acceptedAnswers": [
+        "60",
+        "60 sec",
+        "60 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-078",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 3): Durasi SEC - ON?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 sec",
+        "30 detik"
+      ],
+      "unit": "SEC",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    },
+    {
+      "id": "BO105-BF-079",
+      "aircraft": "BO-105",
+      "section": "BOLD FACE LIMITATIONS",
+      "category": "Engine Starter Limits",
+      "questionType": "fill-blank",
+      "question": "Starter Onboard Battery (Cycle 3): Durasi MIN - OFF?",
+      "answer": "30",
+      "acceptedAnswers": [
+        "30",
+        "30 min",
+        "30 menit"
+      ],
+      "unit": "MIN",
+      "sourceDocument": "BOLD FACE BO-105.pdf",
+      "sourcePage": 3,
+      "points": 1,
+      "verified": true
+    }
+  ]
+}

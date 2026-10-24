@@ -214,5 +214,29 @@
       "LIMITATIONS",
       "WARNING/CAUTION/ADVISORIES"
     ]
+  },
+  {
+    "aircraft": "BO-105",
+    "title": "BOLD FACE BO-105",
+    "file": "data/bo-105.json",
+    "sourceDocument": "BOLD FACE BO-105.pdf",
+    "description": "Limitations lengkap Helikopter BO-105: Mass & Load, Max Altitude, Max Speed, Oil Qty, Oil Temp, Oil Pressure, Fuel Qty & Press, Engine/Transmission Power, Slope Limits, dan Engine Starter",
+    "totalQuestions": 79,
+    "categoriesCount": 10,
+    "categories": [
+      "Engine & Transmission Power",
+      "Engine Starter Limits",
+      "Fuel Quantity & Press",
+      "Mass & Load",
+      "Max Altitude",
+      "Max Speed",
+      "Oil Pressure",
+      "Oil Quantity",
+      "Oil Temperature",
+      "Slope Limits"
+    ],
+    "sections": [
+      "BOLD FACE LIMITATIONS"
+    ]
   }
 ]
