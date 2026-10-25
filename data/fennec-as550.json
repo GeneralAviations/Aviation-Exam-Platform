@@ -3,7 +3,7 @@
   "title": "BOLD FACE FENNEC AS550",
   "sourceDocument": "BOLD FACE FENNEC AS550.docx",
   "description": "Limitation Weight, Speed, Altitude, Rotor, FLI, Torque, N1, N2, TOT, Electrical, dan Cargo Helikopter FENNEC AS550",
-  "totalQuestions": 49,
+  "totalQuestions": 15,
   "questions": [
     {
       "id": "FENNEC-LIM-001",
@@ -11,87 +11,103 @@
       "section": "LIMITATION",
       "category": "Weight Limitation",
       "questionType": "fill-blank",
-      "question": "Maximum internal weight for flight, take-off and landing with non-jettisonable load",
-      "answer": "2250 kg",
+      "question": "1. Maximum & Minimum internal weight for flight, take-off and landing with non-jettisonable load",
+      "answer": "a. Maximum internal weight for flight, take-off and landing with non-jettisonable load 2250 kg | b. Minimum internal weight for flight, take-off and landing 1310 kg",
       "acceptedAnswers": [
-        "2250",
-        "2.250",
-        "2250 kg",
-        "2250kg"
+        "2250 kg, 1310 kg"
       ],
-      "unit": "kg",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
       "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "points": 2,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Maximum internal weight for flight, take-off and landing with non-jettisonable load",
+          "answer": "2250 kg",
+          "acceptedAnswers": [
+            "2250",
+            "2.250",
+            "2250 kg",
+            "2250kg",
+            "2,250"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai Maximum internal weight for flight, take-off and landing with non-jettisonable load..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Minimum internal weight for flight, take-off and landing",
+          "answer": "1310 kg",
+          "acceptedAnswers": [
+            "1310",
+            "1.310",
+            "1310 kg",
+            "1310kg",
+            "1,310"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai Minimum internal weight for flight, take-off and landing..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-002",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Weight Limitation",
+      "category": "VNE Limitation",
       "questionType": "fill-blank",
-      "question": "Minimum internal weight for flight, take-off and landing",
-      "answer": "1310 kg",
+      "question": "2. VNE power off and power On",
+      "answer": "a. VNE power off 125 kts | b. VNE power On 155 kts",
       "acceptedAnswers": [
-        "1310",
-        "1.310",
-        "1310 kg",
-        "1310kg"
+        "125 kts, 155 kts"
       ],
-      "unit": "kg",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
       "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "points": 2,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "VNE power off",
+          "answer": "125 kts",
+          "acceptedAnswers": [
+            "125",
+            "125 kts",
+            "125 kias",
+            "125 knots"
+          ],
+          "unit": "kts",
+          "placeholder": "Nilai VNE power off..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "VNE power On",
+          "answer": "155 kts",
+          "acceptedAnswers": [
+            "155",
+            "155 kts",
+            "155 kias",
+            "155 knots"
+          ],
+          "unit": "kts",
+          "placeholder": "Nilai VNE power On..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-003",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "VNE Limitation",
-      "questionType": "fill-blank",
-      "question": "VNE power off",
-      "answer": "125 kts",
-      "acceptedAnswers": [
-        "125",
-        "125 kts",
-        "125 kias",
-        "125 knots"
-      ],
-      "unit": "kts",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-004",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "VNE Limitation",
-      "questionType": "fill-blank",
-      "question": "VNE power On",
-      "answer": "155 kts",
-      "acceptedAnswers": [
-        "155",
-        "155 kts",
-        "155 kias",
-        "155 knots"
-      ],
-      "unit": "kts",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-005",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
       "category": "Maximum Operating Altitude",
       "questionType": "fill-blank",
-      "question": "Maximum operating Altitude",
+      "question": "3. Maximum operating Altitude",
       "answer": "23.000 ft",
       "acceptedAnswers": [
         "23.000",
@@ -107,78 +123,79 @@
       "verified": true
     },
     {
-      "id": "FENNEC-LIM-006",
+      "id": "FENNEC-LIM-004",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
       "category": "Slope Landing Limitation",
       "questionType": "fill-blank",
-      "question": "Landing and rotor stopping limitation on slope: Nose up",
-      "answer": "10°",
+      "question": "4. Landing and rotor stopping limitation on slope",
+      "answer": "a. Nose up 10° | b. Nose down 6° | c. Sideways 8°",
       "acceptedAnswers": [
-        "10",
-        "10°",
-        "10 deg",
-        "10 degrees"
+        "10°, 6°, 8°"
       ],
-      "unit": "°",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
       "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "points": 3,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Nose up",
+          "answer": "10°",
+          "acceptedAnswers": [
+            "10",
+            "10°",
+            "10 deg",
+            "10 degrees"
+          ],
+          "unit": "°",
+          "placeholder": "Nilai Nose up..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Nose down",
+          "answer": "6°",
+          "acceptedAnswers": [
+            "6",
+            "6°",
+            "6 deg",
+            "6 degrees"
+          ],
+          "unit": "°",
+          "placeholder": "Nilai Nose down..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Sideways",
+          "answer": "8°",
+          "acceptedAnswers": [
+            "8",
+            "8°",
+            "8 deg",
+            "8 degrees"
+          ],
+          "unit": "°",
+          "placeholder": "Nilai Sideways..."
+        }
+      ]
     },
     {
-      "id": "FENNEC-LIM-007",
+      "id": "FENNEC-LIM-005",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Slope Landing Limitation",
+      "category": "Running Landing",
       "questionType": "fill-blank",
-      "question": "Landing and rotor stopping limitation on slope: Nose down",
-      "answer": "6°",
-      "acceptedAnswers": [
-        "6",
-        "6°",
-        "6 deg",
-        "6 degrees"
-      ],
-      "unit": "°",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-008",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Slope Landing Limitation",
-      "questionType": "fill-blank",
-      "question": "Landing and rotor stopping limitation on slope: Sideways",
-      "answer": "8°",
-      "acceptedAnswers": [
-        "8",
-        "8°",
-        "8 deg",
-        "8 degrees"
-      ],
-      "unit": "°",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-009",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Running Landings",
-      "questionType": "fill-blank",
-      "question": "Excluding emergencies and failures, maximum speed for performing running landings",
+      "question": "5. Excluding emergencies and failures, maximum speed for performing running landings",
       "answer": "40 kts",
       "acceptedAnswers": [
         "40",
         "40 kts",
-        "40 knots",
-        "40 kias"
+        "40 kias",
+        "40 knots"
       ],
       "unit": "kts",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
@@ -187,782 +204,742 @@
       "verified": true
     },
     {
-      "id": "FENNEC-LIM-010",
+      "id": "FENNEC-LIM-006",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
       "category": "Main Rotor Limitation",
       "questionType": "fill-blank",
-      "question": "Rotor Brake operation max. speed",
-      "answer": "170 rpm",
+      "question": "6. MAIN ROTOR LIMITATION",
+      "answer": "a. Rotor Brake operation max. speed 170 rpm | b. Minimum power off 320 rpm | c. Caution Range I 320 to 375 rpm | d. Normal operation range 375 to 405 rpm | e. Caution range II 405 to 430 rpm | f. Max power off 430 rpm | g. LOW AURAL WARNING < 360 rpm | h. HIGH AURAL WARNING > 410 rpm",
       "acceptedAnswers": [
-        "170",
-        "170 rpm"
+        "170 rpm, 320 rpm, 320 to 375 rpm, 375 to 405 rpm, 405 to 430 rpm, 430 rpm, < 360 rpm, > 410 rpm"
       ],
-      "unit": "rpm",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
       "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "points": 8,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Rotor Brake operation max. speed",
+          "answer": "170 rpm",
+          "acceptedAnswers": [
+            "170",
+            "170 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Rotor Brake operation max. speed..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Minimum power off",
+          "answer": "320 rpm",
+          "acceptedAnswers": [
+            "320",
+            "320 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Minimum power off..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Caution Range I",
+          "answer": "320 to 375 rpm",
+          "acceptedAnswers": [
+            "320 to 375",
+            "320 - 375",
+            "320-375",
+            "320 sampai 375"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Caution Range I..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "Normal operation range",
+          "answer": "375 to 405 rpm",
+          "acceptedAnswers": [
+            "375 to 405",
+            "375 - 405",
+            "375-405",
+            "375 sampai 405"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Normal operation range..."
+        },
+        {
+          "id": "sub_e",
+          "letter": "e",
+          "label": "Caution range II",
+          "answer": "405 to 430 rpm",
+          "acceptedAnswers": [
+            "405 to 430",
+            "405 - 430",
+            "405-430",
+            "405 sampai 430"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Caution range II..."
+        },
+        {
+          "id": "sub_f",
+          "letter": "f",
+          "label": "Max power off",
+          "answer": "430 rpm",
+          "acceptedAnswers": [
+            "430",
+            "430 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Max power off..."
+        },
+        {
+          "id": "sub_g",
+          "letter": "g",
+          "label": "LOW AURAL WARNING",
+          "answer": "< 360 rpm",
+          "acceptedAnswers": [
+            "< 360",
+            "<360",
+            "< 360 rpm",
+            "360"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai LOW AURAL WARNING..."
+        },
+        {
+          "id": "sub_h",
+          "letter": "h",
+          "label": "HIGH AURAL WARNING",
+          "answer": "> 410 rpm",
+          "acceptedAnswers": [
+            "> 410",
+            ">410",
+            "> 410 rpm",
+            "410"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai HIGH AURAL WARNING..."
+        }
+      ]
+    },
+    {
+      "id": "FENNEC-LIM-007",
+      "aircraft": "FENNEC AS550",
+      "section": "LIMITATION",
+      "category": "First Limitation Indicator",
+      "questionType": "fill-blank",
+      "question": "7. FIRST LIMITITATION INDICATOR",
+      "answer": "a. Max continuous rating 9,6 | b. Take off power 9,6 to 10 | c. Max take off rating 10 | d. Max transient rating (5 sec) 10,4",
+      "acceptedAnswers": [
+        "9,6, 9,6 to 10, 10, 10,4"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
+      "sourcePage": 1,
+      "points": 4,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Max continuous rating",
+          "answer": "9,6",
+          "acceptedAnswers": [
+            "9.6",
+            "9,6"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max continuous rating..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Take off power",
+          "answer": "9,6 to 10",
+          "acceptedAnswers": [
+            "9.6 to 10",
+            "9,6 to 10",
+            "9.6 - 10",
+            "9,6 - 10",
+            "9.6-10",
+            "9,6 sampai 10"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Take off power..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Max take off rating",
+          "answer": "10",
+          "acceptedAnswers": [
+            "10"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max take off rating..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "Max transient rating (5 sec)",
+          "answer": "10,4",
+          "acceptedAnswers": [
+            "10.4",
+            "10,4"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max transient rating (5 sec)..."
+        }
+      ]
+    },
+    {
+      "id": "FENNEC-LIM-008",
+      "aircraft": "FENNEC AS550",
+      "section": "LIMITATION",
+      "category": "Torque Transmission Limitation",
+      "questionType": "fill-blank",
+      "question": "8. TORQUE TRANSMISSION LIMITATION",
+      "answer": "a. Max continuous rating 92,7 % | b. Take off power 92,7 to 100 % | c. Max take off rating 100 % | d. Max transient rating (5 sec) 104 %",
+      "acceptedAnswers": [
+        "92,7 %, 92,7 to 100 %, 100 %, 104 %"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
+      "sourcePage": 1,
+      "points": 4,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Max continuous rating",
+          "answer": "92,7 %",
+          "acceptedAnswers": [
+            "92.7",
+            "92,7",
+            "92.7 %",
+            "92,7 %"
+          ],
+          "unit": "%",
+          "placeholder": "Nilai Max continuous rating..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Take off power",
+          "answer": "92,7 to 100 %",
+          "acceptedAnswers": [
+            "92.7 to 100",
+            "92,7 to 100",
+            "92.7 - 100",
+            "92,7 - 100",
+            "92.7 sampai 100"
+          ],
+          "unit": "%",
+          "placeholder": "Nilai Take off power..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Max take off rating",
+          "answer": "100 %",
+          "acceptedAnswers": [
+            "100",
+            "100 %",
+            "100%"
+          ],
+          "unit": "%",
+          "placeholder": "Nilai Max take off rating..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "Max transient rating (5 sec)",
+          "answer": "104 %",
+          "acceptedAnswers": [
+            "104",
+            "104 %",
+            "104%"
+          ],
+          "unit": "%",
+          "placeholder": "Nilai Max transient rating (5 sec)..."
+        }
+      ]
+    },
+    {
+      "id": "FENNEC-LIM-009",
+      "aircraft": "FENNEC AS550",
+      "section": "LIMITATION",
+      "category": "N2 Limitation",
+      "questionType": "fill-blank",
+      "question": "9. N2 LIMITATION",
+      "answer": "a. Minimum 367 rpm | b. Normal operating range 367 to 413 rpm | c. Max continuous 413 rpm | d. Max Transient Limit (20 sec) 440 rpm",
+      "acceptedAnswers": [
+        "367 rpm, 367 to 413 rpm, 413 rpm, 440 rpm"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
+      "sourcePage": 2,
+      "points": 4,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Minimum",
+          "answer": "367 rpm",
+          "acceptedAnswers": [
+            "367",
+            "367 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Minimum..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Normal operating range",
+          "answer": "367 to 413 rpm",
+          "acceptedAnswers": [
+            "367 to 413",
+            "367 - 413",
+            "367-413",
+            "367 sampai 413"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Normal operating range..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Max continuous",
+          "answer": "413 rpm",
+          "acceptedAnswers": [
+            "413",
+            "413 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Max continuous..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "Max Transient Limit (20 sec)",
+          "answer": "440 rpm",
+          "acceptedAnswers": [
+            "440",
+            "440 rpm"
+          ],
+          "unit": "rpm",
+          "placeholder": "Nilai Max Transient Limit (20 sec)..."
+        }
+      ]
+    },
+    {
+      "id": "FENNEC-LIM-010",
+      "aircraft": "FENNEC AS550",
+      "section": "LIMITATION",
+      "category": "N1 Limitation",
+      "questionType": "fill-blank",
+      "question": "10. N1 LIMITATION",
+      "answer": "a. Min Stabilized Speed 67% | b. Max continuous rating ∆N1 = -4 (-4 %) | c. Take off power ∆N1 = -4 % to 0% (-4%) | d. Max take off rating ∆N1 = 0 % (0 %) | e. Max transient rating (≤20 sec) ∆N1 = +1 % (1 %)",
+      "acceptedAnswers": [
+        "67%, ∆N1 = -4 (-4 %), ∆N1 = -4 % to 0% (-4%), ∆N1 = 0 % (0 %), ∆N1 = +1 % (1 %)"
+      ],
+      "unit": "",
+      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
+      "sourcePage": 2,
+      "points": 5,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Min Stabilized Speed",
+          "answer": "67%",
+          "acceptedAnswers": [
+            "67",
+            "67%"
+          ],
+          "unit": "%",
+          "placeholder": "Nilai Min Stabilized Speed..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Max continuous rating",
+          "answer": "∆N1 = -4 (-4 %)",
+          "acceptedAnswers": [
+            "-4",
+            "-4%",
+            "-4 %",
+            "∆N1 = -4",
+            "delta N1 = -4"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max continuous rating..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Take off power",
+          "answer": "∆N1 = -4 % to 0% (-4%)",
+          "acceptedAnswers": [
+            "-4% to 0%",
+            "-4 to 0",
+            "-4 sampai 0",
+            "-4% - 0%"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Take off power..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "Max take off rating",
+          "answer": "∆N1 = 0 % (0 %)",
+          "acceptedAnswers": [
+            "0",
+            "0%",
+            "0 %",
+            "∆N1 = 0",
+            "delta N1 = 0"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max take off rating..."
+        },
+        {
+          "id": "sub_e",
+          "letter": "e",
+          "label": "Max transient rating (≤20 sec)",
+          "answer": "∆N1 = +1 % (1 %)",
+          "acceptedAnswers": [
+            "+1",
+            "1",
+            "1%",
+            "+1%",
+            "+1 %",
+            "∆N1 = +1",
+            "delta N1 = +1"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max transient rating (≤20 sec)..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-011",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
+      "category": "TOT Limitation",
       "questionType": "fill-blank",
-      "question": "Minimum power off rotor speed",
-      "answer": "320 rpm",
+      "question": "11. TOT LIMITATION",
+      "answer": "a. STARTING LIMITATION: Max continuous 750 °C | b. STARTING LIMITATION: Max transient (10 sec) 840 °C | c. FLIGHT LIMITATION: Max continuous rating 905 °C | d. FLIGHT LIMITATION: Takeoff power 905 to 949 °C | e. FLIGHT LIMITATION: Max takeoff rating 949 °C | f. FLIGHT LIMITATION: Max transient (20 sec) 981 °C",
       "acceptedAnswers": [
-        "320",
-        "320 rpm"
+        "750 °C, 840 °C, 905 °C, 905 to 949 °C, 949 °C, 981 °C"
       ],
-      "unit": "rpm",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "sourcePage": 2,
+      "points": 6,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "STARTING LIMITATION: Max continuous",
+          "answer": "750 °C",
+          "acceptedAnswers": [
+            "750",
+            "750 °C",
+            "750°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai STARTING LIMITATION: Max continuous..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "STARTING LIMITATION: Max transient (10 sec)",
+          "answer": "840 °C",
+          "acceptedAnswers": [
+            "840",
+            "840 °C",
+            "840°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai STARTING LIMITATION: Max transient (10 sec)..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "FLIGHT LIMITATION: Max continuous rating",
+          "answer": "905 °C",
+          "acceptedAnswers": [
+            "905",
+            "905 °C",
+            "905°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai FLIGHT LIMITATION: Max continuous rating..."
+        },
+        {
+          "id": "sub_d",
+          "letter": "d",
+          "label": "FLIGHT LIMITATION: Takeoff power",
+          "answer": "905 to 949 °C",
+          "acceptedAnswers": [
+            "905 to 949",
+            "905 - 949",
+            "905-949",
+            "905 sampai 949"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai FLIGHT LIMITATION: Takeoff power..."
+        },
+        {
+          "id": "sub_e",
+          "letter": "e",
+          "label": "FLIGHT LIMITATION: Max takeoff rating",
+          "answer": "949 °C",
+          "acceptedAnswers": [
+            "949",
+            "949 °C",
+            "949°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai FLIGHT LIMITATION: Max takeoff rating..."
+        },
+        {
+          "id": "sub_f",
+          "letter": "f",
+          "label": "FLIGHT LIMITATION: Max transient (20 sec)",
+          "answer": "981 °C",
+          "acceptedAnswers": [
+            "981",
+            "981 °C",
+            "981°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai FLIGHT LIMITATION: Max transient (20 sec)..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-012",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
+      "category": "Oil Limitation",
       "questionType": "fill-blank",
-      "question": "Caution Range I rotor speed",
-      "answer": "320 to 375 rpm",
+      "question": "12. Oil temperature and pressure limitation",
+      "answer": "a. Max oil temperature limitation 117 °C | b. Max oil pressure limitation Depend on N1",
       "acceptedAnswers": [
-        "320 to 375",
-        "320-375",
-        "320 to 375 rpm"
+        "117 °C, Depend on N1"
       ],
-      "unit": "rpm",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "sourcePage": 2,
+      "points": 2,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Max oil temperature limitation",
+          "answer": "117 °C",
+          "acceptedAnswers": [
+            "117",
+            "117 °C",
+            "117°C"
+          ],
+          "unit": "°C",
+          "placeholder": "Nilai Max oil temperature limitation..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Max oil pressure limitation",
+          "answer": "Depend on N1",
+          "acceptedAnswers": [
+            "Depend on N1",
+            "Depend on N1 RPM",
+            "Tergantung N1",
+            "Depend on NI"
+          ],
+          "unit": "",
+          "placeholder": "Nilai Max oil pressure limitation..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-013",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
+      "category": "Electrical Circuit Limitation",
       "questionType": "fill-blank",
-      "question": "Normal operation range rotor speed",
-      "answer": "375 to 405 rpm",
+      "question": "13. Electrical circuit limitation & MAX CURRENT",
+      "answer": "a. Max voltage 31,5 V (26 - 29 V) | b. MAX CURRENT: Max continuous 150 A | c. MAX CURRENT: Starter generator 200 A",
       "acceptedAnswers": [
-        "375 to 405",
-        "375-405",
-        "375 to 405 rpm"
+        "31,5 V (26 - 29 V), 150 A, 200 A"
       ],
-      "unit": "rpm",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "sourcePage": 2,
+      "points": 3,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Max voltage",
+          "answer": "31,5 V (26 - 29 V)",
+          "acceptedAnswers": [
+            "31.5",
+            "31,5",
+            "31.5 V",
+            "31,5 V",
+            "26 - 29 V",
+            "31,5 V (26 - 29 V)"
+          ],
+          "unit": "V",
+          "placeholder": "Nilai Max voltage..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "MAX CURRENT: Max continuous",
+          "answer": "150 A",
+          "acceptedAnswers": [
+            "150",
+            "150 A",
+            "150A"
+          ],
+          "unit": "A",
+          "placeholder": "Nilai MAX CURRENT: Max continuous..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "MAX CURRENT: Starter generator",
+          "answer": "200 A",
+          "acceptedAnswers": [
+            "200",
+            "200 A",
+            "200A"
+          ],
+          "unit": "A",
+          "placeholder": "Nilai MAX CURRENT: Starter generator..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-014",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
+      "category": "Baggage Compartment",
       "questionType": "fill-blank",
-      "question": "Caution range II rotor speed",
-      "answer": "405 to 430 rpm",
+      "question": "14. BAGGAGE COMPARTMENT LOAD LIMIT",
+      "answer": "a. RH cargo compartment 100 kg | b. LH cargo compartment 120 kg | c. Rear cargo compartment 80 kg",
       "acceptedAnswers": [
-        "405 to 430",
-        "405-430",
-        "405 to 430 rpm"
+        "100 kg, 120 kg, 80 kg"
       ],
-      "unit": "rpm",
+      "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
+      "sourcePage": 2,
+      "points": 3,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "RH cargo compartment",
+          "answer": "100 kg",
+          "acceptedAnswers": [
+            "100",
+            "100 kg",
+            "100kg"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai RH cargo compartment..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "LH cargo compartment",
+          "answer": "120 kg",
+          "acceptedAnswers": [
+            "120",
+            "120 kg",
+            "120kg"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai LH cargo compartment..."
+        },
+        {
+          "id": "sub_c",
+          "letter": "c",
+          "label": "Rear cargo compartment",
+          "answer": "80 kg",
+          "acceptedAnswers": [
+            "80",
+            "80 kg",
+            "80kg"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai Rear cargo compartment..."
+        }
+      ]
     },
     {
       "id": "FENNEC-LIM-015",
       "aircraft": "FENNEC AS550",
       "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
+      "category": "Cabin Compartment",
       "questionType": "fill-blank",
-      "question": "Max power off rotor speed",
-      "answer": "430 rpm",
+      "question": "15. CABIN COMPARTMENT LOAD LIMIT",
+      "answer": "a. Rear cabin floor 310 kg | b. Forward left cabin floor 150 kg",
       "acceptedAnswers": [
-        "430",
-        "430 rpm"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-016",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
-      "questionType": "fill-blank",
-      "question": "LOW AURAL WARNING rotor threshold",
-      "answer": "< 360 rpm",
-      "acceptedAnswers": [
-        "< 360",
-        "<360",
-        "< 360 rpm",
-        "360 rpm",
-        "360"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-017",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Main Rotor Limitation",
-      "questionType": "fill-blank",
-      "question": "HIGH AURAL WARNING rotor threshold",
-      "answer": "> 410 rpm",
-      "acceptedAnswers": [
-        "> 410",
-        ">410",
-        "> 410 rpm",
-        "410 rpm",
-        "410"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-018",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "First Limitation Indicator (FLI)",
-      "questionType": "fill-blank",
-      "question": "FLI Max continuous rating",
-      "answer": "9,6",
-      "acceptedAnswers": [
-        "9.6",
-        "9,6",
-        "9.6 rating"
-      ],
-      "unit": "",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-019",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "First Limitation Indicator (FLI)",
-      "questionType": "fill-blank",
-      "question": "FLI Take off power range",
-      "answer": "9,6 to 10",
-      "acceptedAnswers": [
-        "9.6 to 10",
-        "9,6 to 10",
-        "9.6-10",
-        "9,6-10"
-      ],
-      "unit": "",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-020",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "First Limitation Indicator (FLI)",
-      "questionType": "fill-blank",
-      "question": "FLI Max take off rating",
-      "answer": "10",
-      "acceptedAnswers": [
-        "10",
-        "10.0"
-      ],
-      "unit": "",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-021",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "First Limitation Indicator (FLI)",
-      "questionType": "fill-blank",
-      "question": "FLI Max transient rating (5 sec)",
-      "answer": "10,4",
-      "acceptedAnswers": [
-        "10.4",
-        "10,4"
-      ],
-      "unit": "",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-022",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Torque Transmission Limitation",
-      "questionType": "fill-blank",
-      "question": "Torque Transmission: Max continuous rating",
-      "answer": "92,7 %",
-      "acceptedAnswers": [
-        "92.7",
-        "92,7",
-        "92.7 %",
-        "92,7 %",
-        "92.7%"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-023",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Torque Transmission Limitation",
-      "questionType": "fill-blank",
-      "question": "Torque Transmission: Take off power range",
-      "answer": "92,7 to 100 %",
-      "acceptedAnswers": [
-        "92.7 to 100",
-        "92,7 to 100",
-        "92.7-100%",
-        "92.7 to 100 %"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-024",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Torque Transmission Limitation",
-      "questionType": "fill-blank",
-      "question": "Torque Transmission: Max take off rating",
-      "answer": "100 %",
-      "acceptedAnswers": [
-        "100",
-        "100 %",
-        "100%"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-025",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Torque Transmission Limitation",
-      "questionType": "fill-blank",
-      "question": "Torque Transmission: Max transient rating (5 sec)",
-      "answer": "104 %",
-      "acceptedAnswers": [
-        "104",
-        "104 %",
-        "104%"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 1,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-026",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N2 Limitation",
-      "questionType": "fill-blank",
-      "question": "N2 Minimum",
-      "answer": "367 rpm",
-      "acceptedAnswers": [
-        "367",
-        "367 rpm"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-027",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N2 Limitation",
-      "questionType": "fill-blank",
-      "question": "N2 Normal operating range",
-      "answer": "367 to 413 rpm",
-      "acceptedAnswers": [
-        "367 to 413",
-        "367-413",
-        "367 to 413 rpm"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-028",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N2 Limitation",
-      "questionType": "fill-blank",
-      "question": "N2 Max continuous",
-      "answer": "413 rpm",
-      "acceptedAnswers": [
-        "413",
-        "413 rpm"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-029",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N2 Limitation",
-      "questionType": "fill-blank",
-      "question": "N2 Max Transient Limit (20 sec)",
-      "answer": "440 rpm",
-      "acceptedAnswers": [
-        "440",
-        "440 rpm"
-      ],
-      "unit": "rpm",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-030",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N1 Limitation",
-      "questionType": "fill-blank",
-      "question": "N1 Min Stabilized Speed",
-      "answer": "67%",
-      "acceptedAnswers": [
-        "67",
-        "67%",
-        "67 %"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-031",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N1 Limitation",
-      "questionType": "fill-blank",
-      "question": "N1 Max continuous rating",
-      "answer": "ΔN1 = -4 (-4 %)",
-      "acceptedAnswers": [
-        "ΔN1 = -4",
-        "-4",
-        "-4%",
-        "-4 %",
-        "dN1 = -4"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-032",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N1 Limitation",
-      "questionType": "fill-blank",
-      "question": "N1 Take off power",
-      "answer": "ΔN1 = -4 % to 0% (-4%)",
-      "acceptedAnswers": [
-        "ΔN1 = -4 % to 0%",
-        "-4% to 0%",
-        "-4 to 0",
-        "-4% to 0"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-033",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N1 Limitation",
-      "questionType": "fill-blank",
-      "question": "N1 Max take off rating",
-      "answer": "ΔN1 = 0 % (0 %)",
-      "acceptedAnswers": [
-        "ΔN1 = 0 %",
-        "0",
-        "0%",
-        "0 %",
-        "dN1 = 0"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-034",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "N1 Limitation",
-      "questionType": "fill-blank",
-      "question": "N1 Max transient rating (≤20 sec)",
-      "answer": "ΔN1 = +1 % (1 %)",
-      "acceptedAnswers": [
-        "ΔN1 = +1 %",
-        "+1",
-        "+1%",
-        "+1 %",
-        "1%"
-      ],
-      "unit": "%",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-035",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Starting Limitation: Max continuous",
-      "answer": "750 °C",
-      "acceptedAnswers": [
-        "750",
-        "750 °C",
-        "750 C",
-        "750°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-036",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Starting Limitation: Max transient (10 sec)",
-      "answer": "840 °C",
-      "acceptedAnswers": [
-        "840",
-        "840 °C",
-        "840 C",
-        "840°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-037",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Flight Limitation: Max continuous rating",
-      "answer": "905 °C",
-      "acceptedAnswers": [
-        "905",
-        "905 °C",
-        "905 C",
-        "905°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-038",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Flight Limitation: Takeoff power range",
-      "answer": "905 to 949 °C",
-      "acceptedAnswers": [
-        "905 to 949",
-        "905-949",
-        "905 to 949 °C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-039",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Flight Limitation: Max takeoff rating",
-      "answer": "949 °C",
-      "acceptedAnswers": [
-        "949",
-        "949 °C",
-        "949 C",
-        "949°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-040",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "TOT Limitation",
-      "questionType": "fill-blank",
-      "question": "TOT Flight Limitation: Max transient (20 sec)",
-      "answer": "981 °C",
-      "acceptedAnswers": [
-        "981",
-        "981 °C",
-        "981 C",
-        "981°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-041",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Oil Temp and Pressure",
-      "questionType": "fill-blank",
-      "question": "Max oil temperature limitation",
-      "answer": "117 °C",
-      "acceptedAnswers": [
-        "117",
-        "117 °C",
-        "117 C",
-        "117°C"
-      ],
-      "unit": "°C",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-042",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Oil Temp and Pressure",
-      "questionType": "fill-blank",
-      "question": "Max oil pressure limitation",
-      "answer": "Depend on N1",
-      "acceptedAnswers": [
-        "Depend on N1",
-        "depend on n1",
-        "Depends on N1",
-        "Tergantung N1"
+        "310 kg, 150 kg"
       ],
       "unit": "",
       "sourceDocument": "BOLD FACE FENNEC AS550.docx",
       "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-043",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Electrical Circuit Limitation",
-      "questionType": "fill-blank",
-      "question": "Electrical circuit Max voltage (normal operating range)",
-      "answer": "31,5 V ( 26 - 29 V)",
-      "acceptedAnswers": [
-        "31.5 V (26 - 29 V)",
-        "31.5 V",
-        "31,5",
-        "31.5",
-        "26 - 29 V",
-        "31.5 V (26-29 V)"
-      ],
-      "unit": "V",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-044",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Electrical Circuit Limitation",
-      "questionType": "fill-blank",
-      "question": "Max current continuous & Starter generator",
-      "answer": "150 A / 200 A",
-      "acceptedAnswers": [
-        "150 A / 200 A",
-        "150 / 200",
-        "150 A dan 200 A",
-        "150, 200"
-      ],
-      "unit": "A",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-045",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Baggage Compartment Load Limit",
-      "questionType": "fill-blank",
-      "question": "RH cargo compartment",
-      "answer": "100 kg",
-      "acceptedAnswers": [
-        "100",
-        "100 kg",
-        "100kg"
-      ],
-      "unit": "kg",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-046",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Baggage Compartment Load Limit",
-      "questionType": "fill-blank",
-      "question": "LH cargo compartment",
-      "answer": "120 kg",
-      "acceptedAnswers": [
-        "120",
-        "120 kg",
-        "120kg"
-      ],
-      "unit": "kg",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-047",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Baggage Compartment Load Limit",
-      "questionType": "fill-blank",
-      "question": "Rear cargo compartment",
-      "answer": "80 kg",
-      "acceptedAnswers": [
-        "80",
-        "80 kg",
-        "80kg"
-      ],
-      "unit": "kg",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-048",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Cabin Compartment Load Limit",
-      "questionType": "fill-blank",
-      "question": "Rear cabin floor load limit",
-      "answer": "310 kg",
-      "acceptedAnswers": [
-        "310",
-        "310 kg",
-        "310kg"
-      ],
-      "unit": "kg",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
-    },
-    {
-      "id": "FENNEC-LIM-049",
-      "aircraft": "FENNEC AS550",
-      "section": "LIMITATION",
-      "category": "Cabin Compartment Load Limit",
-      "questionType": "fill-blank",
-      "question": "Forward left cabin floor load limit",
-      "answer": "150 kg",
-      "acceptedAnswers": [
-        "150",
-        "150 kg",
-        "150kg"
-      ],
-      "unit": "kg",
-      "sourceDocument": "BOLD FACE FENNEC AS550.docx",
-      "sourcePage": 2,
-      "points": 1,
-      "verified": true
+      "points": 2,
+      "verified": true,
+      "subQuestions": [
+        {
+          "id": "sub_a",
+          "letter": "a",
+          "label": "Rear cabin floor",
+          "answer": "310 kg",
+          "acceptedAnswers": [
+            "310",
+            "310 kg",
+            "310kg"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai Rear cabin floor..."
+        },
+        {
+          "id": "sub_b",
+          "letter": "b",
+          "label": "Forward left cabin floor",
+          "answer": "150 kg",
+          "acceptedAnswers": [
+            "150",
+            "150 kg",
+            "150kg"
+          ],
+          "unit": "kg",
+          "placeholder": "Nilai Forward left cabin floor..."
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "name": "aviation-exam-platform",
+  "version": "2.0.0",
+  "description": "Professional Aviation Examination & Bold Face Evaluation Suite for military and civil flight crews",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "test": "node test_suite.js && node test_engine.js && node test_layout_inspect.js",
+    "build:data": "python generate_all_data.py"
+  },
+  "keywords": [
+    "aviation",
+    "flight-training",
+    "bold-face",
+    "emergency-procedures",
+    "flight-crew",
+    "helicopter",
+    "aircraft",
+    "afm"
+  ],
+  "author": "General Aviations",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/generalaviations/Aviation-Exam-Platform.git"
+  },
+  "homepage": "https://generalaviations.github.io/Aviation-Exam-Platform/"
+}

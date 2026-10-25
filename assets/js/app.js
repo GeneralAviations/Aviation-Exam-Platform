@@ -12,6 +12,13 @@ const App = (() => {
   let boldFaceKeysRevealed = false;
 
   const FLEET_METADATA = {
+    'AH-64E': {
+      category: 'COMBAT',
+      heli: true,
+      roleBadge: '⚔️ ATTACK HELICOPTER',
+      tagline: 'Helikopter Tempur Utama Tandem / Sistem Sensor Malam & Rudal',
+      icon: '⚔️'
+    },
     'AH-64E APACHE': {
       category: 'COMBAT',
       heli: true,
@@ -59,6 +66,13 @@ const App = (() => {
       heli: true,
       roleBadge: '🚁 HEAVY MEDIUM TRANSPORT',
       tagline: 'Helikopter Angkut Berat & Pasukan / Kapasitas Kargo 4.000 kg',
+      icon: '🚁'
+    },
+    'SIKORSKY S-300C': {
+      category: 'HELI',
+      heli: true,
+      roleBadge: '🚁 PRIMARY FLIGHT TRAINER',
+      tagline: 'Helikopter Latih Dasar Penerbang / Piston Lycoming HIO-360',
       icon: '🚁'
     },
     'SIKORSKY S300C': {
@@ -530,12 +544,25 @@ const App = (() => {
             `;
           }
 
+          let labelText = subQ.label || 'Parameter';
+          let subLetter = subQ.letter || '';
+          const matchLetter = labelText.match(/^([a-z0-9]+)[\.\)]\s*(.*)/i);
+          if (matchLetter) {
+            if (!subLetter) subLetter = matchLetter[1].toLowerCase();
+            labelText = matchLetter[2];
+          }
+          if (!subLetter) {
+            subLetter = String.fromCharCode(97 + sIdx);
+          }
+          labelText = labelText.replace(/^[\*\-•\s]+/, '').replace(/[\s:]+$/, '');
+          const cleanLetter = subLetter.replace(/\.+$/, '');
+
           return `
             <div class="sub-param-card ${statusCls}">
               <div class="sub-param-header">
                 <span class="sub-param-label">
-                  <span class="sub-idx">${sIdx + 1}</span>
-                  <strong>${subQ.label || 'Parameter'}</strong>
+                  <span class="sub-idx">${cleanLetter}.</span>
+                  <strong>${labelText}</strong>
                 </span>
                 ${subQ.unit ? `<span class="sub-unit-tag">${subQ.unit}</span>` : ''}
               </div>
@@ -547,7 +574,7 @@ const App = (() => {
                   data-question-id="${q.id}" 
                   data-sub-id="${subQ.id}" 
                   value="${val}" 
-                  placeholder="Ketik nilai ${subQ.label}..." 
+                  placeholder="${subQ.placeholder || 'Ketik nilai ' + (labelText || subLetter) + '...'}" 
                   autocomplete="off" 
                   autocapitalize="off" 
                   spellcheck="false" 
@@ -813,13 +840,24 @@ const App = (() => {
         comparisonHtml = `
           <div class="review-sub-breakdown">
             <div class="review-sub-grid">
-              ${q.subQuestions.map(sq => {
+              ${q.subQuestions.map((sq, sIdx) => {
                 const sr = (Array.isArray(ev.subResults) ? ev.subResults.find(s => s.id === sq.id) : ev.subResults?.[sq.id]) || {};
                 const subBadge = sr.isCorrect ? '<span class="badge badge-correct">✓ Tepat</span>' : sr.isEmpty ? '<span class="badge badge-empty">Kosong</span>' : '<span class="badge badge-wrong">✕ Salah</span>';
+                let labelText = sq.label || '';
+                let subLetter = sq.letter || '';
+                const matchLetter = labelText.match(/^([a-z0-9]+)[\.\)]\s*(.*)/i);
+                if (matchLetter) {
+                  if (!subLetter) subLetter = matchLetter[1].toLowerCase();
+                  labelText = matchLetter[2];
+                }
+                if (!subLetter) {
+                  subLetter = String.fromCharCode(97 + sIdx);
+                }
+                labelText = labelText.replace(/^[\*\-•]\s*/, '');
                 return `
                   <div class="review-sub-card ${sr.status || 'empty'}">
                     <div class="review-sub-header">
-                      <strong>${sq.label}</strong>
+                      <strong>${subLetter}. ${labelText}</strong>
                       ${subBadge}
                     </div>
                     <div class="review-sub-row">
@@ -1069,21 +1107,34 @@ const App = (() => {
               ` : '';
 
               const hasSub = q.subQuestions && q.subQuestions.length > 0;
-              const cleanQText = (q.question || '').replace(/^\d+[\.\)]\s*/, '');
+              const qMatch = (q.question || '').match(/^\s*(\d+)[\.\)]\s*(.*)/);
+              const qNum = qMatch ? `${qMatch[1]}.` : (q.order ? `${q.order}.` : `${idx + 1}.`);
+              const cleanQText = qMatch ? qMatch[2] : (q.question || '').replace(/^\d+[\.\)]\s*/, '');
               if (hasSub) {
                 return `
                   ${catHeaderHtml}
                   <div class="paper-question-item paper-multi-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
                     <div class="paper-q-text">
-                      <span class="paper-q-num">${idx + 1}.</span>
+                      <span class="paper-q-num">${qNum}</span>
                       <span class="paper-q-body">${cleanQText}</span>
                     </div>
                     <div class="paper-sub-list">
                       ${q.subQuestions.map((sq, sIdx) => {
-                        const subLetter = String.fromCharCode(97 + sIdx);
+                        let labelText = sq.label || '';
+                        let subLetter = sq.letter || '';
+                        const matchLetter = labelText.match(/^([a-z0-9]+)[\.\)]\s*(.*)/i);
+                        if (matchLetter) {
+                          if (!subLetter) subLetter = matchLetter[1].toLowerCase();
+                          labelText = matchLetter[2];
+                        }
+                        if (!subLetter) {
+                          subLetter = String.fromCharCode(97 + sIdx);
+                        }
+                        labelText = labelText.replace(/^[\*\-•\s]+/, '').replace(/[\s:]+$/, '');
+                        const cleanLetter = subLetter.replace(/\.+$/, '');
                         return `
                         <div class="paper-sub-row">
-                          <span class="paper-sub-label">${subLetter}. ${sq.label}:</span>
+                          <span class="paper-sub-label">${cleanLetter}. ${labelText} :</span>
                           <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">....................................................</span>
                           ${!isPrintOnly ? `
                             <div class="paper-input-wrapper no-print">
@@ -1093,7 +1144,7 @@ const App = (() => {
                                 id="paper-input-${q.id}-${sq.id}" 
                                 data-qid="${q.id}" 
                                 data-subid="${sq.id}" 
-                                placeholder="Ketik..." 
+                                placeholder="${sq.placeholder || 'Ketik...'}" 
                                 autocomplete="off" 
                                 spellcheck="false" 
                                 oninput="App.onBoldFaceSubInput('${q.id}', '${sq.id}')"
@@ -1118,7 +1169,7 @@ const App = (() => {
                 ${catHeaderHtml}
                 <div class="paper-question-item" id="paper-item-${q.id}" data-qid="${q.id}" data-section="${sec}">
                   <div class="paper-q-text">
-                    <span class="paper-q-num">${idx + 1}.</span>
+                    <span class="paper-q-num">${qNum}</span>
                     <span class="paper-q-body">${cleanQText}</span>
                     <span class="paper-dots ${isPrintOnly ? '' : 'print-only'}">..........................................................................................</span>
                     ${!isPrintOnly ? `
@@ -1483,6 +1534,18 @@ const App = (() => {
     }
 
     if (totalCountEl) totalCountEl.textContent = String(bankQuestions.length);
+
+    const filterSelect = document.getElementById('bank-aircraft-filter');
+    if (filterSelect && catalog.length) {
+      const currentVal = filterSelect.value || 'ALL';
+      filterSelect.innerHTML = `
+        <option value="ALL">Semua Pesawat (${catalog.length} Armada - ${bankQuestions.length} Soal)</option>
+        ${catalog.map(c => `
+          <option value="${c.aircraft}" ${currentVal === c.aircraft ? 'selected' : ''}>${c.aircraft} (${c.totalQuestions} Soal)</option>
+        `).join('')}
+      `;
+    }
+
     renderBankFiltered();
   }
 

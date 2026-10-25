@@ -66,27 +66,35 @@
         <div class="dashboard-stats-strip">
           <div class="stat-card">
             <div class="stat-icon-wrapper">📚</div>
-            <div id="dash-total-questions" class="stat-val">659</div>
-            <div class="stat-desc">Bank Soal Terverifikasi</div>
-            <div class="stat-sub">8 Jenis Pesawat Lengkap</div>
+            <div class="stat-info-col">
+              <div id="dash-total-questions" class="stat-val">481</div>
+              <div class="stat-desc">Bank Soal Terverifikasi</div>
+              <div class="stat-sub">8 Jenis Pesawat Lengkap</div>
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon-wrapper">📝</div>
-            <div id="dash-total-exams" class="stat-val">0</div>
-            <div class="stat-desc">Sesi Ujian Selesai</div>
-            <div class="stat-sub">Tersimpan di Perangkat</div>
+            <div class="stat-info-col">
+              <div id="dash-total-exams" class="stat-val">0</div>
+              <div class="stat-desc">Sesi Ujian Selesai</div>
+              <div class="stat-sub">Tersimpan di Perangkat</div>
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon-wrapper">🎯</div>
-            <div id="dash-avg-score" class="stat-val">0%</div>
-            <div class="stat-desc">Rata-rata Nilai</div>
-            <div class="stat-sub">Standar Kelulusan 75%</div>
+            <div class="stat-info-col">
+              <div id="dash-avg-score" class="stat-val">0%</div>
+              <div class="stat-desc">Rata-rata Nilai</div>
+              <div class="stat-sub">Standar Kelulusan 75%</div>
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon-wrapper">🏆</div>
-            <div id="dash-pass-rate" class="stat-val">0%</div>
-            <div class="stat-desc">Tingkat Kelulusan</div>
-            <div class="stat-sub">Evaluasi Akurasi Jawaban</div>
+            <div class="stat-info-col">
+              <div id="dash-pass-rate" class="stat-val">0%</div>
+              <div class="stat-desc">Tingkat Kelulusan</div>
+              <div class="stat-sub">Evaluasi Akurasi Jawaban</div>
+            </div>
           </div>
         </div>
 
@@ -499,15 +507,15 @@
             oninput="App.renderBankFiltered()" 
           />
           <select id="bank-aircraft-filter" class="select-control" onchange="App.renderBankFiltered()">
-            <option value="ALL">Semua Pesawat (8 Armada)</option>
-            <option value="AH-64E APACHE">AH-64E APACHE (132 Soal)</option>
+            <option value="ALL">Semua Pesawat (8 Armada - 481 Soal)</option>
+            <option value="AH-64E">AH-64E APACHE (76 Soal)</option>
             <option value="ANKA MALE UAV">ANKA MALE UAV (132 Soal)</option>
-            <option value="BELL 412 EP">BELL 412 EP (147 Soal)</option>
+            <option value="BELL 412 EP">BELL 412 EP (122 Soal)</option>
             <option value="BO-105">BO-105 (79 Soal)</option>
-            <option value="CASA 212-200">CASA 212-200 (44 Soal)</option>
-            <option value="FENNEC AS550">FENNEC AS550 (49 Soal)</option>
-            <option value="MI-17V5">MI-17V5 (53 Soal)</option>
-            <option value="SIKORSKY S300C">SIKORSKY S300C (23 Soal)</option>
+            <option value="CASA 212-200">CASA 212-200 (9 Soal Multi-Item)</option>
+            <option value="FENNEC AS550">FENNEC AS550 (15 Soal Multi-Item)</option>
+            <option value="MI-17V5">MI-17V5 (25 Soal)</option>
+            <option value="SIKORSKY S-300C">SIKORSKY S-300C (23 Soal)</option>
           </select>
         </div>
 
