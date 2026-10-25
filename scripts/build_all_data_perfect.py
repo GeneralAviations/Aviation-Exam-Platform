@@ -16,6 +16,7 @@ import glob
 from build_full_suite import build_casa212, build_fennec_as550_full
 from build_ballface_datasets import build_mi17v5
 from build_ah64e import build_ah64e_suite
+from build_s300c import build_s300c
 
 def build_bell412ep_perfect():
     # 106 Limitation questions with exact numbering and subQuestions
@@ -553,6 +554,11 @@ def main():
     with open("data/ah-64e.json", "w", encoding="utf-8") as f:
         json.dump(ah64, f, indent=2, ensure_ascii=False)
     print(f"Generated data/ah-64e.json with {ah64['totalQuestions']} items.")
+
+    s300c = build_s300c()
+    with open("data/sikorsky-s300c.json", "w", encoding="utf-8") as f:
+        json.dump(s300c, f, indent=2, ensure_ascii=False)
+    print(f"Generated data/sikorsky-s300c.json with {s300c['totalQuestions']} items.")
 
     update_aircraft_index()
 

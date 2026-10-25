@@ -139,6 +139,20 @@ assert(resDan2.isCorrect, 'Accepts "dan" when official answer is "&"');
 const resComb = Grading.evaluateAnswer('55 & 115 / 55 - 95', '55 DAN 115 PSI / 55 SAMPAI 95 PSI', []);
 assert(resComb.isCorrect, 'Accepts complex combined "&" and "-" for "DAN" and "SAMPAI"');
 
+// Dual-unit and slash alternatives support
+const resSlash1 = Grading.evaluateAnswer('109', '109 MPH/ 95 KTS', [], 'MPH / KTS');
+assert(resSlash1.isCorrect, 'Accepts single side 109 when official answer is dual 109 MPH/ 95 KTS');
+const resSlash2 = Grading.evaluateAnswer('95', '109 MPH/ 95 KTS', [], 'MPH / KTS');
+assert(resSlash2.isCorrect, 'Accepts single side 95 when official answer is dual 109 MPH/ 95 KTS');
+const resSlash3 = Grading.evaluateAnswer('109/95', '109 MPH/ 95 KTS', [], 'MPH / KTS');
+assert(resSlash3.isCorrect, 'Accepts 109/95 when official answer is dual 109 MPH/ 95 KTS');
+
+// Multi-parameter subQuestions check
+const s300cData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/sikorsky-s300c.json'), 'utf8'));
+const s300OilTemp = s300cData.questions.find(q => q.id === 'S300C-LIM-004');
+const resSubQ = Grading.evaluateQuestion(s300OilTemp, { sub_a: '260', sub_b: '100-250' });
+assert(resSubQ.isCorrect, 'Evaluates multi-input subQuestions accurately for S300C Oil Temp');
+
 // Overall exam calculation
 const sampleQuestions = [
   { id: 'Q1', question: 'Gross weight', answer: '11900 Lbs', acceptedAnswers: ['11900'], category: 'Weight', points: 1 },

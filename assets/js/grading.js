@@ -91,6 +91,25 @@ const Grading = (() => {
       set.add(base.replace(/\band\b/gi, ' & '));
     }
 
+    // 3. Dual units or slash alternatives (e.g. '109 MPH/ 95 KTS' -> '109 MPH', '95 KTS', '109', '95', '109/95', '109 / 95')
+    if (base.includes('/')) {
+      const parts = base.split('/').map(p => p.trim()).filter(Boolean);
+      if (parts.length > 1) {
+        parts.forEach(p => {
+          set.add(p);
+          const numOnly = p.replace(/[^\d.,-]/g, '').trim();
+          if (numOnly) set.add(numOnly);
+        });
+        const nums = parts.map(p => p.replace(/[^\d.,-]/g, '').trim()).filter(Boolean);
+        if (nums.length === parts.length) {
+          set.add(nums.join('/'));
+          set.add(nums.join(' / '));
+          set.add(nums.join(' dan '));
+          set.add(nums.join(' & '));
+        }
+      }
+    }
+
     return Array.from(set);
   }
 
