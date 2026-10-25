@@ -107,13 +107,16 @@ const AnkaRenderer = (() => {
       .replace(/kias|kts|knots?|deg|degrees|km|kgs?|kg|psi|bar|ft|msl|v|volts?|amps?|c|percent|vs|%/g, ' ')
       .replace(/[,]/g, '.')
       .replace(/\./g, '')
-      .replace(/[^0-9+\-\s]/g, ' ')
+      .replace(/[^0-9a-z+\-\s]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
 
   function exactAnswerMatch(answer, value) {
-    return normalize(answer) === normalize(value);
+    const normAns = normalize(answer);
+    const normVal = normalize(value);
+    if (!normAns || !normVal) return false;
+    return normAns === normVal;
   }
 
   function numericAnswerMatch(answer, value) {
@@ -123,12 +126,38 @@ const AnkaRenderer = (() => {
   }
 
   function isAnswerCorrect(acceptedAnswers, userValue) {
-    if (!userValue || !userValue.trim()) return false;
+    if (!userValue || !String(userValue).trim()) return false;
+    const cleanUser = String(userValue).trim();
     const list = Array.isArray(acceptedAnswers) ? acceptedAnswers : String(acceptedAnswers || '').split('|');
-    return list.some(ans => {
-      const clean = ans.trim();
-      return exactAnswerMatch(clean, userValue) || numericAnswerMatch(clean, userValue);
-    });
+    
+    // 1. Direct or numeric match across accepted options
+    for (const ans of list) {
+      const clean = String(ans || '').trim();
+      if (!clean) continue;
+      if (exactAnswerMatch(clean, cleanUser)) return true;
+      if (numericAnswerMatch(clean, cleanUser)) return true;
+    }
+
+    // 2. Delegate to Grading engine if available for unit/synonym resolution
+    const gradingEngine = (typeof Grading !== 'undefined' && Grading.evaluateAnswer)
+      ? Grading
+      : (typeof globalThis !== 'undefined' && globalThis.Grading ? globalThis.Grading : null);
+
+    if (gradingEngine) {
+      const primaryAns = list[0] || '';
+      const evalRes = gradingEngine.evaluateAnswer(cleanUser, primaryAns, list);
+      if (evalRes && evalRes.isCorrect) return true;
+    }
+
+    // 3. Fallback synonym checks (left/kiri, right/kanan)
+    const uNorm = cleanUser.toLowerCase();
+    for (const ans of list) {
+      const aNorm = String(ans || '').toLowerCase().trim();
+      if ((aNorm === 'left' || aNorm === 'kiri') && (uNorm === 'left' || uNorm === 'kiri')) return true;
+      if ((aNorm === 'right' || aNorm === 'kanan') && (uNorm === 'right' || uNorm === 'kanan')) return true;
+    }
+
+    return false;
   }
 
   function isTableQuestion(qid) {

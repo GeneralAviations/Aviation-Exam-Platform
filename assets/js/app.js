@@ -1048,17 +1048,40 @@ const App = (() => {
     ];
 
     (activeExamResult.detailedResults || []).forEach((item, idx) => {
-      const q = item.question;
-      const ev = item.evaluation;
+      const q = item.question || {};
+      const ev = item.evaluation || {};
+
+      let userAnsStr = '';
+      if (typeof item.userAnswer === 'string') {
+        userAnsStr = item.userAnswer;
+      } else if (item.userAnswer && typeof item.userAnswer === 'object') {
+        userAnsStr = Object.entries(item.userAnswer)
+          .map(([k, v]) => `${k}: ${v}`)
+          .join(' | ');
+      } else if (item.userAnswer !== undefined && item.userAnswer !== null) {
+        userAnsStr = String(item.userAnswer);
+      }
+
+      let officialAnsStr = '';
+      if (typeof q.answer === 'string') {
+        officialAnsStr = q.answer;
+      } else if (q.answer && typeof q.answer === 'object') {
+        officialAnsStr = Object.entries(q.answer)
+          .map(([k, v]) => `${k}: ${v}`)
+          .join(' | ');
+      } else if (q.answer !== undefined && q.answer !== null) {
+        officialAnsStr = String(q.answer);
+      }
+
       rows.push([
         idx + 1,
-        `"${q.category.replace(/"/g, '""')}"`,
-        `"${q.question.replace(/"/g, '""')}"`,
-        `"${(item.userAnswer || '').replace(/"/g, '""')}"`,
-        `"${q.answer.replace(/"/g, '""')}"`,
-        ev.status.toUpperCase(),
-        ev.score,
-        `"${q.sourceDocument}"`
+        `"${String(q.category || '').replace(/"/g, '""')}"`,
+        `"${String(q.question || '').replace(/"/g, '""')}"`,
+        `"${userAnsStr.replace(/"/g, '""')}"`,
+        `"${officialAnsStr.replace(/"/g, '""')}"`,
+        String(ev.status || '').toUpperCase(),
+        ev.score !== undefined ? ev.score : 0,
+        `"${String(q.sourceDocument || '').replace(/"/g, '""')}"`
       ]);
     });
 
@@ -1066,7 +1089,7 @@ const App = (() => {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `Hasil_Ujian_${activeExamResult.aircraft}_${Date.now()}.csv`);
+    link.setAttribute('download', `Hasil_Ujian_${activeExamResult.aircraft || 'Aviation'}_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -2010,7 +2033,8 @@ const App = (() => {
     clearAllHistory,
     filterFleetCategory,
     onFleetSearch,
-    clearFleetSearch
+    clearFleetSearch,
+    setActiveExamResultForTest: (r) => { activeExamResult = r; }
   };
 })();
 

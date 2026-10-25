@@ -62,6 +62,13 @@ assert.strictEqual(AnkaRenderer.isAnswerCorrect('<= 20 KTS', '20'), true);
 assert.strictEqual(AnkaRenderer.isAnswerCorrect('51-87', '51 - 87'), true);
 assert.strictEqual(AnkaRenderer.isAnswerCorrect('FLOAT', 'float'), true);
 assert.strictEqual(AnkaRenderer.isAnswerCorrect('108 KIAS', '90'), false);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect('Left', 'kanan'), false);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect('Left', 'kiri'), true);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect('Left', 'left'), true);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect('Right', 'kanan'), true);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect('Right', 'kiri'), false);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect(['Kiri', 'Left'], 'kanan'), false);
+assert.strictEqual(AnkaRenderer.isAnswerCorrect(['Kiri', 'Left'], 'kiri'), true);
 console.log('✓ PASS: AnkaRenderer answer validation is accurate.');
 
 // 4. Test CSS hazard candy-cane border
