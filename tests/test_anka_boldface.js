@@ -71,9 +71,37 @@ assert(css.includes('.boldface-app-shell.is-anka'), 'CSS must include .boldface-
 assert(css.includes('.boldface-app-shell.is-anka .correction-text'), 'CSS must include .correction-text styling');
 console.log('✓ PASS: CSS hazard striped border and authentic styling confirmed.');
 
-// 5. Test index.html includes anka-renderer.js
+// 5. Test index.html includes anka-renderer.js and exam table container
 const html = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf-8');
 assert(html.includes('anka-renderer.js'), 'index.html must include script tag for anka-renderer.js');
-console.log('✓ PASS: index.html correctly loads anka-renderer.js script.');
+assert(html.includes('exam-table-input-zone'), 'index.html must include exam-table-input-zone container');
+console.log('✓ PASS: index.html correctly loads anka-renderer.js and has exam-table-input-zone.');
+
+// 6. Test Exam Table Classifiers & Interactive Table Generation
+assert.strictEqual(AnkaRenderer.isTableQuestion('ANKA-LIM-006'), true, 'Wind limit Q006 is table question');
+assert.strictEqual(AnkaRenderer.isTableQuestion('ANKA-LIM-001'), false, 'Airspeed limit Q001 is not table question');
+assert.strictEqual(AnkaRenderer.getTableType('ANKA-LIM-008'), 'wind', 'Q008 must resolve to wind table');
+assert.strictEqual(AnkaRenderer.getTableType('ANKA-LIM-020'), 'kuband', 'Q020 must resolve to kuband table');
+assert.strictEqual(AnkaRenderer.getTableType('ANKA-LIM-040'), 'system', 'Q040 must resolve to system table');
+assert.strictEqual(AnkaRenderer.getTableType('ANKA-ACT-008'), 'surface', 'ACT Q008 must resolve to surface table');
+
+const windHtml = AnkaRenderer.getTableHtmlForExam('ANKA-LIM-006', {}, false, null);
+assert(windHtml.includes('wind-table'), 'Wind table HTML rendered');
+assert(windHtml.includes('exam-cell-input-ANKA-LIM-006'), 'Wind table includes input cell for Q006');
+assert(windHtml.includes('is-active-cell'), 'Active cell has is-active-cell marker');
+
+const kuHtml = AnkaRenderer.getTableHtmlForExam('ANKA-LIM-020', {}, false, null);
+assert(kuHtml.includes('ku-band-table'), 'Ku-band table HTML rendered');
+assert(kuHtml.includes('exam-cell-input-ANKA-LIM-020'), 'Ku-band table includes input cell for Q020');
+
+const sysHtml = AnkaRenderer.getTableHtmlForExam('ANKA-LIM-040', {}, false, null);
+assert(sysHtml.includes('limitation-table'), 'System limitation table HTML rendered');
+assert(sysHtml.includes('exam-cell-input-ANKA-LIM-040'), 'System table includes input cell for Q040');
+
+const surfHtml = AnkaRenderer.getTableHtmlForExam('ANKA-ACT-008', {}, false, null);
+assert(surfHtml.includes('simple-table'), 'Surface table HTML rendered');
+assert(surfHtml.includes('exam-cell-input-ANKA-ACT-008'), 'Surface table includes input cell for Q008');
+
+console.log('✓ PASS: AnkaRenderer table questions classifier and table HTML generators verified.');
 
 console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===\n');

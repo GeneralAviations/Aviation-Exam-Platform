@@ -131,12 +131,377 @@ const AnkaRenderer = (() => {
     });
   }
 
+  function isTableQuestion(qid) {
+    if (!qid) return false;
+    if (/^ANKA-LIM-0(0[6-9]|1[0-4])$/.test(qid)) return true; // Wind
+    if (/^ANKA-LIM-0(19|[2-3][0-6])$/.test(qid)) return true; // Ku-Band
+    if (/^ANKA-LIM-0(3[7-9]|[4-5][0-9]|6[0-2])$/.test(qid)) return true; // System
+    if (/^ANKA-ACT-00[7-9]|ANKA-ACT-01[0-4]$/.test(qid)) return true; // Surface
+    return false;
+  }
+
+  function getTableType(qid) {
+    if (/^ANKA-LIM-0(0[6-9]|1[0-4])$/.test(qid)) return 'wind';
+    if (/^ANKA-LIM-0(19|[2-3][0-6])$/.test(qid)) return 'kuband';
+    if (/^ANKA-LIM-0(3[7-9]|[4-5][0-9]|6[0-2])$/.test(qid)) return 'system';
+    if (/^ANKA-ACT-00[7-9]|ANKA-ACT-01[0-4]$/.test(qid)) return 'surface';
+    return null;
+  }
+
+  function isDottedQuestion(qid) {
+    if (!qid) return false;
+    if (/^ANKA-LIM-00[1-5]$/.test(qid)) return true;
+    if (/^ANKA-LIM-01[5-8]$/.test(qid)) return true;
+    if (/^ANKA-ACT-00[1-6]|ANKA-ACT-015$/.test(qid)) return true;
+    if (/^ANKA-RPMH-00[1-5]$/.test(qid)) return true;
+    if (/^ANKA-RPML-00[1-6]$/.test(qid)) return true;
+    if (/^ANKA-LDG-00[1-7]$/.test(qid)) return true;
+    return false;
+  }
+
+  function renderTableCellInput(cell, activeQid, answersMap, isPractice, instantChecks) {
+    if (!cell) return '<span class="cell-na">-</span>';
+    const qid = cell.qid;
+    const isActive = qid === activeQid;
+    const userVal = (answersMap && answersMap[qid]) || '';
+    const acceptedList = (cell.accepted || cell.answer || '').split('|').map(s => s.trim());
+    const refAnswer = cell.answer || acceptedList[0] || '';
+    
+    let statusClass = '';
+    let noteHtml = '';
+    
+    if (isPractice && userVal.trim()) {
+      const isCorrect = isAnswerCorrect(acceptedList, userVal);
+      if (isCorrect) {
+        statusClass = 'is-valid';
+      } else {
+        statusClass = 'is-invalid';
+        noteHtml = `<span class="cell-key-hint">(${refAnswer})</span>`;
+      }
+    }
+
+    return `
+      <div class="exam-table-cell-wrapper ${isActive ? 'is-active-cell' : ''} ${statusClass}">
+        <input 
+          type="text" 
+          class="exam-cell-input ${statusClass}" 
+          id="exam-cell-input-${qid}" 
+          data-qid="${qid}" 
+          value="${userVal.replace(/"/g, '&quot;')}" 
+          placeholder="${isActive ? 'Jawaban aktif...' : '...'}" 
+          autocomplete="off" 
+          spellcheck="false" 
+          oninput="App.onExamTableInput(event, '${qid}')" 
+          onkeydown="App.onExamTableCellKeyDown(event, '${qid}')" 
+        />
+        ${isActive ? '<span class="active-cell-badge">▶ Soal Ini</span>' : ''}
+        ${noteHtml}
+      </div>
+    `;
+  }
+
+  function getWindTableExamHtml(activeQid, answersMap, isPractice, instantChecks) {
+    const rows = [
+      {
+        label: 'HEAD',
+        cells: [
+          { qid: 'ANKA-LIM-006', answer: '<= 20 KTS', accepted: '20 KTS max|<=20 KTS|<=20|20 KTS|<= 20 KTS|20 max|20|<= 20' },
+          { qid: 'ANKA-LIM-007', answer: '<= 20 KTS', accepted: '20 KTS max|<=20 KTS|<=20|20 KTS|<= 20 KTS|20 max|20|<= 20' },
+          { qid: 'ANKA-LIM-008', answer: '+/- 7 KTS', accepted: '+/-7|+/- 7 KTS|+/-7 KTS|+/- 7|7 KTS|7' }
+        ]
+      },
+      {
+        label: 'CROSS',
+        cells: [
+          { qid: 'ANKA-LIM-009', answer: '<= 15 KTS', accepted: '15|<= 15|<=15 KTS|15 max|<= 15 KTS|15 KTS|15 KTS max|<=15' },
+          { qid: 'ANKA-LIM-010', answer: '<= 15 KTS', accepted: '15|<= 15|<=15 KTS|15 max|<= 15 KTS|15 KTS|15 KTS max|<=15' },
+          { qid: 'ANKA-LIM-011', answer: '+/- 7 KTS', accepted: '+/-7|+/- 7 KTS|+/-7 KTS|+/- 7|7 KTS|7' }
+        ]
+      },
+      {
+        label: 'TAIL',
+        cells: [
+          { qid: 'ANKA-LIM-012', answer: '<= 6 KTS', accepted: '<= 6 KTS|6|6 KTS|<=6|<= 6|6 KTS max|6 max|<=6 KTS' },
+          { qid: 'ANKA-LIM-013', answer: '<= 6 KTS', accepted: '<= 6 KTS|6|6 KTS|<=6|<= 6|6 KTS max|6 max|<=6 KTS' },
+          { qid: 'ANKA-LIM-014', answer: '+/- 4 KTS', accepted: '+/-4|4|+/- 4|+/- 4 KTS|4 KTS|+/-4 KTS' }
+        ]
+      }
+    ];
+
+    return `
+      <div class="exam-table-card">
+        <div class="exam-table-intro">
+          <span class="exam-table-tag">Tabel Batasan Kecepatan Angin (WIND LIMITATIONS)</span>
+          <span class="exam-table-hint">💡 Format tabel asli ANKA: Kolom jawaban berada langsung di dalam sel tabel. Sel yang sedang aktif tersorot biru.</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table wind-table">
+            <thead>
+              <tr>
+                <th>WIND</th>
+                <th>AUTOTAKEOFF</th>
+                <th>AUTOLAND</th>
+                <th>GUST</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  <td>${renderTableCellInput(r.cells[0], activeQid, answersMap, isPractice, instantChecks)}</td>
+                  <td>${renderTableCellInput(r.cells[1], activeQid, answersMap, isPractice, instantChecks)}</td>
+                  <td>${renderTableCellInput(r.cells[2], activeQid, answersMap, isPractice, instantChecks)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  function getKuBandTableExamHtml(activeQid, answersMap, isPractice, instantChecks) {
+    const rows = [
+      {
+        label: 'Directional Antenna Narrow Band',
+        cells: [
+          { qid: 'ANKA-LIM-019', answer: '200 Km', accepted: '200 km|200 Km|200' },
+          { qid: 'ANKA-LIM-020', answer: '200 Km', accepted: '200 km|200 Km|200' },
+          { qid: 'ANKA-LIM-021', answer: '200 Km', accepted: '200 km|200 Km|200' },
+          { qid: 'ANKA-LIM-022', answer: '90 Km', accepted: '90 Km|90|90 km' },
+          { qid: 'ANKA-LIM-023', answer: '65 Km', accepted: '65|65 Km|65 km' },
+          { qid: 'ANKA-LIM-024', answer: '45 Km', accepted: '45 Km|45|45 km' }
+        ]
+      },
+      {
+        label: 'Directional Antenna Wide Band',
+        cells: [
+          { qid: 'ANKA-LIM-025', answer: '40 Km', accepted: '40 km|40|40 Km' },
+          { qid: 'ANKA-LIM-026', answer: '30 Km', accepted: '30|30 km|30 Km' },
+          { qid: 'ANKA-LIM-027', answer: '20 Km', accepted: '20 km|20 Km|20' },
+          { qid: 'ANKA-LIM-028', answer: '7,5 Km', accepted: '7,5 km|7.5 Km|7,5 Km|7.5 km|7,5|7.5' },
+          { qid: 'ANKA-LIM-029', answer: '5 Km', accepted: '5|5 Km|5 km' },
+          { qid: 'ANKA-LIM-030', answer: '3,5 Km', accepted: '3,5|3,5 Km|3.5|3.5 km|3,5 km|3.5 Km' }
+        ]
+      },
+      {
+        label: 'Omni Antenna',
+        cells: [
+          { qid: 'ANKA-LIM-031', answer: '7 Km', accepted: '7 km|7|7 Km' },
+          { qid: 'ANKA-LIM-032', answer: '5 Km', accepted: '5|5 Km|5 km' },
+          { qid: 'ANKA-LIM-033', answer: '3,5 Km', accepted: '3,5|3,5 Km|3.5|3.5 km|3,5 km|3.5 Km' },
+          { qid: 'ANKA-LIM-034', answer: 'N/A', accepted: 'n/a|-|N/A|NA' },
+          { qid: 'ANKA-LIM-035', answer: 'N/A', accepted: 'n/a|-|N/A|NA' },
+          { qid: 'ANKA-LIM-036', answer: 'N/A', accepted: 'n/a|-|N/A|NA' }
+        ]
+      }
+    ];
+
+    return `
+      <div class="exam-table-card">
+        <div class="exam-table-intro">
+          <span class="exam-table-tag">Tabel Matriks Jarak Maksimum KU-Band Data Link</span>
+          <span class="exam-table-hint">💡 Format tabel asli ANKA: Kolom jawaban 2D Ground Antena x UAV Airborne Data Rate:</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table ku-band-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="3">UAV</th>
+                <th colspan="3">Omni Antenna</th>
+              </tr>
+              <tr>
+                <th>Ground</th>
+                <th>10,71 Mbps</th>
+                <th>21,73 Mbps</th>
+                <th>44,73 Mbps</th>
+                <th>10,71 Mbps</th>
+                <th>21,73 Mbps</th>
+                <th>44,73 Mbps</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  ${r.cells.map(c => `<td>${renderTableCellInput(c, activeQid, answersMap, isPractice, instantChecks)}</td>`).join('')}
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  function getSystemTableExamHtml(activeQid, answersMap, isPractice, instantChecks) {
+    const rows = [
+      {
+        label: 'ENGINE RPM',
+        cells: [
+          { qid: 'ANKA-LIM-037', answer: '900', accepted: '900|900 RPM|900 rpm' },
+          { qid: 'ANKA-LIM-038', answer: '980-2320', accepted: '980 - 2320|980 s/d 2320|980-2320 RPM|980 s.d. 2320|980-2320 rpm|980 - 2320 RPM|980 to 2320 rpm|980 - 2320 rpm|980 s/d 2320 rpm|980-2320|980 sampai 2320 RPM|980 to 2320 RPM|980 sampai 2320 rpm|980 sampai 2320|980 to 2320' },
+          { qid: 'ANKA-LIM-039', answer: '2357', accepted: '2357 rpm|2357|2357 RPM' }
+        ]
+      },
+      {
+        label: 'OIL PRESSURE IN AIR (PSI)',
+        cells: [
+          { qid: 'ANKA-LIM-040', answer: '17', accepted: '17|17 psi|17 PSI' },
+          { qid: 'ANKA-LIM-041', answer: '51-87', accepted: '51-87 PSI|51 sampai 87 psi|51 to 87|51 sampai 87 PSI|51 - 87|51 - 87 PSI|51 s/d 87 psi|51 to 87 psi|51 - 87 psi|51 sampai 87|51 s/d 87|51 s.d. 87|51-87 psi|51-87|51 to 87 PSI' },
+          { qid: 'ANKA-LIM-042', answer: '94', accepted: '94 PSI|94 psi|94' }
+        ]
+      },
+      {
+        label: 'OIL TEMPERATURE (°C)',
+        cells: [
+          { qid: 'ANKA-LIM-043', answer: '50', accepted: '50|50 degc|50 c|50 deg c|50 derajatc|50c|50 c °C|50 deg c °C|50°c|50 °C' },
+          { qid: 'ANKA-LIM-044', answer: '75-110', accepted: '75 sampai 110|75-110°c|75-110 degc|75 - 110|75 s/d 110|75 s.d. 110|75 to 110|75 sampai 110 °C|75 sampai 110°c|75 to 110°c|75 - 110 °C|75 s/d 110°c|75-110 °C|75-110 derajatc|75 - 110°c|75-110c|75-110|75 to 110 °C' },
+          { qid: 'ANKA-LIM-045', answer: '140', accepted: '140 derajatc|140 degc|140°c|140 c|140|140c|140 c °C|140 °C' }
+        ]
+      },
+      {
+        label: 'GEAR BOX TEMPERATURE (°C)',
+        cells: [
+          { qid: 'ANKA-LIM-046', answer: '-30', accepted: '-30 degc|-30 derajatc|-30 c °C|-30°c|-30 °C|-30 c|-30c|-30' },
+          { qid: 'ANKA-LIM-047', answer: '70-100', accepted: '70 - 100 °C|70-100c|70 - 100|70 to 100|70-100°c|70 - 100°c|70 s.d. 100|70 s/d 100|70-100|70-100 derajatc|70 sampai 100 °C|70 sampai 100°c|70 to 100 °C|70 sampai 100|70 to 100°c|70 s/d 100°c|70-100 degc|70-100 °C' },
+          { qid: 'ANKA-LIM-048', answer: '120', accepted: '120°c|120c|120 °C|120 degc|120 derajatc|120 c|120 c °C|120' }
+        ]
+      },
+      {
+        label: 'COOLANT TEMPERATURE (°C)',
+        cells: [
+          { qid: 'ANKA-LIM-049', answer: '-32', accepted: '-32 °C|-32 degc|-32 derajatc|-32|-32 c|-32 c °C|-32°c|-32c' },
+          { qid: 'ANKA-LIM-050', answer: '80-100', accepted: '80-100 derajatc|80 to 100 °C|80-100°c|80-100 °C|80 - 100°c|80 s.d. 100|80 - 100|80-100c|80 s/d 100|80 sampai 100 °C|80-100 degc|80 sampai 100°c|80 s/d 100°c|80-100|80 to 100°c|80 to 100|80 - 100 °C|80 sampai 100' },
+          { qid: 'ANKA-LIM-051', answer: '105', accepted: '105 c|105 c °C|105°c|105 °C|105 derajatc|105c|105 degc|105' }
+        ]
+      },
+      {
+        label: 'RAIL PRESSURE (BAR)',
+        cells: [
+          { qid: 'ANKA-LIM-052', answer: '330', accepted: '330 BAR|330 bar|330' },
+          { qid: 'ANKA-LIM-053', answer: '360-1350', accepted: '360 sampai 1350|360 sampai 1350 BAR|360-1350 bar|360 - 1350 bar|360 - 1350 BAR|360-1350 BAR|360 to 1350 bar|360 s/d 1350|360 s/d 1350 bar|360 to 1350|360 to 1350 BAR|360-1350|360 - 1350|360 sampai 1350 bar|360 s.d. 1350' },
+          { qid: 'ANKA-LIM-054', answer: '1425', accepted: '1425|1425 BAR|1425 bar' }
+        ]
+      },
+      {
+        label: 'FUEL PRESSURE (PSI)',
+        cells: [
+          { qid: 'ANKA-LIM-055', answer: '4', accepted: '4 psi|4|4 PSI' },
+          { qid: 'ANKA-LIM-056', answer: '5-35', accepted: '5 - 35|5 to 35 PSI|5-35|5 to 35 psi|5 s.d. 35|5 sampai 35|5 - 35 PSI|5 s/d 35|5-35 psi|5 - 35 psi|5 sampai 35 psi|5 to 35|5 sampai 35 PSI|5 s/d 35 psi|5-35 PSI' },
+          { qid: 'ANKA-LIM-057', answer: '44', accepted: '44 psi|44 PSI|44' }
+        ]
+      },
+      {
+        label: 'ALTERNATOR VOLTAGE (V)',
+        cells: [
+          { qid: 'ANKA-LIM-058', answer: '22', accepted: '22 volt|22 volt V|22 v|22 V|22' },
+          { qid: 'ANKA-LIM-059', answer: '27-28', accepted: '27 to 28 V|27 - 28 v|27 - 28|27 s.d. 28|27 sampai 28 V|27 sampai 28 v|27-28 V|27 to 28|27-28|27 to 28 v|27 sampai 28|27 s/d 28|27 s/d 28 v|27 - 28 V|27-28 v' },
+          { qid: 'ANKA-LIM-060', answer: '29', accepted: '29 volt V|29 v|29 volt|29 V|29' }
+        ]
+      },
+      {
+        label: 'ALTERNATOR CURRENT (AMP)',
+        cells: [
+          null,
+          { qid: 'ANKA-LIM-061', answer: '0-140', accepted: '0 s.d. 140|0 to 140 AMP|0 - 140 amp|0 s/d 140 amp|0 to 140 amp|0 - 140|0 - 140 AMP|0 s/d 140|0 sampai 140 AMP|0 to 140|0-140 AMP|0 sampai 140|0 sampai 140 amp|0-140 amp|0-140' },
+          { qid: 'ANKA-LIM-062', answer: '141', accepted: '141 AMP|141 amp|141' }
+        ]
+      }
+    ];
+
+    return `
+      <div class="exam-table-card">
+        <div class="exam-table-intro">
+          <span class="exam-table-tag">Tabel Batasan Operasi Engine & Sistem (SYSTEM LIMITATIONS)</span>
+          <span class="exam-table-hint">💡 Kolom tabel resmi ANKA: Isikan MIN, NORMAL OPERATION, dan MAX pada sel yang relevan:</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table limitation-table">
+            <thead>
+              <tr>
+                <th>SYSTEM</th>
+                <th>MIN</th>
+                <th>NORMAL OPERATION</th>
+                <th>MAX</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  <td>${renderTableCellInput(r.cells[0], activeQid, answersMap, isPractice, instantChecks)}</td>
+                  <td>${renderTableCellInput(r.cells[1], activeQid, answersMap, isPractice, instantChecks)}</td>
+                  <td>${renderTableCellInput(r.cells[2], activeQid, answersMap, isPractice, instantChecks)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  function getSurfaceTableExamHtml(activeQid, answersMap, isPractice, instantChecks) {
+    const rows = [
+      { label: 'RIRV', qid: 'ANKA-ACT-007', answer: 'Left', accepted: 'Kiri|Left|LEFT' },
+      { label: 'RORV', qid: 'ANKA-ACT-008', answer: 'Left', accepted: 'Kiri|Left|LEFT' },
+      { label: 'LIRV', qid: 'ANKA-ACT-009', answer: 'Right', accepted: 'RIGHT|Kanan|Right' },
+      { label: 'LORV', qid: 'ANKA-ACT-010', answer: 'Right', accepted: 'RIGHT|Kanan|Right' },
+      { label: 'RIA', qid: 'ANKA-ACT-011', answer: 'Right', accepted: 'RIGHT|Kanan|Right' },
+      { label: 'ROA', qid: 'ANKA-ACT-012', answer: 'Right', accepted: 'RIGHT|Kanan|Right' },
+      { label: 'LIA', qid: 'ANKA-ACT-013', answer: 'Left', accepted: 'Kiri|Left|LEFT' },
+      { label: 'LOA', qid: 'ANKA-ACT-014', answer: 'Left', accepted: 'Kiri|Left|LEFT' }
+    ];
+
+    return `
+      <div class="exam-table-card">
+        <div class="exam-table-intro">
+          <span class="exam-table-tag">Tabel Landing Wind Direction (Crosswind Ruddervator Failure)</span>
+          <span class="exam-table-hint">💡 Kolom tabel arah pendaratan angin: Isikan Left / Right pada kolom kendali aktif:</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table simple-table">
+            <thead>
+              <tr>
+                <th>Surface</th>
+                <th>Landing Wind Direction</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  <td>${renderTableCellInput(r, activeQid, answersMap, isPractice, instantChecks)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  function getTableHtmlForExam(qid, answersMap, isPractice, instantChecks) {
+    const type = getTableType(qid);
+    if (type === 'wind') return getWindTableExamHtml(qid, answersMap, isPractice, instantChecks);
+    if (type === 'kuband') return getKuBandTableExamHtml(qid, answersMap, isPractice, instantChecks);
+    if (type === 'system') return getSystemTableExamHtml(qid, answersMap, isPractice, instantChecks);
+    if (type === 'surface') return getSurfaceTableExamHtml(qid, answersMap, isPractice, instantChecks);
+    return '';
+  }
+
   return {
     getTabs,
     renderSections,
     setActiveTab,
     isAnswerCorrect,
-    normalize
+    normalize,
+    isTableQuestion,
+    getTableType,
+    isDottedQuestion,
+    getTableHtmlForExam
   };
 })();
 

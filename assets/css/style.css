@@ -3033,3 +3033,158 @@ a {
     page-break-after: auto;
   }
 }
+
+/* ==========================================================================
+   EXAM VIEW - TABLE BASED QUESTIONS (ANKA & MATRIX QUESTIONS)
+   ========================================================================== */
+.exam-table-input-zone {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.exam-table-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.exam-table-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.exam-table-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #0d2238, #163d61);
+  color: #f6e9a8;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.exam-table-hint {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.exam-table-card .table-wrap {
+  margin: 8px 0;
+  overflow-x: auto;
+}
+
+.exam-table-card .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid rgba(17, 34, 50, 0.2);
+}
+
+.exam-table-card .data-table th,
+.exam-table-card .data-table td {
+  border: 1px solid rgba(17, 34, 50, 0.18);
+  padding: 8px 6px;
+  vertical-align: middle;
+  text-align: center;
+  color: #1b2634;
+}
+
+.exam-table-card .data-table thead th {
+  background: #f6e9a8 !important;
+  color: #0d2238 !important;
+  font-weight: 800;
+  font-size: 0.88rem;
+}
+
+.exam-table-card .wind-table td:first-child,
+.exam-table-card .limitation-table td:first-child,
+.exam-table-card .simple-table td:first-child {
+  text-align: left;
+  font-weight: 700;
+  background: #f8fafc;
+  color: #0d2238;
+}
+
+.exam-table-cell-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.exam-cell-input {
+  width: 100%;
+  min-width: 82px;
+  height: 2.3rem;
+  padding: 4px 8px;
+  border: 1px solid rgba(17, 34, 50, 0.6);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1b2634;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.exam-cell-input:focus {
+  outline: none;
+  border-color: #2c64d8;
+  box-shadow: 0 0 0 3px rgba(44, 100, 216, 0.25);
+  background: #ffffff;
+}
+
+.exam-table-cell-wrapper.is-active-cell .exam-cell-input {
+  border: 2px solid #2563eb !important;
+  background: #eff6ff !important;
+  color: #1e3a8a !important;
+  font-weight: 800;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.active-cell-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.cell-key-hint {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.exam-cell-input.is-valid {
+  border-color: #16a34a !important;
+  background: #f0fdf4 !important;
+  color: #15803d !important;
+}
+
+.exam-cell-input.is-invalid {
+  border-color: #dc2626 !important;
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+}
+
+.cell-na {
+  color: #94a3b8;
+  font-weight: 700;
+}
+

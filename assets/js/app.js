@@ -225,6 +225,10 @@ const App = (() => {
     } else if (viewName === 'setup') {
       const aircraft = params.get('aircraft') || 'BELL 412 EP';
       await loadAndRenderSetup(aircraft);
+    } else if (viewName === 'paper') {
+      const aircraft = params.get('aircraft') || 'ANKA MALE UAV';
+      const mode = params.get('mode') || 'practice';
+      await openBoldFaceDirect(aircraft, mode);
     } else if (viewName === 'bank') {
       await loadAndRenderQuestionBank();
     } else if (viewName === 'history') {
@@ -284,15 +288,30 @@ const App = (() => {
                 Lanjutkan (${draftCount} dijawab)
               </button>
             ` : ''}
-            <button class="btn btn-primary" onclick="App.openSetup('${item.aircraft}')">
-              Mulai Ujian
-            </button>
-            <button class="btn btn-secondary" onclick="App.openBoldFaceDirect('${item.aircraft}')">
-              Lembar Bold Face ⭐
-            </button>
-            <button class="btn btn-secondary btn-sm" onclick="App.openPaperMode('${item.aircraft}')">
-              Cetak PDF
-            </button>
+            ${item.aircraft === 'ANKA MALE UAV' ? `
+              <button class="btn btn-primary" onclick="App.openBoldFaceDirect('${item.aircraft}', 'practice')">
+                🚀 Mulai Latihan (Tabel Asli)
+              </button>
+              <button class="btn btn-secondary" onclick="App.openBoldFaceDirect('${item.aircraft}', 'exam')">
+                ⏱️ Mode Ujian (Tabel Asli)
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="App.openSetup('${item.aircraft}')">
+                Mode Kuis Per Soal
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="App.openPaperMode('${item.aircraft}')">
+                Cetak PDF
+              </button>
+            ` : `
+              <button class="btn btn-primary" onclick="App.openSetup('${item.aircraft}')">
+                Mulai Ujian
+              </button>
+              <button class="btn btn-secondary" onclick="App.openBoldFaceDirect('${item.aircraft}')">
+                Lembar Bold Face ⭐
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="App.openPaperMode('${item.aircraft}')">
+                Cetak PDF
+              </button>
+            `}
           </div>
         </div>
       `;
@@ -362,6 +381,11 @@ const App = (() => {
         `;
       }
 
+      if (aircraftId === 'ANKA MALE UAV') {
+        const bfRadio = document.querySelector('input[name="exam-mode"][value="boldface"]');
+        if (bfRadio) bfRadio.checked = true;
+      }
+
       updateSelectedCatCount();
     } catch (e) {
       console.error('Setup load error:', e);
@@ -423,6 +447,16 @@ const App = (() => {
 
     if (questions.length === 0) {
       showToast('Tidak ada soal yang cocok dengan pilihan Anda.', 'warning');
+      return;
+    }
+
+    // ANKA MALE UAV defaults to authentic table sheet layout
+    if (currentAircraftData.aircraft === 'ANKA MALE UAV') {
+      if (mode === 'manual') {
+        openPaperView(currentAircraftData, questions);
+        return;
+      }
+      openBoldFaceSheet(currentAircraftData, questions, mode === 'exam' ? 'exam' : 'practice');
       return;
     }
 
@@ -518,9 +552,31 @@ const App = (() => {
     if (secEl) secEl.textContent = q.section;
     if (textEl) textEl.textContent = (q.question || '').replace(/^\d+[\.\)]\s*/, '');
 
+    const isAnkaTable = Boolean(window.AnkaRenderer && window.AnkaRenderer.isTableQuestion && window.AnkaRenderer.isTableQuestion(q.id));
+    const examTableZone = document.getElementById('exam-table-input-zone');
     const hasSub = q.subQuestions && Array.isArray(q.subQuestions) && q.subQuestions.length > 0;
 
-    if (hasSub) {
+    if (isAnkaTable) {
+      if (singleInputGroup) singleInputGroup.style.display = 'none';
+      if (multiGrid) multiGrid.style.display = 'none';
+      if (unitEl) unitEl.setAttribute('hidden', '');
+
+      if (examTableZone) {
+        examTableZone.style.display = 'block';
+        examTableZone.innerHTML = AnkaRenderer.getTableHtmlForExam(
+          q.id,
+          state.answers || {},
+          state.mode === 'practice',
+          state.instantCheck
+        );
+
+        const activeInput = document.getElementById(`exam-cell-input-${q.id}`);
+        if (activeInput && (!document.activeElement || document.activeElement.tagName !== 'INPUT')) {
+          activeInput.focus();
+        }
+      }
+    } else if (hasSub) {
+      if (examTableZone) examTableZone.style.display = 'none';
       if (singleInputGroup) singleInputGroup.style.display = 'none';
       if (unitEl) unitEl.setAttribute('hidden', '');
 
@@ -594,6 +650,7 @@ const App = (() => {
         }
       }
     } else {
+      if (examTableZone) examTableZone.style.display = 'none';
       if (multiGrid) multiGrid.style.display = 'none';
       if (singleInputGroup) singleInputGroup.style.display = 'flex';
 
@@ -727,6 +784,43 @@ const App = (() => {
         promptSubmitExam();
       } else {
         ExamEngine.nextQuestion();
+      }
+    }
+  }
+
+  function onExamTableInput(e, cellQid) {
+    const val = e.target.value;
+    ExamEngine.setAnswer(cellQid, val);
+    const state = ExamEngine.getState();
+    if (state && state.currentQuestion && state.currentQuestion.id === cellQid) {
+      state.currentAnswer = val;
+    }
+    const grid = document.getElementById('exam-navigator-grid');
+    if (grid && state && state.questions) {
+      const qIdx = state.questions.findIndex(q => q.id === cellQid);
+      if (qIdx >= 0) {
+        const btn = grid.children[qIdx];
+        if (btn && !state.flags.includes(cellQid)) {
+          btn.classList.toggle('answered', Boolean(val && val.trim().length > 0));
+        }
+      }
+    }
+  }
+
+  function onExamTableCellKeyDown(e, cellQid) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const allInputs = Array.from(document.querySelectorAll('.exam-cell-input'));
+      const currIdx = allInputs.indexOf(e.target);
+      if (currIdx >= 0 && currIdx < allInputs.length - 1) {
+        allInputs[currIdx + 1].focus();
+      } else {
+        const state = ExamEngine.getState();
+        if (state && state.currentIndex === state.totalQuestions - 1) {
+          promptSubmitExam();
+        } else {
+          ExamEngine.nextQuestion();
+        }
       }
     }
   }
@@ -988,11 +1082,11 @@ const App = (() => {
   // ==========================================
   // BOLD FACE & PAPER SHEET MODE (STYLE ANKA)
   // ==========================================
-  async function openBoldFaceDirect(aircraftId) {
+  async function openBoldFaceDirect(aircraftId, subMode = 'practice') {
     try {
       const data = await QuestionLoader.loadAircraftData(aircraftId);
       currentAircraftData = data;
-      openBoldFaceSheet(data, data.questions, 'practice');
+      openBoldFaceSheet(data, data.questions, subMode);
     } catch (e) {
       console.error(e);
       showToast('Gagal memuat lembar Bold Face untuk: ' + aircraftId, 'error');
@@ -1887,6 +1981,8 @@ const App = (() => {
     onAnswerInput,
     onSubAnswerInput,
     onAnswerKeyDown,
+    onExamTableInput,
+    onExamTableCellKeyDown,
     checkCurrentQuestion,
     revealCurrentQuestion,
     toggleCurrentFlag,
