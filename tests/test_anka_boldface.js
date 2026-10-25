@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
 
+const ROOT_DIR = path.resolve(__dirname, '..');
+
 console.log('=== VERIFYING AUTHENTIC ANKA BOLDFACE LAYOUT & FUNCTIONALITY ===');
 
 // 1. Check anka-renderer.js
-const AnkaRenderer = require('./assets/js/anka-renderer.js');
+const AnkaRenderer = require(path.join(ROOT_DIR, 'assets/js/anka-renderer.js'));
 assert(AnkaRenderer, 'AnkaRenderer module must be loaded');
 
 const tabs = AnkaRenderer.getTabs();
@@ -63,15 +65,15 @@ assert.strictEqual(AnkaRenderer.isAnswerCorrect('108 KIAS', '90'), false);
 console.log('✓ PASS: AnkaRenderer answer validation is accurate.');
 
 // 4. Test CSS hazard candy-cane border
-const css = fs.readFileSync(path.join(__dirname, 'assets/css/style.css'), 'utf-8');
+const css = fs.readFileSync(path.join(ROOT_DIR, 'assets/css/style.css'), 'utf-8');
 assert(css.includes('repeating-linear-gradient'), 'CSS must include repeating linear gradient hazard border');
 assert(css.includes('.boldface-app-shell.is-anka'), 'CSS must include .boldface-app-shell.is-anka rules');
 assert(css.includes('.boldface-app-shell.is-anka .correction-text'), 'CSS must include .correction-text styling');
 console.log('✓ PASS: CSS hazard striped border and authentic styling confirmed.');
 
 // 5. Test index.html includes anka-renderer.js
-const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
+const html = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf-8');
 assert(html.includes('anka-renderer.js'), 'index.html must include script tag for anka-renderer.js');
 console.log('✓ PASS: index.html correctly loads anka-renderer.js script.');
 
-console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===');
+console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===\n');

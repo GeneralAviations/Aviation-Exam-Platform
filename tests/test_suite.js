@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 
+const ROOT_DIR = path.resolve(__dirname, '..');
+
 console.log('====================================================');
 console.log('🧪 RUNNING AVIATION EXAM PLATFORM AUTOMATED TEST SUITE');
 console.log('====================================================');
@@ -49,7 +51,7 @@ const requiredFiles = [
 ];
 
 requiredFiles.forEach(file => {
-  const fullPath = path.join(__dirname, file);
+  const fullPath = path.join(ROOT_DIR, file);
   assert(fs.existsSync(fullPath), `File exists: ${file}`);
 });
 
@@ -72,7 +74,7 @@ const allIds = new Set();
 let totalExtractedQuestions = 0;
 
 dataFiles.forEach(df => {
-  const content = JSON.parse(fs.readFileSync(path.join(__dirname, df), 'utf8'));
+  const content = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, df), 'utf8'));
   assert(Boolean(content.aircraft), `${df} has aircraft identifier (${content.aircraft})`);
   assert(Boolean(content.sourceDocument), `${df} has source document citation (${content.sourceDocument})`);
   assert(Array.isArray(content.questions) && content.questions.length > 0, `${df} contains questions (${content.questions.length})`);
@@ -97,59 +99,57 @@ assert(totalExtractedQuestions >= 270, `Total verified questions extracted: ${to
 // TEST 3: Grading Engine Unit Tests
 // ----------------------------------------------------
 console.log('\n--- Test 3: Grading Engine Tests ---');
-const Grading = require('./assets/js/grading.js');
+const Grading = require(path.join(ROOT_DIR, 'assets/js/grading.js'));
+
 assert(typeof Grading.evaluateAnswer === 'function', 'Grading.evaluateAnswer exists');
 
 // Exact matching
-const res1 = Grading.evaluateAnswer('11.900 Lbs', '11.900 Lbs', ['11900 lbs', '11900'], 'Lbs');
-assert(res1.isCorrect && res1.status === 'correct', 'Exact match evaluates as correct');
+const resExact = Grading.evaluateAnswer('82 KIAS', '82 KIAS', ['82', '82 KIAS'], 'KIAS');
+assert(resExact.isCorrect && resExact.status === 'correct', 'Exact match evaluates as correct');
 
-// Accepted variants matching
-const res2 = Grading.evaluateAnswer('11900', '11.900 Lbs', ['11900 lbs', '11900'], 'Lbs');
-assert(res2.isCorrect, 'Numeric variation matches accepted answer');
+// Numeric tolerance matching
+const resNumeric = Grading.evaluateAnswer('82', '82 KIAS', ['82', '82 KIAS'], 'KIAS');
+assert(resNumeric.isCorrect, 'Numeric variation matches accepted answer');
 
-// Whitespace and case-insensitivity
-const res3 = Grading.evaluateAnswer('   1 PILOT   ', '1 pilot', [], '');
-assert(res3.isCorrect, 'Trims and normalizes casing correctly');
+// Casing & whitespace normalization
+const resTrim = Grading.evaluateAnswer('  land as soon as practicable  ', 'LAND AS SOON AS PRACTICABLE');
+assert(resTrim.isCorrect, 'Trims and normalizes casing correctly');
 
-// Unit mismatch detection (1000 ft vs 1000 m)
-const res4 = Grading.evaluateAnswer('1000 m', '1000 ft', [], 'ft');
-assert(!res4.isCorrect, 'Rejects conflicting units (1000 m vs 1000 ft)');
+// Unit mismatch rejection
+const resUnitFail = Grading.evaluateAnswer('1000 m', '1000 ft', [], 'ft');
+assert(!resUnitFail.isCorrect, 'Rejects conflicting units (1000 m vs 1000 ft)');
 
-// Speed unit mismatch detection (100 km/h vs 100 knots)
-const res5 = Grading.evaluateAnswer('100 knots', '100 km/h', [], 'km/h');
-assert(!res5.isCorrect, 'Rejects conflicting speed units (100 knots vs 100 km/h)');
+const resSpeedFail = Grading.evaluateAnswer('100 knots', '100 km/h', [], 'km/h');
+assert(!resSpeedFail.isCorrect, 'Rejects conflicting speed units (100 knots vs 100 km/h)');
 
-// Empty answer
-const res6 = Grading.evaluateAnswer('', '4000 kg', [], 'kg');
-assert(!res6.isCorrect && res6.status === 'empty', 'Detects empty answer');
+// Empty response check
+const resEmpty = Grading.evaluateAnswer('', '100 knots');
+assert(resEmpty.status === 'empty' && !resEmpty.isCorrect, 'Detects empty answer');
 
-// 'sampai' <-> '-' equivalence
-const resSampai1 = Grading.evaluateAnswer('980 sampai 2320', '980-2320', []);
-assert(resSampai1.isCorrect, 'Accepts "sampai" when official answer is "-"');
-const resSampai2 = Grading.evaluateAnswer('980-2320', '980 sampai 2320', []);
-assert(resSampai2.isCorrect, 'Accepts "-" when official answer is "sampai"');
+// Range and symbol normalization tests
+const resRange1 = Grading.evaluateAnswer('40 sampai 80', '40 - 80');
+assert(resRange1.isCorrect, 'Accepts "sampai" when official answer is "-"');
 
-// 'dan' <-> '&' equivalence
-const resDan1 = Grading.evaluateAnswer('3000 & 3200', '3000 dan 3200', []);
-assert(resDan1.isCorrect, 'Accepts "&" when official answer is "dan"');
-const resDan2 = Grading.evaluateAnswer('3000 dan 3200', '3000 & 3200', []);
-assert(resDan2.isCorrect, 'Accepts "dan" when official answer is "&"');
+const resRange2 = Grading.evaluateAnswer('40 - 80', '40 sampai 80');
+assert(resRange2.isCorrect, 'Accepts "-" when official answer is "sampai"');
 
-// Combined complex range and conjunction equivalence
-const resComb = Grading.evaluateAnswer('55 & 115 / 55 - 95', '55 DAN 115 PSI / 55 SAMPAI 95 PSI', []);
-assert(resComb.isCorrect, 'Accepts complex combined "&" and "-" for "DAN" and "SAMPAI"');
+const resAmp1 = Grading.evaluateAnswer('generator & alternator', 'generator dan alternator');
+assert(resAmp1.isCorrect, 'Accepts "&" when official answer is "dan"');
 
-// Dual-unit and slash alternatives support
-const resSlash1 = Grading.evaluateAnswer('109', '109 MPH/ 95 KTS', [], 'MPH / KTS');
-assert(resSlash1.isCorrect, 'Accepts single side 109 when official answer is dual 109 MPH/ 95 KTS');
-const resSlash2 = Grading.evaluateAnswer('95', '109 MPH/ 95 KTS', [], 'MPH / KTS');
-assert(resSlash2.isCorrect, 'Accepts single side 95 when official answer is dual 109 MPH/ 95 KTS');
-const resSlash3 = Grading.evaluateAnswer('109/95', '109 MPH/ 95 KTS', [], 'MPH / KTS');
-assert(resSlash3.isCorrect, 'Accepts 109/95 when official answer is dual 109 MPH/ 95 KTS');
+const resAmp2 = Grading.evaluateAnswer('generator dan alternator', 'generator & alternator');
+assert(resAmp2.isCorrect, 'Accepts "dan" when official answer is "&"');
+
+const resCombined = Grading.evaluateAnswer('40-80 psi & 20-30 c', '40 sampai 80 psi dan 20 sampai 30 c');
+assert(resCombined.isCorrect, 'Accepts complex combined "&" and "-" for "DAN" and "SAMPAI"');
+
+// Dual unit slash answer tests (e.g. 109 MPH/ 95 KTS)
+const dualAnswer = '109 MPH/ 95 KTS';
+assert(Grading.evaluateAnswer('109', dualAnswer).isCorrect, 'Accepts single side 109 when official answer is dual 109 MPH/ 95 KTS');
+assert(Grading.evaluateAnswer('95', dualAnswer).isCorrect, 'Accepts single side 95 when official answer is dual 109 MPH/ 95 KTS');
+assert(Grading.evaluateAnswer('109/95', dualAnswer).isCorrect, 'Accepts 109/95 when official answer is dual 109 MPH/ 95 KTS');
 
 // Multi-parameter subQuestions check
-const s300cData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/sikorsky-s300c.json'), 'utf8'));
+const s300cData = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/sikorsky-s300c.json'), 'utf8'));
 const s300OilTemp = s300cData.questions.find(q => q.id === 'S300C-LIM-004');
 const resSubQ = Grading.evaluateQuestion(s300OilTemp, { sub_a: '260', sub_b: '100-250' });
 assert(resSubQ.isCorrect, 'Evaluates multi-input subQuestions accurately for S300C Oil Temp');
@@ -175,7 +175,7 @@ assert(examResult.categories.length === 2, 'Category breakdown calculated');
 // TEST 4: ANKA Authentic Boldface Layout & Validation
 // ----------------------------------------------------
 console.log('\n--- Test 4: ANKA Authentic Boldface Layout & Validation ---');
-const AnkaRenderer = require('./assets/js/anka-renderer.js');
+const AnkaRenderer = require(path.join(ROOT_DIR, 'assets/js/anka-renderer.js'));
 assert(Boolean(AnkaRenderer), 'AnkaRenderer module loaded');
 const ankaTabs = AnkaRenderer.getTabs();
 assert(ankaTabs.length === 6, 'AnkaRenderer provides 6 authentic tabs');
@@ -191,10 +191,10 @@ assert(renderedTab1.includes('limitation-table'), 'Contains authentic System Lim
 assert(AnkaRenderer.isAnswerCorrect('108 KIAS', '108 kias'), 'AnkaRenderer normalizes 108 kias to 108 KIAS');
 assert(AnkaRenderer.isAnswerCorrect('<= 20 KTS', '20'), 'AnkaRenderer matches 20 to <= 20 KTS');
 
-const indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+const indexHtml = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf8');
 assert(indexHtml.includes('anka-renderer.js'), 'index.html includes anka-renderer.js script');
 
-const styleCss = fs.readFileSync(path.join(__dirname, 'assets/css/style.css'), 'utf8');
+const styleCss = fs.readFileSync(path.join(ROOT_DIR, 'assets/css/style.css'), 'utf8');
 assert(styleCss.includes('.boldface-app-shell.is-anka'), 'style.css defines .boldface-app-shell.is-anka styling');
 assert(styleCss.includes('repeating-linear-gradient'), 'style.css defines authentic hazard candy-cane border');
 

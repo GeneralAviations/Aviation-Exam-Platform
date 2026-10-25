@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8080",
-    "test": "node test_suite.js && node test_engine.js && node test_layout_inspect.js",
-    "build:data": "python generate_all_data.py"
+    "test": "node tests/test_suite.js && node tests/test_engine.js && node tests/test_layout_inspect.js && node tests/test_anka_boldface.js",
+    "build:data": "python scripts/generate_all_data.py"
   },
   "keywords": [
     "aviation",

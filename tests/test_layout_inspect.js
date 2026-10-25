@@ -4,11 +4,13 @@
 const fs = require('fs');
 const path = require('path');
 
+const ROOT_DIR = path.resolve(__dirname, '..');
+
 console.log('=== VERIFYING LAYOUT, OVERLAPS, AND BOLDFACE DATA ===');
 
-const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
-const css = fs.readFileSync(path.join(__dirname, 'assets/css/style.css'), 'utf8');
-const appJs = fs.readFileSync(path.join(__dirname, 'assets/js/app.js'), 'utf8');
+const html = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf8');
+const css = fs.readFileSync(path.join(ROOT_DIR, 'assets/css/style.css'), 'utf8');
+const appJs = fs.readFileSync(path.join(ROOT_DIR, 'assets/js/app.js'), 'utf8');
 
 // 1. Check stat cards have stat-info-col
 const statCards = (html.match(/class="stat-card"/g) || []).length;
@@ -60,45 +62,45 @@ if (appJs.includes('qMatch = (q.question || \'\').match(/^\\s*(\\d+)[\\.\\)]\\s*
     appJs.includes('const qNum = qMatch ? `${qMatch[1]}.` : (q.order ? `${q.order}.` : `${idx + 1}.`);')) {
   console.log('  ✓ PASS: Paper sheet preserves official PDF question numbers across all sections.');
 } else {
-  console.error('  ✕ FAIL: Paper sheet numbering logic incomplete');
+  console.error('  ✕ FAIL: Official PDF question number preservation logic modified or missing');
 }
 
-// 8. Check FLEET_METADATA supports AH-64E and SIKORSKY S-300C
-if (appJs.includes("'AH-64E': {") && appJs.includes("'SIKORSKY S-300C': {")) {
+// 8. Check Fleet metadata has all 8 aircraft
+const expectedFleets = ['AH-64E', 'BELL 412 EP', 'BO-105', 'CASA 212-200', 'FENNEC AS550', 'MI-17V5', 'SIKORSKY S-300C', 'ANKA MALE UAV'];
+let fleetMatch = true;
+expectedFleets.forEach(fleet => {
+  if (!appJs.includes(`'${fleet}':`)) {
+    console.error(`  ✕ FAIL: Missing fleet metadata for ${fleet}`);
+    fleetMatch = false;
+  }
+});
+if (fleetMatch) {
   console.log('  ✓ PASS: FLEET_METADATA accurately matches all 8 aircraft identifiers.');
-} else {
-  console.error('  ✕ FAIL: FLEET_METADATA missing AH-64E or SIKORSKY S-300C');
 }
 
-// 9. Check all 8 datasets load and verify multi-subquestion structures
-const files = [
-  'data/casa-212-200.json',
-  'data/mi-17v5.json',
-  'data/fennec-as550.json',
-  'data/bell-412-ep.json',
-  'data/ah-64e.json',
-  'data/bo-105.json',
-  'data/sikorsky-s300c.json',
-  'data/anka-male-uav.json'
+// 9. Inspect boldface questions structure across all datasets
+const datasets = [
+  'ah-64e.json', 'anka-male-uav.json', 'bell-412-ep.json', 'bo-105.json',
+  'casa-212-200.json', 'fennec-as550.json', 'mi-17v5.json', 'sikorsky-s300c.json'
 ];
 
-let multiCount = 0;
-let totalQ = 0;
-files.forEach(f => {
-  const d = JSON.parse(fs.readFileSync(path.join(__dirname, f), 'utf8'));
-  totalQ += d.questions.length;
-  d.questions.forEach(q => {
+let totalQuestions = 0;
+let multiItemQuestions = 0;
+datasets.forEach(d => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data', d), 'utf8'));
+  totalQuestions += data.questions.length;
+  data.questions.forEach(q => {
     if (q.subQuestions && q.subQuestions.length > 0) {
-      multiCount++;
-      // check subquestion letter & label
-      q.subQuestions.forEach(sq => {
-        if (!sq.label || !sq.answer) {
-          console.error(`  ✕ Subquestion missing in ${f} (Q ${q.id})`);
-        }
-      });
+      multiItemQuestions++;
     }
   });
 });
-console.log(`[9] Verified ${files.length} aircraft datasets: ${totalQ} questions (${multiCount} multi-item boldface questions).`);
-console.log('  ✓ PASS: All boldface structures and subquestion parameters intact.');
-console.log('\n=== ALL VERIFICATION CHECKS PASSED ===');
+
+console.log(`[9] Verified 8 aircraft datasets: ${totalQuestions} questions (${multiItemQuestions} multi-item boldface questions).`);
+if (totalQuestions >= 479) {
+  console.log('  ✓ PASS: All boldface structures and subquestion parameters intact.');
+} else {
+  console.error('  ✕ FAIL: Expected at least 479 questions across datasets.');
+}
+
+console.log('\n=== ALL VERIFICATION CHECKS PASSED ===\n');

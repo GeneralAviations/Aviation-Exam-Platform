@@ -98,17 +98,19 @@ Aviation-Exam-Platform/
 │   ├── mi-17v5.json            # Bank soal MI-17V5 (25 soal resmi)
 │   └── sikorsky-s300c.json     # Bank soal SIKORSKY S-300C (23 soal)
 ├── scripts/                    # Skrip pengembang & kompilasi dataset
+│   ├── generate_all_data.py    # Titik masuk eksekusi kompilasi data master
 │   ├── build_all_data_perfect.py # Kompiler dataset master seluruh armada
 │   ├── build_ah64e.py          # Generator builder AH-64E
 │   ├── build_ballface_datasets.py # Generator builder MI-17 & Bell 412
 │   ├── build_full_suite.py     # Generator builder CASA 212 & Fennec AS550
 │   └── generate_anka_data.py   # Generator builder ANKA MALE UAV
-├── generate_all_data.py        # Titik masuk eksekusi kompilasi data master
+├── tests/                      # Rangkaian pengujian otomatis (Automated Test Suite)
+│   ├── test_suite.js           # Pengujian otomatis regresi (75 pengujian)
+│   ├── test_engine.js          # Pengujian simulasi siklus ujian & penyimpanan
+│   ├── test_layout_inspect.js  # Pengujian verifikasi visual layout & anti-overlap
+│   └── test_anka_boldface.js   # Pengujian verifikasi otentik ANKA boldface
 ├── index.html                  # Single Page Application (SPA) entry point
 ├── package.json                # Konfigurasi npm scripts & dependensi pengujian
-├── test_suite.js               # Pengujian otomatis regresi (65 pengujian)
-├── test_engine.js              # Pengujian simulasi siklus ujian & penyimpanan
-├── test_layout_inspect.js      # Pengujian verifikasi visual layout & anti-overlap
 ├── .gitignore                  # Berkas pengecualian Git
 ├── .nojekyll                   # Mencegah Jekyll mengabaikan folder statis
 ├── LICENSE                     # Lisensi open-source MIT
@@ -142,15 +144,18 @@ npm test
 ```
 Hasil pengujian:
 ```text
-✓ PASS: 65 / 65 test suite criteria passed (0 failed)
+✓ PASS: 75 / 75 test suite criteria passed (0 failed)
 ✓ PASS: Exam Engine lifecycle & LocalStorage simulation passed
 ✓ PASS: Layout, responsive dots, and anti-overlap verification passed
+✓ PASS: ANKA authentic boldface layout & validation passed
 ```
 
 ### 3. Mengompilasi Ulang Data Bank Soal
 Jika ingin mengompilasi ulang seluruh dataset pesawat dari skrip sumber:
 ```bash
-python generate_all_data.py
+python scripts/generate_all_data.py
+# atau
+npm run build:data
 ```
 
 ---
