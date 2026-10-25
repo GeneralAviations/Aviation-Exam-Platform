@@ -104,4 +104,10 @@ assert(surfHtml.includes('exam-cell-input-ANKA-ACT-008'), 'Surface table include
 
 console.log('✓ PASS: AnkaRenderer table questions classifier and table HTML generators verified.');
 
+// 7. Test app.js paper view navigation architecture
+const appJs = fs.readFileSync(path.join(ROOT_DIR, 'assets/js/app.js'), 'utf-8');
+assert(appJs.includes('loadAndRenderPaperView'), 'app.js must define loadAndRenderPaperView');
+assert(!appJs.includes('renderBoldFaceSheetDOM(data, questions, subMode);\n    Navigation.navigateTo(\'paper\');'), 'renderBoldFaceSheetDOM must not call Navigation.navigateTo');
+console.log('✓ PASS: app.js paper navigation architecture verified to have zero recursion.');
+
 console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===\n');

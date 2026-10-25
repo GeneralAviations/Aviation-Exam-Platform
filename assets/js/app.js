@@ -226,9 +226,11 @@ const App = (() => {
       const aircraft = params.get('aircraft') || 'BELL 412 EP';
       await loadAndRenderSetup(aircraft);
     } else if (viewName === 'paper') {
-      const aircraft = params.get('aircraft') || 'ANKA MALE UAV';
-      const mode = params.get('mode') || 'practice';
-      await openBoldFaceDirect(aircraft, mode);
+      const aircraft = params.get('aircraft') || (currentPaperData ? currentPaperData.aircraft : 'ANKA MALE UAV');
+      const mode = params.get('mode') || boldFaceSubMode || 'practice';
+      if (!currentPaperData || currentPaperData.aircraft !== aircraft || boldFaceSubMode !== mode) {
+        await loadAndRenderPaperView(aircraft, mode);
+      }
     } else if (viewName === 'bank') {
       await loadAndRenderQuestionBank();
     } else if (viewName === 'history') {
@@ -450,15 +452,6 @@ const App = (() => {
       return;
     }
 
-    // ANKA MALE UAV defaults to authentic table sheet layout
-    if (currentAircraftData.aircraft === 'ANKA MALE UAV') {
-      if (mode === 'manual') {
-        openPaperView(currentAircraftData, questions);
-        return;
-      }
-      openBoldFaceSheet(currentAircraftData, questions, mode === 'exam' ? 'exam' : 'practice');
-      return;
-    }
 
     if (mode === 'boldface') {
       openBoldFaceSheet(currentAircraftData, questions, 'practice');
@@ -1082,28 +1075,40 @@ const App = (() => {
   // ==========================================
   // BOLD FACE & PAPER SHEET MODE (STYLE ANKA)
   // ==========================================
-  async function openBoldFaceDirect(aircraftId, subMode = 'practice') {
+  async function loadAndRenderPaperView(aircraftId, subMode = 'practice') {
     try {
       const data = await QuestionLoader.loadAircraftData(aircraftId);
       currentAircraftData = data;
-      openBoldFaceSheet(data, data.questions, subMode);
+      renderBoldFaceSheetDOM(data, data.questions, subMode);
     } catch (e) {
       console.error(e);
       showToast('Gagal memuat lembar Bold Face untuk: ' + aircraftId, 'error');
     }
   }
 
+  function openBoldFaceDirect(aircraftId, subMode = 'practice') {
+    Navigation.navigateTo('paper', { aircraft: aircraftId, mode: subMode });
+  }
+
   function openPaperMode(aircraftId) {
-    QuestionLoader.loadAircraftData(aircraftId).then(data => {
-      openPaperView(data, data.questions);
-    });
+    Navigation.navigateTo('paper', { aircraft: aircraftId, mode: 'manual' });
   }
 
   function openPaperView(data, questions) {
-    openBoldFaceSheet(data, questions, 'manual');
+    renderBoldFaceSheetDOM(data, questions, 'manual');
+    if (Navigation.getCurrentView() !== 'paper') {
+      Navigation.navigateTo('paper', { aircraft: data.aircraft, mode: 'manual' });
+    }
   }
 
   function openBoldFaceSheet(data, questions, subMode = 'practice') {
+    renderBoldFaceSheetDOM(data, questions, subMode);
+    if (Navigation.getCurrentView() !== 'paper') {
+      Navigation.navigateTo('paper', { aircraft: data.aircraft, mode: subMode });
+    }
+  }
+
+  function renderBoldFaceSheetDOM(data, questions, subMode = 'practice') {
     currentPaperData = data;
     currentPaperQuestions = questions && questions.length ? questions : (data.questions || []);
     boldFaceSubMode = subMode;
@@ -1212,7 +1217,6 @@ const App = (() => {
     });
 
     resetBoldFaceStatsUI();
-    Navigation.navigateTo('paper');
   }
 
   function renderBoldFaceQuestions(questionsList, isPrintOnly) {
