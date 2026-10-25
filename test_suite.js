@@ -38,6 +38,7 @@ const requiredFiles = [
   'assets/js/question-loader.js',
   'assets/js/exam-engine.js',
   'assets/js/navigation.js',
+  'assets/js/anka-renderer.js',
   'assets/js/app.js',
   'data/aircraft-index.json',
   'data/mi-17v5.json',
