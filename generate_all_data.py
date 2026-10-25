@@ -14,7 +14,10 @@ if SCRIPTS_DIR not in sys.path:
 # Ensure execution runs from repository root
 os.chdir(BASE_DIR)
 
-from build_all_data_perfect import main as build_master
+try:
+    from scripts.build_all_data_perfect import main as build_master
+except ImportError:
+    from build_all_data_perfect import main as build_master
 
 if __name__ == "__main__":
     print("Executing Aviation Exam Platform Master Data Generator...")
