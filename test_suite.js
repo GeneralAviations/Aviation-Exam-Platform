@@ -172,9 +172,36 @@ assert(examResult.wrongCount === 1, 'Wrong count is 1');
 assert(examResult.categories.length === 2, 'Category breakdown calculated');
 
 // ----------------------------------------------------
-// TEST 4: Local HTTP Server Status Check
+// TEST 4: ANKA Authentic Boldface Layout & Validation
 // ----------------------------------------------------
-console.log('\n--- Test 4: HTTP Server Endpoints Check ---');
+console.log('\n--- Test 4: ANKA Authentic Boldface Layout & Validation ---');
+const AnkaRenderer = require('./assets/js/anka-renderer.js');
+assert(Boolean(AnkaRenderer), 'AnkaRenderer module loaded');
+const ankaTabs = AnkaRenderer.getTabs();
+assert(ankaTabs.length === 6, 'AnkaRenderer provides 6 authentic tabs');
+const ankaTabCounts = ankaTabs.map(t => t.count);
+assert(ankaTabCounts.reduce((a, b) => a + b, 0) === 132, 'All 132 ANKA questions are represented in tabs');
+
+const renderedTab1 = AnkaRenderer.renderSections('tab-1');
+assert(renderedTab1.includes('BOLD FACE LIMITATIONS'), 'Tab 1 contains authentic title BOLD FACE LIMITATIONS');
+assert(renderedTab1.includes('TRAINING ONLY'), 'Header contains authentic military TRAINING ONLY tag');
+assert(renderedTab1.includes('wind-table'), 'Contains authentic Wind table');
+assert(renderedTab1.includes('ku-band-table'), 'Contains authentic Ku-Band 2D table');
+assert(renderedTab1.includes('limitation-table'), 'Contains authentic System Limitation table');
+assert(AnkaRenderer.isAnswerCorrect('108 KIAS', '108 kias'), 'AnkaRenderer normalizes 108 kias to 108 KIAS');
+assert(AnkaRenderer.isAnswerCorrect('<= 20 KTS', '20'), 'AnkaRenderer matches 20 to <= 20 KTS');
+
+const indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+assert(indexHtml.includes('anka-renderer.js'), 'index.html includes anka-renderer.js script');
+
+const styleCss = fs.readFileSync(path.join(__dirname, 'assets/css/style.css'), 'utf8');
+assert(styleCss.includes('.boldface-app-shell.is-anka'), 'style.css defines .boldface-app-shell.is-anka styling');
+assert(styleCss.includes('repeating-linear-gradient'), 'style.css defines authentic hazard candy-cane border');
+
+// ----------------------------------------------------
+// TEST 5: Local HTTP Server Status Check
+// ----------------------------------------------------
+console.log('\n--- Test 5: HTTP Server Endpoints Check ---');
 
 function testEndpoint(pathname) {
   return new Promise((resolve) => {

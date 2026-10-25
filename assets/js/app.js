@@ -1015,11 +1015,24 @@ const App = (() => {
     boldFaceSubMode = subMode;
     boldFaceKeysRevealed = false;
 
+    const isAnka = data.aircraft === 'ANKA MALE UAV';
+    const shellEl = document.querySelector('.boldface-app-shell');
+    if (shellEl) shellEl.classList.toggle('is-anka', isAnka);
+
     // Sidebar Info
     const aTitle = document.getElementById('bf-aircraft-title');
     const aSub = document.getElementById('bf-doc-sub');
-    if (aTitle) aTitle.textContent = data.aircraft;
-    if (aSub) aSub.textContent = data.sourceDocument || data.title;
+    const logoIcon = document.querySelector('.bf-logo-icon');
+
+    if (isAnka) {
+      if (aTitle) aTitle.textContent = 'ANKA Training';
+      if (aSub) aSub.textContent = 'MALE UAV';
+      if (logoIcon) logoIcon.textContent = 'A';
+    } else {
+      if (aTitle) aTitle.textContent = data.aircraft;
+      if (aSub) aSub.textContent = data.sourceDocument || data.title;
+      if (logoIcon) logoIcon.textContent = '✈️';
+    }
 
     // Header Paper Info
     const pTitle = document.getElementById('paper-aircraft-title');
@@ -1039,29 +1052,52 @@ const App = (() => {
 
     setBoldFaceSubMode(subMode, false);
 
-    // Render Navigation tabs in sidebar
-    const sections = [...new Set(currentPaperQuestions.map(q => q.section || 'UMUM'))];
     const tabsContainer = document.getElementById('bf-tabs-list');
-    if (tabsContainer) {
-      tabsContainer.innerHTML = `
-        <button type="button" class="bf-tab-btn active" data-tab-sec="ALL" onclick="App.filterBoldFaceSection('ALL')">
-          <span>Semua Bagian</span>
-          <span class="bf-tab-badge">${currentPaperQuestions.length}</span>
-        </button>
-        ${sections.map(sec => {
-          const count = currentPaperQuestions.filter(q => (q.section || 'UMUM') === sec).length;
-          return `
-            <button type="button" class="bf-tab-btn" data-tab-sec="${sec}" onclick="App.filterBoldFaceSection('${sec}')">
-              <span>${sec}</span>
-              <span class="bf-tab-badge">${count}</span>
-            </button>
-          `;
-        }).join('')}
-      `;
-    }
 
-    // Render questions onto document sheet
-    renderBoldFaceQuestions(currentPaperQuestions, subMode === 'manual');
+    if (isAnka && window.AnkaRenderer) {
+      const ankaTabs = AnkaRenderer.getTabs();
+      if (tabsContainer) {
+        tabsContainer.innerHTML = ankaTabs.map((tab, idx) => `
+          <button type="button" class="bf-tab-btn ${idx === 0 ? 'active' : ''}" data-tab-sec="${tab.id}" onclick="App.filterBoldFaceSection('${tab.id}')">
+            <span>${tab.title}</span>
+            <span class="bf-tab-badge">${tab.count}</span>
+          </button>
+        `).join('') + `
+          <button type="button" class="bf-tab-btn" data-tab-sec="ALL" onclick="App.filterBoldFaceSection('ALL')">
+            <span>Semua Modul (Lengkap)</span>
+            <span class="bf-tab-badge">${currentPaperQuestions.length}</span>
+          </button>
+        `;
+      }
+
+      const container = document.getElementById('paper-sheet-content');
+      if (container) {
+        container.innerHTML = AnkaRenderer.renderSections('tab-1');
+      }
+    } else {
+      // Render Navigation tabs in sidebar for other aircraft
+      const sections = [...new Set(currentPaperQuestions.map(q => q.section || 'UMUM'))];
+      if (tabsContainer) {
+        tabsContainer.innerHTML = `
+          <button type="button" class="bf-tab-btn active" data-tab-sec="ALL" onclick="App.filterBoldFaceSection('ALL')">
+            <span>Semua Bagian</span>
+            <span class="bf-tab-badge">${currentPaperQuestions.length}</span>
+          </button>
+          ${sections.map(sec => {
+            const count = currentPaperQuestions.filter(q => (q.section || 'UMUM') === sec).length;
+            return `
+              <button type="button" class="bf-tab-btn" data-tab-sec="${sec}" onclick="App.filterBoldFaceSection('${sec}')">
+                <span>${sec}</span>
+                <span class="bf-tab-badge">${count}</span>
+              </button>
+            `;
+          }).join('')}
+        `;
+      }
+
+      // Render questions onto document sheet
+      renderBoldFaceQuestions(currentPaperQuestions, subMode === 'manual');
+    }
 
     // Restore draft answers from Storage
     const drafts = Storage.getDraftAnswers(data.aircraft) || {};
@@ -1224,6 +1260,92 @@ const App = (() => {
   function checkBoldFaceAnswers() {
     if (!currentPaperQuestions || currentPaperQuestions.length === 0) return;
 
+    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
+
+    if (isAnka) {
+      document.querySelectorAll('.correction-text').forEach(node => node.remove());
+
+      let correctCount = 0;
+      let wrongCount = 0;
+      let emptyCount = 0;
+
+      const allInputs = Array.from(document.querySelectorAll('.boldface-app-shell.is-anka .answer-input'));
+
+      allInputs.forEach(input => {
+        const userVal = input.value.trim();
+        const acceptedRaw = input.dataset.accepted || input.dataset.answer || '';
+        const accepted = acceptedRaw.split('|').map(s => s.trim()).filter(Boolean);
+        const refAns = (input.dataset.answer || '').split('|')[0].trim() || accepted[0] || 'Jawaban referensi';
+
+        input.classList.remove('correct', 'incorrect', 'auto-filled');
+
+        if (!userVal) {
+          emptyCount++;
+          return;
+        }
+
+        const isCorrect = window.AnkaRenderer && window.AnkaRenderer.isAnswerCorrect
+          ? AnkaRenderer.isAnswerCorrect(accepted, userVal)
+          : accepted.some(ans => ans.toLowerCase() === userVal.toLowerCase());
+
+        if (isCorrect) {
+          input.classList.add('correct');
+          correctCount++;
+        } else {
+          input.classList.add('incorrect');
+          wrongCount++;
+
+          const note = document.createElement('span');
+          note.className = 'correction-text';
+          note.textContent = ` (${refAns})`;
+          input.parentNode.appendChild(note);
+        }
+      });
+
+      const totalCount = allInputs.length || currentPaperQuestions.length;
+      const finalScore = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
+      const settings = Storage.getSettings();
+      const isPassed = finalScore >= (settings.passingScore || 75);
+
+      const elBenar = document.getElementById('bf-stat-benar');
+      const elSalah = document.getElementById('bf-stat-salah');
+      const elKosong = document.getElementById('bf-stat-kosong');
+      const elNilai = document.getElementById('bf-stat-nilai');
+      const elBadge = document.getElementById('bf-stat-badge');
+      const candScore = document.getElementById('paper-cand-score');
+
+      if (elBenar) elBenar.textContent = String(correctCount);
+      if (elSalah) elSalah.textContent = String(wrongCount);
+      if (elKosong) elKosong.textContent = String(emptyCount);
+      if (elNilai) elNilai.textContent = `${finalScore}%`;
+      if (candScore) candScore.textContent = `${finalScore}% (${isPassed ? 'LULUS' : 'TIDAK LULUS'})`;
+
+      if (elBadge) {
+        elBadge.textContent = isPassed ? `LULUS (STANDAR ${settings.passingScore || 75}%)` : `TIDAK LULUS (STANDAR ${settings.passingScore || 75}%)`;
+        elBadge.className = `bf-stat-badge ${isPassed ? 'status-pass' : 'status-fail'}`;
+      }
+
+      if (boldFaceSubMode === 'exam' && currentPaperData) {
+        Storage.saveExamResult({
+          aircraft: currentPaperData.aircraft,
+          mode: 'boldface-sheet',
+          finalScore,
+          totalQuestions: totalCount,
+          correctCount,
+          wrongCount,
+          emptyCount,
+          reviewCount: 0,
+          isPassed,
+          durationSeconds: 0,
+          categories: []
+        });
+        Storage.clearDraftAnswers(currentPaperData.aircraft);
+      }
+
+      showToast(`Koreksi selesai! Skor: ${finalScore}% (${correctCount} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
+      return;
+    }
+
     let correctCount = 0;
     let wrongCount = 0;
     let emptyCount = 0;
@@ -1344,8 +1466,43 @@ const App = (() => {
 
   function toggleBoldFaceKeys() {
     if (!currentPaperQuestions) return;
+    if (boldFaceSubMode === 'exam') {
+      showToast('Kunci jawaban dinonaktifkan dalam Mode Ujian.', 'warning');
+      return;
+    }
+
+    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
     boldFaceKeysRevealed = !boldFaceKeysRevealed;
     const toggleBtn = document.getElementById('bf-toggle-keys-btn');
+
+    if (isAnka) {
+      const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input');
+      allInputs.forEach(input => {
+        const refAns = (input.dataset.answer || '').split('|')[0].trim();
+        if (boldFaceKeysRevealed) {
+          if (!input.value.trim() && refAns) {
+            input.dataset.origVal = input.value;
+            input.value = refAns;
+            input.classList.add('auto-filled');
+            input.dataset.autoFilled = 'true';
+          }
+        } else {
+          if (input.dataset.autoFilled === 'true') {
+            input.value = input.dataset.origVal || '';
+            input.classList.remove('auto-filled', 'correct', 'incorrect');
+            delete input.dataset.autoFilled;
+            delete input.dataset.origVal;
+          }
+        }
+      });
+
+      if (toggleBtn) {
+        toggleBtn.innerHTML = boldFaceKeysRevealed ? '🙈 Sembunyikan Kunci' : '💡 Tampilkan Jawaban';
+      }
+
+      showToast(boldFaceKeysRevealed ? 'Kunci jawaban diisikan ke lembar.' : 'Kunci jawaban disembunyikan.', 'info');
+      return;
+    }
 
     currentPaperQuestions.forEach(q => {
       const fbBox = document.getElementById(`paper-feedback-${q.id}`);
@@ -1404,6 +1561,29 @@ const App = (() => {
     if (!currentPaperQuestions || !currentPaperData) return;
     if (!window.confirm('Kosongkan seluruh isian jawaban pada lembar dokumen ini?')) return;
 
+    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
+
+    if (isAnka) {
+      const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input');
+      allInputs.forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect', 'auto-filled');
+        delete input.dataset.autoFilled;
+        delete input.dataset.origVal;
+      });
+
+      document.querySelectorAll('.correction-text').forEach(node => node.remove());
+
+      Storage.clearDraftAnswers(currentPaperData.aircraft);
+      resetBoldFaceStatsUI();
+      boldFaceKeysRevealed = false;
+      const toggleBtn = document.getElementById('bf-toggle-keys-btn');
+      if (toggleBtn) toggleBtn.innerHTML = '💡 Tampilkan Jawaban';
+
+      showToast('Seluruh isian lembar telah dikosongkan.', 'info');
+      return;
+    }
+
     currentPaperQuestions.forEach(q => {
       const fbBox = document.getElementById(`paper-feedback-${q.id}`);
       if (q.subQuestions && q.subQuestions.length > 0) {
@@ -1459,6 +1639,15 @@ const App = (() => {
       btn.classList.toggle('active', btn.dataset.tabSec === sec);
     });
 
+    if (currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV' && window.AnkaRenderer) {
+      AnkaRenderer.setActiveTab(sec);
+      const paperSheet = document.getElementById('paper-sheet-document') || document.querySelector('.paper-sheet-container');
+      if (paperSheet) {
+        paperSheet.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
     const blocks = document.querySelectorAll('.paper-section-block');
     if (sec === 'ALL') {
       blocks.forEach(b => b.style.display = 'block');
@@ -1477,6 +1666,11 @@ const App = (() => {
     const input = document.getElementById(`paper-input-${qid}`);
     if (input) {
       input.classList.remove('correct', 'incorrect', 'auto-filled');
+      delete input.dataset.autoFilled;
+      if (input.parentNode) {
+        const note = input.parentNode.querySelector('.correction-text');
+        if (note) note.remove();
+      }
       drafts[qid] = input.value;
       Storage.saveDraftAnswers(currentPaperData.aircraft, drafts);
     }
