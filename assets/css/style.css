@@ -3188,3 +3188,307 @@ a {
   font-weight: 700;
 }
 
+/* ==========================================================================
+   AUTHENTIC 2-PAGE ANKA BOLDFACE PDF DOCUMENT REPLICA
+   ========================================================================== */
+.boldface-app-shell.is-anka .anka-pdf-sheet {
+  background: #ffffff;
+  color: #000000;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 36px 36px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.boldface-app-shell.is-anka .anka-pdf-section {
+  margin-bottom: 26px;
+}
+
+.boldface-app-shell.is-anka .anka-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.boldface-app-shell.is-anka .anka-section-num {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  min-width: 14px;
+}
+
+.boldface-app-shell.is-anka .anka-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Sections 1 & 3: Clean Blank Rows */
+.boldface-app-shell.is-anka .anka-blanks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.boldface-app-shell.is-anka .anka-blank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 3px 0;
+}
+
+.boldface-app-shell.is-anka .anka-blank-label {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.boldface-app-shell.is-anka .anka-blank-field-wrap {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+/* Underline Answer Inputs in Sections 1 & 3 */
+.boldface-app-shell.is-anka input.anka-underline-input {
+  border: none !important;
+  border-bottom: 2px solid #104494 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #104494 !important;
+  font-weight: 800 !important;
+  font-size: 0.98rem !important;
+  text-align: center !important;
+  width: 160px !important;
+  padding: 2px 4px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.boldface-app-shell.is-anka input.anka-underline-input:focus {
+  border-bottom-color: #0284c7 !important;
+  background: rgba(2, 132, 199, 0.05) !important;
+}
+
+.boldface-app-shell.is-anka input.anka-underline-input.correct {
+  color: #15803d !important;
+  border-bottom-color: #16a34a !important;
+}
+
+.boldface-app-shell.is-anka input.anka-underline-input.incorrect {
+  color: #dc2626 !important;
+  border-bottom-color: #dc2626 !important;
+}
+
+/* Authentic Document Tables (Sections 2, 4, 5) */
+.boldface-app-shell.is-anka .anka-pdf-table,
+.exam-table-card .anka-pdf-table {
+  width: 100%;
+  border-collapse: collapse !important;
+  border: 1.5px solid #000000 !important;
+  margin: 4px 0 10px;
+  background: #ffffff;
+}
+
+.boldface-app-shell.is-anka .anka-pdf-table th,
+.boldface-app-shell.is-anka .anka-pdf-table td,
+.exam-table-card .anka-pdf-table th,
+.exam-table-card .anka-pdf-table td {
+  border: 1px solid #000000 !important;
+  padding: 6px 4px !important;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.88rem;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.boldface-app-shell.is-anka .anka-pdf-table thead th,
+.exam-table-card .anka-pdf-table thead th {
+  background: #ffffff !important;
+  font-weight: 700;
+  color: #000000 !important;
+}
+
+.boldface-app-shell.is-anka .anka-pdf-table .anka-cell-label,
+.exam-table-card .anka-pdf-table .anka-cell-label {
+  font-weight: 700;
+  text-align: left !important;
+  padding-left: 8px !important;
+  background: #ffffff !important;
+}
+
+/* Authentic Pale Yellow Shading for specific cells */
+.boldface-app-shell.is-anka .cell-yellow,
+.boldface-app-shell.is-anka .cell-yellow-th,
+.exam-table-card .cell-yellow,
+.exam-table-card .cell-yellow-th {
+  background-color: #ffff99 !important;
+}
+
+/* Table Input Inside Authentic Tables */
+.boldface-app-shell.is-anka input.table-cell-input {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #104494 !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 4px 2px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.boldface-app-shell.is-anka input.table-cell-input:focus {
+  background: rgba(16, 68, 148, 0.08) !important;
+}
+
+.boldface-app-shell.is-anka input.table-cell-input.correct {
+  color: #15803d !important;
+}
+
+.boldface-app-shell.is-anka input.table-cell-input.incorrect {
+  color: #dc2626 !important;
+}
+
+/* Section 6: Authentic Prose & Inline Blanks */
+.boldface-app-shell.is-anka .anka-doc-prose-block {
+  font-size: 0.96rem;
+  line-height: 1.85;
+  color: #000000;
+}
+
+.boldface-app-shell.is-anka .anka-doc-p {
+  margin: 0 0 16px;
+  color: #000000;
+}
+
+.boldface-app-shell.is-anka .anka-doc-subblock {
+  margin: 16px 0;
+}
+
+.boldface-app-shell.is-anka .anka-doc-subheading {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #000000;
+}
+
+.boldface-app-shell.is-anka .anka-doc-subitem {
+  margin-left: 24px;
+  margin-bottom: 6px;
+  color: #000000;
+}
+
+.boldface-app-shell.is-anka .anka-dotted-blank {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+  margin: 0 3px;
+  vertical-align: baseline;
+}
+
+.boldface-app-shell.is-anka .dots-prefix,
+.boldface-app-shell.is-anka .dots-suffix {
+  color: #104494;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.boldface-app-shell.is-anka input.anka-inline-input {
+  border: none !important;
+  border-bottom: 1.5px solid #104494 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #104494 !important;
+  font-weight: 800 !important;
+  font-size: 0.94rem !important;
+  text-align: center !important;
+  width: 68px !important;
+  min-width: 44px;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 2px !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.boldface-app-shell.is-anka input.anka-inline-input:focus {
+  border-bottom-color: #0284c7 !important;
+  background: rgba(2, 132, 199, 0.05) !important;
+}
+
+.boldface-app-shell.is-anka input.anka-inline-input.correct {
+  color: #15803d !important;
+  border-bottom-color: #16a34a !important;
+}
+
+.boldface-app-shell.is-anka input.anka-inline-input.incorrect {
+  color: #dc2626 !important;
+  border-bottom-color: #dc2626 !important;
+}
+
+/* Page Break Divider between Page 1 and Page 2 */
+.boldface-app-shell.is-anka .anka-pdf-page-break {
+  margin: 32px 0;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boldface-app-shell.is-anka .anka-page-divider-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #cbd5e1;
+  z-index: 1;
+}
+
+.boldface-app-shell.is-anka .anka-page-tag {
+  position: relative;
+  z-index: 2;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  letter-spacing: 0.08em;
+}
+
+/* Responsive Support for ANKA PDF Sheet */
+@media (max-width: 768px) {
+  .boldface-app-shell.is-anka .anka-pdf-sheet {
+    padding: 20px 14px;
+  }
+  .boldface-app-shell.is-anka .anka-blank-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .boldface-app-shell.is-anka .anka-blank-field-wrap {
+    width: 100%;
+  }
+  .boldface-app-shell.is-anka input.anka-underline-input {
+    width: 100% !important;
+    text-align: left !important;
+  }
+  .boldface-app-shell.is-anka .anka-doc-subitem {
+    margin-left: 12px;
+  }
+}
+
