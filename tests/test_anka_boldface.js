@@ -167,8 +167,15 @@ assert(appJs.includes('applyAnkaKeysDisplay(boldFaceKeysRevealed);'), 'toggleBol
 assert(appJs.includes('.table-key-hint'), 'applyAnkaKeysDisplay must support table cells with .table-key-hint');
 assert(appJs.includes('.inline-key-hint'), 'applyAnkaKeysDisplay must support inline blanks with .inline-key-hint');
 assert(appJs.includes('.anka-key-hint'), 'applyAnkaKeysDisplay must support standard rows with .anka-key-hint');
+assert(appJs.includes('function isAnkaAircraft('), 'app.js must define isAnkaAircraft');
+assert(appJs.includes('function getAnkaRenderer('), 'app.js must define getAnkaRenderer');
+assert(appJs.includes('function decodeHtmlEntities('), 'app.js must decode HTML entities');
 assert(!appJs.includes('if (!input.value.trim() && refAns)'), 'Buggy check that ignored filled inputs must be removed');
-console.log('✓ PASS: Show Answers implementation and hint badge generation verified.');
+
+// Test that CSS never truncates answer hints
+assert(!css.includes('.boldface-app-shell.is-anka .table-key-hint {\n  display: block;\n  font-size: 0.68rem;'), 'Old truncated table hint CSS must be replaced');
+assert(css.includes('text-overflow: clip !important;'), 'CSS must allow hints to expand without ellipsis');
+console.log('✓ PASS: Show Answers implementation, non-truncation, and hint badge generation verified.');
 
 // 10. Test Authoritative Dataset Completeness
 const ankaData = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/anka-male-uav.json'), 'utf-8'));
@@ -177,5 +184,11 @@ ankaData.questions.forEach(q => {
   assert(q.answer !== undefined && q.answer !== null && String(q.answer).trim().length > 0, `Question ${q.id} must have non-empty answer`);
 });
 console.log('✓ PASS: All 132 ANKA questions possess valid authoritative answers in dataset.');
+
+// 11. Test window and global exports in anka-renderer.js
+const ankaScript = fs.readFileSync(path.join(ROOT_DIR, 'assets/js/anka-renderer.js'), 'utf-8');
+assert(ankaScript.includes('window.AnkaRenderer = AnkaRenderer'), 'anka-renderer.js must explicitly assign window.AnkaRenderer');
+assert(ankaScript.includes('globalThis.AnkaRenderer = AnkaRenderer'), 'anka-renderer.js must assign globalThis.AnkaRenderer');
+console.log('✓ PASS: AnkaRenderer export to window and global scopes verified.');
 
 console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===\n');

@@ -545,7 +545,8 @@ const App = (() => {
     if (secEl) secEl.textContent = q.section;
     if (textEl) textEl.textContent = (q.question || '').replace(/^\d+[\.\)]\s*/, '');
 
-    const isAnkaTable = Boolean(window.AnkaRenderer && window.AnkaRenderer.isTableQuestion && window.AnkaRenderer.isTableQuestion(q.id));
+    const ankaEngine = getAnkaRenderer();
+    const isAnkaTable = Boolean(ankaEngine && ankaEngine.isTableQuestion && ankaEngine.isTableQuestion(q.id));
     const examTableZone = document.getElementById('exam-table-input-zone');
     const hasSub = q.subQuestions && Array.isArray(q.subQuestions) && q.subQuestions.length > 0;
 
@@ -556,7 +557,7 @@ const App = (() => {
 
       if (examTableZone) {
         examTableZone.style.display = 'block';
-        examTableZone.innerHTML = AnkaRenderer.getTableHtmlForExam(
+        examTableZone.innerHTML = ankaEngine.getTableHtmlForExam(
           q.id,
           state.answers || {},
           state.mode === 'practice',
@@ -1098,6 +1099,25 @@ const App = (() => {
   // ==========================================
   // BOLD FACE & PAPER SHEET MODE (STYLE ANKA)
   // ==========================================
+  function isAnkaAircraft(data) {
+    if (!data) return false;
+    const a = String(data.aircraft || data.title || data.id || '').toUpperCase();
+    return a.includes('ANKA');
+  }
+
+  function getAnkaRenderer() {
+    if (typeof AnkaRenderer !== 'undefined' && AnkaRenderer && AnkaRenderer.renderSections) {
+      return AnkaRenderer;
+    }
+    if (typeof window !== 'undefined' && window.AnkaRenderer && window.AnkaRenderer.renderSections) {
+      return window.AnkaRenderer;
+    }
+    if (typeof globalThis !== 'undefined' && globalThis.AnkaRenderer && globalThis.AnkaRenderer.renderSections) {
+      return globalThis.AnkaRenderer;
+    }
+    return null;
+  }
+
   async function loadAndRenderPaperView(aircraftId, subMode = 'practice') {
     try {
       const data = await QuestionLoader.loadAircraftData(aircraftId);
@@ -1137,7 +1157,8 @@ const App = (() => {
     boldFaceSubMode = subMode;
     boldFaceKeysRevealed = false;
 
-    const isAnka = data.aircraft === 'ANKA MALE UAV';
+    const isAnka = isAnkaAircraft(data);
+    const ankaEngine = getAnkaRenderer();
     const shellEl = document.querySelector('.boldface-app-shell');
     if (shellEl) shellEl.classList.toggle('is-anka', isAnka);
 
@@ -1176,8 +1197,8 @@ const App = (() => {
 
     const tabsContainer = document.getElementById('bf-tabs-list');
 
-    if (isAnka && window.AnkaRenderer) {
-      const ankaTabs = AnkaRenderer.getTabs();
+    if (isAnka && ankaEngine) {
+      const ankaTabs = ankaEngine.getTabs();
       if (tabsContainer) {
         tabsContainer.innerHTML = ankaTabs.map((tab, idx) => `
           <button type="button" class="bf-tab-btn ${idx === 0 ? 'active' : ''}" data-tab-sec="${tab.id}" onclick="App.filterBoldFaceSection('${tab.id}')">
@@ -1194,7 +1215,7 @@ const App = (() => {
 
       const container = document.getElementById('paper-sheet-content');
       if (container) {
-        container.innerHTML = AnkaRenderer.renderSections('tab-1');
+        container.innerHTML = ankaEngine.renderSections('tab-1');
       }
     } else {
       // Render Navigation tabs in sidebar for other aircraft
@@ -1245,6 +1266,12 @@ const App = (() => {
   function renderBoldFaceQuestions(questionsList, isPrintOnly) {
     const container = document.getElementById('paper-sheet-content');
     if (!container) return;
+
+    const ankaEngine = getAnkaRenderer();
+    if (currentPaperData && isAnkaAircraft(currentPaperData) && ankaEngine) {
+      container.innerHTML = ankaEngine.renderSections('ALL');
+      return;
+    }
 
     const sections = [...new Set(questionsList.map(q => q.section || 'UMUM'))];
 
@@ -1381,7 +1408,8 @@ const App = (() => {
   function checkBoldFaceAnswers() {
     if (!currentPaperQuestions || currentPaperQuestions.length === 0) return;
 
-    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
+    const isAnka = isAnkaAircraft(currentPaperData);
+    const ankaEngine = getAnkaRenderer();
 
     if (isAnka) {
       document.querySelectorAll('.correction-text').forEach(node => node.remove());
@@ -1405,8 +1433,8 @@ const App = (() => {
           return;
         }
 
-        const isCorrect = window.AnkaRenderer && window.AnkaRenderer.isAnswerCorrect
-          ? AnkaRenderer.isAnswerCorrect(accepted, userVal)
+        const isCorrect = ankaEngine && ankaEngine.isAnswerCorrect
+          ? ankaEngine.isAnswerCorrect(accepted, userVal)
           : accepted.some(ans => ans.toLowerCase() === userVal.toLowerCase());
 
         if (isCorrect) {
@@ -1418,8 +1446,8 @@ const App = (() => {
 
           const note = document.createElement('span');
           note.className = 'correction-text';
-          note.textContent = ` (${refAns})`;
-          if (input.classList.contains('inline-blank-input')) {
+          note.textContent = ` (${decodeHtmlEntities(refAns)})`;
+          if (input.classList.contains('inline-blank-input') || input.classList.contains('anka-inline-input')) {
             input.insertAdjacentElement('afterend', note);
           } else {
             input.parentNode.appendChild(note);
@@ -1589,15 +1617,26 @@ const App = (() => {
     showToast(`Koreksi selesai! Skor: ${finalScore}% (${Math.round(correctCount)} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
   }
 
+  function decodeHtmlEntities(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&le;/gi, '≤')
+      .replace(/&ge;/gi, '≥')
+      .replace(/&deg;/gi, '°')
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>')
+      .replace(/&amp;/gi, '&');
+  }
+
   function cleanAnswerText(val) {
     if (val === undefined || val === null) return '';
     if (Array.isArray(val)) {
-      return val.length > 0 ? String(val[0]).trim() : '';
+      return val.length > 0 ? decodeHtmlEntities(String(val[0]).trim()) : '';
     }
     if (typeof val === 'object') {
       return '';
     }
-    return String(val).trim();
+    return decodeHtmlEntities(String(val).trim());
   }
 
   function applyAnkaKeysDisplay(show) {
@@ -1628,7 +1667,10 @@ const App = (() => {
         ? qObj.answer
         : input.dataset.answer;
 
-      const cleanAns = cleanAnswerText(rawAnswer);
+      let cleanAns = cleanAnswerText(rawAnswer);
+      if (!cleanAns && input.dataset.accepted) {
+        cleanAns = cleanAnswerText(input.dataset.accepted.split('|')[0]);
+      }
       if (!cleanAns) {
         console.warn(`[ANKA Key] Missing authoritative answer for question ${qid}`);
         return;
@@ -1640,35 +1682,35 @@ const App = (() => {
 
       if (tdParent) {
         // Table cell question (WIND, Ku-Band, System Limitations, etc.)
-        const hint = document.createElement('span');
+        const hint = document.createElement('div');
         hint.className = 'table-key-hint no-print';
         hint.dataset.hintFor = input.id;
         hint.title = `Kunci: ${cleanAns}`;
-        hint.textContent = cleanAns;
+        hint.innerHTML = `<span class="key-badge-label">Kunci:</span> <strong>${cleanAns}</strong>`;
         tdParent.appendChild(hint);
-      } else if (input.classList.contains('inline-blank-input')) {
-        // Inline blank within prose paragraph
+      } else if (input.classList.contains('inline-blank-input') || input.classList.contains('anka-inline-input')) {
+        // Inline blank within prose paragraph (Section 6)
         const hint = document.createElement('span');
         hint.className = 'inline-key-hint no-print';
         hint.dataset.hintFor = input.id;
         hint.title = `Kunci: ${cleanAns}`;
-        hint.textContent = `[${cleanAns}]`;
+        hint.innerHTML = `💡 [Kunci: <strong>${cleanAns}</strong>]`;
         input.insertAdjacentElement('afterend', hint);
       } else if (inputWrap) {
-        // Standard question row with dotted leader
-        const hint = document.createElement('span');
+        // Standard question row with dotted leader (Section 1, Section 3, Emergency steps)
+        const hint = document.createElement('div');
         hint.className = 'anka-key-hint no-print';
         hint.dataset.hintFor = input.id;
         hint.title = `Kunci: ${cleanAns}`;
-        hint.textContent = `Kunci: ${cleanAns}`;
+        hint.innerHTML = `💡 Kunci: <strong>${cleanAns}</strong>`;
         inputWrap.appendChild(hint);
       } else {
         // Fallback for any other structure
-        const hint = document.createElement('span');
+        const hint = document.createElement('div');
         hint.className = 'anka-key-hint no-print';
         hint.dataset.hintFor = input.id;
         hint.title = `Kunci: ${cleanAns}`;
-        hint.textContent = `Kunci: ${cleanAns}`;
+        hint.innerHTML = `💡 Kunci: <strong>${cleanAns}</strong>`;
         input.insertAdjacentElement('afterend', hint);
       }
     });
@@ -1681,7 +1723,7 @@ const App = (() => {
       return;
     }
 
-    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
+    const isAnka = isAnkaAircraft(currentPaperData);
     boldFaceKeysRevealed = !boldFaceKeysRevealed;
     const toggleBtn = document.getElementById('bf-toggle-keys-btn');
 
@@ -1752,7 +1794,7 @@ const App = (() => {
     if (!currentPaperQuestions || !currentPaperData) return;
     if (!window.confirm('Kosongkan seluruh isian jawaban pada lembar dokumen ini?')) return;
 
-    const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
+    const isAnka = isAnkaAircraft(currentPaperData);
 
     if (isAnka) {
       const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input, .boldface-app-shell.is-anka .paper-blank-input');
@@ -1830,8 +1872,10 @@ const App = (() => {
       btn.classList.toggle('active', btn.dataset.tabSec === sec);
     });
 
-    if (currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV' && window.AnkaRenderer) {
-      AnkaRenderer.setActiveTab(sec);
+    const isAnka = isAnkaAircraft(currentPaperData);
+    const ankaEngine = getAnkaRenderer();
+    if (isAnka && ankaEngine) {
+      ankaEngine.setActiveTab(sec);
       if (boldFaceKeysRevealed) {
         applyAnkaKeysDisplay(true);
       }

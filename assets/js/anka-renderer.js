@@ -10,7 +10,7 @@
  *  - All 6 authentic modules (Limitations + 5 Emergency Procedures)
  *  - Integrated live answer validation and correction display
  */
-const AnkaRenderer = (() => {
+var AnkaRenderer = (() => {
   const tabs = [
   {
         "id": "tab-1",
@@ -537,6 +537,15 @@ const AnkaRenderer = (() => {
   };
 })();
 
+if (typeof window !== 'undefined') {
+  window.AnkaRenderer = AnkaRenderer;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.AnkaRenderer = AnkaRenderer;
+}
+if (typeof global !== 'undefined') {
+  global.AnkaRenderer = AnkaRenderer;
+}
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = AnkaRenderer;
 }
