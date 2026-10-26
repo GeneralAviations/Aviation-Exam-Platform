@@ -117,4 +117,65 @@ assert(appJs.includes('loadAndRenderPaperView'), 'app.js must define loadAndRend
 assert(!appJs.includes('renderBoldFaceSheetDOM(data, questions, subMode);\n    Navigation.navigateTo(\'paper\');'), 'renderBoldFaceSheetDOM must not call Navigation.navigateTo');
 console.log('✓ PASS: app.js paper navigation architecture verified to have zero recursion.');
 
+// 8. Test Horizontal Dotted-Leader Layout & Table Columns
+const allRendered = AnkaRenderer.renderSections('ALL');
+const questionRowMatches = allRendered.match(/class="[^"]*question-row[^"]*"/g) || [];
+assert(questionRowMatches.length >= 55, `Expected >= 55 question rows, got ${questionRowMatches.length}`);
+
+const leaderMatches = allRendered.match(/class="[^"]*question-leader[^"]*"/g) || [];
+assert(leaderMatches.length >= 55, `Expected >= 55 question leaders, got ${leaderMatches.length}`);
+
+// Section 1 VNE & Section 3 Turning Speed layout sequence
+assert(/VNE \(Never Exeed\)[\s\S]*?class="[^"]*question-leader[\s\S]*?paper-input-ANKA-LIM-001/.test(allRendered), 'Section 1 must follow horizontal Label -> Leader -> Input order');
+assert(/Turning Speed[\s\S]*?class="[^"]*question-leader[\s\S]*?paper-input-ANKA-LIM-015/.test(allRendered), 'Section 3 must follow horizontal Label -> Leader -> Input order');
+
+// Wind Table: 3 columns per row
+const windTableMatch = allRendered.match(/<table class="[^"]*wind-table[^"]*"[\s\S]*?<\/table>/);
+assert(windTableMatch, 'Wind table must be present');
+const windRows = windTableMatch[0].match(/<tr>[\s\S]*?<\/tr>/g) || [];
+assert.strictEqual(windRows.length, 4, 'Wind table must have 1 header row + 3 data rows');
+for (let i = 1; i < windRows.length; i++) {
+  const inputsInRow = windRows[i].match(/<input /g) || [];
+  assert.strictEqual(inputsInRow.length, 3, `Wind table row ${i} must have exactly 3 horizontal inputs`);
+}
+
+// Ku-Band Table: 6 columns per row
+const kuTableMatch = allRendered.match(/<table class="[^"]*ku-band-table[^"]*"[\s\S]*?<\/table>/);
+assert(kuTableMatch, 'Ku-band table must be present');
+const kuBodyRows = kuTableMatch[0].match(/<tbody>[\s\S]*?<\/tbody>/)[0].match(/<tr>[\s\S]*?<\/tr>/g) || [];
+assert.strictEqual(kuBodyRows.length, 3, 'Ku-band table must have 3 data rows in tbody');
+for (let i = 0; i < kuBodyRows.length; i++) {
+  const inputsInRow = kuBodyRows[i].match(/<input /g) || [];
+  assert.strictEqual(inputsInRow.length, 6, `Ku-band row ${i + 1} must have exactly 6 horizontal inputs`);
+}
+
+// System Limitation Table: 9 rows with MIN, NORMAL OPERATION, MAX
+const limTableMatch = allRendered.match(/<table class="[^"]*limitation-table[^"]*"[\s\S]*?<\/table>/);
+assert(limTableMatch, 'System Limitation table must be present');
+const limBodyRows = limTableMatch[0].match(/<tbody>[\s\S]*?<\/tbody>/)[0].match(/<tr>[\s\S]*?<\/tr>/g) || [];
+assert.strictEqual(limBodyRows.length, 9, 'System Limitation table must have 9 data rows in tbody');
+for (let i = 0; i < limBodyRows.length; i++) {
+  const inputsInRow = limBodyRows[i].match(/<input /g) || [];
+  assert(inputsInRow.length >= 2, `System limitation row ${i + 1} must have inputs for MIN, NORMAL, MAX`);
+}
+console.log('✓ PASS: Horizontal dotted leader layout and all table column structures verified.');
+
+// 9. Test Show Answers implementation in app.js
+assert(appJs.includes('function cleanAnswerText('), 'app.js must define cleanAnswerText');
+assert(appJs.includes('function applyAnkaKeysDisplay('), 'app.js must define applyAnkaKeysDisplay');
+assert(appJs.includes('applyAnkaKeysDisplay(boldFaceKeysRevealed);'), 'toggleBoldFaceKeys must call applyAnkaKeysDisplay');
+assert(appJs.includes('.table-key-hint'), 'applyAnkaKeysDisplay must support table cells with .table-key-hint');
+assert(appJs.includes('.inline-key-hint'), 'applyAnkaKeysDisplay must support inline blanks with .inline-key-hint');
+assert(appJs.includes('.anka-key-hint'), 'applyAnkaKeysDisplay must support standard rows with .anka-key-hint');
+assert(!appJs.includes('if (!input.value.trim() && refAns)'), 'Buggy check that ignored filled inputs must be removed');
+console.log('✓ PASS: Show Answers implementation and hint badge generation verified.');
+
+// 10. Test Authoritative Dataset Completeness
+const ankaData = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data/anka-male-uav.json'), 'utf-8'));
+assert.strictEqual(ankaData.questions.length, 132, 'Must have 132 questions');
+ankaData.questions.forEach(q => {
+  assert(q.answer !== undefined && q.answer !== null && String(q.answer).trim().length > 0, `Question ${q.id} must have non-empty answer`);
+});
+console.log('✓ PASS: All 132 ANKA questions possess valid authoritative answers in dataset.');
+
 console.log('\n=== ALL ANKA BOLDFACE TESTS PASSED SUCCESSFULLY! ===\n');

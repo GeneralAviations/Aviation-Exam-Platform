@@ -1390,7 +1390,7 @@ const App = (() => {
       let wrongCount = 0;
       let emptyCount = 0;
 
-      const allInputs = Array.from(document.querySelectorAll('.boldface-app-shell.is-anka .answer-input'));
+      const allInputs = Array.from(document.querySelectorAll('.boldface-app-shell.is-anka .answer-input, .boldface-app-shell.is-anka .paper-blank-input'));
 
       allInputs.forEach(input => {
         const userVal = input.value.trim();
@@ -1419,7 +1419,11 @@ const App = (() => {
           const note = document.createElement('span');
           note.className = 'correction-text';
           note.textContent = ` (${refAns})`;
-          input.parentNode.appendChild(note);
+          if (input.classList.contains('inline-blank-input')) {
+            input.insertAdjacentElement('afterend', note);
+          } else {
+            input.parentNode.appendChild(note);
+          }
         }
       });
 
@@ -1585,6 +1589,91 @@ const App = (() => {
     showToast(`Koreksi selesai! Skor: ${finalScore}% (${Math.round(correctCount)} Benar, ${wrongCount} Salah, ${emptyCount} Kosong)`, isPassed ? 'success' : 'warning');
   }
 
+  function cleanAnswerText(val) {
+    if (val === undefined || val === null) return '';
+    if (Array.isArray(val)) {
+      return val.length > 0 ? String(val[0]).trim() : '';
+    }
+    if (typeof val === 'object') {
+      return '';
+    }
+    return String(val).trim();
+  }
+
+  function applyAnkaKeysDisplay(show) {
+    // 1. Remove all existing hint badges to avoid any duplicate rendering
+    document.querySelectorAll('.anka-key-hint, .table-key-hint, .inline-key-hint').forEach(el => el.remove());
+
+    if (!show) return;
+
+    // 2. Build authoritative question lookup map from currentPaperQuestions
+    const questionMap = new Map();
+    if (Array.isArray(currentPaperQuestions)) {
+      currentPaperQuestions.forEach(q => {
+        if (q && q.id) {
+          questionMap.set(q.id, q);
+        }
+      });
+    }
+
+    // 3. Find all ANKA question inputs across all tabs
+    const allInputs = document.querySelectorAll('#paper-sheet-content input[data-qid], #paper-sheet-content input[id^="paper-input-ANKA-"]');
+
+    allInputs.forEach(input => {
+      const qid = input.dataset.qid || (input.id ? input.id.replace('paper-input-', '') : null);
+      if (!qid) return;
+
+      const qObj = questionMap.get(qid);
+      const rawAnswer = (qObj && qObj.answer !== undefined && qObj.answer !== null)
+        ? qObj.answer
+        : input.dataset.answer;
+
+      const cleanAns = cleanAnswerText(rawAnswer);
+      if (!cleanAns) {
+        console.warn(`[ANKA Key] Missing authoritative answer for question ${qid}`);
+        return;
+      }
+
+      // Check input placement context: table cell, inline blank, or standard row
+      const tdParent = input.closest('td');
+      const inputWrap = input.closest('.question-input-wrap') || input.closest('.anka-blank-field-wrap');
+
+      if (tdParent) {
+        // Table cell question (WIND, Ku-Band, System Limitations, etc.)
+        const hint = document.createElement('span');
+        hint.className = 'table-key-hint no-print';
+        hint.dataset.hintFor = input.id;
+        hint.title = `Kunci: ${cleanAns}`;
+        hint.textContent = cleanAns;
+        tdParent.appendChild(hint);
+      } else if (input.classList.contains('inline-blank-input')) {
+        // Inline blank within prose paragraph
+        const hint = document.createElement('span');
+        hint.className = 'inline-key-hint no-print';
+        hint.dataset.hintFor = input.id;
+        hint.title = `Kunci: ${cleanAns}`;
+        hint.textContent = `[${cleanAns}]`;
+        input.insertAdjacentElement('afterend', hint);
+      } else if (inputWrap) {
+        // Standard question row with dotted leader
+        const hint = document.createElement('span');
+        hint.className = 'anka-key-hint no-print';
+        hint.dataset.hintFor = input.id;
+        hint.title = `Kunci: ${cleanAns}`;
+        hint.textContent = `Kunci: ${cleanAns}`;
+        inputWrap.appendChild(hint);
+      } else {
+        // Fallback for any other structure
+        const hint = document.createElement('span');
+        hint.className = 'anka-key-hint no-print';
+        hint.dataset.hintFor = input.id;
+        hint.title = `Kunci: ${cleanAns}`;
+        hint.textContent = `Kunci: ${cleanAns}`;
+        input.insertAdjacentElement('afterend', hint);
+      }
+    });
+  }
+
   function toggleBoldFaceKeys() {
     if (!currentPaperQuestions) return;
     if (boldFaceSubMode === 'exam') {
@@ -1596,32 +1685,13 @@ const App = (() => {
     boldFaceKeysRevealed = !boldFaceKeysRevealed;
     const toggleBtn = document.getElementById('bf-toggle-keys-btn');
 
+    if (toggleBtn) {
+      toggleBtn.innerHTML = boldFaceKeysRevealed ? '🙈 Sembunyikan Kunci' : '💡 Tampilkan Jawaban';
+    }
+
     if (isAnka) {
-      const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input');
-      allInputs.forEach(input => {
-        const refAns = (input.dataset.answer || '').split('|')[0].trim();
-        if (boldFaceKeysRevealed) {
-          if (!input.value.trim() && refAns) {
-            input.dataset.origVal = input.value;
-            input.value = refAns;
-            input.classList.add('auto-filled');
-            input.dataset.autoFilled = 'true';
-          }
-        } else {
-          if (input.dataset.autoFilled === 'true') {
-            input.value = input.dataset.origVal || '';
-            input.classList.remove('auto-filled', 'correct', 'incorrect');
-            delete input.dataset.autoFilled;
-            delete input.dataset.origVal;
-          }
-        }
-      });
-
-      if (toggleBtn) {
-        toggleBtn.innerHTML = boldFaceKeysRevealed ? '🙈 Sembunyikan Kunci' : '💡 Tampilkan Jawaban';
-      }
-
-      showToast(boldFaceKeysRevealed ? 'Kunci jawaban diisikan ke lembar.' : 'Kunci jawaban disembunyikan.', 'info');
+      applyAnkaKeysDisplay(boldFaceKeysRevealed);
+      showToast(boldFaceKeysRevealed ? 'Kunci jawaban ditampilkan pada setiap butir soal.' : 'Kunci jawaban disembunyikan.', 'info');
       return;
     }
 
@@ -1685,7 +1755,7 @@ const App = (() => {
     const isAnka = currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV';
 
     if (isAnka) {
-      const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input');
+      const allInputs = document.querySelectorAll('.boldface-app-shell.is-anka .answer-input, .boldface-app-shell.is-anka .paper-blank-input');
       allInputs.forEach(input => {
         input.value = '';
         input.classList.remove('correct', 'incorrect', 'auto-filled');
@@ -1693,7 +1763,7 @@ const App = (() => {
         delete input.dataset.origVal;
       });
 
-      document.querySelectorAll('.correction-text').forEach(node => node.remove());
+      document.querySelectorAll('.correction-text, .anka-key-hint, .table-key-hint, .inline-key-hint').forEach(node => node.remove());
 
       Storage.clearDraftAnswers(currentPaperData.aircraft);
       resetBoldFaceStatsUI();
@@ -1762,6 +1832,9 @@ const App = (() => {
 
     if (currentPaperData && currentPaperData.aircraft === 'ANKA MALE UAV' && window.AnkaRenderer) {
       AnkaRenderer.setActiveTab(sec);
+      if (boldFaceKeysRevealed) {
+        applyAnkaKeysDisplay(true);
+      }
       const paperSheet = document.getElementById('paper-sheet-document') || document.querySelector('.paper-sheet-container');
       if (paperSheet) {
         paperSheet.scrollIntoView({ behavior: 'smooth', block: 'start' });
